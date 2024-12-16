@@ -11,7 +11,7 @@ def process_search_space(search_space):
     :param search_space: 单个搜索空间。
     """
     print(f"Processing search space: {search_space}")
-
+    search_space.discover()
     # 在此执行其他相关操作
     return f"Finished {search_space}"
 
