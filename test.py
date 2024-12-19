@@ -1,132 +1,109 @@
-import random
+import pandas as pd
 from collections import defaultdict
-from typing import List
-
-class ColumnData:
-    def __init__(self, column, probing_table, pli):
-        self.column = column
-        self.probing_table = probing_table
-        self.pli = pli
-
-    def get_probing_table(self):
-        return self.probing_table
-
-    def get_column(self):
-        return self.column
-
-
-class Column:
-    def __init__(self, schema, name, index):
-        self.schema = schema
-        self.name = name
-        self.index = index
-
-    def get_index(self):
-        return self.index
-
-
-class PositionListIndex:
-    @staticmethod
-    def create_for(column_vector, is_null_equal_null):
-        # Simplified placeholder implementation of PLI creation
-        clusters = defaultdict(list)
-        for i, value in enumerate(column_vector):
-            clusters[value].append(i)
-        probing_table = [value for value, cluster in clusters.items() if len(cluster) > 1]
-        return PositionListIndex(probing_table)
-
-    def __init__(self, probing_table):
-        self.probing_table = probing_table
-
-    def get_probing_table(self, unique=False):
-        return self.probing_table
-
-
-class RelationSchema:
-    def __init__(self, relation_name, is_null_equal_null):
-        self.relation_name = relation_name
-        self.is_null_equal_null = is_null_equal_null
-        self.columns = []
-
-    def get_num_columns(self):
-        return len(self.columns)
 
 
 class ColumnLayoutRelationData:
-    def __init__(self, schema, column_data, column_vectors):
-        self.schema = schema
-        self.column_data = column_data
-        self.column_vectors = column_vectors
+    def __init__(self, data):
+        """
+        初始化 ColumnLayoutRelationData 类，构建列布局关系数据。
+        :param data: pandas DataFrame，包含抽样后的数据。
+        """
+        self.schema = list(data.columns)  # 模式：列名列表
+        self.columnTypes = self._infer_column_types(data)  # 每列的数据类型元信息
+        self.columnVectors = self._compute_column_vectors(data)  # 每列的数值索引表示
+        self.columnData = self._compute_column_data()  # 包含列的元信息、PLI 和 Probing Table
 
-    @classmethod
-    def create_from(cls, file_input_generator, is_null_equal_null, max_cols, max_rows):
-        relational_input = file_input_generator.generate_new_copy()
-        schema = RelationSchema(relational_input.relation_name(), is_null_equal_null)
+    def _infer_column_types(self, data):
+        """
+        推断每列的数据类型。
+        :param data: pandas DataFrame，包含抽样后的数据。
+        :return: Dict，列名到数据类型的映射。
+        """
+        column_types = {}
+        for column in data.columns:
+            column_types[column] = data[column].dtype
+        return column_types
 
-        value_dictionary = {}
-        unknown_value_id = 0
-        next_value_id = 1
-        null_value_id = -1
+    def _compute_column_vectors(self, data):
+        """
+        将原始数据表中的字符串值转化为整数值数组表示。
+        :param data: pandas DataFrame，包含抽样后的数据。
+        :return: List[IntList]，每列的数值索引。
+        """
+        column_vectors = []
+        value_to_id = defaultdict(lambda: len(value_to_id))
+        nullValueId = -1
 
-        num_columns = relational_input.number_of_columns()
-        if max_cols > 0:
-            num_columns = min(num_columns, max_cols)
+        for column in data.columns:
+            column_vector = []
+            for value in data[column]:
+                if pd.isnull(value):
+                    column_vector.append(nullValueId)
+                else:
+                    column_vector.append(value_to_id[value])
+            column_vectors.append(column_vector)
+        return column_vectors
 
-        column_vectors = [[] for _ in range(num_columns)]
+    def _compute_column_data(self):
+        """
+        计算每列的 PLI 和 Probing Table。
+        :return: 列的元信息，包括 PLI 和 Probing Table。
+        """
+        column_data = []
 
-        row_num = 0
-        random.seed(23)
+        for col_vector in self.columnVectors:
+            equivalence_classes = defaultdict(list)
+            for index, value in enumerate(col_vector):
+                equivalence_classes[value].append(index)
 
-        while relational_input.has_next():
-            row = relational_input.next()
-            if max_rows <= 0 or row_num < max_rows:
-                for index, field in enumerate(row[:num_columns]):
-                    if field is None:
-                        column_vectors[index].append(null_value_id)
-                    else:
-                        if field not in value_dictionary:
-                            value_dictionary[field] = next_value_id
-                            next_value_id += 1
-                        column_vectors[index].append(value_dictionary[field])
-            else:
-                position = random.randint(0, row_num)
-                if position < max_rows:
-                    for index, field in enumerate(row[:num_columns]):
-                        if field is None:
-                            column_vectors[index][position] = null_value_id
-                        else:
-                            if field not in value_dictionary:
-                                value_dictionary[field] = next_value_id
-                                next_value_id += 1
-                            column_vectors[index][position] = value_dictionary[field]
-            row_num += 1
+            pli = list(equivalence_classes.values())
+            probing_table = [cluster for cluster in pli if len(cluster) > 1]
 
-        column_data_list = []
-        for index, vector in enumerate(column_vectors):
-            column = Column(schema, relational_input.column_names()[index], index)
-            pli = PositionListIndex.create_for(vector, schema.is_null_equal_null)
-            column_data = ColumnData(column, pli.get_probing_table(True), pli)
-            column_data_list.append(column)
+            column_data.append({
+                "PLI": pli,
+                "ProbingTable": probing_table
+            })
 
-        column_data = column_data_list
-        schema.columns = column_data_list
+        return column_data
 
-        return cls(schema, column_data, column_vectors)
+    def get_schema(self):
+        """
+        获取数据的列名（模式）。
+        :return: 数据的列名列表。
+        """
+        return self.schema
 
-    def get_column_data(self):
-        return self.column_data
-
-    def get_column_data_by_index(self, column_index):
-        return self.column_data[column_index]
+    def get_column_types(self):
+        """
+        获取数据的列类型元信息。
+        :return: Dict，列名到数据类型的映射。
+        """
+        return self.columnTypes
 
     def get_column_vectors(self):
-        return self.column_vectors
+        """
+        获取列的数值索引表示。
+        :return: List[IntList]，每列的数值索引。
+        """
+        return self.columnVectors
 
-    def get_num_rows(self):
-        return len(self.column_data[0].get_probing_table())
+    def get_column_data(self):
+        """
+        获取列的元信息，包括 PLI 和 Probing Table。
+        :return: List[Dict]，列的元信息。
+        """
+        return self.columnData
 
-    def get_tuple(self, tuple_index):
-        return [
-            self.column_data[column_index].get_probing_table()[tuple_index]
-            for column_index in range(self.schema.get_num_columns())
-        ]
+    def num_rows(self):
+        """
+        获取数据的行数。
+        :return: 数据的行数。
+        """
+        return len(self.columnVectors[0]) if self.columnVectors else 0
+
+    def num_columns(self):
+        """
+        获取数据的列数。
+        :return: 数据的列数。
+        """
+        return len(self.columnVectors)

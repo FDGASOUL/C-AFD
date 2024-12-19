@@ -1,5 +1,5 @@
 from itertools import combinations
-from correlation_utils import compute_correlation
+from correlation_utils import CorrelationCalculator
 
 
 # TODO: 方向问题，去除索引属性问题
@@ -54,6 +54,7 @@ class SearchSpace:
         self.column_id = column_id
         self.context = None
         self.candidate_tree = None
+        self.correlation_calculator = None
 
     def set_context(self, relation_data):
         """
@@ -61,6 +62,7 @@ class SearchSpace:
         :param relation_data: ColumnLayoutRelationData 对象。
         """
         self.context = relation_data
+        self.correlation_calculator = CorrelationCalculator(relation_data)
         self._initialize_candidate_tree()
 
     def _initialize_candidate_tree(self):
@@ -87,7 +89,7 @@ class SearchSpace:
 
         # 对当前层的候选属性计算相关性并剪枝
         for node in current_level_nodes:
-            correlation = compute_correlation(self.column_id - 1, node.attributes)
+            correlation = self.correlation_calculator.compute_correlation(self.column_id - 1, node.attributes)
             if correlation > self.upper_threshold:
                 print(f"发现函数依赖: {node.attributes} -> {self.column_id - 1}")
                 visited.append(node.attributes)
