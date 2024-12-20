@@ -5,6 +5,9 @@ from SearchSpace import SearchSpace
 from concurrent.futures import ThreadPoolExecutor, ProcessPoolExecutor
 
 
+# TODO：每个搜索空间都是独立的，因为并行处理，但是如果需要共享数据，需要考虑线程安全性，A与B独立，不仅在A的搜索空间中剪枝，也可以在B的搜索空间中剪枝
+# TODO：解决方法1：使用共享的全局结论表，存储已经得出的独立性结论。解决方法2：合并搜索空间，将所有搜索空间合并为一个，不再并行搜索空间，而是并行执行需要的任务。解决方法3：使用线程池，线程之间共享内存，可以更快地传递数据
+# TODO：为什么用线程池比进程池更快？线程池的优势在于线程之间共享内存，可以更快地传递数据，而进程池则需要通过序列化和反序列化来传递数据，效率较低
 def process_search_space(search_space):
     """
     处理单个搜索空间的逻辑。
@@ -12,12 +15,10 @@ def process_search_space(search_space):
     """
     print(f"Processing search space: {search_space}")
     search_space.discover()
-    # 在此执行其他相关操作
-    return f"Finished {search_space}"
+    dependencies = search_space.get_discovered_dependencies()
+    return dependencies
 
 
-# TODO：每个搜索空间都是独立的，因为并行处理，但是如果需要共享数据，需要考虑线程安全性，A与B独立，不仅在A的搜索空间中剪枝，也可以在B的搜索空间中剪枝
-# TODO：解决方法1：使用共享的全局结论表，存储已经得出的独立性结论。解决方法2：合并搜索空间，将所有搜索空间合并为一个，不再并行搜索空间，而是并行执行需要的任务
 def run_worker(search_space_counters, use_threads=True):
     """
     并行运行工作器逻辑。
@@ -25,6 +26,8 @@ def run_worker(search_space_counters, use_threads=True):
     :param use_threads: 是否使用线程池（True）或进程池（False）。
     """
     executor_cls = ThreadPoolExecutor if use_threads else ProcessPoolExecutor
+    discovered_dependencies = []  # 汇总所有搜索空间的依赖关系
+
     with executor_cls() as executor:
         # 提交每个搜索空间的任务
         futures = {executor.submit(process_search_space, search_space): search_space
@@ -32,12 +35,13 @@ def run_worker(search_space_counters, use_threads=True):
 
         # 收集结果
         for future in futures:
-            search_space = futures[future]
             try:
                 result = future.result()
-                print(f"Search space {search_space} completed: {result}")
+                discovered_dependencies.extend(result)
             except Exception as e:
-                print(f"Error processing {search_space}: {e}")
+                print(f"Error processing search space: {e}")
+
+    return discovered_dependencies
 
 
 class CAFD:
@@ -87,6 +91,10 @@ class CAFD:
         for search_space in search_space_counters.keys():
             search_space.set_context(relation_data)
 
-        # 并行运行工作器
-        run_worker(search_space_counters, use_threads=False)
+        # 并行运行工作器并汇总发现的函数依赖
+        all_discovered_dependencies = run_worker(search_space_counters, use_threads=False)
 
+        # 输出汇总结果
+        print("汇总发现的函数依赖:")
+        for dependency in all_discovered_dependencies:
+            print(dependency)

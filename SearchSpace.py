@@ -44,7 +44,7 @@ class DependencyTreeNode:
 
 class SearchSpace:
     upper_threshold = 0.9  # Cramér's V 上限
-    lower_threshold = 0.3  # Cramér's V 下限
+    lower_threshold = 0.01  # Cramér's V 下限
 
     def __init__(self, column_id):
         """
@@ -55,6 +55,7 @@ class SearchSpace:
         self.context = None
         self.candidate_tree = None
         self.correlation_calculator = None
+        self.discovered_dependencies = []  # 存储已发现的函数依赖
 
     def set_context(self, relation_data):
         """
@@ -79,11 +80,10 @@ class SearchSpace:
                 sorted_combination = tuple(sorted(combination))
                 self.candidate_tree.add_combination(sorted_combination)
 
-    def recursive_discover(self, current_level_nodes, visited):
+    def recursive_discover(self, current_level_nodes):
         """
         递归发现函数依赖。
         :param current_level_nodes: 当前层候选属性节点列表。
-        :param visited: 已发现的依赖。
         """
         next_level_nodes = []  # 下一层候选属性节点
 
@@ -91,8 +91,8 @@ class SearchSpace:
         for node in current_level_nodes:
             correlation = self.correlation_calculator.compute_correlation(self.column_id - 1, node.attributes)
             if correlation > self.upper_threshold:
-                print(f"发现函数依赖: {node.attributes} -> {self.column_id - 1}")
-                visited.append(node.attributes)
+                print(f"发现函数依赖: {list(node.attributes)} -> {self.column_id - 1}")
+                self.discovered_dependencies.append((node.attributes, self.column_id - 1))  # 记录发现的依赖
                 self.candidate_tree.prune(node.attributes)  # 剪枝
             elif correlation < self.lower_threshold:
                 self.candidate_tree.prune(node.attributes)  # 剪枝
@@ -101,17 +101,24 @@ class SearchSpace:
 
         # 如果存在下一层候选属性，递归处理
         if next_level_nodes:
-            self.recursive_discover(next_level_nodes, visited)
+            self.recursive_discover(next_level_nodes)
 
     def discover(self):
         """
         搜索依赖关系。
         """
-        visited = []  # 存储已知依赖
-
         if self.column_id != 0 and self.context:
             initial_nodes = list(self.candidate_tree.children.values())
-            self.recursive_discover(initial_nodes, visited)
+            self.recursive_discover(initial_nodes)
+        else:
+            print("无法发现依赖：搜索空间未初始化或上下文数据未设置。")
+
+    def get_discovered_dependencies(self):
+        """
+        获取所有已发现的函数依赖。
+        :return: 发现的函数依赖列表。
+        """
+        return self.discovered_dependencies
 
     def __hash__(self):
         """
