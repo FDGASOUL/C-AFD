@@ -89,3 +89,4 @@ class CAFD:
 
         # 并行运行工作器
         run_worker(search_space_counters, use_threads=False)
+

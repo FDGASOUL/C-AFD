@@ -4,12 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4bcd1cd3-41f3-4013-aa96-cbdac4f83526" name="更改" comment="完成逐层遍历逻辑，下一步实现具体相关性计算">
+    <list default="true" id="4bcd1cd3-41f3-4013-aa96-cbdac4f83526" name="更改" comment="完成pli索引的完善">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cafd.py" beforeDir="false" afterPath="$PROJECT_DIR$/Cafd.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ColumnLayoutRelationData.py" beforeDir="false" afterPath="$PROJECT_DIR$/ColumnLayoutRelationData.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SearchSpace.py" beforeDir="false" afterPath="$PROJECT_DIR$/SearchSpace.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Config.py" beforeDir="false" afterPath="$PROJECT_DIR$/Config.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/correlation_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/correlation_utils.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,7 +38,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Python.Cafd.executor": "Debug",
-    "Python.Config.executor": "Debug",
+    "Python.Config.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
     "last_opened_file_path": "E:/资料/C-AFD/Config.py",
@@ -95,7 +95,7 @@
       <updated>1733395765391</updated>
       <workItem from="1733395782469" duration="57000" />
       <workItem from="1733989814584" duration="1410000" />
-      <workItem from="1733991442751" duration="49341000" />
+      <workItem from="1733991442751" duration="68354000" />
     </task>
     <task id="LOCAL-00001" summary="不使用依赖树版本，获取候选依赖组合存在问题">
       <option name="closed" value="true" />
@@ -113,7 +113,15 @@
       <option name="project" value="LOCAL" />
       <updated>1734338205317</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="完成pli索引的完善">
+      <option name="closed" value="true" />
+      <created>1734594084195</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1734594084195</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -133,10 +141,11 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="不使用依赖树版本，获取候选依赖组合存在问题" />
     <MESSAGE value="完成逐层遍历逻辑，下一步实现具体相关性计算" />
-    <option name="LAST_COMMIT_MESSAGE" value="完成逐层遍历逻辑，下一步实现具体相关性计算" />
+    <MESSAGE value="完成pli索引的完善" />
+    <option name="LAST_COMMIT_MESSAGE" value="完成pli索引的完善" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/C_AFD$Cafd.coverage" NAME="Cafd 覆盖结果" MODIFIED="1734085271666" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/C_AFD$Config.coverage" NAME="Config 覆盖结果" MODIFIED="1734514620608" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/C_AFD$Config.coverage" NAME="Config 覆盖结果" MODIFIED="1734610813379" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
   </component>
 </project>

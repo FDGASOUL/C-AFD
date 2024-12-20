@@ -37,6 +37,7 @@ class ColumnLayoutRelationData:
     def _compute_column_data(self):
         """
         计算每列的 PLI 和 Probing Table。
+
         :return: 列的元信息，包括 PLI 和 Probing Table。
         """
         column_data = []
@@ -52,10 +53,9 @@ class ColumnLayoutRelationData:
             next_cluster_id = 1  # 每列的簇编号从 1 开始
 
             for cluster in pli:
-                if len(cluster) > 1:  # 非单例簇
-                    for position in cluster:
-                        probing_table[position] = next_cluster_id
-                    next_cluster_id += 1
+                for position in cluster:
+                    probing_table[position] = next_cluster_id
+                next_cluster_id += 1
 
             column_data.append({
                 "PLI": pli,
