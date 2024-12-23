@@ -2,6 +2,7 @@
 # TODO: java代码中采用了列表逐层的方式，是否需要借鉴？
 # TODO: 使用data数据后，速度很慢，具体慢在哪里？计算pli耗费时间不多，为每个搜索空间设置上下文环境用了一半时间,具体来说add_combination添加属性组合到依赖树中占据大量时间
 # TODO: φ²的计算公式需不需要除d-1？GPT:如果希望最后的结果除以 (d−1)(d−1)，其实是将 φ² 的计算转换为 Cramér's V 的一种变形（或与之相关的指标）。这可能是为了便于在不同维度的数据中比较关联强度。
+# TODO: 对计算结果的缓存，是否需要？都什么结果能够用上缓存？
 class CorrelationCalculator:
     """
     相关性计算工具类。
@@ -15,6 +16,15 @@ class CorrelationCalculator:
         """
         self.columnVectors = column_layout_data.get_column_vectors()
         self.columnData = column_layout_data.get_column_data()
+        self.schema = column_layout_data.get_schema()  # 获取列名映射
+
+    def _get_column_name(self, column_index):
+        """
+        根据列索引获取列名。
+        :param column_index: 列索引。
+        :return: 对应的列名。
+        """
+        return self.schema[column_index]
 
     def build_linked_table(self, column_a, column_b):
         """
@@ -23,14 +33,11 @@ class CorrelationCalculator:
         :param column_b: 列 B 的索引或组合（可以是单个索引，也可以是集合）。
         :return: 一个包含映射关系的字典，表示列连表。
         """
-        if isinstance(column_b, int):
-            column_b = {column_b}
-
         pli_a = self.columnData[column_a]["PLI"]
 
         if len(column_b) == 1:
             # 如果只有一个列，直接获取其 columnVectors
-            column_vectors_b = self.columnVectors[list(column_b)[0]]
+            column_vectors_b = self.columnVectors[column_b[0]]
         else:
             # 对多个列的 columnVectors 进行交叉，形成新 columnVectors
             column_vectors_b = self._cross_column_vectors([self.columnVectors[col] for col in column_b])
@@ -123,7 +130,7 @@ class CorrelationCalculator:
 
         # 检查期望分布频数表
         if not self._check_expected_frequencies(expected_frequencies):
-            raise ValueError("期望分布频数表中超过 20% 的格子期望计数未大于 5，需要进行归并操作。")
+            print("期望分布频数表中超过 20% 的格子期望计数未大于 5，需要进行归并操作。")
 
         # 总观测数
         total = sum(sum(row) for row in linked_table)
@@ -141,7 +148,7 @@ class CorrelationCalculator:
         d = min(d1, d2)
         phi_squared = chi_squared / (total * (d - 1))
 
-        # print(f"计算列 {column_a} 和列 {list(column_b)} 之间的相关性 (φ²): {phi_squared}")
+        column_a_name = self._get_column_name(column_a)
+        column_b_names = [self._get_column_name(col) for col in column_b]
+        print(f"计算列 {column_a_name} 和列 {column_b_names} 之间的相关性 (φ²): {phi_squared}")
         return phi_squared
-
-

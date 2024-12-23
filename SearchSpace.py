@@ -2,7 +2,9 @@ from itertools import combinations
 from correlation_utils import CorrelationCalculator
 
 
-# TODO: 方向问题，去除索引属性问题
+# TODO: 方向问题
+# TODO: 过拟合问题，不知道为什么没有减掉，出现了大量的过拟合组合，应该在构建树的时候就限制组合长度，剪枝部分可能也有问题，发现：1与12候选，与13剪枝，但还是会验证12,13
+# TODO: 构建树还是比较麻烦，筛选属性更好
 class DependencyTreeNode:
     def __init__(self, attributes):
         """
@@ -74,11 +76,10 @@ class SearchSpace:
         initial_candidates = [col for col in range(num_columns) if col != self.column_id - 1]
         self.candidate_tree = DependencyTreeNode(set())
 
-        # 按层级构建依赖树
-        for size in range(1, len(initial_candidates) + 1):
+        MAX_COMBINATION_SIZE = 5  # 限制候选组合最大长度
+        for size in range(1, min(len(initial_candidates), MAX_COMBINATION_SIZE) + 1):
             for combination in combinations(initial_candidates, size):
-                sorted_combination = tuple(sorted(combination))
-                self.candidate_tree.add_combination(sorted_combination)
+                self.candidate_tree.add_combination(combination)
 
     def recursive_discover(self, current_level_nodes):
         """
@@ -89,10 +90,14 @@ class SearchSpace:
 
         # 对当前层的候选属性计算相关性并剪枝
         for node in current_level_nodes:
-            correlation = self.correlation_calculator.compute_correlation(self.column_id - 1, node.attributes)
+            column_b = list(node.attributes) if isinstance(node.attributes, frozenset) else [node.attributes]
+            correlation = self.correlation_calculator.compute_correlation(self.column_id - 1, column_b)
             if correlation > self.upper_threshold:
-                print(f"发现函数依赖: {list(node.attributes)} -> {self.column_id - 1}")
-                self.discovered_dependencies.append((node.attributes, self.column_id - 1))  # 记录发现的依赖
+                schema = self.context.get_schema()
+                lhs_columns = [schema[attr] for attr in column_b]
+                rhs_column = schema[self.column_id - 1]
+                print(f"发现函数依赖: {lhs_columns} -> {rhs_column}")
+                self.discovered_dependencies.append((column_b, self.column_id - 1))  # 记录发现的依赖
                 self.candidate_tree.prune(node.attributes)  # 剪枝
             elif correlation < self.lower_threshold:
                 self.candidate_tree.prune(node.attributes)  # 剪枝
@@ -108,6 +113,7 @@ class SearchSpace:
         搜索依赖关系。
         """
         if self.column_id != 0 and self.context:
+            schema = self.context.get_schema()
             initial_nodes = list(self.candidate_tree.children.values())
             self.recursive_discover(initial_nodes)
         else:
