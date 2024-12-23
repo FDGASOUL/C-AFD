@@ -1,8 +1,8 @@
 from itertools import combinations
-from correlation_utils import CorrelationCalculator
+from Correlation_utils import CorrelationCalculator
 
 
-# TODO: 方向问题
+# TODO: 方向问题,由于方向问题，无法发现循环依赖，直接被剪枝掉了
 # TODO: 过拟合问题，不知道为什么没有减掉，出现了大量的过拟合组合，应该在构建树的时候就限制组合长度，剪枝部分可能也有问题，发现：1与12候选，与13剪枝，但还是会验证12,13
 # TODO: 构建树还是比较麻烦，筛选属性更好
 class DependencyTreeNode:
@@ -28,11 +28,17 @@ class DependencyTreeNode:
 
     def prune(self, attribute):
         """
-        剪枝：移除包含指定属性的所有子节点。
+        剪枝：递归移除所有包含指定属性的路径。
         :param attribute: 需要移除的属性。
         """
-        if attribute in self.children:
-            del self.children[attribute]
+        # 收集需要删除的子节点
+        to_delete = [key for key, child in self.children.items() if attribute in child.attributes]
+
+        # 删除直接子节点
+        for key in to_delete:
+            del self.children[key]
+
+        # 递归对子节点进行剪枝
         for child in self.children.values():
             child.prune(attribute)
 
@@ -46,7 +52,7 @@ class DependencyTreeNode:
 
 class SearchSpace:
     upper_threshold = 0.9  # Cramér's V 上限
-    lower_threshold = 0.01  # Cramér's V 下限
+    lower_threshold = 0.05  # Cramér's V 下限
 
     def __init__(self, column_id):
         """
@@ -76,7 +82,7 @@ class SearchSpace:
         initial_candidates = [col for col in range(num_columns) if col != self.column_id - 1]
         self.candidate_tree = DependencyTreeNode(set())
 
-        MAX_COMBINATION_SIZE = 5  # 限制候选组合最大长度
+        MAX_COMBINATION_SIZE = 4  # 限制候选组合最大长度
         for size in range(1, min(len(initial_candidates), MAX_COMBINATION_SIZE) + 1):
             for combination in combinations(initial_candidates, size):
                 self.candidate_tree.add_combination(combination)
@@ -86,23 +92,33 @@ class SearchSpace:
         递归发现函数依赖。
         :param current_level_nodes: 当前层候选属性节点列表。
         """
-        next_level_nodes = []  # 下一层候选属性节点
+        nodes_to_expand = []  # 用于记录需要扩展的节点
 
-        # 对当前层的候选属性计算相关性并剪枝
+        # 对当前层的候选属性计算相关性并处理剪枝
         for node in current_level_nodes:
             column_b = list(node.attributes) if isinstance(node.attributes, frozenset) else [node.attributes]
             correlation = self.correlation_calculator.compute_correlation(self.column_id - 1, column_b)
+
+            # 根据相关性阈值分类处理
             if correlation > self.upper_threshold:
+                # 发现函数依赖，记录并剪枝
                 schema = self.context.get_schema()
                 lhs_columns = [schema[attr] for attr in column_b]
                 rhs_column = schema[self.column_id - 1]
                 print(f"发现函数依赖: {lhs_columns} -> {rhs_column}")
-                self.discovered_dependencies.append((column_b, self.column_id - 1))  # 记录发现的依赖
-                self.candidate_tree.prune(node.attributes)  # 剪枝
+                self.discovered_dependencies.append((lhs_columns, rhs_column))  # 记录发现的依赖
+                self.candidate_tree.prune(next(iter(node.attributes)))  # 剪枝
             elif correlation < self.lower_threshold:
-                self.candidate_tree.prune(node.attributes)  # 剪枝
+                # 相关性过低，直接剪枝
+                self.candidate_tree.prune(next(iter(node.attributes)))  # 剪枝
             else:
-                next_level_nodes.extend(node.children.values())
+                # 相关性介于上下阈值之间，记录节点以供下一层扩展
+                nodes_to_expand.append(node)
+
+        # 根据记录的节点生成下一层候选节点
+        next_level_nodes = []
+        for node in nodes_to_expand:
+            next_level_nodes.extend(node.children.values())
 
         # 如果存在下一层候选属性，递归处理
         if next_level_nodes:
@@ -113,7 +129,6 @@ class SearchSpace:
         搜索依赖关系。
         """
         if self.column_id != 0 and self.context:
-            schema = self.context.get_schema()
             initial_nodes = list(self.candidate_tree.children.values())
             self.recursive_discover(initial_nodes)
         else:
@@ -126,17 +141,3 @@ class SearchSpace:
         """
         return self.discovered_dependencies
 
-    def __hash__(self):
-        """
-        定义对象的哈希值，使其可用于字典的键。
-        """
-        return hash(self.column_id)
-
-    def __eq__(self, other):
-        """
-        定义对象相等性。
-        """
-        return isinstance(other, SearchSpace) and self.column_id == other.column_id
-
-    def __repr__(self):
-        return f"SearchSpace(column_id={self.column_id})"

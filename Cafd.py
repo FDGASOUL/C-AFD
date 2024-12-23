@@ -1,4 +1,6 @@
 import os
+
+from Evaluate_fd import evaluate_fd
 from Sampler import Sampler
 from ColumnLayoutRelationData import ColumnLayoutRelationData
 from SearchSpace import SearchSpace
@@ -93,9 +95,32 @@ class CAFD:
             search_space.set_context(relation_data)
 
         # 并行运行工作器并汇总发现的函数依赖
-        all_discovered_dependencies = run_worker(search_space_counters, use_threads=False)
+        all_discovered_dependencies = run_worker(search_space_counters, use_threads=True)
 
         # 输出汇总结果
         print("汇总发现的函数依赖:")
         for dependency in all_discovered_dependencies:
             print(dependency)
+
+        # 计算准确率、召回率和 F1 值
+        precision, recall, f1 = evaluate_fd(all_discovered_dependencies, self.ground_truth_path)
+        print(f"精度: {precision:.2f}")
+        print(f"召回率: {recall:.2f}")
+        print(f"F1分数: {f1:.2f}")
+
+        # 保存发现的函数依赖到文件
+        discovered_file_path = os.path.join(
+            "discovered_fd",
+            os.path.basename(self.ground_truth_path).replace(".txt", "_discovered.txt")
+        )
+
+        os.makedirs(os.path.dirname(discovered_file_path), exist_ok=True)
+
+        with open(discovered_file_path, "w", encoding="utf-8") as f:
+            for LHS, RHS in all_discovered_dependencies:
+                # 格式化 LHS 和 RHS
+                lhs_str = ",".join(sorted(LHS))  # 左部属性按字母顺序排序并用逗号连接
+                rhs_str = RHS
+                f.write(f"{lhs_str}->{rhs_str}\n")
+
+        print(f"发现的函数依赖已保存到: {discovered_file_path}")
