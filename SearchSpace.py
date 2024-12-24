@@ -2,7 +2,7 @@ from itertools import combinations
 from Correlation_utils import CorrelationCalculator
 
 
-# TODO: 方向问题,由于方向问题，无法发现循环依赖，直接被剪枝掉了
+# TODO: 方向问题,由于方向问题，无法发现循环依赖，直接被剪枝掉了，需要验证方向
 # TODO: 过拟合问题，不知道为什么没有减掉，出现了大量的过拟合组合，应该在构建树的时候就限制组合长度，剪枝部分可能也有问题，发现：1与12候选，与13剪枝，但还是会验证12,13
 # TODO: 构建树还是比较麻烦，筛选属性更好
 class DependencyTreeNode:

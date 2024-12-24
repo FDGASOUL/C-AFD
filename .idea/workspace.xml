@@ -4,12 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4bcd1cd3-41f3-4013-aa96-cbdac4f83526" name="更改" comment="12.23">
-      <change afterPath="$PROJECT_DIR$/Evaluate_fd.py" afterDir="false" />
+    <list default="true" id="4bcd1cd3-41f3-4013-aa96-cbdac4f83526" name="更改" comment="改正剪枝函数，添加F1计算">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Cafd.py" beforeDir="false" afterPath="$PROJECT_DIR$/Cafd.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Correlation_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/Correlation_utils.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SearchSpace.py" beforeDir="false" afterPath="$PROJECT_DIR$/SearchSpace.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/correlation_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/Correlation_utils.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,7 +94,7 @@
       <updated>1733395765391</updated>
       <workItem from="1733395782469" duration="57000" />
       <workItem from="1733989814584" duration="1410000" />
-      <workItem from="1733991442751" duration="104934000" />
+      <workItem from="1733991442751" duration="113093000" />
     </task>
     <task id="LOCAL-00001" summary="不使用依赖树版本，获取候选依赖组合存在问题">
       <option name="closed" value="true" />
@@ -145,7 +144,15 @@
       <option name="project" value="LOCAL" />
       <updated>1734938483242</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="改正剪枝函数，添加F1计算">
+      <option name="closed" value="true" />
+      <created>1734955093545</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1734955093545</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -169,21 +176,11 @@
     <MESSAGE value="列联表构建完毕，发现速度问题" />
     <MESSAGE value="12.20" />
     <MESSAGE value="12.23" />
-    <option name="LAST_COMMIT_MESSAGE" value="12.23" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Cafd.py</url>
-          <line>97</line>
-          <option name="timeStamp" value="40" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="改正剪枝函数，添加F1计算" />
+    <option name="LAST_COMMIT_MESSAGE" value="改正剪枝函数，添加F1计算" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/C_AFD$Cafd.coverage" NAME="Cafd 覆盖结果" MODIFIED="1734085271666" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/C_AFD$Config.coverage" NAME="Config 覆盖结果" MODIFIED="1734954450223" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/C_AFD$Config.coverage" NAME="Config 覆盖结果" MODIFIED="1735014293144" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
   </component>
 </project>
