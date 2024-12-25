@@ -2,7 +2,6 @@ import pandas as pd
 from collections import defaultdict
 
 
-# TODO: 对于原本就是整数的列，是否需要转换columnVectors数字标识符？
 # TODO: probing_table是否能用上，是否要去除单个元素的cluster？单例簇对于依赖发现来说没有实际意义（一个值不可能约束其他值），Probing Table 通过排除单例簇，降低了计算复杂度。
 class ColumnLayoutRelationData:
     def __init__(self, data):

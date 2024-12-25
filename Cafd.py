@@ -11,6 +11,7 @@ from concurrent.futures import ThreadPoolExecutor, ProcessPoolExecutor
 # TODO：解决方法1：使用共享的全局结论表，存储已经得出的独立性结论。解决方法2：合并搜索空间，将所有搜索空间合并为一个，不再并行搜索空间，而是并行执行需要的任务。解决方法3：使用线程池，线程之间共享内存，可以更快地传递数据
 # TODO：为什么用线程池比进程池更快？线程池的优势在于线程之间共享内存，可以更快地传递数据，而进程池则需要通过序列化和反序列化来传递数据，效率较低
 # TODO: 使用进程池感觉没有正确执行，还是顺序的，只有一两个在运行，其他的都在等待，目前看只有3个内核在用，或者是并行启动缓慢
+# TODO: 三个指标的计算方法
 def process_search_space(search_space):
     """
     处理单个搜索空间的逻辑。
@@ -119,8 +120,8 @@ class CAFD:
         with open(discovered_file_path, "w", encoding="utf-8") as f:
             for LHS, RHS in all_discovered_dependencies:
                 # 格式化 LHS 和 RHS
-                lhs_str = ",".join(sorted(LHS))  # 左部属性按字母顺序排序并用逗号连接
-                rhs_str = RHS
+                lhs_str = ",".join(sorted(map(str, LHS)))  # 左部属性按字母顺序排序并用逗号连接
+                rhs_str = str(RHS)  # 将 RHS 转换为字符串
                 f.write(f"{lhs_str}->{rhs_str}\n")
 
         print(f"发现的函数依赖已保存到: {discovered_file_path}")

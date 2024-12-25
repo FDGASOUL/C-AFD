@@ -3,6 +3,7 @@ import time
 from Cafd import CAFD
 
 
+# TODO: 时间不要最后结束，应该在汇总找完所有搜索空间后，输出总时间
 class Config:
     DATASET_CONFIG = {
         "IRIS": {"path": "iris", "has_header": False},

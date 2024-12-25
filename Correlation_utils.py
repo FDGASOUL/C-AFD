@@ -1,7 +1,4 @@
 # TODO: java代码中忽略了单个的簇，是否需要借鉴？
-# TODO: java代码中采用了列表逐层的方式，是否需要借鉴？
-# TODO: 使用data数据后，速度很慢，具体慢在哪里？计算pli耗费时间不多，为每个搜索空间设置上下文环境用了一半时间,具体来说add_combination添加属性组合到依赖树中占据大量时间
-# TODO: φ²的计算公式需不需要除d-1？GPT:如果希望最后的结果除以 (d−1)，其实是将 φ² 的计算转换为 Cramér's V 的一种变形（或与之相关的指标）。这可能是为了便于在不同维度的数据中比较关联强度。
 # TODO: 对计算结果的缓存，是否需要？都什么结果能够用上缓存？
 class CorrelationCalculator:
     """
@@ -116,6 +113,26 @@ class CorrelationCalculator:
             cross_vectors[row_index] = cluster_map[cluster_key]
 
         return cross_vectors
+
+    def check_dependency_direction(self, lhs_columns, rhs_column):
+        """
+        检查函数依赖的方向是否正确。
+        :param lhs_columns: 左部属性列表。
+        :param rhs_column: 右部属性。
+        :return: 方向检查的得分（范围 0 到 1 之间）。
+        """
+        # 构建列联表
+        crosstab = self.build_linked_table(lhs_columns, rhs_column)
+
+        # 遍历列联表，计算每列的最大值累加和
+        max_sum = 0
+        total_sum = sum(sum(row) for row in crosstab)
+        for col_index in range(len(crosstab[0])):
+            max_value = max(row[col_index] for row in crosstab)
+            max_sum += max_value
+
+        # 返回累加和与总数的比值
+        return max_sum / total_sum
 
     def compute_correlation(self, column_a, column_b):
         """

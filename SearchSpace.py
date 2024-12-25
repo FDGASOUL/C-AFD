@@ -2,9 +2,8 @@ from itertools import combinations
 from Correlation_utils import CorrelationCalculator
 
 
-# TODO: 方向问题,由于方向问题，无法发现循环依赖，直接被剪枝掉了，需要验证方向
-# TODO: 过拟合问题，不知道为什么没有减掉，出现了大量的过拟合组合，应该在构建树的时候就限制组合长度，剪枝部分可能也有问题，发现：1与12候选，与13剪枝，但还是会验证12,13
-# TODO: 构建树还是比较麻烦，筛选属性更好
+# TODO: 方向问题,发现方向有问题，则认为可以继续上升，是否会影响速度？由于只有单个属性会有方向问题，可以利用缓存机制，减少计算量
+# TODO: 方法1：筛选属性。方法2：缓存要剪枝组合。方法3：位运算。
 class DependencyTreeNode:
     def __init__(self, attributes):
         """
@@ -51,8 +50,9 @@ class DependencyTreeNode:
 
 
 class SearchSpace:
-    upper_threshold = 0.9  # Cramér's V 上限
-    lower_threshold = 0.05  # Cramér's V 下限
+    upper_threshold = 0.9  # 上限阈值
+    lower_threshold = 0.05  # 下限阈值
+    directional_threshold = 0.95  # 方向判断阈值
 
     def __init__(self, column_id):
         """
@@ -82,8 +82,8 @@ class SearchSpace:
         initial_candidates = [col for col in range(num_columns) if col != self.column_id - 1]
         self.candidate_tree = DependencyTreeNode(set())
 
-        MAX_COMBINATION_SIZE = 4  # 限制候选组合最大长度
-        for size in range(1, min(len(initial_candidates), MAX_COMBINATION_SIZE) + 1):
+        max_combination_size = 4  # 限制候选组合最大长度
+        for size in range(1, min(len(initial_candidates), max_combination_size) + 1):
             for combination in combinations(initial_candidates, size):
                 self.candidate_tree.add_combination(combination)
 
@@ -105,9 +105,19 @@ class SearchSpace:
                 schema = self.context.get_schema()
                 lhs_columns = [schema[attr] for attr in column_b]
                 rhs_column = schema[self.column_id - 1]
-                print(f"发现函数依赖: {lhs_columns} -> {rhs_column}")
-                self.discovered_dependencies.append((lhs_columns, rhs_column))  # 记录发现的依赖
-                self.candidate_tree.prune(next(iter(node.attributes)))  # 剪枝
+
+                if len(column_b) == 1:  # 如果左部属性只有一个，判断方向
+                    if self.correlation_calculator.check_dependency_direction(self.column_id - 1, column_b) > self.directional_threshold:
+                        print(f"发现函数依赖: {lhs_columns} -> {rhs_column}")
+                        self.discovered_dependencies.append((lhs_columns, rhs_column))  # 记录发现的依赖
+                        self.candidate_tree.prune(next(iter(node.attributes)))  # 剪枝
+                    else:
+                        nodes_to_expand.append(node)  # 方向有问题，加入扩展节点
+                else:  # 如果左部属性超过一个，直接存储依赖
+                    print(f"发现函数依赖: {lhs_columns} -> {rhs_column}")
+                    self.discovered_dependencies.append((lhs_columns, rhs_column))  # 记录发现的依赖
+                    self.candidate_tree.prune(next(iter(node.attributes)))  # 剪枝
+
             elif correlation < self.lower_threshold:
                 # 相关性过低，直接剪枝
                 self.candidate_tree.prune(next(iter(node.attributes)))  # 剪枝
@@ -140,4 +150,3 @@ class SearchSpace:
         :return: 发现的函数依赖列表。
         """
         return self.discovered_dependencies
-
