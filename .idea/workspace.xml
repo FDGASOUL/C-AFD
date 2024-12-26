@@ -4,14 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4bcd1cd3-41f3-4013-aa96-cbdac4f83526" name="更改" comment="12.24">
+    <list default="true" id="4bcd1cd3-41f3-4013-aa96-cbdac4f83526" name="更改" comment="添加方向判断">
+      <change afterPath="$PROJECT_DIR$/Incorporate_into.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cafd.py" beforeDir="false" afterPath="$PROJECT_DIR$/Cafd.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ColumnLayoutRelationData.py" beforeDir="false" afterPath="$PROJECT_DIR$/ColumnLayoutRelationData.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Config.py" beforeDir="false" afterPath="$PROJECT_DIR$/Config.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Correlation_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/Correlation_utils.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SearchSpace.py" beforeDir="false" afterPath="$PROJECT_DIR$/SearchSpace.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/discovered_fd/data_discovered.txt" beforeDir="false" afterPath="$PROJECT_DIR$/discovered_fd/data_discovered.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,7 +37,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Python.Cafd.executor": "Debug",
-    "Python.Config.executor": "Run",
+    "Python.Config.executor": "Debug",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
     "last_opened_file_path": "E:/资料/C-AFD/Config.py",
@@ -97,7 +94,7 @@
       <updated>1733395765391</updated>
       <workItem from="1733395782469" duration="57000" />
       <workItem from="1733989814584" duration="1410000" />
-      <workItem from="1733991442751" duration="122356000" />
+      <workItem from="1733991442751" duration="143943000" />
     </task>
     <task id="LOCAL-00001" summary="不使用依赖树版本，获取候选依赖组合存在问题">
       <option name="closed" value="true" />
@@ -163,7 +160,15 @@
       <option name="project" value="LOCAL" />
       <updated>1735039251143</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="添加方向判断">
+      <option name="closed" value="true" />
+      <created>1735094049369</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1735094049369</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -189,10 +194,11 @@
     <MESSAGE value="12.23" />
     <MESSAGE value="改正剪枝函数，添加F1计算" />
     <MESSAGE value="12.24" />
-    <option name="LAST_COMMIT_MESSAGE" value="12.24" />
+    <MESSAGE value="添加方向判断" />
+    <option name="LAST_COMMIT_MESSAGE" value="添加方向判断" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/C_AFD$Cafd.coverage" NAME="Cafd 覆盖结果" MODIFIED="1734085271666" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/C_AFD$Config.coverage" NAME="Config 覆盖结果" MODIFIED="1735047361303" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/C_AFD$Config.coverage" NAME="Config 覆盖结果" MODIFIED="1735136447352" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
   </component>
 </project>

@@ -52,7 +52,6 @@ class DependencyTreeNode:
 class SearchSpace:
     upper_threshold = 0.9  # 上限阈值
     lower_threshold = 0.05  # 下限阈值
-    directional_threshold = 0.95  # 方向判断阈值
 
     def __init__(self, column_id):
         """
@@ -107,7 +106,7 @@ class SearchSpace:
                 rhs_column = schema[self.column_id - 1]
 
                 if len(column_b) == 1:  # 如果左部属性只有一个，判断方向
-                    if self.correlation_calculator.check_dependency_direction(self.column_id - 1, column_b) > self.directional_threshold:
+                    if self.correlation_calculator.check_dependency_direction(self.column_id - 1, column_b):
                         print(f"发现函数依赖: {lhs_columns} -> {rhs_column}")
                         self.discovered_dependencies.append((lhs_columns, rhs_column))  # 记录发现的依赖
                         self.candidate_tree.prune(next(iter(node.attributes)))  # 剪枝

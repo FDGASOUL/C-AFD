@@ -1,10 +1,14 @@
 # TODO: java代码中忽略了单个的簇，是否需要借鉴？
 # TODO: 对计算结果的缓存，是否需要？都什么结果能够用上缓存？
+from Incorporate_into import Incorporate
+
+
 class CorrelationCalculator:
     """
     相关性计算工具类。
     用于封装不同的相关性计算方法，以便在项目中复用。
     """
+    directional_threshold = 0.95  # 方向判断阈值
 
     def __init__(self, column_layout_data):
         """
@@ -119,20 +123,21 @@ class CorrelationCalculator:
         检查函数依赖的方向是否正确。
         :param lhs_columns: 左部属性列表。
         :param rhs_column: 右部属性。
-        :return: 方向检查的得分（范围 0 到 1 之间）。
+        :return: 如果所有列都满足方向阈值返回 True，否则返回 False。
         """
         # 构建列联表
         crosstab = self.build_linked_table(lhs_columns, rhs_column)
 
-        # 遍历列联表，计算每列的最大值累加和
-        max_sum = 0
-        total_sum = sum(sum(row) for row in crosstab)
+        # 遍历列联表
         for col_index in range(len(crosstab[0])):
-            max_value = max(row[col_index] for row in crosstab)
-            max_sum += max_value
+            column_sum = sum(row[col_index] for row in crosstab)  # 当前列的总数
+            if column_sum == 0:
+                continue  # 跳过没有数据的列
+            max_value = max(row[col_index] for row in crosstab)  # 当前列的最大值
+            if max_value / column_sum < self.directional_threshold:
+                return False  # 一旦有一列不满足阈值，立即返回 False
 
-        # 返回累加和与总数的比值
-        return max_sum / total_sum
+        return True  # 所有列都满足阈值，返回 True
 
     def compute_correlation(self, column_a, column_b):
         """
@@ -147,7 +152,14 @@ class CorrelationCalculator:
 
         # 检查期望分布频数表
         if not self._check_expected_frequencies(expected_frequencies):
-            print("期望分布频数表中超过 20% 的格子期望计数未大于 5，需要进行归并操作。")
+            print("期望分布频数表中超过 20% 的格子期望计数未大于 5，进行归并操作。")
+            inc = Incorporate()
+            result = inc.merge_tables(linked_table, expected_frequencies)
+            if not result:
+                print("归并操作失败，相关性设置为 0。")
+                return 0
+
+            linked_table, expected_frequencies = result
 
         # 总观测数
         total = sum(sum(row) for row in linked_table)
