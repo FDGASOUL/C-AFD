@@ -96,7 +96,7 @@ class CAFD:
             search_space.set_context(relation_data)
 
         # 并行运行工作器并汇总发现的函数依赖
-        all_discovered_dependencies = run_worker(search_space_counters, use_threads=False)
+        all_discovered_dependencies = run_worker(search_space_counters, use_threads=True)
 
         # 输出汇总结果
         print("汇总发现的函数依赖:")

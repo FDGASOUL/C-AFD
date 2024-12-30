@@ -1,138 +1,227 @@
-import csv
-import random
-from collections import defaultdict
-
-
-class ColumnLayoutRelationData:
-    """
-    列布局关系数据类，包含属性向量（列数据）和相关的架构信息。
-    """
-
-    def __init__(self, schema, column_data, column_vectors):
-        self.schema = schema  # 存储列的模式信息
-        self.column_data = column_data  # 列数据对象
-        self.column_vectors = column_vectors  # 属性向量
-
-    @staticmethod
-    def create_from(file_input_generator, is_null_equal_null, max_cols, max_rows):
-        """
-        从文件输入生成器创建 ColumnLayoutRelationData 实例。
-
-        :param file_input_generator: 文件输入生成器对象
-        :param is_null_equal_null: 是否认为两个不同的 NULL 值相等
-        :param max_cols: 最大列数
-        :param max_rows: 最大行数
-        :return: ColumnLayoutRelationData 实例
-        """
-
-        # 读取数据为df
-        relational_input = file_input_generator
-
-        # 创建模式
-        # schema = RelationSchema(file_input_generator.relation_name, is_null_equal_null)
-
-        # 准备数值索引
-        value_dictionary = defaultdict(lambda: 0)  # 未知值默认为 0
-        unknown_value_id = 0
-        next_value_id = 1
-
-        # 准备列向量
-        num_columns = relational_input.number_of_columns
-        if max_cols > 0:
-            num_columns = min(num_columns, max_cols)
-
-        column_vectors = [[] for _ in range(num_columns)]  # 初始化列向量列表
-
-        # 填充列向量
-        row_num = 0
-        random.seed(23)  # 随机数种子
-        for row in relational_input:  # 遍历所有行
-            if max_rows <= 0 or row_num < max_rows:  # 未达到最大行限制
-                for index, field in enumerate(row[:num_columns]):
-                    if field is None:  # 空值处理
-                        column_vectors[index].append(-1)
-                    else:
-                        if field not in value_dictionary:
-                            value_dictionary[field] = next_value_id
-                            next_value_id += 1
-                        column_vectors[index].append(value_dictionary[field])
-            else:  # 超过最大行限制，随机替换
-                position = random.randint(0, row_num)
-                if position < max_rows:
-                    for index, field in enumerate(row[:num_columns]):
-                        if field is None:
-                            column_vectors[index][position] = -1
-                        else:
-                            if field not in value_dictionary:
-                                value_dictionary[field] = next_value_id
-                                next_value_id += 1
-                            column_vectors[index][position] = value_dictionary[field]
-            row_num += 1
-
-        # 清空数值索引
-        value_dictionary = None
-
-        # 创建列数据对象
-        column_data_list = []
-        for index, vector in enumerate(column_vectors):
-            column = Column(schema, relational_input.column_names[index], index)
-            pli = PositionListIndex.create_for(vector, is_null_equal_null)
-            probing_table = pli.get_probing_table(True)
-            column_data = ColumnData(column, probing_table, pli)
-            column_data_list.append(column)
-
-        # 构建 ColumnLayoutRelationData 对象
-        column_data_array = [None] * len(column_vectors)
-        for data in column_data_list:
-            schema.columns.append(data.column)  # 添加到架构中
-            column_data_array[data.column.index] = data
-
-        return ColumnLayoutRelationData(schema, column_data_array, column_vectors)
-
-    def get_column_data(self):
-        """
-        返回所有列数据对象。
-        """
-        return self.column_data
-
-    def get_column_data_by_index(self, column_index):
-        """
-        根据索引返回列数据对象。
-        """
-        return self.column_data[column_index]
-
-    def get_column_vectors(self):
-        """
-        返回列向量。
-        """
-        return self.column_vectors
-
-    def get_num_rows(self):
-        """
-        返回行数。
-        """
-        return len(self.column_data[0].probing_table)
-
-    def get_tuple(self, tuple_index):
-        """
-        返回指定索引处的元组（行）。
-        """
-        num_columns = self.schema.get_num_columns()
-        return [self.column_data[i].probing_table[tuple_index] for i in range(num_columns)]
-
-        # 获取某列的 PLI
-        column_name = 3
-        pli = relation_data.get_pli(column_name)
-        print(f"PLI for column '{column_name}': {pli}")
-
-        # 获取所有列的 PLI
-        all_pli = relation_data.get_all_pli()
-        print("All PLIs:", all_pli)
-
-        # 查看数据模式
-        schema = relation_data.get_schema()
-        print("Schema:", schema)
-
-        # 获取行数和列数
-        print("Number of rows:", relation_data.num_rows())
-        print("Number of columns:", relation_data.num_columns())
+# import heapq
+# import math
+#
+#
+# # TODO: 分布相似度衡量标准，使用余弦相似度和Pearson 相关系数都特别大，难以区分真正相似的分布和不相似的分布。
+# # TODO: 只允许脏的跟干净的归并，能简单不少
+# class Incorporate:
+#     """
+#     归并工具类。
+#     """
+#     similarity_threshold = 0.1  # 相似度阈值
+#
+#     def merge_tables(self, actual_table, expected_table):
+#         """
+#         归并操作：对实际分布列联表和期望分布列联表进行归并。
+#         :param actual_table: 实际分布列联表（二维列表）。
+#         :param expected_table: 期望分布列联表（二维列表）。
+#         :return: 归并后的实际分布表和期望分布表，如果无法归并则返回 False。
+#         """
+#
+#         # 预处理阶段
+#         dirty_cells = []  # 存储脏格子
+#         row_dirty_count = [0] * len(expected_table)  # 每行脏格子计数
+#         col_dirty_count = [0] * len(expected_table[0])  # 每列脏格子计数
+#
+#         for i, row in enumerate(expected_table):
+#             for j, val in enumerate(row):
+#                 if val < 5:
+#                     dirty_cells.append((i, j))
+#                     row_dirty_count[i] += 1
+#                     col_dirty_count[j] += 1
+#
+#         # 记录可以归并的行对和列对
+#         merge_heap = []  # 最大堆存储行/列归并对及其 benefit
+#
+#         # 寻找行归并对
+#         dirty_rows = [i for i, count in enumerate(row_dirty_count) if count > 0]
+#         checked_row_pairs = set()  # 用于记录已经检查过的行对
+#
+#         for dirty_row_idx in dirty_rows:
+#             for other_row_idx in range(len(expected_table)):
+#                 if dirty_row_idx != other_row_idx:
+#                     row_pair = (min(dirty_row_idx, other_row_idx), max(dirty_row_idx, other_row_idx))
+#                     if row_pair not in checked_row_pairs:
+#                         checked_row_pairs.add(row_pair)
+#                         if Incorporate._are_rows_similar(actual_table[row_pair[0]], actual_table[row_pair[1]], self.similarity_threshold):
+#                             benefit = Incorporate._calculate_row_benefit(expected_table[row_pair[0]], expected_table[row_pair[1]])
+#                             if benefit > len(expected_table[0]) / 5:
+#                                 heapq.heappush(merge_heap, (-benefit, 'row', row_pair[0], row_pair[1]))
+#
+#         # 寻找列归并对
+#         dirty_cols = [j for j, count in enumerate(col_dirty_count) if count > 0]
+#         checked_col_pairs = set()  # 用于记录已经检查过的列对
+#
+#         for dirty_col_idx in dirty_cols:
+#             for other_col_idx in range(len(expected_table[0])):
+#                 if dirty_col_idx != other_col_idx:
+#                     col_pair = (min(dirty_col_idx, other_col_idx), max(dirty_col_idx, other_col_idx))
+#                     if col_pair not in checked_col_pairs:
+#                         checked_col_pairs.add(col_pair)
+#                         if Incorporate._are_columns_similar(actual_table, col_pair[0], col_pair[1], self.similarity_threshold):
+#                             benefit = Incorporate._calculate_column_benefit(expected_table, col_pair[0], col_pair[1])
+#                             if benefit > len(expected_table) / 5:
+#                                 heapq.heappush(merge_heap, (-benefit, 'col', col_pair[0], col_pair[1]))
+#
+#         # 开始归并循环
+#         total_dirty_cells = len(dirty_cells)
+#         while total_dirty_cells > len(expected_table) * len(expected_table[0]) / 5:
+#             if not merge_heap:
+#                 print("没有可归并的行或列，无法完成归并。")
+#                 return False
+#
+#             # 选择 benefit 最大的归并对
+#             _, merge_type, idx1, idx2 = heapq.heappop(merge_heap)
+#
+#             if merge_type == 'row':
+#                 Incorporate._merge_rows(actual_table, expected_table, idx1, idx2)
+#                 row_dirty_count[idx1] += row_dirty_count[idx2]
+#                 del row_dirty_count[idx2]
+#
+#                 # 更新脏格子计数
+#                 for j in range(len(expected_table[0])):
+#                     if expected_table[idx1][j] >= 5 and (idx1, j) in dirty_cells:
+#                         dirty_cells.remove((idx1, j))
+#                         total_dirty_cells -= 1
+#
+#             elif merge_type == 'col':
+#                 Incorporate._merge_columns(actual_table, expected_table, idx1, idx2)
+#                 col_dirty_count[idx1] += col_dirty_count[idx2]
+#                 del col_dirty_count[idx2]
+#
+#                 # 更新脏格子计数
+#                 for i in range(len(expected_table)):
+#                     if expected_table[i][idx1] >= 5 and (i, idx1) in dirty_cells:
+#                         dirty_cells.remove((i, idx1))
+#                         total_dirty_cells -= 1
+#
+#         return actual_table, expected_table
+#
+#     @staticmethod
+#     def _merge_rows(actual_table, expected_table, row_idx1, row_idx2):
+#         """
+#         归并两行。
+#         :param actual_table: 实际分布列联表。
+#         :param expected_table: 期望分布列联表。
+#         :param row_idx1: 第一行索引。
+#         :param row_idx2: 第二行索引。
+#         """
+#         for j in range(len(actual_table[0])):
+#             actual_table[row_idx1][j] += actual_table[row_idx2][j]
+#             expected_table[row_idx1][j] += expected_table[row_idx2][j]
+#         del actual_table[row_idx2]
+#         del expected_table[row_idx2]
+#
+#     @staticmethod
+#     def _merge_columns(actual_table, expected_table, col_idx1, col_idx2):
+#         """
+#         归并两列。
+#         :param actual_table: 实际分布列联表。
+#         :param expected_table: 期望分布列联表。
+#         :param col_idx1: 第一列索引。
+#         :param col_idx2: 第二列索引。
+#         """
+#         for i in range(len(actual_table)):
+#             actual_table[i][col_idx1] += actual_table[i][col_idx2]
+#             expected_table[i][col_idx1] += expected_table[i][col_idx2]
+#             del actual_table[i][col_idx2]
+#             del expected_table[i][col_idx2]
+#
+#     @staticmethod
+#     def _are_rows_similar(row1, row2, similarity_threshold):
+#         """
+#         判断两行是否分布相似，使用 KL 散度。
+#         :param row1: 第一行。
+#         :param row2: 第二行。
+#         :param similarity_threshold: 相似度阈值（KL 散度越小越相似）。
+#         :return: 布尔值，表示两行是否相似。
+#         """
+#         divergence = Incorporate._kl_divergence(row1, row2)
+#         return divergence <= similarity_threshold
+#
+#     @staticmethod
+#     def _are_columns_similar(table, col1, col2, similarity_threshold):
+#         """
+#         判断两列是否分布相似，使用 KL 散度。
+#         :param table: 列联表。
+#         :param col1: 第一列索引。
+#         :param col2: 第二列索引。
+#         :param similarity_threshold: 相似度阈值（KL 散度越小越相似）。
+#         :return: 布尔值，表示两列是否相似。
+#         """
+#         col1_values = [row[col1] for row in table]
+#         col2_values = [row[col2] for row in table]
+#         divergence = Incorporate._kl_divergence(col1_values, col2_values)
+#         return divergence <= similarity_threshold
+#
+#     @staticmethod
+#     def _kl_divergence(vec1, vec2):
+#         """
+#         计算两个概率分布之间的 KL 散度。
+#         :param vec1: 第一个分布（向量）。
+#         :param vec2: 第二个分布（向量）。
+#         :return: KL 散度值。
+#         """
+#         # 转换为概率分布
+#         sum1 = sum(vec1)
+#         sum2 = sum(vec2)
+#         if sum1 == 0 or sum2 == 0:
+#             raise ValueError("向量和不能为零。")
+#         prob1 = [x / sum1 for x in vec1]
+#         prob2 = [y / sum2 for y in vec2]
+#
+#         # 避免出现 log(0) 的问题，添加一个很小的平滑值
+#         epsilon = 1e-10
+#         prob1 = [p + epsilon for p in prob1]
+#         prob2 = [q + epsilon for q in prob2]
+#
+#         # 计算 KL 散度
+#         divergence = sum(p * math.log(p / q) for p, q in zip(prob1, prob2))
+#         return divergence
+#
+#     @staticmethod
+#     def _calculate_row_benefit(row1, row2):
+#         """
+#         计算两行归并的 benefit。
+#         :param row1: 第一行。
+#         :param row2: 第二行。
+#         :return: 归并带来的 benefit。
+#         """
+#         benefit = 0
+#         for j in range(len(row1)):
+#             if row1[j] < 5 and row2[j] < 5:
+#                 if row1[j] + row2[j] >= 5:
+#                     # 两个脏格子合并后变为非脏格子
+#                     benefit += 2
+#                 else:
+#                     # 两个脏格子合并仍是脏格子
+#                     benefit += 1
+#             elif row1[j] < 5 or row2[j] < 5:
+#                 # 仅一个是脏格子
+#                 benefit += 1
+#         return benefit
+#
+#     @staticmethod
+#     def _calculate_column_benefit(table, col1_idx, col2_idx):
+#         """
+#         计算两列归并的 benefit。
+#         :param table: 期望分布的列联表。
+#         :param col1_idx: 第一列的索引。
+#         :param col2_idx: 第二列的索引。
+#         :return: 归并带来的 benefit。
+#         """
+#         benefit = 0
+#         for row in table:
+#             val1, val2 = row[col1_idx], row[col2_idx]
+#             if val1 < 5 and val2 < 5:
+#                 if val1 + val2 >= 5:
+#                     # 两个脏格子合并后变为非脏格子
+#                     benefit += 2
+#                 else:
+#                     # 两个脏格子合并仍是脏格子
+#                     benefit += 1
+#             elif val1 < 5 or val2 < 5:
+#                 # 仅一个是脏格子
+#                 benefit += 1
+#         return benefit
+#

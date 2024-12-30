@@ -8,6 +8,11 @@ class Config:
     DATASET_CONFIG = {
         "IRIS": {"path": "iris", "has_header": False},
         "DATA": {"path": "data", "has_header": True},
+        "BEERS": {"path": "beers", "has_header": True},
+        "FLIGHTS": {"path": "flights", "has_header": True},
+        "HOSPITAL": {"path": "hospital", "has_header": True},
+        "ALARM": {"path": "alarm", "has_header": True},
+        "ASIA": {"path": "asia", "has_header": True},
     }
 
     def __init__(self, dataset):
@@ -16,7 +21,7 @@ class Config:
         self.input_folder_path = os.path.join("data", "")
         self.input_file_ending = ".csv"
         self._set_dataset(dataset)
-        self.sample_size = 4000
+        self.sample_size = 5000
         self.is_null_equal_null = True
 
     def _set_dataset(self, dataset):
@@ -39,7 +44,7 @@ def execute(config):
 
 if __name__ == "__main__":
     start_time = time.time()
-    conf = Config("DATA")
+    conf = Config("HOSPITAL")
     print(conf)
     execute(conf)
     print(f"Total runtime: {int((time.time() - start_time) * 1000)} ms")

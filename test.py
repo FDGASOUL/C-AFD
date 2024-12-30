@@ -1,109 +1,68 @@
-import pandas as pd
-from collections import defaultdict
+import math
 
 
-class ColumnLayoutRelationData:
-    def __init__(self, data):
-        """
-        初始化 ColumnLayoutRelationData 类，构建列布局关系数据。
-        :param data: pandas DataFrame，包含抽样后的数据。
-        """
-        self.schema = list(data.columns)  # 模式：列名列表
-        self.columnTypes = self._infer_column_types(data)  # 每列的数据类型元信息
-        self.columnVectors = self._compute_column_vectors(data)  # 每列的数值索引表示
-        self.columnData = self._compute_column_data()  # 包含列的元信息、PLI 和 Probing Table
+class Incorporate:
+    """
+    归并工具类。
+    """
 
-    def _infer_column_types(self, data):
+    @staticmethod
+    def are_rows_similar(row1, row2, similarity_threshold):
         """
-        推断每列的数据类型。
-        :param data: pandas DataFrame，包含抽样后的数据。
-        :return: Dict，列名到数据类型的映射。
+        判断两行是否分布相似，使用 KL 散度。
+        :param row1: 第一行。
+        :param row2: 第二行。
+        :param similarity_threshold: 相似度阈值（KL 散度越小越相似）。
+        :return: 布尔值，表示两行是否相似。
         """
-        column_types = {}
-        for column in data.columns:
-            column_types[column] = data[column].dtype
-        return column_types
+        divergence = Incorporate._kl_divergence(row1, row2)
+        return divergence
 
-    def _compute_column_vectors(self, data):
+    @staticmethod
+    def are_columns_similar(table, col1, col2, similarity_threshold):
         """
-        将原始数据表中的字符串值转化为整数值数组表示。
-        :param data: pandas DataFrame，包含抽样后的数据。
-        :return: List[IntList]，每列的数值索引。
+        判断两列是否分布相似，使用 KL 散度。
+        :param table: 列联表。
+        :param col1: 第一列索引。
+        :param col2: 第二列索引。
+        :param similarity_threshold: 相似度阈值（KL 散度越小越相似）。
+        :return: 布尔值，表示两列是否相似。
         """
-        column_vectors = []
-        value_to_id = defaultdict(lambda: len(value_to_id))
-        nullValueId = -1
+        col1_values = [row[col1] for row in table]
+        col2_values = [row[col2] for row in table]
+        divergence = Incorporate._kl_divergence(col1_values, col2_values)
+        return divergence <= similarity_threshold
 
-        for column in data.columns:
-            column_vector = []
-            for value in data[column]:
-                if pd.isnull(value):
-                    column_vector.append(nullValueId)
-                else:
-                    column_vector.append(value_to_id[value])
-            column_vectors.append(column_vector)
-        return column_vectors
+    @staticmethod
+    def _kl_divergence(vec1, vec2):
+        """
+        计算两个概率分布之间的 KL 散度。
+        :param vec1: 第一个分布（向量）。
+        :param vec2: 第二个分布（向量）。
+        :return: KL 散度值。
+        """
+        # 转换为概率分布
+        sum1 = sum(vec1)
+        sum2 = sum(vec2)
+        if sum1 == 0 or sum2 == 0:
+            raise ValueError("向量和不能为零。")
+        prob1 = [x / sum1 for x in vec1]
+        prob2 = [y / sum2 for y in vec2]
 
-    def _compute_column_data(self):
-        """
-        计算每列的 PLI 和 Probing Table。
-        :return: 列的元信息，包括 PLI 和 Probing Table。
-        """
-        column_data = []
+        # 避免出现 log(0) 的问题，添加一个很小的平滑值
+        epsilon = 1e-10
+        prob1 = [p + epsilon for p in prob1]
+        prob2 = [q + epsilon for q in prob2]
 
-        for col_vector in self.columnVectors:
-            equivalence_classes = defaultdict(list)
-            for index, value in enumerate(col_vector):
-                equivalence_classes[value].append(index)
+        # 计算 KL 散度
+        divergence = sum(p * math.log(p / q) for p, q in zip(prob1, prob2))
+        return divergence
 
-            pli = list(equivalence_classes.values())
-            probing_table = [cluster for cluster in pli if len(cluster) > 1]
 
-            column_data.append({
-                "PLI": pli,
-                "ProbingTable": probing_table
-            })
+row1 = [10, 20, 30]
+row2 = [2, 4, 6]
+threshold = 0.5
 
-        return column_data
+result = Incorporate.are_rows_similar(row1, row2, threshold)
+print(result)  # 输出是否相似
 
-    def get_schema(self):
-        """
-        获取数据的列名（模式）。
-        :return: 数据的列名列表。
-        """
-        return self.schema
-
-    def get_column_types(self):
-        """
-        获取数据的列类型元信息。
-        :return: Dict，列名到数据类型的映射。
-        """
-        return self.columnTypes
-
-    def get_column_vectors(self):
-        """
-        获取列的数值索引表示。
-        :return: List[IntList]，每列的数值索引。
-        """
-        return self.columnVectors
-
-    def get_column_data(self):
-        """
-        获取列的元信息，包括 PLI 和 Probing Table。
-        :return: List[Dict]，列的元信息。
-        """
-        return self.columnData
-
-    def num_rows(self):
-        """
-        获取数据的行数。
-        :return: 数据的行数。
-        """
-        return len(self.columnVectors[0]) if self.columnVectors else 0
-
-    def num_columns(self):
-        """
-        获取数据的列数。
-        :return: 数据的列数。
-        """
-        return len(self.columnVectors)

@@ -153,16 +153,19 @@ class CorrelationCalculator:
         # 检查期望分布频数表
         if not self._check_expected_frequencies(expected_frequencies):
             print("期望分布频数表中超过 20% 的格子期望计数未大于 5，进行归并操作。")
-            inc = Incorporate()
-            result = inc.merge_tables(linked_table, expected_frequencies)
-            if not result:
-                print("归并操作失败，相关性设置为 0。")
-                return 0
-
-            linked_table, expected_frequencies = result
+            # inc = Incorporate()
+            # result = inc.merge_tables(linked_table, expected_frequencies)
+            # if not result:
+            #     print("归并操作失败，相关性设置为 0。")
+            #     return 0
+            #
+            # linked_table, expected_frequencies = result
 
         # 总观测数
         total = sum(sum(row) for row in linked_table)
+        if total == 0:
+            print("Warning: Total observations are zero. Setting φ² to 0.")
+            return 0
 
         # 计算 χ²
         chi_squared = 0
@@ -171,13 +174,20 @@ class CorrelationCalculator:
                 expected = expected_frequencies[i][j]
                 if expected > 0:
                     chi_squared += ((observed - expected) ** 2) / expected
+                else:
+                    print(f"Warning: Expected frequency at ({i}, {j}) is zero. Skipping this cell.")
 
         # 计算 φ²
         d1, d2 = len(linked_table), len(linked_table[0])
         d = min(d1, d2)
+        if d <= 1:
+            print("Warning: Degrees of freedom is zero. Setting φ² to 0.")
+            return 0
+
         phi_squared = chi_squared / (total * (d - 1))
 
         column_a_name = self._get_column_name(column_a)
         column_b_names = [self._get_column_name(col) for col in column_b]
         print(f"计算列 {column_a_name} 和列 {column_b_names} 之间的相关性 (φ²): {phi_squared}")
         return phi_squared
+
