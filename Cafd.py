@@ -4,7 +4,7 @@ from Evaluate_fd import evaluate_fd
 from Sampler import Sampler
 from ColumnLayoutRelationData import ColumnLayoutRelationData
 from SearchSpace import SearchSpace
-from concurrent.futures import ThreadPoolExecutor, ProcessPoolExecutor
+from concurrent.futures import ThreadPoolExecutor, ProcessPoolExecutor, as_completed
 
 
 # TODO：每个搜索空间都是独立的，因为并行处理，但是如果需要共享数据，需要考虑线程安全性，A与B独立，不仅在A的搜索空间中剪枝，也可以在B的搜索空间中剪枝
@@ -17,33 +17,39 @@ def process_search_space(search_space):
     处理单个搜索空间的逻辑。
     :param search_space: 单个搜索空间。
     """
-    print(f"Processing search space: {search_space}")
-    search_space.discover()
-    dependencies = search_space.get_discovered_dependencies()
-    return dependencies
+    try:
+        print(f"Processing search space: {search_space}")
+        search_space.discover()
+        dependencies = search_space.get_discovered_dependencies()
+        return dependencies
+    except Exception as e:
+        print(f"Error processing search space {search_space}: {e}")
+        return []  # 返回空依赖列表以避免影响后续汇总
 
 
-def run_worker(search_space_counters, use_threads=True):
+def run_worker(search_space_counters, use_threads=True, max_workers=None):
     """
     并行运行工作器逻辑。
     :param search_space_counters: 搜索空间计数器。
     :param use_threads: 是否使用线程池（True）或进程池（False）。
+    :param max_workers: 最大工作者数量。
     """
     executor_cls = ThreadPoolExecutor if use_threads else ProcessPoolExecutor
     discovered_dependencies = []  # 汇总所有搜索空间的依赖关系
 
-    with executor_cls() as executor:
+    with executor_cls(max_workers=max_workers) as executor:
         # 提交每个搜索空间的任务
-        futures = {executor.submit(process_search_space, search_space): search_space
-                   for search_space in search_space_counters.keys()}
+        future_to_space = {executor.submit(process_search_space, search_space): search_space
+                           for search_space in search_space_counters.keys()}
 
         # 收集结果
-        for future in futures:
+        for future in as_completed(future_to_space):
+            search_space = future_to_space[future]
             try:
                 result = future.result()
                 discovered_dependencies.extend(result)
             except Exception as e:
-                print(f"Error processing search space: {e}")
+                print(f"Error processing search space {search_space}: {e}")
 
     return discovered_dependencies
 
@@ -96,7 +102,7 @@ class CAFD:
             search_space.set_context(relation_data)
 
         # 并行运行工作器并汇总发现的函数依赖
-        all_discovered_dependencies = run_worker(search_space_counters, use_threads=True)
+        all_discovered_dependencies = run_worker(search_space_counters, use_threads=True, max_workers=None)
 
         # 输出汇总结果
         print("汇总发现的函数依赖:")

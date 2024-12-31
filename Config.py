@@ -44,7 +44,7 @@ def execute(config):
 
 if __name__ == "__main__":
     start_time = time.time()
-    conf = Config("ASIA")
+    conf = Config("DATA")
     print(conf)
     execute(conf)
     print(f"Total runtime: {int((time.time() - start_time) * 1000)} ms")
