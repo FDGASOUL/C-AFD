@@ -34,19 +34,16 @@ class Incorporate:
                     row_dirty_count[i] += 1
                     col_dirty_count[j] += 1
 
-        # 记录可以归并的行对和列对
-        merge_heap = []  # 最大堆存储行/列归并对及其 benefit
-
-        # 计算收益阈值
-        row_benefit_threshold = len(expected_table[0]) / 5
-        col_benefit_threshold = len(expected_table) / 5
+        # 初始化行列长度
+        row_longest = len(expected_table)
+        col_longest = len(expected_table[0])
 
         # 寻找行归并对
         dirty_rows = [i for i, count in enumerate(row_dirty_count) if count > 0]
         merge_heap = Incorporate.find_merge_pairs(dirty_rows, range(len(expected_table)), actual_table, expected_table,
                                                   is_row=True,
                                                   similarity_threshold=self.similarity_threshold,
-                                                  benefit_threshold=row_benefit_threshold)
+                                                  benefit_threshold=col_longest / 5)
 
         # 寻找列归并对
         dirty_cols = [j for j, count in enumerate(col_dirty_count) if count > 0]
@@ -54,12 +51,10 @@ class Incorporate:
                                                    expected_table,
                                                    is_row=False,
                                                    similarity_threshold=self.similarity_threshold,
-                                                   benefit_threshold=col_benefit_threshold)
+                                                   benefit_threshold=row_longest / 5)
 
         # 开始归并循环
         total_dirty_cells = len(dirty_cells)
-        row_longest = len(expected_table)
-        col_longest = len(expected_table[0])
 
         while total_dirty_cells > row_longest * col_longest / 5:
             if not merge_heap:
@@ -76,9 +71,16 @@ class Incorporate:
             if idx1 == idx2:  # 已经归并过，跳过
                 continue
 
+            # 计算归并对其他行/列的影响
+            dependencies = Incorporate.find_dirty_cell_dependencies(expected_table, idx1, idx2,
+                                                                    axis=0 if merge_type == 'row' else 1)
+
             if merge_type == 'row':
                 # 归并行
                 Incorporate._merge(actual_table, expected_table, idx1, idx2, axis=0)
+
+                # 更新行数
+                row_longest -= 1
 
                 # 创建一个列表存储 idx1 和 idx2 中为脏行的行索引
                 dirty_rows_in_merge = [idx for idx in (idx1, idx2) if row_dirty_count[idx] > 0]
@@ -90,7 +92,7 @@ class Incorporate:
                 # 更新 merge_heap 中的相关归并对
                 merge_heap = Incorporate.update_dirty_count_and_heap(row_dirty_count, dirty_rows_in_merge,
                                                                      expected_table,
-                                                                     merge_heap, idx1, 'row')
+                                                                     merge_heap, dependencies, idx1, 'row', col_longest, row_longest)
 
                 # 更新映射表
                 row_mapping = Incorporate.update_mapping(row_mapping, idx1, idx2)
@@ -98,12 +100,12 @@ class Incorporate:
                 # 更新脏格子总数
                 total_dirty_cells += benefit
 
-                # 更新行数
-                row_longest -= 1
-
             else:
                 # 归并列
                 Incorporate._merge(actual_table, expected_table, idx1, idx2, axis=1)
+
+                # 更新列数
+                col_longest -= 1
 
                 # 创建一个列表存储 idx1 和 idx2 中为脏列的列索引
                 dirty_cols_in_merge = [idx for idx in (idx1, idx2) if col_dirty_count[idx] > 0]
@@ -115,16 +117,13 @@ class Incorporate:
                 # 更新 merge_heap 中的相关归并对
                 merge_heap = Incorporate.update_dirty_count_and_heap(col_dirty_count, dirty_cols_in_merge,
                                                                      expected_table,
-                                                                     merge_heap, idx1, 'col')
+                                                                     merge_heap, dependencies, idx1, 'col', row_longest, col_longest)
 
                 # 更新映射表
                 col_mapping = Incorporate.update_mapping(col_mapping, idx1, idx2)
 
                 # 更新脏格子总数
                 total_dirty_cells += benefit
-
-                # 更新列数
-                col_longest -= 1
 
         # 最终清理阶段
         actual_table = [row for i, row in enumerate(actual_table) if row_mapping[i] == i]
@@ -290,49 +289,82 @@ class Incorporate:
                     pair = (min(dirty_idx, other_idx), max(dirty_idx, other_idx))
                     if pair not in checked_pairs:
                         checked_pairs.add(pair)
-                        # 行或列的相似性判断和收益计算
+                        # 先计算收益
                         if is_row:
-                            similar = Incorporate._are_rows_similar(actual_table[pair[0]], actual_table[pair[1]],
-                                                                    similarity_threshold)
                             benefit = Incorporate._calculate_row_benefit(expected_table[pair[0]],
                                                                          expected_table[pair[1]])
                         else:
-                            similar = Incorporate._are_columns_similar(actual_table, pair[0], pair[1],
-                                                                       similarity_threshold)
                             benefit = Incorporate._calculate_column_benefit(expected_table, pair[0], pair[1])
 
-                        # 判断是否满足收益阈值
-                        if similar and benefit > benefit_threshold:
-                            heapq.heappush(merge_heap, (-benefit, 'row' if is_row else 'col', pair[0], pair[1]))
+                        # 判断收益是否满足阈值
+                        if benefit > benefit_threshold:
+                            # 如果满足收益阈值，再判断相似性
+                            if is_row:
+                                similar = Incorporate._are_rows_similar(actual_table[pair[0]], actual_table[pair[1]],
+                                                                        similarity_threshold)
+                            else:
+                                similar = Incorporate._are_columns_similar(actual_table, pair[0], pair[1],
+                                                                           similarity_threshold)
+
+                            # 如果相似性也满足，则加入堆
+                            if similar:
+                                heapq.heappush(merge_heap, (-benefit, 'row' if is_row else 'col', pair[0], pair[1]))
 
         return merge_heap
 
     @staticmethod
-    def update_dirty_count_and_heap(dirty_count, dirty_items_in_merge, expected_table, merge_heap, idx1, item_type):
+    def find_dirty_cell_dependencies(expected_table, idx1, idx2, axis):
+        """
+        寻找给定行或列索引中的脏格子涉及到的列或行。
+        :param expected_table: 期望分布列联表。
+        :param idx1: 第一个行/列索引。
+        :param idx2: 第二个行/列索引。
+        :param axis: 0 表示行，1 表示列。
+        :return: 涉及的列索引列表（如果 axis=0）或行索引列表（如果 axis=1）。
+        """
+        dependencies = set()
+        if axis == 0:  # 行
+            for j in range(len(expected_table[0])):  # 遍历列
+                if expected_table[idx1][j] < 5 or expected_table[idx2][j] < 5:
+                    dependencies.add(j)
+        elif axis == 1:  # 列
+            for i in range(len(expected_table)):  # 遍历行
+                if expected_table[i][idx1] < 5 or expected_table[i][idx2] < 5:
+                    dependencies.add(i)
+        return list(dependencies)
+
+    @staticmethod
+    def update_dirty_count_and_heap(dirty_count, dirty_items_in_merge, expected_table, merge_heap, dependencies, idx1,
+                                    item_type,
+                                    benefit_threshold_1, benefit_threshold_2):
         """
         更新脏格子计数和堆中归并对。
         :param dirty_count: 当前脏格子计数（行或列）。
         :param dirty_items_in_merge: 当前归并的脏行/列索引。
         :param expected_table: 期望表，用于计算 benefit。
         :param merge_heap: 归并堆。
+        :param dependencies: 归并对涉及到的行/列。
         :param idx1: 归并后的行/列索引。
         :param item_type: 'row' 或 'col'，用于区分操作类型。
+        :param benefit_threshold_1: 归并收益阈值 1。
+        :param benefit_threshold_2: 归并收益阈值 2。
         """
         updated_heap = []
         while merge_heap:
             current_benefit, current_type, i1, i2 = heapq.heappop(merge_heap)
 
             if current_type == item_type:
-                # 判断是否涉及到刚归并的行或列
+                # 判断是否有一行/列涉及到刚归并的行/列
                 is_i1_dirty = i1 in dirty_items_in_merge
                 is_i2_dirty = i2 in dirty_items_in_merge
 
                 if is_i1_dirty or is_i2_dirty:
-                    # 如果涉及归并的行/列对，但另一行/列是干净行/列，并且 idx1 已被归并为干净，跳过
+                    # 跳过条件：另一行是干净行，且 idx1 已经是干净行
                     if ((is_i1_dirty and dirty_count[i2] == 0) or (is_i2_dirty and dirty_count[i1] == 0)) and \
                             dirty_count[idx1] == 0:
                         continue
-                    # 更新当前对的 benefit 并重新插入堆
+
+                    # 重新计算 benefit
                     if dirty_count[i1] != 0 and dirty_count[i2] != 0:
                         if item_type == 'row':
                             current_benefit = Incorporate._calculate_row_benefit(expected_table[i1], expected_table[i2])
@@ -341,13 +373,27 @@ class Incorporate:
                     else:
                         current_benefit = max(dirty_count[i1], dirty_count[i2])
 
-                    heapq.heappush(updated_heap, (-current_benefit, current_type, i1, i2))
+                    # 插入堆的条件：满足收益阈值
+                    if current_benefit > benefit_threshold_1 / 5:
+                        heapq.heappush(updated_heap, (-current_benefit, current_type, i1, i2))
                 else:
-                    # 不涉及归并的行/列对，直接保留
+                    # 不涉及刚归并的行/列，直接重新插入堆
                     heapq.heappush(updated_heap, (-current_benefit, current_type, i1, i2))
             else:
-                # 不同类型的归并对
-                # TODO: 对不同类型的归并对的处理逻辑
-                heapq.heappush(updated_heap, (-current_benefit, current_type, i1, i2))
+                # 检查是否有至少一行/列在 dependencies 中
+                if i1 in dependencies or i2 in dependencies:
+                    # 重新计算 benefit
+                    if current_type == 'row':
+                        current_benefit = Incorporate._calculate_row_benefit(expected_table[i1], expected_table[i2])
+                    else:
+                        current_benefit = Incorporate._calculate_column_benefit(expected_table, i1, i2)
+
+                    # 插入堆的条件：满足收益阈值 2
+                    if current_benefit > benefit_threshold_2 / 5:
+                        heapq.heappush(updated_heap, (-current_benefit, current_type, i1, i2))
+                else:
+                    # 不涉及 dependencies 的对，直接保留
+                    heapq.heappush(updated_heap, (-current_benefit, current_type, i1, i2))
 
         return updated_heap
+
