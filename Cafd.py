@@ -3,15 +3,16 @@ import os
 from Evaluate_fd import evaluate_fd
 from Sampler import Sampler
 from ColumnLayoutRelationData import ColumnLayoutRelationData
-from SearchSpace import SearchSpace
+from SearchSpace_bit import SearchSpace
 from concurrent.futures import ThreadPoolExecutor, ProcessPoolExecutor, as_completed
 
 
 # TODO：每个搜索空间都是独立的，因为并行处理，但是如果需要共享数据，需要考虑线程安全性，A与B独立，不仅在A的搜索空间中剪枝，也可以在B的搜索空间中剪枝
 # TODO：解决方法1：使用共享的全局结论表，存储已经得出的独立性结论。解决方法2：合并搜索空间，将所有搜索空间合并为一个，不再并行搜索空间，而是并行执行需要的任务。解决方法3：使用线程池，线程之间共享内存，可以更快地传递数据
 # TODO：为什么用线程池比进程池更快？线程池的优势在于线程之间共享内存，可以更快地传递数据，而进程池则需要通过序列化和反序列化来传递数据，效率较低
-# TODO: 使用进程池感觉没有正确执行，还是顺序的，只有一两个在运行，其他的都在等待，目前看只有3个内核在用，或者是并行启动缓慢
+# TODO: 顺序执行并不比并行执行慢，当运行较慢时，使用进程池，当运行较快时，使用线程池
 # TODO: 三个指标的计算方法
+# TODO: 对index列的处理
 def process_search_space(search_space):
     """
     处理单个搜索空间的逻辑。

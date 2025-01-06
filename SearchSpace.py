@@ -4,6 +4,7 @@ from Correlation_utils import CorrelationCalculator
 
 # TODO: 方向问题,发现方向有问题，则认为可以继续上升，是否会影响速度？由于只有单个属性会有方向问题，可以利用缓存机制，减少计算量
 # TODO: 方法1：筛选属性。方法2：缓存要剪枝组合。方法3：位运算。
+# TODO: 减少日志打印开销，当搜索空间较大时，这可能会对性能产生一定影响。可以将日志写入文件或缓冲区，在搜索完成后统一输出，避免实时打印的性能开销
 class DependencyTreeNode:
     def __init__(self, attributes):
         """
@@ -50,7 +51,7 @@ class DependencyTreeNode:
 
 
 class SearchSpace:
-    upper_threshold = 0.9  # 上限阈值
+    upper_threshold = 0.95  # 上限阈值
     lower_threshold = 0.05  # 下限阈值
 
     def __init__(self, column_id):
