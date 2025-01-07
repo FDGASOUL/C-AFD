@@ -1,5 +1,9 @@
 from Correlation_utils import CorrelationCalculator
 from itertools import combinations
+import logging
+
+# 获取日志实例
+logger = logging.getLogger(__name__)
 
 
 class SearchSpace:
@@ -53,7 +57,7 @@ class SearchSpace:
                 rhs_column = schema[self.column_id - 1]
 
                 if self.correlation_calculator.check_dependency_direction(self.column_id - 1, column_b):
-                    print(f"发现函数依赖: {lhs_column} -> {rhs_column}")
+                    logger.info(f"发现函数依赖: {lhs_column} -> {rhs_column}")
                     self.discovered_dependencies.append(([lhs_column], rhs_column))
                 else:
                     valid_attributes.add(combination)
@@ -105,7 +109,7 @@ class SearchSpace:
                 lhs_columns = [schema[attr] for attr in column_b]
                 rhs_column = schema[self.column_id - 1]
 
-                print(f"发现函数依赖: {lhs_columns} -> {rhs_column}")
+                logger.info(f"发现函数依赖: {lhs_columns} -> {rhs_column}")
                 self.discovered_dependencies.append((lhs_columns, rhs_column))
                 current_level_pruned.add(combination)
 
@@ -125,7 +129,7 @@ class SearchSpace:
             first_level_attributes = self.detect_first_level()
 
             if not first_level_attributes:
-                print("第一层全部剪枝，不用继续上升。")
+                logger.info("第一层全部剪枝，不用继续上升。")
                 return
 
             # 生成第二层候选组合
@@ -134,9 +138,9 @@ class SearchSpace:
             if second_level_combinations:
                 self.recursive_discover(first_level_attributes, second_level_combinations, 2)
             else:
-                print("第二层无有效组合，搜索结束。")
+                logger.info("第二层无有效组合，搜索结束。")
         else:
-            print("无法发现依赖：搜索空间未初始化或上下文数据未设置。")
+            logger.info("无法发现依赖：搜索空间未初始化或上下文数据未设置。")
 
     def get_discovered_dependencies(self):
         """

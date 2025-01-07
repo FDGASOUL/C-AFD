@@ -1,10 +1,12 @@
 from itertools import combinations
 from Correlation_utils import CorrelationCalculator
+import logging
+
+# 获取日志实例
+logger = logging.getLogger(__name__)
 
 
 # TODO: 方向问题,发现方向有问题，则认为可以继续上升，是否会影响速度？由于只有单个属性会有方向问题，可以利用缓存机制，减少计算量
-# TODO: 方法1：筛选属性。方法2：缓存要剪枝组合。方法3：位运算。
-# TODO: 减少日志打印开销，当搜索空间较大时，这可能会对性能产生一定影响。可以将日志写入文件或缓冲区，在搜索完成后统一输出，避免实时打印的性能开销
 class DependencyTreeNode:
     def __init__(self, attributes):
         """
@@ -108,13 +110,13 @@ class SearchSpace:
 
                 if len(column_b) == 1:  # 如果左部属性只有一个，判断方向
                     if self.correlation_calculator.check_dependency_direction(self.column_id - 1, column_b):
-                        print(f"发现函数依赖: {lhs_columns} -> {rhs_column}")
+                        logger.info(f"发现函数依赖: {lhs_columns} -> {rhs_column}")
                         self.discovered_dependencies.append((lhs_columns, rhs_column))  # 记录发现的依赖
                         self.candidate_tree.prune(next(iter(node.attributes)))  # 剪枝
                     else:
                         nodes_to_expand.append(node)  # 方向有问题，加入扩展节点
                 else:  # 如果左部属性超过一个，直接存储依赖
-                    print(f"发现函数依赖: {lhs_columns} -> {rhs_column}")
+                    logger.info(f"发现函数依赖: {lhs_columns} -> {rhs_column}")
                     self.discovered_dependencies.append((lhs_columns, rhs_column))  # 记录发现的依赖
                     self.candidate_tree.prune(next(iter(node.attributes)))  # 剪枝
 
@@ -142,7 +144,7 @@ class SearchSpace:
             initial_nodes = list(self.candidate_tree.children.values())
             self.recursive_discover(initial_nodes)
         else:
-            print("无法发现依赖：搜索空间未初始化或上下文数据未设置。")
+            logger.info("无法发现依赖：搜索空间未初始化或上下文数据未设置。")
 
     def get_discovered_dependencies(self):
         """

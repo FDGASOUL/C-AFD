@@ -1,6 +1,10 @@
 import os
 import random
 import pandas as pd
+import logging
+
+# 获取日志实例
+logger = logging.getLogger(__name__)
 
 
 class Sampler:
@@ -21,7 +25,7 @@ class Sampler:
         """
         对输入数据集进行简单随机抽样。
         """
-        print(f"Reading dataset from: {self.input_file_path}")
+        logger.info(f"Reading dataset from: {self.input_file_path}")
 
         # 使用 pandas 读取数据
         try:
@@ -36,12 +40,12 @@ class Sampler:
         # 检查抽样数量是否合理
         # TODO: 对于接近抽样数量的数据集，是否还需要进行抽样？
         if self.sample_size > len(data):
-            print(f"Sample size ({self.sample_size}) exceeds dataset size ({len(data)}). Returning the entire dataset.")
+            logger.info(f"Sample size ({self.sample_size}) exceeds dataset size ({len(data)}). Returning the entire dataset.")
             return data
 
         # 随机抽样
         sampled_data = data.sample(n=self.sample_size, random_state=random.randint(0, 10000))
-        print(f"Sampled {self.sample_size} rows from the dataset.")
+        logger.info(f"Sampled {self.sample_size} rows from the dataset.")
 
         return sampled_data
 
@@ -52,4 +56,4 @@ class Sampler:
         """
         sampled_data = self.random_sample()
         sampled_data.to_csv(output_path, index=False)
-        print(f"Sampled data saved to: {output_path}")
+        logger.info(f"Sampled data saved to: {output_path}")

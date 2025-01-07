@@ -1,9 +1,11 @@
 import heapq
 import math
+import logging
+
+# 获取日志实例
+logger = logging.getLogger(__name__)
 
 
-# TODO: 分布相似度衡量标准，使用余弦相似度和Pearson 相关系数都特别大，难以区分真正相似的分布和不相似的分布。
-# TODO: 只允许脏的跟干净的归并，能简单不少，每次重新计算归并对也能简单不少，但是可能造成大量开销
 class Incorporate:
     """
     归并工具类。
@@ -58,7 +60,7 @@ class Incorporate:
 
         while total_dirty_cells > row_longest * col_longest / 5:
             if not merge_heap:
-                print("没有可归并的行或列，无法完成归并。")
+                logger.info("没有可归并的行或列，无法完成归并。")
                 return False
 
             # 选择 benefit 最大的归并对

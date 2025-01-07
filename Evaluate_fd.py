@@ -1,4 +1,8 @@
 import os
+import logging
+
+# 获取日志实例
+logger = logging.getLogger(__name__)
 
 
 def parse_fd_file(file_path):

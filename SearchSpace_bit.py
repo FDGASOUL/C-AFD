@@ -1,7 +1,12 @@
 from Correlation_utils import CorrelationCalculator
+import logging
+
+# 获取日志实例
+logger = logging.getLogger(__name__)
 
 
 # TODO: 只检查本层剪枝集是否合理
+# TODO: 对data数据集还是存在拼接的循环依赖无法发现的问题
 class SearchSpace:
     upper_threshold = 0.95  # 上限阈值
     lower_threshold = 0.05  # 下限阈值
@@ -86,13 +91,13 @@ class SearchSpace:
 
                 if len(column_b) == 1:  # 如果左部属性只有一个，判断方向
                     if self.correlation_calculator.check_dependency_direction(self.column_id - 1, column_b):
-                        print(f"发现函数依赖: {lhs_columns} -> {rhs_column}")
+                        logger.info(f"发现函数依赖: {lhs_columns} -> {rhs_column}")
                         self.discovered_dependencies.append((lhs_columns, rhs_column))  # 记录发现的依赖
                         current_level_pruned.add(combination)  # 将当前组合加入当前层的剪枝集
                     else:
                         next_level_combinations.add(combination)  # 方向有问题，加入扩展节点
                 else:  # 如果左部属性超过一个，直接存储依赖
-                    print(f"发现函数依赖: {lhs_columns} -> {rhs_column}")
+                    logger.info(f"发现函数依赖: {lhs_columns} -> {rhs_column}")
                     self.discovered_dependencies.append((lhs_columns, rhs_column))  # 记录发现的依赖
                     current_level_pruned.add(combination)  # 将当前组合加入当前层的剪枝集
 
@@ -123,7 +128,7 @@ class SearchSpace:
             # 开始递归搜索
             self.recursive_discover(initial_combinations)
         else:
-            print("无法发现依赖：搜索空间未初始化或上下文数据未设置。")
+            logger.warning("无法发现依赖：搜索空间未初始化或上下文数据未设置。")
 
     def get_discovered_dependencies(self):
         """

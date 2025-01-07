@@ -4,13 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4bcd1cd3-41f3-4013-aa96-cbdac4f83526" name="更改" comment="测试">
-      <change afterPath="$PROJECT_DIR$/SearchSpace_bit.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SearchSpace_bit2.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test4.py" afterDir="false" />
+    <list default="true" id="4bcd1cd3-41f3-4013-aa96-cbdac4f83526" name="更改" comment="完成两种位存储">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Cafd.py" beforeDir="false" afterPath="$PROJECT_DIR$/Cafd.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ColumnLayoutRelationData.py" beforeDir="false" afterPath="$PROJECT_DIR$/ColumnLayoutRelationData.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Config.py" beforeDir="false" afterPath="$PROJECT_DIR$/Config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Correlation_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/Correlation_utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Evaluate_fd.py" beforeDir="false" afterPath="$PROJECT_DIR$/Evaluate_fd.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Incorporate_into.py" beforeDir="false" afterPath="$PROJECT_DIR$/Incorporate_into.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sampler.py" beforeDir="false" afterPath="$PROJECT_DIR$/Sampler.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SearchSpace.py" beforeDir="false" afterPath="$PROJECT_DIR$/SearchSpace.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SearchSpace_bit.py" beforeDir="false" afterPath="$PROJECT_DIR$/SearchSpace_bit.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SearchSpace_bit2.py" beforeDir="false" afterPath="$PROJECT_DIR$/SearchSpace_bit2.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/discovered_fd/data_discovered.txt" beforeDir="false" afterPath="$PROJECT_DIR$/discovered_fd/data_discovered.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -68,7 +73,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Python.Cafd.executor": "Debug",
-    "Python.Config.executor": "Run",
+    "Python.Config.executor": "Debug",
     "Python.Sampler_num.executor": "Run",
     "Python.test.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -133,7 +138,7 @@
       <workItem from="1735629987252" duration="4888000" />
       <workItem from="1735635000668" duration="189000" />
       <workItem from="1735635230171" duration="219000" />
-      <workItem from="1735635680542" duration="32373000" />
+      <workItem from="1735635680542" duration="47664000" />
     </task>
     <task id="LOCAL-00001" summary="不使用依赖树版本，获取候选依赖组合存在问题">
       <option name="closed" value="true" />
@@ -239,7 +244,15 @@
       <option name="project" value="LOCAL" />
       <updated>1735637533642</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="完成两种位存储">
+      <option name="closed" value="true" />
+      <created>1736145430482</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1736145430482</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -270,12 +283,13 @@
     <MESSAGE value="修改前归并代码" />
     <MESSAGE value="修改完归并代码" />
     <MESSAGE value="测试" />
-    <option name="LAST_COMMIT_MESSAGE" value="测试" />
+    <MESSAGE value="完成两种位存储" />
+    <option name="LAST_COMMIT_MESSAGE" value="完成两种位存储" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/C_AFD$Cafd.coverage" NAME="Cafd 覆盖结果" MODIFIED="1734085271666" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/C_AFD$Sampler_num.coverage" NAME="Sampler_num 覆盖结果" MODIFIED="1735267934623" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/C_AFD$test.coverage" NAME="test 覆盖结果" MODIFIED="1735183211955" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/C_AFD$Config.coverage" NAME="Config 覆盖结果" MODIFIED="1735903028958" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/C_AFD$Config.coverage" NAME="Config 覆盖结果" MODIFIED="1736157410620" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
   </component>
 </project>

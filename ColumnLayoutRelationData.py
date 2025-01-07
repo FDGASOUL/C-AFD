@@ -1,8 +1,12 @@
 import pandas as pd
 from collections import defaultdict
+import logging
+
+# 获取日志实例
+logger = logging.getLogger(__name__)
 
 
-# TODO: probing_table是否能用上，是否要去除单个元素的cluster？单例簇对于依赖发现来说没有实际意义（一个值不可能约束其他值），Probing Table 通过排除单例簇，降低了计算复杂度。
+# TODO: probing_table是否能用上，是否要去除单个元素的cluster？单例簇对于依赖发现来说没有实际意义（一个值不可能约束其他值），Probing Table 通过排除单例簇，降低了计算复杂度，同时解决了index的问题。
 class ColumnLayoutRelationData:
     def __init__(self, data):
         """
@@ -83,13 +87,6 @@ class ColumnLayoutRelationData:
         :return: List[Dict]，列的元信息。
         """
         return self.columnData
-
-    def num_rows(self):
-        """
-        获取数据的行数。
-        :return: 数据的行数。
-        """
-        return len(self.columnVectors[0]) if self.columnVectors else 0
 
     def num_columns(self):
         """
