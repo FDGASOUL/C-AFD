@@ -1,11 +1,9 @@
-column1->column2
-column3->column4
 column5,column6->column7
-column13->column11
-column13->column12
 column8,column9->column10
-column11,column12->column13
-精度: 1.00
-召回率: 1.00
-F1分数: 1.00
-总运行时间: 287 ms
+column11->column13
+column16->column15
+column14,column15->column16
+精度: 0.40
+召回率: 0.29
+F1分数: 0.33
+总运行时间: 389 ms

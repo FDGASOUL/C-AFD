@@ -6,7 +6,8 @@ import logging
 logger = logging.getLogger(__name__)
 
 
-# TODO: probing_table是否能用上，是否要去除单个元素的cluster？单例簇对于依赖发现来说没有实际意义（一个值不可能约束其他值），Probing Table 通过排除单例簇，降低了计算复杂度，同时解决了index的问题。
+# TODO: 通过排除单例簇，降低了计算复杂度，同时解决了index的问题。目前只排除PLI中的单列簇，构造交叉表时对RHS使用PLI，而LHS使用Vectors，是否合理，应该是LHS的单列簇没有用
+# TODO: 对数字可以不计算vectors
 class ColumnLayoutRelationData:
     def __init__(self, data):
         """
@@ -51,10 +52,14 @@ class ColumnLayoutRelationData:
             for index, value in enumerate(col_vector):
                 equivalence_classes[value].append(index)
 
-            pli = list(equivalence_classes.values())
-            probing_table = [nullValueId] * len(col_vector)  # 初始化 Probing Table
-            next_cluster_id = 1  # 每列的簇编号从 1 开始
+            # 获取 PLI，排除单列簇（只包含一个元素的簇）
+            pli = [cluster for cluster in equivalence_classes.values() if len(cluster) > 1]
 
+            # 初始化 Probing Table，所有位置初始为 0
+            probing_table = [nullValueId] * len(col_vector)
+            next_cluster_id = 1  # 非单列簇的簇编号从 1 开始
+
+            # 为非单列簇赋值
             for cluster in pli:
                 for position in cluster:
                     probing_table[position] = next_cluster_id

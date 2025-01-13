@@ -1,365 +1,79 @@
-2025-01-06 17:56:51,623 - root - INFO - 全局日志配置已完成！
-2025-01-06 17:56:51,623 - root - INFO - Config:
-	dataset: data.csv
-2025-01-06 17:56:51,623 - root - INFO - Starting CAFD execution...
-2025-01-06 17:56:51,624 - Cafd - INFO - Executing CAFD on dataset: data\data.csv
-2025-01-06 17:56:51,624 - Cafd - INFO - Using ground truth: groundtruth\data.txt
-2025-01-06 17:56:51,624 - Sampler - INFO - Reading dataset from: data\data.csv
-2025-01-06 17:56:51,632 - Sampler - INFO - Sampled 5000 rows from the dataset.
-2025-01-06 17:56:51,897 - Cafd - INFO - Processing search space: <SearchSpace_bit.SearchSpace object at 0x0000019B5ABFFBB0>
-2025-01-06 17:56:51,897 - Cafd - INFO - Processing search space: <SearchSpace_bit.SearchSpace object at 0x0000019B5C261EB0>
-2025-01-06 17:56:51,898 - Cafd - INFO - Processing search space: <SearchSpace_bit.SearchSpace object at 0x0000019B5C261DF0>
-2025-01-06 17:56:51,898 - Cafd - INFO - Processing search space: <SearchSpace_bit.SearchSpace object at 0x0000019B5C261EE0>
-2025-01-06 17:56:51,898 - Cafd - INFO - Processing search space: <SearchSpace_bit.SearchSpace object at 0x0000019B5C261F10>
-2025-01-06 17:56:51,898 - Cafd - INFO - Processing search space: <SearchSpace_bit.SearchSpace object at 0x0000019B5C261F40>
-2025-01-06 17:56:51,900 - Cafd - INFO - Processing search space: <SearchSpace_bit.SearchSpace object at 0x0000019B5C261F70>
-2025-01-06 17:56:51,900 - Cafd - INFO - Processing search space: <SearchSpace_bit.SearchSpace object at 0x0000019B5C261FA0>
-2025-01-06 17:56:51,900 - Cafd - INFO - Processing search space: <SearchSpace_bit.SearchSpace object at 0x0000019B5C261FD0>
-2025-01-06 17:56:51,900 - Cafd - INFO - Processing search space: <SearchSpace_bit.SearchSpace object at 0x0000019B5BE90040>
-2025-01-06 17:56:51,900 - Cafd - INFO - Processing search space: <SearchSpace_bit.SearchSpace object at 0x0000019B5BE90070>
-2025-01-06 17:56:51,900 - Cafd - INFO - Processing search space: <SearchSpace_bit.SearchSpace object at 0x0000019B5BE900A0>
-2025-01-06 17:56:51,901 - Cafd - INFO - Processing search space: <SearchSpace_bit.SearchSpace object at 0x0000019B5BE900D0>
-2025-01-06 17:56:51,901 - Cafd - INFO - Processing search space: <SearchSpace_bit.SearchSpace object at 0x0000019B5BE90100>
-2025-01-06 17:56:51,901 - Cafd - INFO - Processing search space: <SearchSpace_bit.SearchSpace object at 0x0000019B5BE90130>
-2025-01-06 17:56:51,901 - Cafd - INFO - Processing search space: <SearchSpace_bit.SearchSpace object at 0x0000019B5BE90160>
-2025-01-06 17:56:51,901 - Cafd - INFO - Processing search space: <SearchSpace_bit.SearchSpace object at 0x0000019B5BE90190>
-2025-01-06 17:56:51,901 - Cafd - INFO - Processing search space: <SearchSpace_bit.SearchSpace object at 0x0000019B5BE901C0>
-2025-01-06 17:56:51,905 - Correlation_utils - INFO - 计算列 column1 和列 ['column2'] 之间的相关性 (φ²): 1.0000000000000002
-2025-01-06 17:56:51,907 - Correlation_utils - INFO - 计算列 column1 和列 ['column3'] 之间的相关性 (φ²): 0.0013532185758281159
-2025-01-06 17:56:51,908 - Correlation_utils - INFO - 计算列 column1 和列 ['column4'] 之间的相关性 (φ²): 0.00048532288107673224
-2025-01-06 17:56:51,909 - Correlation_utils - INFO - 计算列 column1 和列 ['column5'] 之间的相关性 (φ²): 0.0011868517229694452
-2025-01-06 17:56:51,910 - Correlation_utils - INFO - 计算列 column1 和列 ['column6'] 之间的相关性 (φ²): 0.0010162235952783088
-2025-01-06 17:56:51,911 - Correlation_utils - INFO - 计算列 column1 和列 ['column7'] 之间的相关性 (φ²): 0.0005972270439130782
-2025-01-06 17:56:51,912 - Correlation_utils - INFO - 计算列 column1 和列 ['column8'] 之间的相关性 (φ²): 0.0016463662562558046
-2025-01-06 17:56:51,913 - Correlation_utils - INFO - 计算列 column1 和列 ['column9'] 之间的相关性 (φ²): 0.0006250720540490335
-2025-01-06 17:56:51,914 - Correlation_utils - INFO - 计算列 column1 和列 ['column10'] 之间的相关性 (φ²): 0.0019816180319126454
-2025-01-06 17:56:51,915 - Correlation_utils - INFO - 计算列 column1 和列 ['column11'] 之间的相关性 (φ²): 0.00102954466105371
-2025-01-06 17:56:51,916 - Correlation_utils - INFO - 计算列 column1 和列 ['column12'] 之间的相关性 (φ²): 0.0013803980300950715
-2025-01-06 17:56:51,917 - Correlation_utils - INFO - 计算列 column1 和列 ['column13'] 之间的相关性 (φ²): 0.009700828749248986
-2025-01-06 17:56:51,918 - Correlation_utils - INFO - 计算列 column1 和列 ['column14'] 之间的相关性 (φ²): 0.000561393843522392
-2025-01-06 17:56:51,921 - Correlation_utils - INFO - 计算列 column1 和列 ['column15'] 之间的相关性 (φ²): 0.0011148104188647865
-2025-01-06 17:56:51,922 - Correlation_utils - INFO - 计算列 column4 和列 ['column1'] 之间的相关性 (φ²): 0.00048532288107673213
-2025-01-06 17:56:51,923 - Correlation_utils - INFO - 计算列 column1 和列 ['column16'] 之间的相关性 (φ²): 0.000537435605714713
-2025-01-06 17:56:51,925 - Correlation_utils - INFO - 计算列 column5 和列 ['column1'] 之间的相关性 (φ²): 0.001186851722969445
-2025-01-06 17:56:51,926 - Correlation_utils - INFO - 计算列 column4 和列 ['column2'] 之间的相关性 (φ²): 0.00019796340604031062
-2025-01-06 17:56:51,928 - Correlation_utils - INFO - 计算列 column2 和列 ['column1'] 之间的相关性 (φ²): 1.0000000000000002
-2025-01-06 17:56:51,929 - Correlation_utils - INFO - 计算列 column3 和列 ['column1'] 之间的相关性 (φ²): 0.0013532185758281159
-2025-01-06 17:56:51,930 - Correlation_utils - INFO - 计算列 column8 和列 ['column1'] 之间的相关性 (φ²): 0.0016463662562558046
-2025-01-06 17:56:51,931 - Correlation_utils - INFO - 计算列 column1 和列 ['column17'] 之间的相关性 (φ²): 0.0008213556153196451
-2025-01-06 17:56:51,932 - Correlation_utils - INFO - 计算列 column6 和列 ['column1'] 之间的相关性 (φ²): 0.0010162235952783088
-2025-01-06 17:56:51,933 - Correlation_utils - INFO - 计算列 column9 和列 ['column1'] 之间的相关性 (φ²): 0.0006250720540490336
-2025-01-06 17:56:51,935 - Correlation_utils - INFO - 计算列 column5 和列 ['column2'] 之间的相关性 (φ²): 0.0004499236069042347
-2025-01-06 17:56:51,936 - Correlation_utils - INFO - 计算列 column7 和列 ['column1'] 之间的相关性 (φ²): 0.0005972270439130782
-2025-01-06 17:56:51,937 - Correlation_utils - INFO - 计算列 column11 和列 ['column1'] 之间的相关性 (φ²): 0.00102954466105371
-2025-01-06 17:56:51,938 - Correlation_utils - INFO - 计算列 column10 和列 ['column1'] 之间的相关性 (φ²): 0.001981618031912646
-2025-01-06 17:56:51,939 - Correlation_utils - INFO - 计算列 column4 和列 ['column3'] 之间的相关性 (φ²): 1.0
-2025-01-06 17:56:51,940 - Correlation_utils - INFO - 计算列 column18 和列 ['column1'] 之间的相关性 (φ²): 0.0007573231330541237
-2025-01-06 17:56:51,943 - Correlation_utils - INFO - 计算列 column12 和列 ['column1'] 之间的相关性 (φ²): 0.0013803980300950713
-2025-01-06 17:56:51,944 - SearchSpace_bit - INFO - 发现函数依赖: ['column1'] -> column2
-2025-01-06 17:56:51,945 - Correlation_utils - INFO - 计算列 column14 和列 ['column1'] 之间的相关性 (φ²): 0.0005613938435223921
-2025-01-06 17:56:51,946 - Correlation_utils - INFO - 计算列 column17 和列 ['column1'] 之间的相关性 (φ²): 0.000821355615319645
-2025-01-06 17:56:51,948 - Correlation_utils - INFO - 计算列 column15 和列 ['column1'] 之间的相关性 (φ²): 0.0011148104188647863
-2025-01-06 17:56:51,949 - Correlation_utils - INFO - 计算列 column3 和列 ['column2'] 之间的相关性 (φ²): 0.0010227661255526512
-2025-01-06 17:56:51,950 - Correlation_utils - INFO - 计算列 column8 和列 ['column2'] 之间的相关性 (φ²): 0.0017579817167780651
-2025-01-06 17:56:51,951 - Correlation_utils - INFO - 计算列 column16 和列 ['column1'] 之间的相关性 (φ²): 0.0005374356057147133
-2025-01-06 17:56:51,952 - Correlation_utils - INFO - 计算列 column1 和列 ['column18'] 之间的相关性 (φ²): 0.0007573231330541237
-2025-01-06 17:56:51,953 - Correlation_utils - INFO - 计算列 column6 和列 ['column2'] 之间的相关性 (φ²): 0.0012047510198827166
-2025-01-06 17:56:51,954 - Correlation_utils - INFO - 计算列 column9 和列 ['column2'] 之间的相关性 (φ²): 0.0005721221363450428
-2025-01-06 17:56:51,955 - Correlation_utils - INFO - 计算列 column5 和列 ['column3'] 之间的相关性 (φ²): 0.0001539647599057206
-2025-01-06 17:56:51,956 - Correlation_utils - INFO - 计算列 column7 和列 ['column2'] 之间的相关性 (φ²): 0.0003081149558859825
-2025-01-06 17:56:51,957 - Correlation_utils - INFO - 计算列 column11 和列 ['column2'] 之间的相关性 (φ²): 0.0009884474563851711
-2025-01-06 17:56:51,958 - Correlation_utils - INFO - 计算列 column10 和列 ['column2'] 之间的相关性 (φ²): 0.0017556167285071392
-2025-01-06 17:56:51,959 - SearchSpace_bit - INFO - 发现函数依赖: ['column3'] -> column4
-2025-01-06 17:56:51,961 - Correlation_utils - INFO - 计算列 column18 和列 ['column2'] 之间的相关性 (φ²): 0.00039133199524106856
-2025-01-06 17:56:51,962 - Correlation_utils - INFO - 计算列 column12 和列 ['column2'] 之间的相关性 (φ²): 0.001624223491096216
-2025-01-06 17:56:51,963 - Correlation_utils - INFO - 计算列 column2 和列 ['column3'] 之间的相关性 (φ²): 0.001022766125552651
-2025-01-06 17:56:51,964 - Correlation_utils - INFO - 计算列 column14 和列 ['column2'] 之间的相关性 (φ²): 0.00025067103961375054
-2025-01-06 17:56:51,965 - Correlation_utils - INFO - 计算列 column17 和列 ['column2'] 之间的相关性 (φ²): 0.00047240103799666306
-2025-01-06 17:56:51,966 - Correlation_utils - INFO - 计算列 column15 和列 ['column2'] 之间的相关性 (φ²): 0.0006417001623622378
-2025-01-06 17:56:51,967 - Correlation_utils - INFO - 计算列 column3 和列 ['column4'] 之间的相关性 (φ²): 1.0
-2025-01-06 17:56:51,968 - Correlation_utils - INFO - 计算列 column8 和列 ['column3'] 之间的相关性 (φ²): 0.0008596168759114054
-2025-01-06 17:56:51,969 - Correlation_utils - INFO - 计算列 column16 和列 ['column2'] 之间的相关性 (φ²): 0.0004047137179238163
-2025-01-06 17:56:51,970 - Correlation_utils - INFO - 计算列 column6 和列 ['column3'] 之间的相关性 (φ²): 0.0013475950860712717
-2025-01-06 17:56:51,971 - Correlation_utils - INFO - 计算列 column9 和列 ['column3'] 之间的相关性 (φ²): 0.0009275959626300168
-2025-01-06 17:56:51,972 - Correlation_utils - INFO - 计算列 column5 和列 ['column4'] 之间的相关性 (φ²): 9.729646288581422e-05
-2025-01-06 17:56:51,973 - Correlation_utils - INFO - 计算列 column7 和列 ['column3'] 之间的相关性 (φ²): 0.00037584872557319834
-2025-01-06 17:56:51,974 - Correlation_utils - INFO - 计算列 column11 和列 ['column3'] 之间的相关性 (φ²): 0.0009948456562125386
-2025-01-06 17:56:51,975 - Correlation_utils - INFO - 计算列 column10 和列 ['column3'] 之间的相关性 (φ²): 0.0014900490676258294
-2025-01-06 17:56:51,976 - Correlation_utils - INFO - 计算列 column4 和列 ['column5'] 之间的相关性 (φ²): 9.729646288581422e-05
-2025-01-06 17:56:51,978 - Correlation_utils - INFO - 计算列 column18 和列 ['column3'] 之间的相关性 (φ²): 0.00033067247376887874
-2025-01-06 17:56:51,978 - Correlation_utils - INFO - 计算列 column12 和列 ['column3'] 之间的相关性 (φ²): 0.0015762363087578116
-2025-01-06 17:56:51,980 - Correlation_utils - INFO - 计算列 column2 和列 ['column4'] 之间的相关性 (φ²): 0.00019796340604031062
-2025-01-06 17:56:51,981 - Correlation_utils - INFO - 计算列 column14 和列 ['column3'] 之间的相关性 (φ²): 0.0001168324475860208
-2025-01-06 17:56:51,982 - Correlation_utils - INFO - 计算列 column17 和列 ['column3'] 之间的相关性 (φ²): 0.0002230930422633123
-2025-01-06 17:56:51,983 - Correlation_utils - INFO - 计算列 column15 和列 ['column3'] 之间的相关性 (φ²): 0.0006091300864446376
-2025-01-06 17:56:51,986 - Correlation_utils - INFO - 计算列 column3 和列 ['column5'] 之间的相关性 (φ²): 0.0001539647599057206
-2025-01-06 17:56:51,987 - Correlation_utils - INFO - 计算列 column8 和列 ['column4'] 之间的相关性 (φ²): 0.0009489507675982182
-2025-01-06 17:56:51,988 - Correlation_utils - INFO - 计算列 column16 和列 ['column3'] 之间的相关性 (φ²): 0.0004577641569242095
-2025-01-06 17:56:51,989 - Correlation_utils - INFO - 计算列 column6 和列 ['column4'] 之间的相关性 (φ²): 0.0016032147760060309
-2025-01-06 17:56:51,990 - Correlation_utils - INFO - 计算列 column9 和列 ['column4'] 之间的相关性 (φ²): 0.0006310250504771641
-2025-01-06 17:56:51,991 - Correlation_utils - INFO - 计算列 column5 和列 ['column6'] 之间的相关性 (φ²): 0.002123344579570385
-2025-01-06 17:56:51,992 - Correlation_utils - INFO - 计算列 column7 和列 ['column4'] 之间的相关性 (φ²): 0.00031832846070473943
-2025-01-06 17:56:51,993 - Correlation_utils - INFO - 计算列 column11 和列 ['column4'] 之间的相关性 (φ²): 0.0007427433355259022
-2025-01-06 17:56:51,994 - Correlation_utils - INFO - 计算列 column10 和列 ['column4'] 之间的相关性 (φ²): 0.0009298429054547786
-2025-01-06 17:56:51,995 - Correlation_utils - INFO - 计算列 column4 和列 ['column6'] 之间的相关性 (φ²): 0.0016032147760060304
-2025-01-06 17:56:51,998 - Correlation_utils - INFO - 计算列 column18 和列 ['column4'] 之间的相关性 (φ²): 0.0003539582910509309
-2025-01-06 17:56:51,999 - Correlation_utils - INFO - 计算列 column12 和列 ['column4'] 之间的相关性 (φ²): 0.0015352198650245776
-2025-01-06 17:56:52,000 - Correlation_utils - INFO - 计算列 column2 和列 ['column5'] 之间的相关性 (φ²): 0.0004499236069042348
-2025-01-06 17:56:52,001 - Correlation_utils - INFO - 计算列 column14 和列 ['column4'] 之间的相关性 (φ²): 4.868351268070187e-05
-2025-01-06 17:56:52,002 - Correlation_utils - INFO - 计算列 column17 和列 ['column4'] 之间的相关性 (φ²): 0.00013720931278087545
-2025-01-06 17:56:52,002 - Correlation_utils - INFO - 计算列 column15 和列 ['column4'] 之间的相关性 (φ²): 0.0006874920534328184
-2025-01-06 17:56:52,003 - Correlation_utils - INFO - 计算列 column3 和列 ['column6'] 之间的相关性 (φ²): 0.001347595086071272
-2025-01-06 17:56:52,005 - Correlation_utils - INFO - 计算列 column8 和列 ['column5'] 之间的相关性 (φ²): 0.0010253119628098985
-2025-01-06 17:56:52,006 - Correlation_utils - INFO - 计算列 column16 和列 ['column4'] 之间的相关性 (φ²): 0.0006469501079372882
-2025-01-06 17:56:52,008 - Correlation_utils - INFO - 计算列 column6 和列 ['column5'] 之间的相关性 (φ²): 0.0021233445795703844
-2025-01-06 17:56:52,009 - Correlation_utils - INFO - 计算列 column9 和列 ['column5'] 之间的相关性 (φ²): 0.0014108676550826447
-2025-01-06 17:56:52,010 - Correlation_utils - INFO - 计算列 column5 和列 ['column7'] 之间的相关性 (φ²): 0.12465942002023005
-2025-01-06 17:56:52,011 - Correlation_utils - INFO - 计算列 column7 和列 ['column5'] 之间的相关性 (φ²): 0.12465942002023003
-2025-01-06 17:56:52,012 - Correlation_utils - INFO - 计算列 column11 和列 ['column5'] 之间的相关性 (φ²): 0.0007515643581133437
-2025-01-06 17:56:52,013 - Correlation_utils - INFO - 计算列 column10 和列 ['column5'] 之间的相关性 (φ²): 0.0014496524433682935
-2025-01-06 17:56:52,015 - Correlation_utils - INFO - 计算列 column4 和列 ['column7'] 之间的相关性 (φ²): 0.00031832846070473943
-2025-01-06 17:56:52,016 - Correlation_utils - INFO - 计算列 column18 和列 ['column5'] 之间的相关性 (φ²): 0.0008581617974421217
-2025-01-06 17:56:52,017 - Correlation_utils - INFO - 计算列 column12 和列 ['column5'] 之间的相关性 (φ²): 0.0014587892942485323
-2025-01-06 17:56:52,018 - Correlation_utils - INFO - 计算列 column2 和列 ['column6'] 之间的相关性 (φ²): 0.0012047510198827168
-2025-01-06 17:56:52,019 - Correlation_utils - INFO - 计算列 column14 和列 ['column5'] 之间的相关性 (φ²): 0.0006685964739769085
-2025-01-06 17:56:52,020 - Correlation_utils - INFO - 计算列 column17 和列 ['column5'] 之间的相关性 (φ²): 0.00048471854307982387
-2025-01-06 17:56:52,021 - Correlation_utils - INFO - 计算列 column15 和列 ['column5'] 之间的相关性 (φ²): 0.000530399330547461
-2025-01-06 17:56:52,022 - Correlation_utils - INFO - 计算列 column3 和列 ['column7'] 之间的相关性 (φ²): 0.0003758487255731983
-2025-01-06 17:56:52,023 - Correlation_utils - INFO - 计算列 column8 和列 ['column6'] 之间的相关性 (φ²): 0.0014988671202368366
-2025-01-06 17:56:52,025 - Correlation_utils - INFO - 计算列 column16 和列 ['column5'] 之间的相关性 (φ²): 0.00048253269025946166
-2025-01-06 17:56:52,026 - Correlation_utils - INFO - 计算列 column6 和列 ['column7'] 之间的相关性 (φ²): 0.3201372338814159
-2025-01-06 17:56:52,026 - Correlation_utils - WARNING - 期望分布频数表中超过 20% 的格子期望计数未大于 5，进行归并操作。
-2025-01-06 17:56:52,028 - Correlation_utils - INFO - 计算列 column5 和列 ['column8'] 之间的相关性 (φ²): 0.0010253119628098985
-2025-01-06 17:56:52,029 - Correlation_utils - INFO - 计算列 column7 和列 ['column6'] 之间的相关性 (φ²): 0.3201372338814158
-2025-01-06 17:56:52,031 - Correlation_utils - INFO - 计算列 column11 和列 ['column6'] 之间的相关性 (φ²): 0.0017440079805459414
-2025-01-06 17:56:52,032 - Correlation_utils - INFO - 计算列 column10 和列 ['column6'] 之间的相关性 (φ²): 0.0017714066836831677
-2025-01-06 17:56:52,033 - Correlation_utils - INFO - 计算列 column4 和列 ['column8'] 之间的相关性 (φ²): 0.000948950767598218
-2025-01-06 17:56:52,034 - Correlation_utils - INFO - 计算列 column18 和列 ['column6'] 之间的相关性 (φ²): 0.0018190097029674565
-2025-01-06 17:56:52,035 - Correlation_utils - INFO - 计算列 column12 和列 ['column6'] 之间的相关性 (φ²): 0.0006576010260571183
-2025-01-06 17:56:52,036 - Correlation_utils - INFO - 计算列 column2 和列 ['column7'] 之间的相关性 (φ²): 0.0003081149558859825
-2025-01-06 17:56:52,037 - Correlation_utils - INFO - 计算列 column14 和列 ['column6'] 之间的相关性 (φ²): 0.001746432602268189
-2025-01-06 17:56:52,040 - Correlation_utils - INFO - 计算列 column17 和列 ['column6'] 之间的相关性 (φ²): 0.0017584218337718654
-2025-01-06 17:56:52,041 - Correlation_utils - INFO - 计算列 column15 和列 ['column6'] 之间的相关性 (φ²): 0.0007515298047921825
-2025-01-06 17:56:52,042 - Correlation_utils - INFO - 计算列 column3 和列 ['column8'] 之间的相关性 (φ²): 0.0008596168759114053
-2025-01-06 17:56:52,043 - Correlation_utils - INFO - 计算列 column8 和列 ['column7'] 之间的相关性 (φ²): 0.0010982375430987766
-2025-01-06 17:56:52,044 - Correlation_utils - INFO - 计算列 column16 和列 ['column6'] 之间的相关性 (φ²): 0.001343820457748529
-2025-01-06 17:56:52,045 - Correlation_utils - INFO - 计算列 column6 和列 ['column8'] 之间的相关性 (φ²): 0.0014988671202368368
-2025-01-06 17:56:52,046 - Incorporate_into - INFO - 没有可归并的行或列，无法完成归并。
-2025-01-06 17:56:52,047 - Correlation_utils - INFO - 计算列 column5 和列 ['column9'] 之间的相关性 (φ²): 0.001410867655082645
-2025-01-06 17:56:52,048 - Correlation_utils - INFO - 计算列 column7 和列 ['column8'] 之间的相关性 (φ²): 0.0010982375430987766
-2025-01-06 17:56:52,049 - Correlation_utils - INFO - 计算列 column11 和列 ['column7'] 之间的相关性 (φ²): 0.0020346605645712433
-2025-01-06 17:56:52,050 - Correlation_utils - INFO - 计算列 column10 和列 ['column7'] 之间的相关性 (φ²): 0.0025178221149503043
-2025-01-06 17:56:52,051 - Correlation_utils - INFO - 计算列 column4 和列 ['column9'] 之间的相关性 (φ²): 0.0006310250504771641
-2025-01-06 17:56:52,052 - Correlation_utils - INFO - 计算列 column18 和列 ['column7'] 之间的相关性 (φ²): 0.0003465444451991397
-2025-01-06 17:56:52,054 - Correlation_utils - INFO - 计算列 column12 和列 ['column7'] 之间的相关性 (φ²): 0.000694913141560951
-2025-01-06 17:56:52,055 - Correlation_utils - INFO - 计算列 column2 和列 ['column8'] 之间的相关性 (φ²): 0.0017579817167780655
-2025-01-06 17:56:52,056 - Correlation_utils - INFO - 计算列 column14 和列 ['column7'] 之间的相关性 (φ²): 0.00021545984378038653
-2025-01-06 17:56:52,057 - Correlation_utils - INFO - 计算列 column17 和列 ['column7'] 之间的相关性 (φ²): 0.0005964933467199698
-2025-01-06 17:56:52,059 - Correlation_utils - INFO - 计算列 column15 和列 ['column7'] 之间的相关性 (φ²): 0.0004364565822454205
-2025-01-06 17:56:52,060 - Correlation_utils - INFO - 计算列 column3 和列 ['column9'] 之间的相关性 (φ²): 0.0009275959626300168
-2025-01-06 17:56:52,061 - Correlation_utils - INFO - 计算列 column8 和列 ['column9'] 之间的相关性 (φ²): 0.0006849036828056976
-2025-01-06 17:56:52,063 - Correlation_utils - INFO - 计算列 column16 和列 ['column7'] 之间的相关性 (φ²): 5.6982316656097655e-05
-2025-01-06 17:56:52,064 - Correlation_utils - WARNING - 期望分布频数表中超过 20% 的格子期望计数未大于 5，进行归并操作。
-2025-01-06 17:56:52,064 - Correlation_utils - WARNING - 归并操作失败，相关性设置为 0。
-2025-01-06 17:56:52,065 - Correlation_utils - INFO - 计算列 column5 和列 ['column10'] 之间的相关性 (φ²): 0.0014496524433682935
-2025-01-06 17:56:52,066 - Correlation_utils - INFO - 计算列 column7 和列 ['column9'] 之间的相关性 (φ²): 0.0020194813802002303
-2025-01-06 17:56:52,067 - Correlation_utils - INFO - 计算列 column11 和列 ['column8'] 之间的相关性 (φ²): 0.0006865180084873338
-2025-01-06 17:56:52,068 - Correlation_utils - INFO - 计算列 column10 和列 ['column8'] 之间的相关性 (φ²): 0.35735051283315455
-2025-01-06 17:56:52,069 - Correlation_utils - INFO - 计算列 column4 和列 ['column10'] 之间的相关性 (φ²): 0.0009298429054547786
-2025-01-06 17:56:52,070 - Correlation_utils - INFO - 计算列 column18 和列 ['column8'] 之间的相关性 (φ²): 0.0007187948039550586
-2025-01-06 17:56:52,071 - Correlation_utils - INFO - 计算列 column12 和列 ['column8'] 之间的相关性 (φ²): 0.0011184088528559722
-2025-01-06 17:56:52,072 - Correlation_utils - INFO - 计算列 column2 和列 ['column9'] 之间的相关性 (φ²): 0.0005721221363450427
-2025-01-06 17:56:52,073 - Correlation_utils - INFO - 计算列 column14 和列 ['column8'] 之间的相关性 (φ²): 0.001285532000778909
-2025-01-06 17:56:52,074 - Correlation_utils - INFO - 计算列 column17 和列 ['column8'] 之间的相关性 (φ²): 0.0007627687628793014
-2025-01-06 17:56:52,075 - Correlation_utils - INFO - 计算列 column15 和列 ['column8'] 之间的相关性 (φ²): 0.0008011379969195576
-2025-01-06 17:56:52,076 - Correlation_utils - INFO - 计算列 column3 和列 ['column10'] 之间的相关性 (φ²): 0.0014900490676258299
-2025-01-06 17:56:52,078 - Correlation_utils - INFO - 计算列 column8 和列 ['column10'] 之间的相关性 (φ²): 0.35735051283315444
-2025-01-06 17:56:52,080 - Correlation_utils - INFO - 计算列 column16 和列 ['column8'] 之间的相关性 (φ²): 0.001047024803890048
-2025-01-06 17:56:52,080 - Incorporate_into - INFO - 没有可归并的行或列，无法完成归并。
-2025-01-06 17:56:52,081 - Correlation_utils - INFO - 计算列 column9 和列 ['column7'] 之间的相关性 (φ²): 0.0020194813802002303
-2025-01-06 17:56:52,082 - Correlation_utils - INFO - 计算列 column5 和列 ['column11'] 之间的相关性 (φ²): 0.0007515643581133436
-2025-01-06 17:56:52,083 - Correlation_utils - INFO - 计算列 column7 和列 ['column10'] 之间的相关性 (φ²): 0.0025178221149503043
-2025-01-06 17:56:52,084 - Correlation_utils - INFO - 计算列 column11 和列 ['column9'] 之间的相关性 (φ²): 0.0008431051895521466
-2025-01-06 17:56:52,085 - Correlation_utils - INFO - 计算列 column10 和列 ['column9'] 之间的相关性 (φ²): 0.19128999698925062
-2025-01-06 17:56:52,086 - Correlation_utils - INFO - 计算列 column4 和列 ['column11'] 之间的相关性 (φ²): 0.0007427433355259019
-2025-01-06 17:56:52,087 - Correlation_utils - WARNING - 期望分布频数表中超过 20% 的格子期望计数未大于 5，进行归并操作。
-2025-01-06 17:56:52,088 - Correlation_utils - INFO - 计算列 column12 和列 ['column9'] 之间的相关性 (φ²): 0.0013452628432136275
-2025-01-06 17:56:52,090 - Correlation_utils - INFO - 计算列 column2 和列 ['column10'] 之间的相关性 (φ²): 0.001755616728507139
-2025-01-06 17:56:52,091 - Correlation_utils - INFO - 计算列 column14 和列 ['column9'] 之间的相关性 (φ²): 0.0011301608943357396
-2025-01-06 17:56:52,092 - Correlation_utils - INFO - 计算列 column17 和列 ['column9'] 之间的相关性 (φ²): 0.0005008889624386263
-2025-01-06 17:56:52,094 - Correlation_utils - INFO - 计算列 column15 和列 ['column9'] 之间的相关性 (φ²): 0.0007869653243852111
-2025-01-06 17:56:52,095 - Correlation_utils - INFO - 计算列 column3 和列 ['column11'] 之间的相关性 (φ²): 0.0009948456562125386
-2025-01-06 17:56:52,096 - Correlation_utils - INFO - 计算列 column8 和列 ['column11'] 之间的相关性 (φ²): 0.000686518008487334
-2025-01-06 17:56:52,097 - Correlation_utils - WARNING - 期望分布频数表中超过 20% 的格子期望计数未大于 5，进行归并操作。
-2025-01-06 17:56:52,097 - Correlation_utils - WARNING - 归并操作失败，相关性设置为 0。
-2025-01-06 17:56:52,098 - Correlation_utils - INFO - 计算列 column9 和列 ['column8'] 之间的相关性 (φ²): 0.000684903682805698
-2025-01-06 17:56:52,099 - Correlation_utils - INFO - 计算列 column5 和列 ['column12'] 之间的相关性 (φ²): 0.0014587892942485323
-2025-01-06 17:56:52,100 - Correlation_utils - INFO - 计算列 column7 和列 ['column11'] 之间的相关性 (φ²): 0.0020346605645712433
-2025-01-06 17:56:52,101 - Correlation_utils - INFO - 计算列 column11 和列 ['column10'] 之间的相关性 (φ²): 0.0012940362849951867
-2025-01-06 17:56:52,102 - Correlation_utils - INFO - 计算列 column10 和列 ['column11'] 之间的相关性 (φ²): 0.0012940362849951867
-2025-01-06 17:56:52,103 - Correlation_utils - INFO - 计算列 column4 和列 ['column12'] 之间的相关性 (φ²): 0.0015352198650245774
-2025-01-06 17:56:52,103 - Correlation_utils - INFO - 计算列 column18 和列 ['column9'] 之间的相关性 (φ²): 0.0014966279385652198
-2025-01-06 17:56:52,105 - Correlation_utils - INFO - 计算列 column12 和列 ['column10'] 之间的相关性 (φ²): 0.0014873492626182039
-2025-01-06 17:56:52,105 - Correlation_utils - INFO - 计算列 column2 和列 ['column11'] 之间的相关性 (φ²): 0.0009884474563851711
-2025-01-06 17:56:52,107 - Correlation_utils - INFO - 计算列 column14 和列 ['column10'] 之间的相关性 (φ²): 0.001691710554658723
-2025-01-06 17:56:52,108 - Correlation_utils - INFO - 计算列 column17 和列 ['column10'] 之间的相关性 (φ²): 0.001513444962336037
-2025-01-06 17:56:52,109 - Correlation_utils - INFO - 计算列 column15 和列 ['column10'] 之间的相关性 (φ²): 0.0003476777053942204
-2025-01-06 17:56:52,110 - Correlation_utils - INFO - 计算列 column3 和列 ['column12'] 之间的相关性 (φ²): 0.0015762363087578118
-2025-01-06 17:56:52,111 - Correlation_utils - INFO - 计算列 column8 和列 ['column12'] 之间的相关性 (φ²): 0.001118408852855972
-2025-01-06 17:56:52,112 - Correlation_utils - INFO - 计算列 column16 和列 ['column9'] 之间的相关性 (φ²): 0.001924606282974591
-2025-01-06 17:56:52,113 - Correlation_utils - INFO - 计算列 column6 和列 ['column10'] 之间的相关性 (φ²): 0.0017714066836831677
-2025-01-06 17:56:52,114 - Correlation_utils - INFO - 计算列 column9 和列 ['column10'] 之间的相关性 (φ²): 0.1912899969892506
-2025-01-06 17:56:52,115 - Correlation_utils - INFO - 计算列 column5 和列 ['column13'] 之间的相关性 (φ²): 0.011420432565742501
-2025-01-06 17:56:52,116 - Correlation_utils - INFO - 计算列 column7 和列 ['column12'] 之间的相关性 (φ²): 0.000694913141560951
-2025-01-06 17:56:52,117 - Correlation_utils - INFO - 计算列 column11 和列 ['column12'] 之间的相关性 (φ²): 0.0014327879399347865
-2025-01-06 17:56:52,118 - Correlation_utils - INFO - 计算列 column10 和列 ['column12'] 之间的相关性 (φ²): 0.001487349262618204
-2025-01-06 17:56:52,119 - Correlation_utils - INFO - 计算列 column4 和列 ['column13'] 之间的相关性 (φ²): 0.009081735842993514
-2025-01-06 17:56:52,121 - Correlation_utils - INFO - 计算列 column18 和列 ['column10'] 之间的相关性 (φ²): 0.0006594787044333125
-2025-01-06 17:56:52,122 - Correlation_utils - INFO - 计算列 column12 和列 ['column11'] 之间的相关性 (φ²): 0.001432787939934786
-2025-01-06 17:56:52,123 - Correlation_utils - INFO - 计算列 column2 和列 ['column12'] 之间的相关性 (φ²): 0.0016242234910962155
-2025-01-06 17:56:52,124 - Correlation_utils - INFO - 计算列 column14 和列 ['column11'] 之间的相关性 (φ²): 0.0009869867259759634
-2025-01-06 17:56:52,125 - Correlation_utils - INFO - 计算列 column17 和列 ['column11'] 之间的相关性 (φ²): 0.0004933549773176636
-2025-01-06 17:56:52,126 - Correlation_utils - INFO - 计算列 column15 和列 ['column11'] 之间的相关性 (φ²): 0.0007323012824424119
-2025-01-06 17:56:52,127 - Correlation_utils - INFO - 计算列 column3 和列 ['column13'] 之间的相关性 (φ²): 0.009064931030806885
-2025-01-06 17:56:52,128 - Correlation_utils - INFO - 计算列 column8 和列 ['column13'] 之间的相关性 (φ²): 0.008346803336962914
-2025-01-06 17:56:52,129 - Correlation_utils - INFO - 计算列 column16 和列 ['column10'] 之间的相关性 (φ²): 0.00232360515127973
-2025-01-06 17:56:52,130 - Correlation_utils - INFO - 计算列 column6 和列 ['column11'] 之间的相关性 (φ²): 0.0017440079805459406
-2025-01-06 17:56:52,131 - Correlation_utils - INFO - 计算列 column9 和列 ['column11'] 之间的相关性 (φ²): 0.0008431051895521466
-2025-01-06 17:56:52,132 - Correlation_utils - INFO - 计算列 column5 和列 ['column14'] 之间的相关性 (φ²): 0.0006685964739769085
-2025-01-06 17:56:52,133 - Correlation_utils - INFO - 计算列 column7 和列 ['column13'] 之间的相关性 (φ²): 0.010061299306144026
-2025-01-06 17:56:52,135 - Correlation_utils - INFO - 计算列 column11 和列 ['column13'] 之间的相关性 (φ²): 1.0000000000000004
-2025-01-06 17:56:52,137 - Correlation_utils - INFO - 计算列 column10 和列 ['column13'] 之间的相关性 (φ²): 0.009282939398248882
-2025-01-06 17:56:52,138 - Correlation_utils - INFO - 计算列 column4 和列 ['column14'] 之间的相关性 (φ²): 4.868351268070187e-05
-2025-01-06 17:56:52,139 - Correlation_utils - INFO - 计算列 column18 和列 ['column11'] 之间的相关性 (φ²): 0.0008540097580216287
-2025-01-06 17:56:52,140 - Correlation_utils - INFO - 计算列 column12 和列 ['column13'] 之间的相关性 (φ²): 1.0000000000000009
-2025-01-06 17:56:52,141 - Correlation_utils - INFO - 计算列 column2 和列 ['column13'] 之间的相关性 (φ²): 0.009308668812819387
-2025-01-06 17:56:52,142 - Correlation_utils - INFO - 计算列 column14 和列 ['column12'] 之间的相关性 (φ²): 0.0018086103552796145
-2025-01-06 17:56:52,143 - Correlation_utils - INFO - 计算列 column17 和列 ['column12'] 之间的相关性 (φ²): 0.0017010732534211762
-2025-01-06 17:56:52,144 - Correlation_utils - INFO - 计算列 column15 和列 ['column12'] 之间的相关性 (φ²): 0.0012850310282803384
-2025-01-06 17:56:52,145 - Correlation_utils - INFO - 计算列 column3 和列 ['column14'] 之间的相关性 (φ²): 0.0001168324475860208
-2025-01-06 17:56:52,146 - Correlation_utils - INFO - 计算列 column8 和列 ['column14'] 之间的相关性 (φ²): 0.0012855320007789095
-2025-01-06 17:56:52,147 - Correlation_utils - INFO - 计算列 column16 和列 ['column11'] 之间的相关性 (φ²): 0.0006574633391444223
-2025-01-06 17:56:52,148 - Correlation_utils - INFO - 计算列 column6 和列 ['column12'] 之间的相关性 (φ²): 0.0006576010260571184
-2025-01-06 17:56:52,149 - Correlation_utils - INFO - 计算列 column9 和列 ['column12'] 之间的相关性 (φ²): 0.001345262843213627
-2025-01-06 17:56:52,150 - Correlation_utils - INFO - 计算列 column5 和列 ['column15'] 之间的相关性 (φ²): 0.000530399330547461
-2025-01-06 17:56:52,152 - Correlation_utils - INFO - 计算列 column7 和列 ['column14'] 之间的相关性 (φ²): 0.00021545984378038653
-2025-01-06 17:56:52,154 - SearchSpace_bit - INFO - 发现函数依赖: ['column13'] -> column11
-2025-01-06 17:56:52,155 - Correlation_utils - INFO - 计算列 column10 和列 ['column14'] 之间的相关性 (φ²): 0.0016917105546587234
-2025-01-06 17:56:52,156 - Correlation_utils - INFO - 计算列 column4 和列 ['column15'] 之间的相关性 (φ²): 0.0006874920534328186
-2025-01-06 17:56:52,157 - Correlation_utils - INFO - 计算列 column18 和列 ['column12'] 之间的相关性 (φ²): 0.0012548402206247994
-2025-01-06 17:56:52,158 - SearchSpace_bit - INFO - 发现函数依赖: ['column13'] -> column12
-2025-01-06 17:56:52,159 - Correlation_utils - INFO - 计算列 column2 和列 ['column14'] 之间的相关性 (φ²): 0.0002506710396137505
-2025-01-06 17:56:52,161 - Correlation_utils - INFO - 计算列 column14 和列 ['column13'] 之间的相关性 (φ²): 0.011944117099972056
-2025-01-06 17:56:52,162 - Correlation_utils - INFO - 计算列 column17 和列 ['column13'] 之间的相关性 (φ²): 0.008839406347541745
-2025-01-06 17:56:52,163 - Correlation_utils - WARNING - 期望分布频数表中超过 20% 的格子期望计数未大于 5，进行归并操作。
-2025-01-06 17:56:52,164 - Correlation_utils - INFO - 计算列 column3 和列 ['column15'] 之间的相关性 (φ²): 0.0006091300864446375
-2025-01-06 17:56:52,165 - Correlation_utils - INFO - 计算列 column8 和列 ['column15'] 之间的相关性 (φ²): 0.0008011379969195578
-2025-01-06 17:56:52,166 - Correlation_utils - INFO - 计算列 column16 和列 ['column12'] 之间的相关性 (φ²): 0.002361145262986818
-2025-01-06 17:56:52,167 - Correlation_utils - WARNING - 期望分布频数表中超过 20% 的格子期望计数未大于 5，进行归并操作。
-2025-01-06 17:56:52,168 - Correlation_utils - WARNING - 期望分布频数表中超过 20% 的格子期望计数未大于 5，进行归并操作。
-2025-01-06 17:56:52,169 - Correlation_utils - INFO - 计算列 column5 和列 ['column16'] 之间的相关性 (φ²): 0.00048253269025946166
-2025-01-06 17:56:52,170 - Correlation_utils - INFO - 计算列 column7 和列 ['column15'] 之间的相关性 (φ²): 0.0004364565822454206
-2025-01-06 17:56:52,171 - Correlation_utils - INFO - 计算列 column11 和列 ['column14'] 之间的相关性 (φ²): 0.0009869867259759632
-2025-01-06 17:56:52,172 - Correlation_utils - INFO - 计算列 column10 和列 ['column15'] 之间的相关性 (φ²): 0.0003476777053942204
-2025-01-06 17:56:52,173 - Correlation_utils - INFO - 计算列 column4 和列 ['column16'] 之间的相关性 (φ²): 0.0006469501079372882
-2025-01-06 17:56:52,174 - Correlation_utils - WARNING - 期望分布频数表中超过 20% 的格子期望计数未大于 5，进行归并操作。
-2025-01-06 17:56:52,176 - Correlation_utils - INFO - 计算列 column12 和列 ['column14'] 之间的相关性 (φ²): 0.0018086103552796143
-2025-01-06 17:56:52,177 - Correlation_utils - INFO - 计算列 column2 和列 ['column15'] 之间的相关性 (φ²): 0.000641700162362238
-2025-01-06 17:56:52,178 - Correlation_utils - INFO - 计算列 column14 和列 ['column15'] 之间的相关性 (φ²): 0.00012749648697883324
-2025-01-06 17:56:52,179 - Correlation_utils - INFO - 计算列 column17 和列 ['column14'] 之间的相关性 (φ²): 0.00018759497011557147
-2025-01-06 17:56:52,197 - Correlation_utils - INFO - 计算列 column15 和列 ['column13'] 之间的相关性 (φ²): 0.008243190195224535
-2025-01-06 17:56:52,197 - Correlation_utils - INFO - 计算列 column3 和列 ['column16'] 之间的相关性 (φ²): 0.0004577641569242095
-2025-01-06 17:56:52,198 - Correlation_utils - INFO - 计算列 column8 和列 ['column16'] 之间的相关性 (φ²): 0.001047024803890048
-2025-01-06 17:56:52,200 - Correlation_utils - INFO - 计算列 column16 和列 ['column13'] 之间的相关性 (φ²): 0.00972517735310661
-2025-01-06 17:56:52,218 - Incorporate_into - INFO - 没有可归并的行或列，无法完成归并。
-2025-01-06 17:56:52,230 - Correlation_utils - INFO - 计算列 column5 和列 ['column17'] 之间的相关性 (φ²): 0.00048471854307982387
-2025-01-06 17:56:52,231 - Correlation_utils - INFO - 计算列 column7 和列 ['column16'] 之间的相关性 (φ²): 5.6982316656097655e-05
-2025-01-06 17:56:52,237 - Incorporate_into - INFO - 没有可归并的行或列，无法完成归并。
-2025-01-06 17:56:52,238 - Correlation_utils - INFO - 计算列 column11 和列 ['column15'] 之间的相关性 (φ²): 0.0007323012824424119
-2025-01-06 17:56:52,239 - Correlation_utils - INFO - 计算列 column10 和列 ['column16'] 之间的相关性 (φ²): 0.0023236051512797286
-2025-01-06 17:56:52,240 - Correlation_utils - INFO - 计算列 column4 和列 ['column17'] 之间的相关性 (φ²): 0.00013720931278087543
-2025-01-06 17:56:52,256 - Correlation_utils - INFO - 计算列 column18 和列 ['column13'] 之间的相关性 (φ²): 0.009093767811095643
-2025-01-06 17:56:52,257 - Correlation_utils - INFO - 计算列 column12 和列 ['column15'] 之间的相关性 (φ²): 0.0012850310282803386
-2025-01-06 17:56:52,258 - Correlation_utils - INFO - 计算列 column2 和列 ['column16'] 之间的相关性 (φ²): 0.00040471371792381633
-2025-01-06 17:56:52,259 - Correlation_utils - INFO - 计算列 column14 和列 ['column16'] 之间的相关性 (φ²): 0.0007409973664821551
-2025-01-06 17:56:52,260 - Correlation_utils - INFO - 计算列 column17 和列 ['column15'] 之间的相关性 (φ²): 0.0005000945406180164
-2025-01-06 17:56:52,261 - Correlation_utils - INFO - 计算列 column15 和列 ['column14'] 之间的相关性 (φ²): 0.0001274964869788332
-2025-01-06 17:56:52,262 - Correlation_utils - INFO - 计算列 column3 和列 ['column17'] 之间的相关性 (φ²): 0.0002230930422633123
-2025-01-06 17:56:52,264 - Correlation_utils - INFO - 计算列 column8 和列 ['column17'] 之间的相关性 (φ²): 0.0007627687628793014
-2025-01-06 17:56:52,264 - Correlation_utils - INFO - 计算列 column16 和列 ['column14'] 之间的相关性 (φ²): 0.0007409973664821549
-2025-01-06 17:56:52,265 - Correlation_utils - WARNING - 归并操作失败，相关性设置为 0。
-2025-01-06 17:56:52,266 - Correlation_utils - INFO - 计算列 column5 和列 ['column18'] 之间的相关性 (φ²): 0.0008581617974421219
-2025-01-06 17:56:52,266 - Correlation_utils - INFO - 计算列 column7 和列 ['column17'] 之间的相关性 (φ²): 0.0005964933467199699
-2025-01-06 17:56:52,267 - Correlation_utils - WARNING - 归并操作失败，相关性设置为 0。
-2025-01-06 17:56:52,267 - Correlation_utils - INFO - 计算列 column11 和列 ['column16'] 之间的相关性 (φ²): 0.0006574633391444223
-2025-01-06 17:56:52,268 - Correlation_utils - INFO - 计算列 column10 和列 ['column17'] 之间的相关性 (φ²): 0.0015134449623360369
-2025-01-06 17:56:52,269 - Correlation_utils - INFO - 计算列 column4 和列 ['column18'] 之间的相关性 (φ²): 0.0003539582910509309
-2025-01-06 17:56:52,270 - Correlation_utils - INFO - 计算列 column18 和列 ['column14'] 之间的相关性 (φ²): 0.0003691556171641484
-2025-01-06 17:56:52,271 - Correlation_utils - INFO - 计算列 column12 和列 ['column16'] 之间的相关性 (φ²): 0.0023611452629868183
-2025-01-06 17:56:52,272 - Correlation_utils - INFO - 计算列 column2 和列 ['column17'] 之间的相关性 (φ²): 0.00047240103799666306
-2025-01-06 17:56:52,274 - Correlation_utils - INFO - 计算列 column14 和列 ['column17'] 之间的相关性 (φ²): 0.00018759497011557147
-2025-01-06 17:56:52,275 - Correlation_utils - INFO - 计算列 column17 和列 ['column16'] 之间的相关性 (φ²): 0.0005613977194066352
-2025-01-06 17:56:52,276 - Correlation_utils - INFO - 计算列 column15 和列 ['column16'] 之间的相关性 (φ²): 0.0005117376484252285
-2025-01-06 17:56:52,277 - Correlation_utils - INFO - 计算列 column3 和列 ['column18'] 之间的相关性 (φ²): 0.0003306724737688788
-2025-01-06 17:56:52,278 - Correlation_utils - INFO - 计算列 column8 和列 ['column18'] 之间的相关性 (φ²): 0.0007187948039550587
-2025-01-06 17:56:52,279 - Correlation_utils - INFO - 计算列 column16 和列 ['column15'] 之间的相关性 (φ²): 0.0005117376484252285
-2025-01-06 17:56:52,280 - Correlation_utils - INFO - 计算列 column6 和列 ['column14'] 之间的相关性 (φ²): 0.0017464326022681885
-2025-01-06 17:56:52,281 - Correlation_utils - INFO - 计算列 column7 和列 ['column18'] 之间的相关性 (φ²): 0.00034654444519913966
-2025-01-06 17:56:52,281 - Correlation_utils - INFO - 计算列 column9 和列 ['column14'] 之间的相关性 (φ²): 0.0011301608943357396
-2025-01-06 17:56:52,283 - Correlation_utils - INFO - 计算列 column11 和列 ['column17'] 之间的相关性 (φ²): 0.0004933549773176637
-2025-01-06 17:56:52,284 - Correlation_utils - INFO - 计算列 column10 和列 ['column18'] 之间的相关性 (φ²): 0.0006594787044333125
-2025-01-06 17:56:52,285 - Correlation_utils - INFO - 计算列 column18 和列 ['column15'] 之间的相关性 (φ²): 0.0005181222138670535
-2025-01-06 17:56:52,286 - Correlation_utils - INFO - 计算列 column12 和列 ['column17'] 之间的相关性 (φ²): 0.0017010732534211762
-2025-01-06 17:56:52,287 - Correlation_utils - INFO - 计算列 column2 和列 ['column18'] 之间的相关性 (φ²): 0.0003913319952410686
-2025-01-06 17:56:52,288 - Correlation_utils - INFO - 计算列 column14 和列 ['column18'] 之间的相关性 (φ²): 0.0003691556171641485
-2025-01-06 17:56:52,288 - Correlation_utils - INFO - 计算列 column17 和列 ['column18'] 之间的相关性 (φ²): 0.00029860139789520914
-2025-01-06 17:56:52,291 - Correlation_utils - INFO - 计算列 column15 和列 ['column17'] 之间的相关性 (φ²): 0.0005000945406180163
-2025-01-06 17:56:52,292 - Correlation_utils - INFO - 计算列 column16 和列 ['column17'] 之间的相关性 (φ²): 0.0005613977194066353
-2025-01-06 17:56:52,293 - Correlation_utils - INFO - 计算列 column6 和列 ['column15'] 之间的相关性 (φ²): 0.0007515298047921825
-2025-01-06 17:56:52,303 - Correlation_utils - INFO - 计算列 column7 和列 ['column5', 'column6'] 之间的相关性 (φ²): 0.9999999999999998
-2025-01-06 17:56:52,304 - Correlation_utils - INFO - 计算列 column9 和列 ['column15'] 之间的相关性 (φ²): 0.0007869653243852111
-2025-01-06 17:56:52,305 - Correlation_utils - INFO - 计算列 column11 和列 ['column18'] 之间的相关性 (φ²): 0.0008540097580216287
-2025-01-06 17:56:52,315 - Correlation_utils - WARNING - 期望分布频数表中超过 20% 的格子期望计数未大于 5，进行归并操作。
-2025-01-06 17:56:52,316 - Correlation_utils - INFO - 计算列 column18 和列 ['column16'] 之间的相关性 (φ²): 0.0006417404072451438
-2025-01-06 17:56:52,317 - Correlation_utils - INFO - 计算列 column12 和列 ['column18'] 之间的相关性 (φ²): 0.0012548402206247992
-2025-01-06 17:56:52,319 - Correlation_utils - INFO - 计算列 column15 和列 ['column18'] 之间的相关性 (φ²): 0.0005181222138670535
-2025-01-06 17:56:52,320 - Correlation_utils - INFO - 计算列 column16 和列 ['column18'] 之间的相关性 (φ²): 0.0006417404072451438
-2025-01-06 17:56:52,321 - Correlation_utils - INFO - 计算列 column6 和列 ['column16'] 之间的相关性 (φ²): 0.001343820457748529
-2025-01-06 17:56:52,321 - SearchSpace_bit - INFO - 发现函数依赖: ['column5', 'column6'] -> column7
-2025-01-06 17:56:52,322 - Correlation_utils - WARNING - 期望分布频数表中超过 20% 的格子期望计数未大于 5，进行归并操作。
-2025-01-06 17:56:52,334 - Correlation_utils - INFO - 计算列 column10 和列 ['column8', 'column9'] 之间的相关性 (φ²): 1.0000000000000002
-2025-01-06 17:56:52,334 - Correlation_utils - INFO - 计算列 column18 和列 ['column17'] 之间的相关性 (φ²): 0.00029860139789520914
-2025-01-06 17:56:52,336 - Correlation_utils - INFO - 计算列 column6 和列 ['column17'] 之间的相关性 (φ²): 0.001758421833771865
-2025-01-06 17:56:52,337 - Correlation_utils - INFO - 计算列 column9 和列 ['column16'] 之间的相关性 (φ²): 0.0016765193725971567
-2025-01-06 17:56:52,337 - SearchSpace_bit - INFO - 发现函数依赖: ['column8', 'column9'] -> column10
-2025-01-06 17:56:52,339 - Correlation_utils - INFO - 计算列 column6 和列 ['column18'] 之间的相关性 (φ²): 0.0018190097029674563
-2025-01-06 17:56:52,340 - Correlation_utils - INFO - 计算列 column9 和列 ['column17'] 之间的相关性 (φ²): 0.0005008889624386263
-2025-01-06 17:56:52,341 - Correlation_utils - WARNING - 期望分布频数表中超过 20% 的格子期望计数未大于 5，进行归并操作。
-2025-01-06 17:56:52,341 - Incorporate_into - INFO - 没有可归并的行或列，无法完成归并。
-2025-01-06 17:56:52,341 - Correlation_utils - WARNING - 归并操作失败，相关性设置为 0。
-2025-01-06 17:57:35,278 - Correlation_utils - INFO - 计算列 column13 和列 ['column1'] 之间的相关性 (φ²): 0.009700828749248989
-2025-01-06 17:57:44,820 - Correlation_utils - INFO - 计算列 column13 和列 ['column2'] 之间的相关性 (φ²): 0.009308668812819389
-2025-01-06 17:57:58,091 - Correlation_utils - INFO - 计算列 column13 和列 ['column3'] 之间的相关性 (φ²): 0.009064931030806887
-2025-01-06 17:58:05,764 - Correlation_utils - INFO - 计算列 column13 和列 ['column4'] 之间的相关性 (φ²): 0.009081735842993505
-2025-01-06 17:58:07,757 - Correlation_utils - INFO - 计算列 column13 和列 ['column5'] 之间的相关性 (φ²): 0.011420432565742506
-2025-01-06 17:58:08,660 - Correlation_utils - WARNING - 期望分布频数表中超过 20% 的格子期望计数未大于 5，进行归并操作。
-2025-01-06 17:58:08,678 - Incorporate_into - INFO - 没有可归并的行或列，无法完成归并。
-2025-01-06 17:58:08,678 - Correlation_utils - WARNING - 归并操作失败，相关性设置为 0。
-2025-01-06 17:58:09,625 - Correlation_utils - INFO - 计算列 column13 和列 ['column7'] 之间的相关性 (φ²): 0.010061299306144035
-2025-01-06 17:58:13,449 - Correlation_utils - INFO - 计算列 column13 和列 ['column8'] 之间的相关性 (φ²): 0.008346803336962905
-2025-01-06 17:58:14,104 - Correlation_utils - WARNING - 期望分布频数表中超过 20% 的格子期望计数未大于 5，进行归并操作。
-2025-01-06 17:58:14,122 - Incorporate_into - INFO - 没有可归并的行或列，无法完成归并。
-2025-01-06 17:58:14,122 - Correlation_utils - WARNING - 归并操作失败，相关性设置为 0。
-2025-01-06 17:58:15,523 - Correlation_utils - INFO - 计算列 column13 和列 ['column10'] 之间的相关性 (φ²): 0.009282939398248886
-2025-01-06 17:58:16,224 - Correlation_utils - INFO - 计算列 column13 和列 ['column11'] 之间的相关性 (φ²): 0.9999999999999997
-2025-01-06 17:59:25,464 - Correlation_utils - INFO - 计算列 column13 和列 ['column12'] 之间的相关性 (φ²): 1.000000000000001
-2025-01-06 18:01:30,863 - Correlation_utils - INFO - 计算列 column13 和列 ['column14'] 之间的相关性 (φ²): 0.011944117099972054
-2025-01-06 18:01:35,548 - Correlation_utils - WARNING - 期望分布频数表中超过 20% 的格子期望计数未大于 5，进行归并操作。
-2025-01-06 18:01:35,565 - Correlation_utils - INFO - 计算列 column13 和列 ['column15'] 之间的相关性 (φ²): 0.008039837398492867
-2025-01-06 18:01:38,803 - Correlation_utils - INFO - 计算列 column13 和列 ['column16'] 之间的相关性 (φ²): 0.00972517735310661
-2025-01-06 18:01:41,928 - Correlation_utils - INFO - 计算列 column13 和列 ['column17'] 之间的相关性 (φ²): 0.008839406347541745
-2025-01-06 18:01:45,538 - Correlation_utils - WARNING - 期望分布频数表中超过 20% 的格子期望计数未大于 5，进行归并操作。
-2025-01-06 18:01:45,554 - Correlation_utils - INFO - 计算列 column13 和列 ['column18'] 之间的相关性 (φ²): 0.0046847727408655575
-2025-01-06 18:04:24,545 - Correlation_utils - WARNING - 期望分布频数表中超过 20% 的格子期望计数未大于 5，进行归并操作。
-2025-01-06 18:04:27,606 - Incorporate_into - INFO - 没有可归并的行或列，无法完成归并。
-2025-01-06 18:04:30,008 - Correlation_utils - WARNING - 归并操作失败，相关性设置为 0。
+2025-01-11 19:13:59,879 - root - INFO - 全局日志配置已完成！
+2025-01-11 19:13:59,880 - root - INFO - Config:
+	dataset: earthquake.csv
+2025-01-11 19:13:59,880 - root - INFO - Starting CAFD execution...
+2025-01-11 19:13:59,880 - Cafd - INFO - Executing CAFD on dataset: data\earthquake.csv
+2025-01-11 19:13:59,880 - Cafd - INFO - Using ground truth: groundtruth\earthquake.txt
+2025-01-11 19:13:59,880 - Sampler - INFO - Reading dataset from: data\earthquake.csv
+2025-01-11 19:13:59,915 - Sampler - INFO - Sampled 10000 rows from the dataset.
+2025-01-11 19:13:59,938 - Cafd - INFO - Processing search space: <SearchSpace_bit.SearchSpace object at 0x0000013082BE9D90>
+2025-01-11 19:13:59,939 - Correlation_utils - WARNING - 期望分布频数表中超过 20% 的格子期望计数未大于 5，进行归并操作。
+2025-01-11 19:13:59,939 - Correlation_utils - INFO - 计算列 Burglary 和列 ['Earthquake'] 之间的相关性 (φ²): 1.3622879450108724e-08
+2025-01-11 19:13:59,939 - SearchSpace_bit - INFO - 将结果存入全局结论表: (0, 1) -> 1.3622879450108724e-08, 当前搜索空间: 0
+2025-01-11 19:13:59,941 - Correlation_utils - WARNING - 期望分布频数表中超过 20% 的格子期望计数未大于 5，进行归并操作。
+2025-01-11 19:13:59,941 - Correlation_utils - INFO - 计算列 Burglary 和列 ['Alarm'] 之间的相关性 (φ²): 1.0
+2025-01-11 19:13:59,941 - SearchSpace_bit - INFO - 将结果存入全局结论表: (0, 2) -> 1.0, 当前搜索空间: 0
+2025-01-11 19:13:59,942 - SearchSpace_bit - INFO - 发现函数依赖: ['Alarm'] -> Burglary
+2025-01-11 19:13:59,943 - Correlation_utils - WARNING - 期望分布频数表中超过 20% 的格子期望计数未大于 5，进行归并操作。
+2025-01-11 19:13:59,943 - Correlation_utils - INFO - 计算列 Burglary 和列 ['JohnCalls'] 之间的相关性 (φ²): 1.0
+2025-01-11 19:13:59,943 - SearchSpace_bit - INFO - 将结果存入全局结论表: (0, 3) -> 1.0, 当前搜索空间: 0
+2025-01-11 19:13:59,944 - SearchSpace_bit - INFO - 发现函数依赖: ['JohnCalls'] -> Burglary
+2025-01-11 19:13:59,946 - Correlation_utils - WARNING - 期望分布频数表中超过 20% 的格子期望计数未大于 5，进行归并操作。
+2025-01-11 19:13:59,946 - Correlation_utils - INFO - 计算列 Burglary 和列 ['MaryCalls'] 之间的相关性 (φ²): 0.48526722198732786
+2025-01-11 19:13:59,946 - SearchSpace_bit - INFO - 将结果存入全局结论表: (0, 4) -> 0.48526722198732786, 当前搜索空间: 0
+2025-01-11 19:13:59,946 - Cafd - INFO - Processing search space: <SearchSpace_bit.SearchSpace object at 0x0000013082C0A730>
+2025-01-11 19:13:59,946 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: (0, 1)，当前搜索空间: 1
+2025-01-11 19:13:59,947 - Correlation_utils - WARNING - 期望分布频数表中超过 20% 的格子期望计数未大于 5，进行归并操作。
+2025-01-11 19:13:59,947 - Correlation_utils - INFO - 计算列 Earthquake 和列 ['Alarm'] 之间的相关性 (φ²): 1.3622879450108724e-08
+2025-01-11 19:13:59,947 - SearchSpace_bit - INFO - 将结果存入全局结论表: (1, 2) -> 1.3622879450108724e-08, 当前搜索空间: 1
+2025-01-11 19:13:59,948 - Correlation_utils - WARNING - 期望分布频数表中超过 20% 的格子期望计数未大于 5，进行归并操作。
+2025-01-11 19:13:59,948 - Correlation_utils - INFO - 计算列 Earthquake 和列 ['JohnCalls'] 之间的相关性 (φ²): 1.3622879450108724e-08
+2025-01-11 19:13:59,948 - SearchSpace_bit - INFO - 将结果存入全局结论表: (1, 3) -> 1.3622879450108724e-08, 当前搜索空间: 1
+2025-01-11 19:13:59,949 - Correlation_utils - WARNING - 期望分布频数表中超过 20% 的格子期望计数未大于 5，进行归并操作。
+2025-01-11 19:13:59,949 - Correlation_utils - INFO - 计算列 Earthquake 和列 ['MaryCalls'] 之间的相关性 (φ²): 3.7774104602581914e-05
+2025-01-11 19:13:59,949 - SearchSpace_bit - INFO - 将结果存入全局结论表: (1, 4) -> 3.7774104602581914e-05, 当前搜索空间: 1
+2025-01-11 19:13:59,949 - Cafd - INFO - Processing search space: <SearchSpace_bit.SearchSpace object at 0x0000013082C0A700>
+2025-01-11 19:13:59,949 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: (0, 2)，当前搜索空间: 2
+2025-01-11 19:13:59,950 - SearchSpace_bit - INFO - 发现函数依赖: ['Burglary'] -> Alarm
+2025-01-11 19:13:59,950 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: (1, 2)，当前搜索空间: 2
+2025-01-11 19:13:59,951 - Correlation_utils - WARNING - 期望分布频数表中超过 20% 的格子期望计数未大于 5，进行归并操作。
+2025-01-11 19:13:59,951 - Correlation_utils - INFO - 计算列 Alarm 和列 ['JohnCalls'] 之间的相关性 (φ²): 1.0
+2025-01-11 19:13:59,951 - SearchSpace_bit - INFO - 将结果存入全局结论表: (2, 3) -> 1.0, 当前搜索空间: 2
+2025-01-11 19:13:59,952 - SearchSpace_bit - INFO - 发现函数依赖: ['JohnCalls'] -> Alarm
+2025-01-11 19:13:59,954 - Correlation_utils - WARNING - 期望分布频数表中超过 20% 的格子期望计数未大于 5，进行归并操作。
+2025-01-11 19:13:59,954 - Correlation_utils - INFO - 计算列 Alarm 和列 ['MaryCalls'] 之间的相关性 (φ²): 0.48526722198732786
+2025-01-11 19:13:59,954 - SearchSpace_bit - INFO - 将结果存入全局结论表: (2, 4) -> 0.48526722198732786, 当前搜索空间: 2
+2025-01-11 19:13:59,955 - Cafd - INFO - Processing search space: <SearchSpace_bit.SearchSpace object at 0x0000013082C0A760>
+2025-01-11 19:13:59,955 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: (0, 3)，当前搜索空间: 3
+2025-01-11 19:13:59,956 - SearchSpace_bit - INFO - 发现函数依赖: ['Burglary'] -> JohnCalls
+2025-01-11 19:13:59,956 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: (1, 3)，当前搜索空间: 3
+2025-01-11 19:13:59,956 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: (2, 3)，当前搜索空间: 3
+2025-01-11 19:13:59,957 - SearchSpace_bit - INFO - 发现函数依赖: ['Alarm'] -> JohnCalls
+2025-01-11 19:13:59,957 - Correlation_utils - WARNING - 期望分布频数表中超过 20% 的格子期望计数未大于 5，进行归并操作。
+2025-01-11 19:13:59,958 - Correlation_utils - INFO - 计算列 JohnCalls 和列 ['MaryCalls'] 之间的相关性 (φ²): 0.48526722198732786
+2025-01-11 19:13:59,958 - SearchSpace_bit - INFO - 将结果存入全局结论表: (3, 4) -> 0.48526722198732786, 当前搜索空间: 3
+2025-01-11 19:13:59,958 - Cafd - INFO - Processing search space: <SearchSpace_bit.SearchSpace object at 0x0000013082C0A790>
+2025-01-11 19:13:59,958 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: (0, 4)，当前搜索空间: 4
+2025-01-11 19:13:59,958 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: (1, 4)，当前搜索空间: 4
+2025-01-11 19:13:59,958 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: (2, 4)，当前搜索空间: 4
+2025-01-11 19:13:59,958 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: (3, 4)，当前搜索空间: 4
+2025-01-11 19:13:59,964 - Correlation_utils - WARNING - 期望分布频数表中超过 20% 的格子期望计数未大于 5，进行归并操作。
+2025-01-11 19:13:59,964 - Correlation_utils - INFO - 计算列 MaryCalls 和列 ['Burglary', 'JohnCalls'] 之间的相关性 (φ²): 0.48526722198732786
+2025-01-11 19:13:59,970 - Correlation_utils - WARNING - 期望分布频数表中超过 20% 的格子期望计数未大于 5，进行归并操作。
+2025-01-11 19:13:59,970 - Correlation_utils - INFO - 计算列 MaryCalls 和列 ['Alarm', 'JohnCalls'] 之间的相关性 (φ²): 0.48526722198732786
+2025-01-11 19:13:59,977 - Correlation_utils - WARNING - 期望分布频数表中超过 20% 的格子期望计数未大于 5，进行归并操作。
+2025-01-11 19:13:59,977 - Correlation_utils - INFO - 计算列 MaryCalls 和列 ['Burglary', 'Alarm'] 之间的相关性 (φ²): 0.48526722198732786
+2025-01-11 19:13:59,984 - Correlation_utils - WARNING - 期望分布频数表中超过 20% 的格子期望计数未大于 5，进行归并操作。
+2025-01-11 19:13:59,984 - Correlation_utils - INFO - 计算列 MaryCalls 和列 ['Burglary', 'Alarm', 'JohnCalls'] 之间的相关性 (φ²): 0.48526722198732786
+2025-01-11 19:13:59,985 - root - INFO - 汇总发现的函数依赖:
+2025-01-11 19:13:59,985 - root - INFO - (['Alarm'], 'Burglary')
+2025-01-11 19:13:59,985 - root - INFO - (['JohnCalls'], 'Burglary')
+2025-01-11 19:13:59,985 - root - INFO - (['Burglary'], 'Alarm')
+2025-01-11 19:13:59,985 - root - INFO - (['JohnCalls'], 'Alarm')
+2025-01-11 19:13:59,985 - root - INFO - (['Burglary'], 'JohnCalls')
+2025-01-11 19:13:59,985 - root - INFO - (['Alarm'], 'JohnCalls')
+2025-01-11 19:13:59,986 - root - INFO - 精度: 0.00
+2025-01-11 19:13:59,986 - root - INFO - 召回率: 0.00
+2025-01-11 19:13:59,986 - root - INFO - F1分数: 0.00
+2025-01-11 19:13:59,986 - root - INFO - Total runtime: 106 ms
+2025-01-11 19:13:59,986 - root - INFO - 发现的函数依赖已保存到: discovered_fd\earthquake_discovered.txt

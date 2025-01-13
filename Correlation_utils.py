@@ -156,13 +156,13 @@ class CorrelationCalculator:
         # 检查期望分布频数表
         if not self._check_expected_frequencies(expected_frequencies):
             logger.warning("期望分布频数表中超过 20% 的格子期望计数未大于 5，进行归并操作。")
-            inc = Incorporate()
-            result = inc.merge_tables(linked_table, expected_frequencies)
-            if not result:
-                logger.warning("归并操作失败，相关性设置为 0。")
-                return 0
-
-            linked_table, expected_frequencies = result
+            # inc = Incorporate()
+            # result = inc.merge_tables(linked_table, expected_frequencies)
+            # if not result:
+            #     logger.warning("归并操作失败，相关性设置为 0。")
+            #     return 0
+            #
+            # linked_table, expected_frequencies = result
 
         # 总观测数
         total = sum(sum(row) for row in linked_table)

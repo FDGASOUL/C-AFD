@@ -36,6 +36,8 @@ class Config:
         "HOSPITAL": {"path": "hospital", "has_header": True},
         "ALARM": {"path": "alarm", "has_header": True},
         "ASIA": {"path": "asia", "has_header": True},
+        "EARTHQUAKE": {"path": "earthquake", "has_header": True},
+        "CANCER": {"path": "cancer", "has_header": True},
     }
 
     def __init__(self, dataset):
@@ -44,7 +46,7 @@ class Config:
         self.input_folder_path = os.path.join("data", "")
         self.input_file_ending = ".csv"
         self._set_dataset(dataset)
-        self.sample_size = 5000
+        self.sample_size = 10000
         self.is_null_equal_null = True
 
     def _set_dataset(self, dataset):
@@ -64,7 +66,7 @@ if __name__ == "__main__":
     start_time = time.time()
     setup_logging()
     logging.info("全局日志配置已完成！")
-    conf = Config("DATA")
+    conf = Config("EARTHQUAKE")
     logging.info(conf)  # 使用日志代替打印
     logging.info("Starting CAFD execution...")
 

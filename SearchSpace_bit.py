@@ -1,15 +1,21 @@
 from Correlation_utils import CorrelationCalculator
 import logging
+from collections import defaultdict
+from threading import RLock
 
 # 获取日志实例
 logger = logging.getLogger(__name__)
+
+# 全局结论表和线程锁
+global_conclusion_table = defaultdict(float)
+global_table_lock = RLock()
 
 
 # TODO: 只检查本层剪枝集是否合理
 # TODO: 对data数据集还是存在拼接的循环依赖无法发现的问题
 class SearchSpace:
-    upper_threshold = 0.95  # 上限阈值
-    lower_threshold = 0.05  # 下限阈值
+    upper_threshold = 0.5  # 上限阈值
+    lower_threshold = 0.01  # 下限阈值
 
     def __init__(self, column_id):
         """
@@ -67,6 +73,29 @@ class SearchSpace:
 
         return next_combinations
 
+    def compute_correlation_with_cache(self, lhs_columns, rhs_column):
+        """
+        带缓存的相关性计算。
+        :param lhs_columns: 左部属性列表。
+        :param rhs_column: 右部属性索引。
+        :return: 相关性值。
+        """
+        key = tuple(sorted(lhs_columns + [rhs_column]))  # 构建唯一的缓存键
+
+        with global_table_lock:  # 加锁确保线程安全
+            if key in global_conclusion_table:  # 如果缓存中存在数据，直接返回
+                logger.info(f"从全局结论表中命中缓存: {key}，当前搜索空间: {rhs_column}")
+                return global_conclusion_table[key]
+
+        # 如果缓存中没有，计算相关性
+        correlation = self.correlation_calculator.compute_correlation(rhs_column, lhs_columns)
+
+        with global_table_lock:
+            global_conclusion_table[key] = correlation  # 更新缓存
+            logger.info(f"将结果存入全局结论表: {key} -> {correlation}, 当前搜索空间: {rhs_column}")
+
+        return correlation
+
     def recursive_discover(self, current_level_combinations):
         """
         递归发现函数依赖。
@@ -81,7 +110,10 @@ class SearchSpace:
             column_b = [idx for idx in range(self.context.num_columns()) if (combination & (1 << idx)) > 0]
 
             # 计算组合的相关性
-            correlation = self.correlation_calculator.compute_correlation(self.column_id - 1, column_b)
+            if len(column_b) == 1:
+                correlation = self.compute_correlation_with_cache(column_b, self.column_id - 1)
+            else:
+                correlation = self.correlation_calculator.compute_correlation(self.column_id - 1, column_b)
 
             if correlation > self.upper_threshold:
                 # 发现函数依赖，记录

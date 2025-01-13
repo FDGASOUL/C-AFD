@@ -9,10 +9,6 @@ import logging
 logger = logging.getLogger(__name__)
 
 
-# TODO：使用共享的全局结论表，存储已经得出的独立性结论。
-# TODO: 顺序执行并不比并行执行慢，当运行较慢时，使用进程池，当运行较快时，使用线程池
-# TODO: 三个指标的计算方法
-# TODO: 对index列的处理
 def process_search_space(search_space):
     """
     处理单个搜索空间的逻辑。
@@ -28,29 +24,19 @@ def process_search_space(search_space):
         return []  # 返回空依赖列表以避免影响后续汇总
 
 
-def run_worker(search_space_counters, use_threads=True, max_workers=None):
+def run_worker_sequential(search_space_counters):
     """
-    并行运行工作器逻辑。
+    顺序运行工作器逻辑。
     :param search_space_counters: 搜索空间计数器。
-    :param use_threads: 是否使用线程池（True）或进程池（False）。
-    :param max_workers: 最大工作者数量。
     """
-    executor_cls = ThreadPoolExecutor if use_threads else ProcessPoolExecutor
     discovered_dependencies = []  # 汇总所有搜索空间的依赖关系
 
-    with executor_cls(max_workers=max_workers) as executor:
-        # 提交每个搜索空间的任务
-        future_to_space = {executor.submit(process_search_space, search_space): search_space
-                           for search_space in search_space_counters.keys()}
-
-        # 收集结果
-        for future in as_completed(future_to_space):
-            search_space = future_to_space[future]
-            try:
-                result = future.result()
-                discovered_dependencies.extend(result)
-            except Exception as e:
-                logger.exception(f"Error processing search space {search_space}: {e}")
+    for search_space in search_space_counters.keys():
+        try:
+            result = process_search_space(search_space)
+            discovered_dependencies.extend(result)
+        except Exception as e:
+            logger.exception(f"Error processing search space {search_space}: {e}")
 
     return discovered_dependencies
 
@@ -104,7 +90,7 @@ class CAFD:
         for search_space in search_space_counters.keys():
             search_space.set_context(relation_data)
 
-        # 并行运行工作器并汇总发现的函数依赖
-        all_discovered_dependencies = run_worker(search_space_counters, use_threads=True, max_workers=None)
+        # 顺序运行工作器并汇总发现的函数依赖
+        all_discovered_dependencies = run_worker_sequential(search_space_counters)
 
         return all_discovered_dependencies
