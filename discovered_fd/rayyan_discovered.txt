@@ -1,0 +1,35 @@
+article_jcreated_at,article_jvolumn->article_language
+author_list->journal_title
+article_jcreated_at,article_jvolumn->journal_title
+article_jissue,article_jvolumn->journal_title
+journal_title->jounral_abbreviation
+journal_issn->jounral_abbreviation
+author_list->jounral_abbreviation
+article_jcreated_at,article_jvolumn->jounral_abbreviation
+article_jcreated_at,article_jissue,article_jvolumn,article_language->jounral_abbreviation
+journal_title->journal_issn
+author_list->journal_issn
+article_jcreated_at,article_jvolumn->journal_issn
+article_jissue,article_jvolumn->journal_issn
+article_jissue,journal_title->article_jvolumn
+article_jcreated_at,journal_title->article_jvolumn
+article_jcreated_at,article_jvolumn->article_jissue
+article_jvolumn,journal_title->article_jissue
+article_jcreated_at,journal_title->article_jissue
+article_jvolumn,journal_issn->article_jcreated_at
+article_jissue,journal_issn->article_jcreated_at
+article_jvolumn,journal_title->article_jcreated_at
+article_jissue,journal_title->article_jcreated_at
+journal_title->article_pagination
+journal_issn->article_pagination
+author_list->article_pagination
+journal_title->author_list
+jounral_abbreviation->author_list
+journal_issn->author_list
+article_jvolumn->author_list
+article_jcreated_at->author_list
+article_pagination->author_list
+精度: 0.03
+召回率: 0.14
+F1分数: 0.05
+总运行时间: 2078 ms

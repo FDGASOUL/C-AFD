@@ -1,6 +1,7 @@
 import heapq
 import math
 import logging
+import copy
 
 # 获取日志实例
 logger = logging.getLogger(__name__)
@@ -10,26 +11,36 @@ class Incorporate:
     """
     归并工具类。
     """
-    similarity_threshold = 0.01  # 相似度阈值
+    similarity_threshold = 0.1  # 相似度阈值
 
     def merge_tables(self, actual_table, expected_table):
         """
         归并操作：对实际分布列联表和期望分布列联表进行归并。
+        只有当归并成功时，才修改传入的实际计数表和期望计数表；
+        否则，原始表保持不变。
         :param actual_table: 实际分布列联表（二维列表）。
         :param expected_table: 期望分布列联表（二维列表）。
         :return: 归并后的实际分布表和期望分布表，如果无法归并则返回 False。
         """
 
-        # 初始化映射表
-        row_mapping = {i: i for i in range(len(expected_table))}  # 行索引映射
-        col_mapping = {j: j for j in range(len(expected_table[0]))}  # 列索引映射
+        # 保存原始表引用
+        original_actual = actual_table
+        original_expected = expected_table
 
-        # 预处理阶段
+        # 对原始表做深拷贝，归并操作只作用于拷贝，只有成功归并才更新原始表
+        actual_copy = copy.deepcopy(actual_table)
+        expected_copy = copy.deepcopy(expected_table)
+
+        # 初始化映射表（针对拷贝）
+        row_mapping = {i: i for i in range(len(expected_copy))}  # 行索引映射
+        col_mapping = {j: j for j in range(len(expected_copy[0]))}  # 列索引映射
+
+        # 预处理阶段：统计脏格子（期望计数 < 5）
         dirty_cells = []  # 存储脏格子
-        row_dirty_count = [0] * len(expected_table)  # 每行脏格子计数
-        col_dirty_count = [0] * len(expected_table[0])  # 每列脏格子计数
+        row_dirty_count = [0] * len(expected_copy)  # 每行脏格子计数
+        col_dirty_count = [0] * len(expected_copy[0])  # 每列脏格子计数
 
-        for i, row in enumerate(expected_table):
+        for i, row in enumerate(expected_copy):
             for j, val in enumerate(row):
                 if val < 5:
                     dirty_cells.append((i, j))
@@ -37,31 +48,36 @@ class Incorporate:
                     col_dirty_count[j] += 1
 
         # 初始化行列长度
-        row_longest = len(expected_table)
-        col_longest = len(expected_table[0])
+        row_longest = len(expected_copy)
+        col_longest = len(expected_copy[0])
 
         # 寻找行归并对
         dirty_rows = [i for i, count in enumerate(row_dirty_count) if count > 0]
-        merge_heap = Incorporate.find_merge_pairs(dirty_rows, range(len(expected_table)), actual_table, expected_table,
-                                                  is_row=True,
-                                                  similarity_threshold=self.similarity_threshold,
-                                                  benefit_threshold=col_longest / 5)
+        merge_heap = Incorporate.find_merge_pairs(
+            dirty_rows, range(len(expected_copy)), actual_copy, expected_copy,
+            is_row=True,
+            similarity_threshold=self.similarity_threshold,
+            benefit_threshold=col_longest / 5
+        )
 
         # 寻找列归并对
         dirty_cols = [j for j, count in enumerate(col_dirty_count) if count > 0]
-        merge_heap += Incorporate.find_merge_pairs(dirty_cols, range(len(expected_table[0])), actual_table,
-                                                   expected_table,
-                                                   is_row=False,
-                                                   similarity_threshold=self.similarity_threshold,
-                                                   benefit_threshold=row_longest / 5)
+        merge_heap += Incorporate.find_merge_pairs(
+            dirty_cols, range(len(expected_copy[0])), actual_copy, expected_copy,
+            is_row=False,
+            similarity_threshold=self.similarity_threshold,
+            benefit_threshold=row_longest / 5
+        )
 
-        # 开始归并循环
+        heapq.heapify(merge_heap)  # 确保堆结构
+
+        # 归并循环：当脏格子比例较高时尝试归并
         total_dirty_cells = len(dirty_cells)
-
-        while total_dirty_cells > row_longest * col_longest / 5:
+        threshold = row_longest * col_longest / 5
+        while total_dirty_cells > threshold:
             if not merge_heap:
                 logger.info("没有可归并的行或列，无法完成归并。")
-                return False
+                return False  # 归并失败，不修改原始表
 
             # 选择 benefit 最大的归并对
             benefit, merge_type, idx1, idx2 = heapq.heappop(merge_heap)
@@ -73,69 +89,55 @@ class Incorporate:
             if idx1 == idx2:  # 已经归并过，跳过
                 continue
 
-            # 计算归并对其他行/列的影响
-            dependencies = Incorporate.find_dirty_cell_dependencies(expected_table, idx1, idx2,
+            # 计算归并对其他行/列的影响（依赖）
+            dependencies = Incorporate.find_dirty_cell_dependencies(expected_copy, idx1, idx2,
                                                                     axis=0 if merge_type == 'row' else 1)
 
             if merge_type == 'row':
-                # 归并行
-                Incorporate._merge(actual_table, expected_table, idx1, idx2, axis=0)
-
-                # 更新行数
+                # 归并行（拷贝上操作）
+                Incorporate._merge(actual_copy, expected_copy, idx1, idx2, axis=0)
                 row_longest -= 1
 
-                # 创建一个列表存储 idx1 和 idx2 中为脏行的行索引
                 dirty_rows_in_merge = [idx for idx in (idx1, idx2) if row_dirty_count[idx] > 0]
-
-                # 更新每行脏格子计数
                 row_dirty_count[idx1] = row_dirty_count[idx1] + row_dirty_count[idx2] + benefit
                 row_dirty_count[idx2] = 0
 
-                # 更新 merge_heap 中的相关归并对
-                merge_heap = Incorporate.update_dirty_count_and_heap(row_dirty_count, dirty_rows_in_merge,
-                                                                     expected_table,
-                                                                     merge_heap, dependencies, idx1, 'row', col_longest, row_longest)
-
-                # 更新映射表
+                merge_heap = Incorporate.update_dirty_count_and_heap(
+                    row_dirty_count, dirty_rows_in_merge, expected_copy,
+                    merge_heap, dependencies, idx1, 'row', col_longest, row_longest
+                )
                 row_mapping = Incorporate.update_mapping(row_mapping, idx1, idx2)
-
-                # 更新脏格子总数
                 total_dirty_cells += benefit
 
             else:
-                # 归并列
-                Incorporate._merge(actual_table, expected_table, idx1, idx2, axis=1)
-
-                # 更新列数
+                # 归并列（拷贝上操作）
+                Incorporate._merge(actual_copy, expected_copy, idx1, idx2, axis=1)
                 col_longest -= 1
 
-                # 创建一个列表存储 idx1 和 idx2 中为脏列的列索引
                 dirty_cols_in_merge = [idx for idx in (idx1, idx2) if col_dirty_count[idx] > 0]
-
-                # 更新每列脏格子计数
-                col_dirty_count[idx1] = col_dirty_count[idx2] + col_dirty_count[idx1] + benefit
+                col_dirty_count[idx1] = col_dirty_count[idx1] + col_dirty_count[idx2] + benefit
                 col_dirty_count[idx2] = 0
 
-                # 更新 merge_heap 中的相关归并对
-                merge_heap = Incorporate.update_dirty_count_and_heap(col_dirty_count, dirty_cols_in_merge,
-                                                                     expected_table,
-                                                                     merge_heap, dependencies, idx1, 'col', row_longest, col_longest)
-
-                # 更新映射表
+                merge_heap = Incorporate.update_dirty_count_and_heap(
+                    col_dirty_count, dirty_cols_in_merge, expected_copy,
+                    merge_heap, dependencies, idx1, 'col', row_longest, col_longest
+                )
                 col_mapping = Incorporate.update_mapping(col_mapping, idx1, idx2)
-
-                # 更新脏格子总数
                 total_dirty_cells += benefit
 
-        # 最终清理阶段
-        actual_table = [row for i, row in enumerate(actual_table) if row_mapping[i] == i]
-        expected_table = [row for i, row in enumerate(expected_table) if row_mapping[i] == i]
-        for row in actual_table:
-            row[:] = [val for j, val in enumerate(row) if col_mapping[j] == j]
-        for row in expected_table:
-            row[:] = [val for j, val in enumerate(row) if col_mapping[j] == j]
+        # 最终清理阶段：根据映射表，过滤掉已归并的行和列
+        actual_merged = [row for i, row in enumerate(actual_copy) if row_mapping.get(i, i) == i]
+        expected_merged = [row for i, row in enumerate(expected_copy) if row_mapping.get(i, i) == i]
+        for row in actual_merged:
+            row[:] = [val for j, val in enumerate(row) if col_mapping.get(j, j) == j]
+        for row in expected_merged:
+            row[:] = [val for j, val in enumerate(row) if col_mapping.get(j, j) == j]
 
-        return actual_table, expected_table
+        # 归并成功后，更新原始表（原地修改）
+        original_actual[:] = actual_merged
+        original_expected[:] = expected_merged
+
+        return original_actual, original_expected
 
     @staticmethod
     def _merge(actual_table, expected_table, idx1, idx2, axis):
@@ -159,37 +161,39 @@ class Incorporate:
     @staticmethod
     def _are_rows_similar(row1, row2, similarity_threshold):
         """
-        判断两行是否分布相似，使用 KL 散度。
+        判断两行是否分布相似，使用 JS 散度。
         :param row1: 第一行。
         :param row2: 第二行。
-        :param similarity_threshold: 相似度阈值（KL 散度越小越相似）。
+        :param similarity_threshold: 相似度阈值（JS 散度越小越相似）。
         :return: 布尔值，表示两行是否相似。
         """
-        divergence = Incorporate._kl_divergence(row1, row2)
+        divergence = Incorporate._js_divergence(row1, row2)
         return divergence <= similarity_threshold
 
     @staticmethod
     def _are_columns_similar(table, col1, col2, similarity_threshold):
         """
-        判断两列是否分布相似，使用 KL 散度。
+        判断两列是否分布相似，使用 JS 散度。
         :param table: 列联表。
         :param col1: 第一列索引。
         :param col2: 第二列索引。
-        :param similarity_threshold: 相似度阈值（KL 散度越小越相似）。
+        :param similarity_threshold: 相似度阈值（JS 散度越小越相似）。
         :return: 布尔值，表示两列是否相似。
         """
         col1_values = [row[col1] for row in table]
         col2_values = [row[col2] for row in table]
-        divergence = Incorporate._kl_divergence(col1_values, col2_values)
+        divergence = Incorporate._js_divergence(col1_values, col2_values)
         return divergence <= similarity_threshold
 
     @staticmethod
-    def _kl_divergence(vec1, vec2):
+    def _js_divergence(vec1, vec2):
         """
-        计算两个概率分布之间的 KL 散度。
-        :param vec1: 第一个分布（向量）。
-        :param vec2: 第二个分布（向量）。
-        :return: KL 散度值。
+        计算两个分布之间的 JS 散度。
+        JS(P||Q) = 0.5 * KL(P || M) + 0.5 * KL(Q || M)，其中 M = (P + Q) / 2。
+
+        :param vec1: 第一个向量（数值列表）。
+        :param vec2: 第二个向量（数值列表）。
+        :return: JS 散度值。
         """
         # 转换为概率分布
         sum1 = sum(vec1)
@@ -197,16 +201,21 @@ class Incorporate:
         if sum1 == 0 or sum2 == 0:
             raise ValueError("向量和不能为零。")
         prob1 = [x / sum1 for x in vec1]
-        prob2 = [y / sum2 for y in vec2]
+        prob2 = [x / sum2 for x in vec2]
 
-        # 避免出现 log(0) 的问题，添加一个很小的平滑值
+        # 为避免 log(0) 问题，添加平滑值
         epsilon = 1e-10
         prob1 = [p + epsilon for p in prob1]
         prob2 = [q + epsilon for q in prob2]
 
-        # 计算 KL 散度
-        divergence = sum(p * math.log(p / q) for p, q in zip(prob1, prob2))
-        return divergence
+        # 计算平均分布 M
+        M = [(p + q) / 2 for p, q in zip(prob1, prob2)]
+
+        # 计算 JS 散度：0.5 * KL(prob1 || M) + 0.5 * KL(prob2 || M)
+        kl1 = sum(p * math.log(p / m) for p, m in zip(prob1, M))
+        kl2 = sum(q * math.log(q / m) for q, m in zip(prob2, M))
+        js_divergence = 0.5 * kl1 + 0.5 * kl2
+        return js_divergence
 
     @staticmethod
     def _calculate_row_benefit(row1, row2):

@@ -27,13 +27,36 @@ def setup_logging():
     root_logger.addHandler(console_handler)
 
 
+def is_redundant(fd, dependencies):
+    """判断一条FD是否是冗余的，即是否可以通过其他FD推导出来"""
+    lhs, rhs = fd
+    for dep in dependencies:
+        dep_lhs, dep_rhs = dep
+        # 如果当前FD的右边可以由依赖中的某个左边推导出来，且依赖中的左边包含当前FD的左边
+        if rhs == dep_rhs and all(attr in dep_lhs for attr in lhs):
+            return True
+    return False
+
+
+def filter_redundant_dependencies(dependencies):
+    """筛选冗余的函数依赖"""
+    filtered_dependencies = []
+    for fd in dependencies:
+        # 如果该FD不是冗余的，则添加到过滤后的依赖列表中
+        if not is_redundant(fd, filtered_dependencies):
+            filtered_dependencies.append(fd)
+    return filtered_dependencies
+
+
 class Config:
     DATASET_CONFIG = {
         "IRIS": {"path": "iris", "has_header": False},
-        "DATA": {"path": "data", "has_header": True},
+        "DATA": {"path": "data-n1", "has_header": True},
         "BEERS": {"path": "beers", "has_header": True},
         "FLIGHTS": {"path": "flights", "has_header": True},
         "HOSPITAL": {"path": "hospital", "has_header": True},
+        "RAYYAN": {"path": "rayyan", "has_header": True},
+        "TAX": {"path": "tax", "has_header": True},
         "ALARM": {"path": "alarm", "has_header": True},
         "ASIA": {"path": "asia", "has_header": True},
         "EARTHQUAKE": {"path": "earthquake", "has_header": True},
@@ -66,13 +89,16 @@ if __name__ == "__main__":
     start_time = time.time()
     setup_logging()
     logging.info("全局日志配置已完成！")
-    conf = Config("EARTHQUAKE")
+    conf = Config("BEERS")
     logging.info(conf)  # 使用日志代替打印
     logging.info("Starting CAFD execution...")
 
     # 执行 CAFD
     cafd = CAFD(conf)
     all_discovered_dependencies = cafd.execute()
+
+    # 筛选冗余函数依赖
+    filtered_dependencies = filter_redundant_dependencies(all_discovered_dependencies)
 
     # 输出汇总结果
     logging.info("汇总发现的函数依赖:")

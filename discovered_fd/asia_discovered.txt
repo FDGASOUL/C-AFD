@@ -1,4 +1,21 @@
-精度: 0.00
-召回率: 0.00
-F1分数: 0.00
-总运行时间: 133 ms
+either,xray->tub
+either,xray->lung
+dysp,xray->lung
+dysp,either->lung
+either,smoke->lung
+smoke,xray->lung
+dysp,smoke->bronc
+tub->either
+lung->either
+dysp,xray->either
+smoke,xray->either
+lung->xray
+either->xray
+bronc,either->dysp
+bronc,xray->dysp
+bronc,smoke->dysp
+bronc,lung->dysp
+精度: 0.12
+召回率: 0.33
+F1分数: 0.17
+总运行时间: 548 ms

@@ -1,8 +1,8 @@
 from scipy.stats import fisher_exact
 
 # 2x2列联表
-table = [[1458, 160],
-         [4957, 93425]]
+table = [[9813, 88],
+         [98, 1]]
 
 # 执行Fisher确切检验
 odds_ratio, p_value = fisher_exact(table)

@@ -17,10 +17,10 @@ def calculate_full_formula(v, p, delta, d):
 
 
 # Example usage:
-p = 0.000001
+p = 0.01
 delta = 0.005
-d1 = 48
-d2 = 48
+d1 = 2
+d2 = 2
 d = min(d1, d2)
 v = (d1-1) * (d2-1)
 result = calculate_full_formula(v, p, delta, d)

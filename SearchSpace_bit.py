@@ -11,11 +11,9 @@ global_conclusion_table = defaultdict(float)
 global_table_lock = RLock()
 
 
-# TODO: 只检查本层剪枝集是否合理
-# TODO: 对data数据集还是存在拼接的循环依赖无法发现的问题
 class SearchSpace:
-    upper_threshold = 0.5  # 上限阈值
-    lower_threshold = 0.01  # 下限阈值
+    upper_threshold = 0.8  # 上限阈值
+    lower_threshold = 0.1  # 下限阈值
 
     def __init__(self, column_id):
         """
@@ -95,7 +93,7 @@ class SearchSpace:
             logger.info(f"将结果存入全局结论表: {key} -> {correlation}, 当前搜索空间: {rhs_column}")
 
         return correlation
-
+# TODO:方向错误的应该怎么处理？
     def recursive_discover(self, current_level_combinations):
         """
         递归发现函数依赖。
@@ -127,7 +125,8 @@ class SearchSpace:
                         self.discovered_dependencies.append((lhs_columns, rhs_column))  # 记录发现的依赖
                         current_level_pruned.add(combination)  # 将当前组合加入当前层的剪枝集
                     else:
-                        next_level_combinations.add(combination)  # 方向有问题，加入扩展节点
+                        logger.info(f"方向错误: {lhs_columns} -> {rhs_column}")
+                        # next_level_combinations.add(combination)  # 方向有问题，加入扩展节点
                 else:  # 如果左部属性超过一个，直接存储依赖
                     logger.info(f"发现函数依赖: {lhs_columns} -> {rhs_column}")
                     self.discovered_dependencies.append((lhs_columns, rhs_column))  # 记录发现的依赖

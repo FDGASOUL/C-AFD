@@ -1,0 +1,7 @@
+JohnCalls->Earthquake
+Burglary->Alarm
+Alarm->JohnCalls
+精度: 0.33
+召回率: 0.33
+F1分数: 0.33
+总运行时间: 335 ms

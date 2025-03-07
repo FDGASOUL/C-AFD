@@ -1,0 +1,7 @@
+journal_title->journal_issn
+jounral_abbreviation->journal_title
+jounral_abbreviation->journal_issn
+journal_issn->journal_title
+article_language,article_jcreated_at->jounral_abbreviation
+article_jcreated_at,jounral_abbreviation->article_language
+article_jcreated_at,jounral_abbreviation->journal_issn

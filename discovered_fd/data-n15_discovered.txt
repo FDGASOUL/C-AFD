@@ -1,0 +1,8 @@
+column11->column13
+column12->column13
+column16->column14
+column16->column15
+精度: 1.00
+召回率: 0.44
+F1分数: 0.62
+总运行时间: 456 ms
