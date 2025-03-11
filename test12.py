@@ -50,4 +50,4 @@ def build_and_test_crosstab(csv_file, column1, column2):
 
 
 if __name__ == "__main__":
-    build_and_test_crosstab("data/beers.csv", "beer_name", "ounces")
+    build_and_test_crosstab("data/beers.csv", "style", "beer_name")

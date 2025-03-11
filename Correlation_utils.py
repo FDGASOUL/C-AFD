@@ -315,88 +315,68 @@ class CorrelationCalculator:
             logger.warning("列联表为空，无法计算相关性。")
             return 0
 
-        # if len(linked_table) == 2 and len(linked_table[0]) == 2:
-        #     # 提取单元格值
-        #     a = float(linked_table[0][0])
-        #     b = float(linked_table[0][1])
-        #     c = float(linked_table[1][0])
-        #     d = float(linked_table[1][1])
-        #
-        #     # 计算Yule's Q
-        #     numerator = a * d - b * c
-        #     denominator = a * d + b * c
-        #
-        #     if denominator == 0:
-        #         # 处理分母为零的情况
-        #         q = 0.0
-        #     else:
-        #         q = numerator / denominator
-        #
-        #     column_a_name = self._get_column_name(column_a)
-        #     column_b_names = [self._get_column_name(col) for col in column_b]
-        #     logger.info(f"计算列 {column_a_name} 和列 {column_b_names} 之间的相关性 (φ²): {q}")
-        #
-        #     return q
-        # else:
         expected_frequencies = self.compute_expected_frequencies(linked_table)
+
         # 检查期望分布频数表
-        if not self._check_expected_frequencies(expected_frequencies):
+        if not self._check_expected_frequencies(expected_frequencies) and len(column_b) > 1:
             logger.warning("期望分布频数表中超过 20% 的格子期望计数未大于 5，进行归并操作。")
             inc = Incorporate()
             result = inc.merge_tables(linked_table, expected_frequencies)
             if not result:
-                logger.warning("归并操作失败，改用最大似然比卡方检验计算相关性。")
-
-                # 改用最大似然比卡方检验
-                total = sum(sum(row) for row in linked_table)
-
-                if total == 0:
-                    logger.warning("总观测数为零，设置 φ² 为 0。")
-                    return 0
-
-                g_squared = 0
-                for i, row in enumerate(linked_table):
-                    for j, observed in enumerate(row):
-                        expected = expected_frequencies[i][j]
-                        if observed > 0 and expected > 0:
-                            g_squared += 2 * observed * math.log(observed / expected)
-                        elif observed > 0 and expected == 0:
-                            logger.warning(f"期望频数为 0（{i}, {j}），无法计算最大似然比卡方统计量。")
-
-                chi_squared = 0
-                for i, row in enumerate(linked_table):
-                    for j, observed in enumerate(row):
-                        expected = expected_frequencies[i][j]
-                        if expected > 0:
-                            chi_squared += ((observed - expected) ** 2) / expected
-                        else:
-                            logger.warning(f"期望频数为零（{i}, {j}），跳过此格子。")
-
-                d1, d2 = len(linked_table), len(linked_table[0])
-                d = min(d1, d2)
-                if d <= 1:
-                    logger.warning("自由度为零，设置 φ² 为 0。")
-                    return 0
-
-                phi_squared = g_squared / (total * (d - 1))
-                phi_squared_1 = chi_squared / (total * (d - 1))
-
-                # # 使用creamV
-                # # 保留四位小数
-                # g_ratio = np.round(g_squared / (total * (d - 1)), 4)
-                # chi_ratio = np.round(chi_squared / (total * (d - 1)), 4)
-                #
-                # # 计算平方根
-                # phi_squared = np.sqrt(g_ratio)
-                # phi_squared_1 = np.sqrt(chi_ratio)
-
-                column_a_name = self._get_column_name(column_a)
-                column_b_names = [self._get_column_name(col) for col in column_b]
-                logger.info(
-                    f"计算列 {column_a_name} 和列 {column_b_names} 之间的相关性 (φ², 基于最大似然比卡方): {phi_squared}, 基于原卡方：{phi_squared_1}")
-                return phi_squared_1
-
+                logger.warning("归并操作失败。")
+                return 0
+        #
+        #         # # 改用最大似然比卡方检验
+        #         # total = sum(sum(row) for row in linked_table)
+        #         #
+        #         # if total == 0:
+        #         #     logger.warning("总观测数为零，设置 φ² 为 0。")
+        #         #     return 0
+        #         #
+        #         # g_squared = 0
+        #         # for i, row in enumerate(linked_table):
+        #         #     for j, observed in enumerate(row):
+        #         #         expected = expected_frequencies[i][j]
+        #         #         if observed > 0 and expected > 0:
+        #         #             g_squared += 2 * observed * math.log(observed / expected)
+        #         #         elif observed > 0 and expected == 0:
+        #         #             logger.warning(f"期望频数为 0（{i}, {j}），无法计算最大似然比卡方统计量。")
+        #         #
+        #         # chi_squared = 0
+        #         # for i, row in enumerate(linked_table):
+        #         #     for j, observed in enumerate(row):
+        #         #         expected = expected_frequencies[i][j]
+        #         #         if expected > 0:
+        #         #             chi_squared += ((observed - expected) ** 2) / expected
+        #         #         else:
+        #         #             logger.warning(f"期望频数为零（{i}, {j}），跳过此格子。")
+        #         #
+        #         # d1, d2 = len(linked_table), len(linked_table[0])
+        #         # d = min(d1, d2)
+        #         # if d <= 1:
+        #         #     logger.warning("自由度为零，设置 φ² 为 0。")
+        #         #     return 0
+        #         #
+        #         # phi_squared = g_squared / (total * (d - 1))
+        #         # phi_squared_1 = chi_squared / (total * (d - 1))
+        #
+        #         # # 使用creamV
+        #         # # 保留四位小数
+        #         # g_ratio = np.round(g_squared / (total * (d - 1)), 4)
+        #         # chi_ratio = np.round(chi_squared / (total * (d - 1)), 4)
+        #         #
+        #         # # 计算平方根
+        #         # phi_squared = np.sqrt(g_ratio)
+        #         # phi_squared_1 = np.sqrt(chi_ratio)
+        #
+        #         # column_a_name = self._get_column_name(column_a)
+        #         # column_b_names = [self._get_column_name(col) for col in column_b]
+        #         # logger.info(
+        #         #     f"计算列 {column_a_name} 和列 {column_b_names} 之间的相关性 (φ², 基于最大似然比卡方): {phi_squared}, 基于原卡方：{phi_squared_1}")
+        #         # return phi_squared_1
+        #
             # 如果归并成功，更新表格和期望频数
+            logger.info("归并操作成功。")
             linked_table, expected_frequencies = result
 
         # 总观测数

@@ -51,7 +51,7 @@ def filter_redundant_dependencies(dependencies):
 class Config:
     DATASET_CONFIG = {
         "IRIS": {"path": "iris", "has_header": False},
-        "DATA": {"path": "data-n1", "has_header": True},
+        "DATA": {"path": "data-n30", "has_header": True},
         "BEERS": {"path": "beers", "has_header": True},
         "FLIGHTS": {"path": "flights", "has_header": True},
         "HOSPITAL": {"path": "hospital", "has_header": True},
@@ -89,7 +89,7 @@ if __name__ == "__main__":
     start_time = time.time()
     setup_logging()
     logging.info("全局日志配置已完成！")
-    conf = Config("BEERS")
+    conf = Config("FLIGHTS")
     logging.info(conf)  # 使用日志代替打印
     logging.info("Starting CAFD execution...")
 

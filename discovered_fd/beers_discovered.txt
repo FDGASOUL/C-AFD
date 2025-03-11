@@ -1,4 +1,7 @@
-精度: 0.00
-召回率: 0.00
-F1分数: 0.00
-总运行时间: 576 ms
+brewery_id->brewery_name
+brewery_id->city
+brewery_id->state
+精度: 1.00
+召回率: 0.60
+F1分数: 0.75
+总运行时间: 2659 ms
