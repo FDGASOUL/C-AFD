@@ -17,7 +17,7 @@ class CorrelationCalculator:
     相关性计算工具类。
     用于封装不同的相关性计算方法，以便在项目中复用。
     """
-    directional_threshold = 0.9  # 方向判断阈值
+    directional_threshold = 0.7  # 方向判断阈值
 
     def __init__(self, column_layout_data):
         """
@@ -35,8 +35,53 @@ class CorrelationCalculator:
         :return: 对应的列名。
         """
         return self.schema[column_index]
-# TODO: 应该采取左部PLI，右部vectors的方式，但是PLI应该怎么交叉呢？
-    def build_linked_table(self, column_a, column_b):
+
+    # TODO: 应该采取左部PLI，右部vectors的方式，但是PLI应该怎么交叉呢？
+    def build_linked_table(self, lhs, rhs):
+        """
+        构建列联表（linked table），左部 (lhs) 使用 PLI，右部 (rhs) 使用 columnVectors。
+
+        :param lhs: 左部属性索引列表（可以是单个属性，也可以是多个属性）。
+        :param rhs: 右部属性索引（单个属性）。
+        :return: 一个包含映射关系的二维数组，表示列联表。
+        """
+
+        # 1. 计算 LHS 的 PLI
+        if len(lhs) == 1:
+            pli_lhs = self.columnData[lhs[0]]["PLI"]
+        else:
+            pli_lhs = self._cross_plis([self.columnData[col]["PLI"] for col in lhs])
+
+        # 2. **筛选前 5 大簇**
+        pli_lhs = sorted(pli_lhs, key=len, reverse=True)[:5]  # 按大小降序，取前 5 个
+
+        # 3. 计算 RHS 的 columnVectors
+        column_vectors_rhs = self.columnVectors[rhs]
+
+        # 4. 获取 RHS 唯一值，初始化映射表
+        unique_values = set()
+        for cluster in pli_lhs:
+            for pos in cluster:
+                unique_values.add(column_vectors_rhs[pos])
+        rhs_index = {value: 0 for value in unique_values}
+
+        # 5. 构建列联表
+        crosstab_list = []
+        for cluster in pli_lhs:
+            cluster_map = rhs_index.copy()
+            for position in cluster:
+                value_rhs = column_vectors_rhs[position]
+                cluster_map[value_rhs] = cluster_map.get(value_rhs, 0) + 1
+            crosstab_list.append(cluster_map)
+
+        # 6. 转换为二维数组
+        crosstab = []
+        for cluster_map in crosstab_list:
+            crosstab.append([cluster_map.get(key, 0) for key in sorted(rhs_index.keys())])
+
+        return crosstab
+
+    def build_linked_table_old(self, column_a, column_b):
         """
         利用 Probing Table 构建列连表（linked table）。
         :param column_a: 列 A 的索引。
@@ -104,66 +149,59 @@ class CorrelationCalculator:
         total_cells = len(expected_frequencies) * len(expected_frequencies[0])
         return valid_count / total_cells >= 0.8
 
-    def _cross_column_vectors(self, vectors_list):
+    def _cross_plis(self, pli_list):
         """
-        对多个列的 columnVectors 进行交叉，生成新 Vectors。
-        :param vectors_list: 列表，每个元素是一个列的 Vectors。
-        :return: 交叉后的新 Vectors。
+        交叉多个 PLI 形成新的 PLI（不过滤单元素簇）。
+        :param pli_list: 需要交叉的 PLI 列表。
+        :return: 交叉后的 PLI
         """
-        if not vectors_list:
-            return []
+        from collections import defaultdict
 
-        num_rows = len(vectors_list[0])
-        cross_vectors = [-1] * num_rows
-        cluster_map = {}
-        next_cluster_id = 1
+        # 建立行号到簇 ID 的映射
+        pli_maps = [{pos: idx for idx, cluster in enumerate(pli) for pos in cluster} for pli in pli_list]
 
-        for row_index in range(num_rows):
-            cluster_key = tuple(vectors[row_index] for vectors in vectors_list)
-            if -1 in cluster_key:
-                continue  # 跳过空值
+        # 计算交叉结果
+        merged_clusters = defaultdict(set)
+        for pos in pli_maps[0]:  # 遍历第一个 PLI 的行号
+            key = tuple(pli_map.get(pos, -1) for pli_map in pli_maps)  # 形成唯一标识
+            merged_clusters[key].add(pos)
 
-            if cluster_key not in cluster_map:
-                cluster_map[cluster_key] = next_cluster_id
-                next_cluster_id += 1
-
-            cross_vectors[row_index] = cluster_map[cluster_key]
-
-        return cross_vectors
+        # 不再过滤单元素簇，保持所有簇
+        return [sorted(list(cluster)) for cluster in merged_clusters.values()]
 
     def check_dependency_direction(self, rhs_column, lhs_columns):
         """
-        检查函数依赖的方向是否正确。
+        检查函数依赖的方向是否正确（按行计算）。
         :param lhs_columns: 左部属性列表。
         :param rhs_column: 右部属性。
-        :return: 如果所有列都满足方向阈值返回 True，否则返回 False。
+        :return: 如果所有行都满足方向阈值返回 True，否则返回 False。
         """
         # 构建列联表
-        crosstab = self.build_linked_table(rhs_column, lhs_columns)
+        crosstab = self.build_linked_table(lhs_columns, rhs_column)
         logger.info(f"目前的左部属性列表：{lhs_columns}")
         logger.info(f"目前的右部属性：{rhs_column}")
 
-        # 记录不符合条件的列
-        failed_columns = []
+        # 记录不符合条件的行
+        failed_rows = []
 
-        # 遍历列联表
-        for col_index in range(len(crosstab[0])):
-            column_sum = sum(row[col_index] for row in crosstab)  # 当前列的总数
-            if column_sum == 0:
-                continue  # 跳过没有数据的列
-            max_value = max(row[col_index] for row in crosstab)  # 当前列的最大值
-            ratio = max_value / column_sum
-            # logger.info(f"列 {col_index} 的 max_value / column_sum = {ratio}")
+        # 遍历行联表（按行计算）
+        for row_index, row in enumerate(crosstab):
+            row_sum = sum(row)  # 当前行的总数
+            if row_sum == 0:
+                continue  # 跳过没有数据的行
+            max_value = max(row)  # 当前行的最大值
+            ratio = max_value / row_sum
+            # logger.info(f"行 {row_index} 的 max_value / row_sum = {ratio}")
 
             if ratio < self.directional_threshold:
-                failed_columns.append((col_index, ratio))  # 记录不符合条件的列
+                failed_rows.append((row_index, ratio))  # 记录不符合条件的行
 
-        # 如果有不符合条件的列，返回 False，并输出不符合条件的列信息
-        if failed_columns:
-            logger.info(f"以下列不满足阈值：{failed_columns}")
+        # 如果有不符合条件的行，返回 False，并输出不符合条件的行信息
+        if failed_rows:
+            logger.info(f"以下行不满足阈值：{failed_rows}")
             return False
 
-        # 所有列都满足阈值，返回 True
+        # 所有行都满足阈值，返回 True
         return True
 
     # def check_dependency_direction(self, lhs_columns, rhs_column):
@@ -310,7 +348,7 @@ class CorrelationCalculator:
         :return: 相关性值。
         """
         # 构建列联表
-        linked_table = self.build_linked_table(column_a, column_b)
+        linked_table = self.build_linked_table(column_b, column_a)
         if not linked_table:
             logger.warning("列联表为空，无法计算相关性。")
             return 0
@@ -318,63 +356,63 @@ class CorrelationCalculator:
         expected_frequencies = self.compute_expected_frequencies(linked_table)
 
         # 检查期望分布频数表
-        if not self._check_expected_frequencies(expected_frequencies) and len(column_b) > 1:
+        if not self._check_expected_frequencies(expected_frequencies) :
             logger.warning("期望分布频数表中超过 20% 的格子期望计数未大于 5，进行归并操作。")
             inc = Incorporate()
             result = inc.merge_tables(linked_table, expected_frequencies)
             if not result:
                 logger.warning("归并操作失败。")
                 return 0
-        #
-        #         # # 改用最大似然比卡方检验
-        #         # total = sum(sum(row) for row in linked_table)
-        #         #
-        #         # if total == 0:
-        #         #     logger.warning("总观测数为零，设置 φ² 为 0。")
-        #         #     return 0
-        #         #
-        #         # g_squared = 0
-        #         # for i, row in enumerate(linked_table):
-        #         #     for j, observed in enumerate(row):
-        #         #         expected = expected_frequencies[i][j]
-        #         #         if observed > 0 and expected > 0:
-        #         #             g_squared += 2 * observed * math.log(observed / expected)
-        #         #         elif observed > 0 and expected == 0:
-        #         #             logger.warning(f"期望频数为 0（{i}, {j}），无法计算最大似然比卡方统计量。")
-        #         #
-        #         # chi_squared = 0
-        #         # for i, row in enumerate(linked_table):
-        #         #     for j, observed in enumerate(row):
-        #         #         expected = expected_frequencies[i][j]
-        #         #         if expected > 0:
-        #         #             chi_squared += ((observed - expected) ** 2) / expected
-        #         #         else:
-        #         #             logger.warning(f"期望频数为零（{i}, {j}），跳过此格子。")
-        #         #
-        #         # d1, d2 = len(linked_table), len(linked_table[0])
-        #         # d = min(d1, d2)
-        #         # if d <= 1:
-        #         #     logger.warning("自由度为零，设置 φ² 为 0。")
-        #         #     return 0
-        #         #
-        #         # phi_squared = g_squared / (total * (d - 1))
-        #         # phi_squared_1 = chi_squared / (total * (d - 1))
-        #
-        #         # # 使用creamV
-        #         # # 保留四位小数
-        #         # g_ratio = np.round(g_squared / (total * (d - 1)), 4)
-        #         # chi_ratio = np.round(chi_squared / (total * (d - 1)), 4)
-        #         #
-        #         # # 计算平方根
-        #         # phi_squared = np.sqrt(g_ratio)
-        #         # phi_squared_1 = np.sqrt(chi_ratio)
-        #
-        #         # column_a_name = self._get_column_name(column_a)
-        #         # column_b_names = [self._get_column_name(col) for col in column_b]
-        #         # logger.info(
-        #         #     f"计算列 {column_a_name} 和列 {column_b_names} 之间的相关性 (φ², 基于最大似然比卡方): {phi_squared}, 基于原卡方：{phi_squared_1}")
-        #         # return phi_squared_1
-        #
+            #
+            #         # # 改用最大似然比卡方检验
+            #         # total = sum(sum(row) for row in linked_table)
+            #         #
+            #         # if total == 0:
+            #         #     logger.warning("总观测数为零，设置 φ² 为 0。")
+            #         #     return 0
+            #         #
+            #         # g_squared = 0
+            #         # for i, row in enumerate(linked_table):
+            #         #     for j, observed in enumerate(row):
+            #         #         expected = expected_frequencies[i][j]
+            #         #         if observed > 0 and expected > 0:
+            #         #             g_squared += 2 * observed * math.log(observed / expected)
+            #         #         elif observed > 0 and expected == 0:
+            #         #             logger.warning(f"期望频数为 0（{i}, {j}），无法计算最大似然比卡方统计量。")
+            #         #
+            #         # chi_squared = 0
+            #         # for i, row in enumerate(linked_table):
+            #         #     for j, observed in enumerate(row):
+            #         #         expected = expected_frequencies[i][j]
+            #         #         if expected > 0:
+            #         #             chi_squared += ((observed - expected) ** 2) / expected
+            #         #         else:
+            #         #             logger.warning(f"期望频数为零（{i}, {j}），跳过此格子。")
+            #         #
+            #         # d1, d2 = len(linked_table), len(linked_table[0])
+            #         # d = min(d1, d2)
+            #         # if d <= 1:
+            #         #     logger.warning("自由度为零，设置 φ² 为 0。")
+            #         #     return 0
+            #         #
+            #         # phi_squared = g_squared / (total * (d - 1))
+            #         # phi_squared_1 = chi_squared / (total * (d - 1))
+            #
+            #         # # 使用creamV
+            #         # # 保留四位小数
+            #         # g_ratio = np.round(g_squared / (total * (d - 1)), 4)
+            #         # chi_ratio = np.round(chi_squared / (total * (d - 1)), 4)
+            #         #
+            #         # # 计算平方根
+            #         # phi_squared = np.sqrt(g_ratio)
+            #         # phi_squared_1 = np.sqrt(chi_ratio)
+            #
+            #         # column_a_name = self._get_column_name(column_a)
+            #         # column_b_names = [self._get_column_name(col) for col in column_b]
+            #         # logger.info(
+            #         #     f"计算列 {column_a_name} 和列 {column_b_names} 之间的相关性 (φ², 基于最大似然比卡方): {phi_squared}, 基于原卡方：{phi_squared_1}")
+            #         # return phi_squared_1
+            #
             # 如果归并成功，更新表格和期望频数
             logger.info("归并操作成功。")
             linked_table, expected_frequencies = result
@@ -404,12 +442,10 @@ class CorrelationCalculator:
 
         phi_squared = chi_squared / (total * (d - 1))
 
+        # 使用creamV
+        cramer_v = np.sqrt(phi_squared)
+
         column_a_name = self._get_column_name(column_a)
         column_b_names = [self._get_column_name(col) for col in column_b]
-        logger.info(f"计算列 {column_a_name} 和列 {column_b_names} 之间的相关性 (φ²): {phi_squared}")
-        return phi_squared
-
-
-
-
-
+        logger.info(f"计算列 {column_a_name} 和列 {column_b_names} 之间的相关性 (φ²): {cramer_v}")
+        return cramer_v

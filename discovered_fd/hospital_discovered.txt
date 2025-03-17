@@ -12,14 +12,6 @@ HospitalName->City
 Address1->City
 ZipCode->City
 PhoneNumber->City
-ProviderNumber->State
-HospitalName->State
-Address1->State
-City->State
-ZipCode->State
-CountyName->State
-PhoneNumber->State
-Stateavg->State
 ProviderNumber->ZipCode
 HospitalName->ZipCode
 Address1->ZipCode
@@ -37,13 +29,7 @@ ProviderNumber->HospitalOwner
 HospitalName->HospitalOwner
 Address1->HospitalOwner
 PhoneNumber->HospitalOwner
-ProviderNumber->EmergencyService
-HospitalName->EmergencyService
-Address1->EmergencyService
-City->EmergencyService
-ZipCode->EmergencyService
 CountyName->EmergencyService
-PhoneNumber->EmergencyService
 MeasureCode->Condition
 MeasureName->Condition
 Stateavg->Condition
@@ -53,7 +39,7 @@ MeasureCode->MeasureName
 Stateavg->MeasureName
 MeasureCode->Stateavg
 MeasureName->Stateavg
-精度: 0.24
-召回率: 0.87
-F1分数: 0.37
-总运行时间: 959 ms
+精度: 0.29
+召回率: 0.80
+F1分数: 0.43
+总运行时间: 175 ms

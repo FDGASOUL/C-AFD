@@ -12,7 +12,7 @@ global_table_lock = RLock()
 
 
 class SearchSpace:
-    upper_threshold = 0.8  # 上限阈值
+    upper_threshold = 0.7  # 上限阈值
     lower_threshold = 0.1  # 下限阈值
 
     def __init__(self, column_id):
@@ -107,11 +107,13 @@ class SearchSpace:
             # 解析组合，将二进制位转换为属性索引列表
             column_b = [idx for idx in range(self.context.num_columns()) if (combination & (1 << idx)) > 0]
 
-            # 计算组合的相关性
-            if len(column_b) == 1:
-                correlation = self.compute_correlation_with_cache(column_b, self.column_id - 1)
-            else:
-                correlation = self.correlation_calculator.compute_correlation(self.column_id - 1, column_b)
+            # # 计算组合的相关性
+            # if len(column_b) == 1:
+            #     correlation = self.compute_correlation_with_cache(column_b, self.column_id - 1)
+            # else:
+            #     correlation = self.correlation_calculator.compute_correlation(self.column_id - 1, column_b)
+
+            correlation = self.correlation_calculator.compute_correlation(self.column_id - 1, column_b)
 
             if correlation > self.upper_threshold:
                 # 发现函数依赖，记录

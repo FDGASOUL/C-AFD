@@ -1,4 +1,8 @@
-精度: 0.00
-召回率: 0.00
-F1分数: 0.00
-总运行时间: 1126 ms
+flight->sched_dep_time
+flight->act_dep_time
+flight->sched_arr_time
+flight->act_arr_time
+精度: 1.00
+召回率: 0.67
+F1分数: 0.80
+总运行时间: 20 ms

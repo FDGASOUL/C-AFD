@@ -1,7 +1,13 @@
+beer_name->style
+brewery_name->brewery_id
 brewery_id->brewery_name
 brewery_id->city
+brewery_name->city
+ibu,ounces->city
 brewery_id->state
-精度: 1.00
-召回率: 0.60
-F1分数: 0.75
-总运行时间: 2659 ms
+brewery_name->state
+city->state
+精度: 0.44
+召回率: 1.00
+F1分数: 0.62
+总运行时间: 3074 ms

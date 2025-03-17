@@ -11,7 +11,7 @@ class Incorporate:
     """
     归并工具类。
     """
-    similarity_threshold = 0.1  # 相似度阈值
+    similarity_threshold = 0.01  # 相似度阈值
 
     def merge_tables(self, actual_table, expected_table):
         """
