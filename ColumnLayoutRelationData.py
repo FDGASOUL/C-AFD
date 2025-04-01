@@ -17,6 +17,7 @@ class ColumnLayoutRelationData:
         self.schema = list(data.columns)  # 模式：列名列表
         self.columnVectors = self._compute_column_vectors(data)  # 每列的数值索引表示
         self.columnData = self._compute_column_data()  # 包含列的元信息、PLI 和 Probing Table
+        # self.testData = data
 
     def _compute_column_vectors(self, data):
         """

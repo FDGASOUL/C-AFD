@@ -37,8 +37,10 @@ class Sampler:
         except Exception as e:
             raise ValueError(f"Failed to read the input dataset: {e}")
 
+        # 删除含有空值的行
+        data.dropna(inplace=True)
+
         # 检查抽样数量是否合理
-        # TODO: 对于接近抽样数量的数据集，是否还需要进行抽样？
         if self.sample_size > len(data):
             logger.info(f"Sample size ({self.sample_size}) exceeds dataset size ({len(data)}). Returning the entire dataset.")
             return data

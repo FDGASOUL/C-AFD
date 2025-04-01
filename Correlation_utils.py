@@ -3,6 +3,7 @@
 import math
 
 import numpy as np
+import pandas as pd
 from scipy.stats import fisher_exact
 
 from Incorporate_into import Incorporate
@@ -53,7 +54,7 @@ class CorrelationCalculator:
             pli_lhs = self._cross_plis([self.columnData[col]["PLI"] for col in lhs])
 
         # 2. **筛选前 5 大簇**
-        pli_lhs = sorted(pli_lhs, key=len, reverse=True)[:5]  # 按大小降序，取前 5 个
+        # pli_lhs = sorted(pli_lhs, key=len, reverse=True)[:5]  # 按大小降序，取前 5 个
 
         # 3. 计算 RHS 的 columnVectors
         column_vectors_rhs = self.columnVectors[rhs]
@@ -80,6 +81,22 @@ class CorrelationCalculator:
             crosstab.append([cluster_map.get(key, 0) for key in sorted(rhs_index.keys())])
 
         return crosstab
+
+    # def build_linked_table_test(self, lhs, rhs):
+    #     df = self.testData
+    #     # 获取列名
+    #     rhs_name = self.schema[rhs]
+    #     lhs_names = [self.schema[col] for col in lhs]
+    #
+    #     # 构建列联表后转置（交换行和列）
+    #     contingency_table = pd.crosstab(
+    #         index=df[rhs_name],
+    #         columns=[df[col] for col in lhs_names]
+    #     ).T  # 添加转置操作
+    #
+    #     # 转换为二维数组并返回（保持与其他方法一致的输出格式）
+    #     return contingency_table.values.tolist()
+
 
     def build_linked_table_old(self, column_a, column_b):
         """
@@ -356,13 +373,9 @@ class CorrelationCalculator:
         expected_frequencies = self.compute_expected_frequencies(linked_table)
 
         # 检查期望分布频数表
-        if not self._check_expected_frequencies(expected_frequencies) :
-            logger.warning("期望分布频数表中超过 20% 的格子期望计数未大于 5，进行归并操作。")
-            inc = Incorporate()
-            result = inc.merge_tables(linked_table, expected_frequencies)
-            if not result:
-                logger.warning("归并操作失败。")
-                return 0
+        if not self._check_expected_frequencies(expected_frequencies) and len(column_b) > 1:
+            logger.warning("归并操作失败。")
+            return 0
             #
             #         # # 改用最大似然比卡方检验
             #         # total = sum(sum(row) for row in linked_table)
@@ -414,8 +427,8 @@ class CorrelationCalculator:
             #         # return phi_squared_1
             #
             # 如果归并成功，更新表格和期望频数
-            logger.info("归并操作成功。")
-            linked_table, expected_frequencies = result
+            # logger.info("归并操作成功。")
+            # linked_table, expected_frequencies = result
 
         # 总观测数
         total = sum(sum(row) for row in linked_table)
