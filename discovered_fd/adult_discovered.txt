@@ -1,6 +1,6 @@
- education-num-> education
- education-> education-num
-精度: 0.00
-召回率: 0.00
-F1分数: 0.00
-总运行时间: 5261 ms
+education-num->education
+education->education-num
+精度: 1.00
+召回率: 1.00
+F1分数: 1.00
+总运行时间: 3436 ms

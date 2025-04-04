@@ -221,6 +221,48 @@ class CorrelationCalculator:
         # 所有行都满足阈值，返回 True
         return True
 
+    def check_dependency_direction_new(self, rhs_column, lhs_columns):
+        """
+        检查函数依赖的方向是否正确（加权平均比较行列方向）
+        :param lhs_columns: 左部属性列表。
+        :param rhs_column: 右部属性。
+        :return: 如果行方向加权平均 >= 列方向且超过阈值返回True
+        """
+        crosstab = self.build_linked_table(lhs_columns, rhs_column)
+        logger.info(f"左部属性：{lhs_columns}，右部属性：{rhs_column}")
+
+        # 计算行方向加权平均
+        total = sum(sum(row) for row in crosstab)
+        if total == 0:
+            logger.warning("列联表总数为零")
+            return False
+
+        row_scores = []
+        for row in crosstab:
+            row_sum = sum(row)
+            if row_sum == 0:
+                continue
+            max_val = max(row)
+            row_scores.append((max_val / row_sum) * (row_sum / total))
+        row_avg = sum(row_scores) if row_scores else 0
+
+        # 计算列方向加权平均（转置列联表）
+        col_scores = []
+        for col in zip(*crosstab):  # 转置列联表
+            col_sum = sum(col)
+            if col_sum == 0:
+                continue
+            max_val = max(col)
+            col_scores.append((max_val / col_sum) * (col_sum / total))
+        col_avg = sum(col_scores) if col_scores else 0
+
+        logger.info(f"行方向得分: {row_avg:.2f}, 列方向得分: {col_avg:.2f}")
+
+        # 最终判断：行方向得分需超过阈值且大于等于列方向得分
+        return row_avg >= col_avg
+
+
+
     # def check_dependency_direction(self, lhs_columns, rhs_column):
     #     """
     #     检查函数依赖的方向是否正确。
@@ -373,62 +415,15 @@ class CorrelationCalculator:
         expected_frequencies = self.compute_expected_frequencies(linked_table)
 
         # 检查期望分布频数表
-        if not self._check_expected_frequencies(expected_frequencies) and len(column_b) > 1:
-            logger.warning("归并操作失败。")
-            return 0
-            #
-            #         # # 改用最大似然比卡方检验
-            #         # total = sum(sum(row) for row in linked_table)
-            #         #
-            #         # if total == 0:
-            #         #     logger.warning("总观测数为零，设置 φ² 为 0。")
-            #         #     return 0
-            #         #
-            #         # g_squared = 0
-            #         # for i, row in enumerate(linked_table):
-            #         #     for j, observed in enumerate(row):
-            #         #         expected = expected_frequencies[i][j]
-            #         #         if observed > 0 and expected > 0:
-            #         #             g_squared += 2 * observed * math.log(observed / expected)
-            #         #         elif observed > 0 and expected == 0:
-            #         #             logger.warning(f"期望频数为 0（{i}, {j}），无法计算最大似然比卡方统计量。")
-            #         #
-            #         # chi_squared = 0
-            #         # for i, row in enumerate(linked_table):
-            #         #     for j, observed in enumerate(row):
-            #         #         expected = expected_frequencies[i][j]
-            #         #         if expected > 0:
-            #         #             chi_squared += ((observed - expected) ** 2) / expected
-            #         #         else:
-            #         #             logger.warning(f"期望频数为零（{i}, {j}），跳过此格子。")
-            #         #
-            #         # d1, d2 = len(linked_table), len(linked_table[0])
-            #         # d = min(d1, d2)
-            #         # if d <= 1:
-            #         #     logger.warning("自由度为零，设置 φ² 为 0。")
-            #         #     return 0
-            #         #
-            #         # phi_squared = g_squared / (total * (d - 1))
-            #         # phi_squared_1 = chi_squared / (total * (d - 1))
-            #
-            #         # # 使用creamV
-            #         # # 保留四位小数
-            #         # g_ratio = np.round(g_squared / (total * (d - 1)), 4)
-            #         # chi_ratio = np.round(chi_squared / (total * (d - 1)), 4)
-            #         #
-            #         # # 计算平方根
-            #         # phi_squared = np.sqrt(g_ratio)
-            #         # phi_squared_1 = np.sqrt(chi_ratio)
-            #
-            #         # column_a_name = self._get_column_name(column_a)
-            #         # column_b_names = [self._get_column_name(col) for col in column_b]
-            #         # logger.info(
-            #         #     f"计算列 {column_a_name} 和列 {column_b_names} 之间的相关性 (φ², 基于最大似然比卡方): {phi_squared}, 基于原卡方：{phi_squared_1}")
-            #         # return phi_squared_1
-            #
-            # 如果归并成功，更新表格和期望频数
-            # logger.info("归并操作成功。")
-            # linked_table, expected_frequencies = result
+        if not self._check_expected_frequencies(expected_frequencies):
+            logger.warning("期望分布频数表中超过 20% 的格子期望计数未大于 5，进行归并操作。")
+            inc = Incorporate()
+            result = inc.merge_tables(linked_table, expected_frequencies)
+            if not result:
+                logger.warning("归并操作失败，相关性设置为 0。")
+                return 0
+
+            linked_table, expected_frequencies = result
 
         # 总观测数
         total = sum(sum(row) for row in linked_table)
@@ -455,10 +450,22 @@ class CorrelationCalculator:
 
         phi_squared = chi_squared / (total * (d - 1))
 
-        # 使用creamV
-        cramer_v = np.sqrt(phi_squared)
+        N = total
+        M = len(linked_table[0])
+        K = len(linked_table)
+
+        # 计算
+        expected_phi = ((M - 1) * (K - 1)) / ((N - 1) * (d - 1))
+
+        if expected_phi == 1:
+            normalized_phi_squared = 0
+        else:
+            normalized_phi_squared = (phi_squared - expected_phi) / (1 - expected_phi)
+
+        normalized_phi_squared_plus = max(normalized_phi_squared, 0)
 
         column_a_name = self._get_column_name(column_a)
         column_b_names = [self._get_column_name(col) for col in column_b]
-        logger.info(f"计算列 {column_a_name} 和列 {column_b_names} 之间的相关性 (φ²): {cramer_v}")
-        return cramer_v
+        logger.info(f"计算列 {column_a_name} 和列 {column_b_names} 之间的相关性 (φ²): {normalized_phi_squared_plus}")
+
+        return normalized_phi_squared_plus

@@ -1,45 +1,27 @@
-HospitalName->ProviderNumber
-Address1->ProviderNumber
-PhoneNumber->ProviderNumber
 ProviderNumber->HospitalName
-Address1->HospitalName
-PhoneNumber->HospitalName
-ProviderNumber->Address1
-HospitalName->Address1
-PhoneNumber->Address1
 ProviderNumber->City
-HospitalName->City
-Address1->City
-ZipCode->City
+ZIPCode->City
 PhoneNumber->City
-ProviderNumber->ZipCode
-HospitalName->ZipCode
-Address1->ZipCode
-PhoneNumber->ZipCode
+ProviderNumber->State
+ZIPCode->State
+PhoneNumber->State
+StateAvg->State
+ProviderNumber->ZIPCode
+PhoneNumber->ZIPCode
 ProviderNumber->CountyName
-HospitalName->CountyName
-Address1->CountyName
-City->CountyName
-ZipCode->CountyName
-PhoneNumber->CountyName
 ProviderNumber->PhoneNumber
-HospitalName->PhoneNumber
-Address1->PhoneNumber
+ProviderNumber->HospitalType
+PhoneNumber->HospitalType
 ProviderNumber->HospitalOwner
-HospitalName->HospitalOwner
-Address1->HospitalOwner
-PhoneNumber->HospitalOwner
-CountyName->EmergencyService
+ProviderNumber->EmergencyService
 MeasureCode->Condition
 MeasureName->Condition
-Stateavg->Condition
+StateAvg->Condition
 MeasureName->MeasureCode
-Stateavg->MeasureCode
+StateAvg->MeasureCode
 MeasureCode->MeasureName
-Stateavg->MeasureName
-MeasureCode->Stateavg
-MeasureName->Stateavg
-精度: 0.29
-召回率: 0.80
-F1分数: 0.43
-总运行时间: 175 ms
+StateAvg->MeasureName
+精度: 0.96
+召回率: 0.79
+F1分数: 0.86
+总运行时间: 34790 ms

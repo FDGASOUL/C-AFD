@@ -12,7 +12,7 @@ global_table_lock = RLock()
 
 
 class SearchSpace:
-    upper_threshold = 0.7  # 上限阈值
+    upper_threshold = 0.5  # 上限阈值
     lower_threshold = 0.1  # 下限阈值
 
     def __init__(self, column_id):
@@ -122,7 +122,7 @@ class SearchSpace:
                 rhs_column = schema[self.column_id - 1]
 
                 if len(column_b) == 1:  # 如果左部属性只有一个，判断方向
-                    if self.correlation_calculator.check_dependency_direction(self.column_id - 1, column_b):
+                    if self.correlation_calculator.check_dependency_direction_new(self.column_id - 1, column_b):
                         logger.info(f"发现函数依赖: {lhs_columns} -> {rhs_column}")
                         self.discovered_dependencies.append((lhs_columns, rhs_column))  # 记录发现的依赖
                         current_level_pruned.add(combination)  # 将当前组合加入当前层的剪枝集

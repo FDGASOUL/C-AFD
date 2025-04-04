@@ -4,17 +4,28 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4bcd1cd3-41f3-4013-aa96-cbdac4f83526" name="更改" comment="3.17">
-      <change afterPath="$PROJECT_DIR$/.idea/MarsCodeWorkspaceAppSettings.xml" afterDir="false" />
+    <list default="true" id="4bcd1cd3-41f3-4013-aa96-cbdac4f83526" name="更改" comment="4.1">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ColumnLayoutRelationData.py" beforeDir="false" afterPath="$PROJECT_DIR$/ColumnLayoutRelationData.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Config.py" beforeDir="false" afterPath="$PROJECT_DIR$/Config.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Correlation_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/Correlation_utils.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Sampler.py" beforeDir="false" afterPath="$PROJECT_DIR$/Sampler.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SearchSpace_bit.py" beforeDir="false" afterPath="$PROJECT_DIR$/SearchSpace_bit.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.log" beforeDir="false" afterPath="$PROJECT_DIR$/app.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/rwd/adult.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/rwd/adult.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/rwd/claims.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/rwd/claims.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/rwd/hospital.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/rwd/hospital.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/discovered_fd/adult_discovered.txt" beforeDir="false" afterPath="$PROJECT_DIR$/discovered_fd/adult_discovered.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/discovered_fd/data-n0_discovered.txt" beforeDir="false" afterPath="$PROJECT_DIR$/discovered_fd/data-n0_discovered.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/discovered_fd/data-n10_discovered.txt" beforeDir="false" afterPath="$PROJECT_DIR$/discovered_fd/data-n10_discovered.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/discovered_fd/data-n20_discovered.txt" beforeDir="false" afterPath="$PROJECT_DIR$/discovered_fd/data-n20_discovered.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/discovered_fd/data-n30_discovered.txt" beforeDir="false" afterPath="$PROJECT_DIR$/discovered_fd/data-n30_discovered.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/discovered_fd/data-n5_discovered.txt" beforeDir="false" afterPath="$PROJECT_DIR$/discovered_fd/data-n5_discovered.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/discovered_fd/earthquake_discovered.txt" beforeDir="false" afterPath="$PROJECT_DIR$/discovered_fd/earthquake_discovered.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/discovered_fd/hospital_discovered.txt" beforeDir="false" afterPath="$PROJECT_DIR$/discovered_fd/hospital_discovered.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/discovered_fd/tax_discovered.txt" beforeDir="false" afterPath="$PROJECT_DIR$/discovered_fd/tax_discovered.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test12.py" beforeDir="false" afterPath="$PROJECT_DIR$/test12.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/groundtruth/rwd/hospital.txt" beforeDir="false" afterPath="$PROJECT_DIR$/groundtruth/rwd/hospital.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/groundtruth/rwd/tax(DESKTOP-hp).txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/groundtruth/rwd/tax.txt" beforeDir="false" afterPath="$PROJECT_DIR$/groundtruth/rwd/tax.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,6 +73,9 @@
       </ProjectWorkspaceSettings>
     </option>
   </component>
+  <component name="PerforceDirect.Settings">
+    <option name="CHARSET" value="无" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 4
 }</component>
@@ -71,30 +85,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Python.Cafd.executor&quot;: &quot;Debug&quot;,
-    &quot;Python.Config.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Sampler_num.executor&quot;: &quot;Run&quot;,
-    &quot;Python.SearchSpace_bit.executor&quot;: &quot;Run&quot;,
-    &quot;Python.test.executor&quot;: &quot;Run&quot;,
-    &quot;Python.test11.executor&quot;: &quot;Run&quot;,
-    &quot;Python.test12.executor&quot;: &quot;Run&quot;,
-    &quot;Python.test6.executor&quot;: &quot;Run&quot;,
-    &quot;Python.test9.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;E:/EdgeDown/paper-afd-comparative-study-main/paper-afd-comparative-study-main&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python.Cafd.executor": "Debug",
+    "Python.Config.executor": "Run",
+    "Python.Sampler_num.executor": "Run",
+    "Python.SearchSpace_bit.executor": "Run",
+    "Python.test.executor": "Run",
+    "Python.test11.executor": "Run",
+    "Python.test12.executor": "Run",
+    "Python.test6.executor": "Run",
+    "Python.test9.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "E:/EdgeDown/paper-afd-comparative-study-main/paper-afd-comparative-study-main",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="Config" type="PythonConfigurationType" factoryName="Python">
       <module name="C-AFD" />
@@ -168,6 +182,7 @@
       <workItem from="1743080293828" duration="1023000" />
       <workItem from="1743140790423" duration="1142000" />
       <workItem from="1743424402644" duration="659000" />
+      <workItem from="1743501510996" duration="36376000" />
     </task>
     <task id="LOCAL-00001" summary="不使用依赖树版本，获取候选依赖组合存在问题">
       <option name="closed" value="true" />
@@ -313,7 +328,15 @@
       <option name="project" value="LOCAL" />
       <updated>1742200812250</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="4.1">
+      <option name="closed" value="true" />
+      <created>1743501707558</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1743501707558</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -349,7 +372,8 @@
     <MESSAGE value="3.7" />
     <MESSAGE value="3.11" />
     <MESSAGE value="3.17" />
-    <option name="LAST_COMMIT_MESSAGE" value="3.17" />
+    <MESSAGE value="4.1" />
+    <option name="LAST_COMMIT_MESSAGE" value="4.1" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/C_AFD$test6.coverage" NAME="test6 覆盖结果" MODIFIED="1736940396626" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
@@ -360,6 +384,6 @@
     <SUITE FILE_PATH="coverage/C_AFD$Sampler_num.coverage" NAME="Sampler_num 覆盖结果" MODIFIED="1736946193454" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/C_AFD$test12.coverage" NAME="test12 覆盖结果" MODIFIED="1743080427957" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/C_AFD$test.coverage" NAME="test 覆盖结果" MODIFIED="1735183211955" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/C_AFD$Config.coverage" NAME="Config 覆盖结果" MODIFIED="1742973755160" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/C_AFD$Config.coverage" NAME="Config 覆盖结果" MODIFIED="1743655319328" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
   </component>
 </project>

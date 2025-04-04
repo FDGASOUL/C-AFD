@@ -5,11 +5,10 @@ Zip(String)->State(String)
 HasChild(String)->MaritalStatus(String)
 SingleExemp(Integer)->MaritalStatus(String)
 MarriedExemp(Integer)->MaritalStatus(String)
-ChildExemp(Integer)->MaritalStatus(String)
 MaritalStatus(String)->HasChild(String)
 ChildExemp(Integer)->HasChild(String)
 MarriedExemp(Integer),SingleExemp(Integer)->HasChild(String)
 精度: 0.00
 召回率: 0.00
 F1分数: 0.00
-总运行时间: 32497 ms
+总运行时间: 19488 ms

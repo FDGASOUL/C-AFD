@@ -51,7 +51,7 @@ def filter_redundant_dependencies(dependencies):
 class Config:
     DATASET_CONFIG = {
         "IRIS": {"path": "iris", "has_header": False},
-        "DATA": {"path": "data-n0", "has_header": True},
+        "DATA": {"path": "data", "has_header": True},
         "BEERS": {"path": "beers", "has_header": True},
         "FLIGHTS": {"path": "flights", "has_header": True},
         "HOSPITAL": {"path": "hospital", "has_header": True},
@@ -61,8 +61,12 @@ class Config:
         "ASIA": {"path": "asia", "has_header": True},
         "EARTHQUAKE": {"path": "earthquake", "has_header": True},
         "CANCER": {"path": "cancer", "has_header": True},
-        "ADULT": {"path": "rwd/adult", "has_header": True},
+        "RWD-ADULT": {"path": "rwd/adult", "has_header": True},
         "RWD-TAX": {"path": "rwd/tax", "has_header": True},
+        "RWD-HOSPITAL": {"path": "rwd/hospital", "has_header": True},
+        "RWD-CLAIMS": {"path": "rwd/claims", "has_header": True},
+        "RWD-DBLP": {"path": "rwd/dblp10k", "has_header": True},
+        "RWD-C38": {"path": "rwd/t_biocase_identification_r91800_c38", "has_header": True},
     }
 
     def __init__(self, dataset):
@@ -91,7 +95,7 @@ if __name__ == "__main__":
     start_time = time.time()
     setup_logging()
     logging.info("全局日志配置已完成！")
-    conf = Config("RWD-TAX")
+    conf = Config("DATA")
     logging.info(conf)  # 使用日志代替打印
     logging.info("Starting CAFD execution...")
 

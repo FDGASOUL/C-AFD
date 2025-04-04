@@ -38,7 +38,7 @@ class Sampler:
             raise ValueError(f"Failed to read the input dataset: {e}")
 
         # 删除含有空值的行
-        data.dropna(inplace=True)
+        # data.dropna(inplace=True)
 
         # 检查抽样数量是否合理
         if self.sample_size > len(data):
