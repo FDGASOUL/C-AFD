@@ -4,28 +4,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4bcd1cd3-41f3-4013-aa96-cbdac4f83526" name="更改" comment="4.1">
+    <list default="true" id="4bcd1cd3-41f3-4013-aa96-cbdac4f83526" name="更改" comment="4.4">
+      <change afterPath="$PROJECT_DIR$/Incorporate_into_hierarchical.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Incorporate_into_new.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test13.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test14.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_birch.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Config.py" beforeDir="false" afterPath="$PROJECT_DIR$/Config.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Correlation_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/Correlation_utils.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Sampler.py" beforeDir="false" afterPath="$PROJECT_DIR$/Sampler.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sampler_num.py" beforeDir="false" afterPath="$PROJECT_DIR$/Sampler_num.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SearchSpace_bit.py" beforeDir="false" afterPath="$PROJECT_DIR$/SearchSpace_bit.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.log" beforeDir="false" afterPath="$PROJECT_DIR$/app.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/rwd/adult.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/rwd/adult.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/rwd/claims.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/rwd/claims.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/rwd/hospital.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/rwd/hospital.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/rwd/tax.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/rwd/tax.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/discovered_fd/adult_discovered.txt" beforeDir="false" afterPath="$PROJECT_DIR$/discovered_fd/adult_discovered.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/discovered_fd/data-n0_discovered.txt" beforeDir="false" afterPath="$PROJECT_DIR$/discovered_fd/data-n0_discovered.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/discovered_fd/data-n10_discovered.txt" beforeDir="false" afterPath="$PROJECT_DIR$/discovered_fd/data-n10_discovered.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/discovered_fd/data-n20_discovered.txt" beforeDir="false" afterPath="$PROJECT_DIR$/discovered_fd/data-n20_discovered.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/discovered_fd/data-n30_discovered.txt" beforeDir="false" afterPath="$PROJECT_DIR$/discovered_fd/data-n30_discovered.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/discovered_fd/data-n5_discovered.txt" beforeDir="false" afterPath="$PROJECT_DIR$/discovered_fd/data-n5_discovered.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/discovered_fd/earthquake_discovered.txt" beforeDir="false" afterPath="$PROJECT_DIR$/discovered_fd/earthquake_discovered.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/discovered_fd/data_discovered.txt" beforeDir="false" afterPath="$PROJECT_DIR$/discovered_fd/data_discovered.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/discovered_fd/hospital_discovered.txt" beforeDir="false" afterPath="$PROJECT_DIR$/discovered_fd/hospital_discovered.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/discovered_fd/tax_discovered.txt" beforeDir="false" afterPath="$PROJECT_DIR$/discovered_fd/tax_discovered.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/groundtruth/rwd/hospital.txt" beforeDir="false" afterPath="$PROJECT_DIR$/groundtruth/rwd/hospital.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/groundtruth/rwd/tax(DESKTOP-hp).txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/groundtruth/rwd/tax.txt" beforeDir="false" afterPath="$PROJECT_DIR$/groundtruth/rwd/tax.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test12.py" beforeDir="false" afterPath="$PROJECT_DIR$/test12.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,9 +72,6 @@
       </ProjectWorkspaceSettings>
     </option>
   </component>
-  <component name="PerforceDirect.Settings">
-    <option name="CHARSET" value="无" />
-  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 4
 }</component>
@@ -89,13 +85,18 @@
   "keyToString": {
     "Python.Cafd.executor": "Debug",
     "Python.Config.executor": "Run",
+    "Python.Incorporate_into_DBSCAN.executor": "Debug",
+    "Python.Incorporate_into_hierarchical.executor": "Run",
     "Python.Sampler_num.executor": "Run",
     "Python.SearchSpace_bit.executor": "Run",
     "Python.test.executor": "Run",
     "Python.test11.executor": "Run",
     "Python.test12.executor": "Run",
+    "Python.test13.executor": "Run",
+    "Python.test14.executor": "Debug",
     "Python.test6.executor": "Run",
     "Python.test9.executor": "Run",
+    "Python.test_birch.executor": "Debug",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "master",
@@ -183,6 +184,11 @@
       <workItem from="1743140790423" duration="1142000" />
       <workItem from="1743424402644" duration="659000" />
       <workItem from="1743501510996" duration="36376000" />
+      <workItem from="1743674742788" duration="8519000" />
+      <workItem from="1744075778866" duration="23867000" />
+      <workItem from="1744259596839" duration="13436000" />
+      <workItem from="1744337527106" duration="17974000" />
+      <workItem from="1744376129193" duration="20303000" />
     </task>
     <task id="LOCAL-00001" summary="不使用依赖树版本，获取候选依赖组合存在问题">
       <option name="closed" value="true" />
@@ -336,7 +342,15 @@
       <option name="project" value="LOCAL" />
       <updated>1743501707558</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="4.4">
+      <option name="closed" value="true" />
+      <created>1743754222615</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1743754222615</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -373,17 +387,44 @@
     <MESSAGE value="3.11" />
     <MESSAGE value="3.17" />
     <MESSAGE value="4.1" />
-    <option name="LAST_COMMIT_MESSAGE" value="4.1" />
+    <MESSAGE value="4.4" />
+    <option name="LAST_COMMIT_MESSAGE" value="4.4" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Incorporate_into_hierarchical.py</url>
+          <line>174</line>
+          <option name="timeStamp" value="22" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/test14.py</url>
+          <line>98</line>
+          <option name="timeStamp" value="23" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/test_birch.py</url>
+          <line>102</line>
+          <option name="timeStamp" value="24" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/C_AFD$test6.coverage" NAME="test6 覆盖结果" MODIFIED="1736940396626" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/C_AFD$test11.coverage" NAME="test11 覆盖结果" MODIFIED="1741159263645" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/C_AFD$SearchSpace_bit.coverage" NAME="SearchSpace_bit 覆盖结果" MODIFIED="1741341969538" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/C_AFD$test9.coverage" NAME="test9 覆盖结果" MODIFIED="1740645843362" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/C_AFD$Cafd.coverage" NAME="Cafd 覆盖结果" MODIFIED="1734085271666" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/C_AFD$Sampler_num.coverage" NAME="Sampler_num 覆盖结果" MODIFIED="1736946193454" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/C_AFD$test12.coverage" NAME="test12 覆盖结果" MODIFIED="1743080427957" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/C_AFD$test_birch.coverage" NAME="test_birch 覆盖结果" MODIFIED="1744712189106" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/C_AFD$Incorporate_into_hierarchical.coverage" NAME="Incorporate_into_hierarchical 覆盖结果" MODIFIED="1744715196673" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/C_AFD$test13.coverage" NAME="test13 覆盖结果" MODIFIED="1744356574004" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/C_AFD$Incorporate_into_DBSCAN.coverage" NAME="Incorporate_into_DBSCAN 覆盖结果" MODIFIED="1744709247533" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/C_AFD$Sampler_num.coverage" NAME="Sampler_num 覆盖结果" MODIFIED="1744361371693" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/C_AFD$test12.coverage" NAME="test12 覆盖结果" MODIFIED="1744364005714" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/C_AFD$test.coverage" NAME="test 覆盖结果" MODIFIED="1735183211955" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/C_AFD$Config.coverage" NAME="Config 覆盖结果" MODIFIED="1743655319328" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/C_AFD$test11.coverage" NAME="test11 覆盖结果" MODIFIED="1741159263645" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/C_AFD$test14.coverage" NAME="test14 覆盖结果" MODIFIED="1744710549695" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/C_AFD$Cafd.coverage" NAME="Cafd 覆盖结果" MODIFIED="1734085271666" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/C_AFD$Config.coverage" NAME="Config 覆盖结果" MODIFIED="1744707239588" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
   </component>
 </project>

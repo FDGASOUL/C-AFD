@@ -12,8 +12,6 @@ global_table_lock = RLock()
 
 
 class SearchSpace:
-    upper_threshold = 0.5  # 上限阈值
-    lower_threshold = 0.1  # 下限阈值
 
     def __init__(self, column_id):
         """
@@ -71,29 +69,62 @@ class SearchSpace:
 
         return next_combinations
 
-    def compute_correlation_with_cache(self, lhs_columns, rhs_column):
+    def compute_correlation_with_cache(self, rhs_column, lhs_columns):
         """
         带缓存的相关性计算。
-        :param lhs_columns: 左部属性列表。
         :param rhs_column: 右部属性索引。
-        :return: 相关性值。
+        :param lhs_columns: 左部属性列表。
+        :return: 相关性结果。
         """
-        key = tuple(sorted(lhs_columns + [rhs_column]))  # 构建唯一的缓存键
+        if len(lhs_columns) != 1:
+            raise ValueError("当前实现仅支持单个左部属性的情况")
+        left = lhs_columns[0]
+        # 分别构造正向（A->B）和反向（B->A）的缓存键
+        key_fwd = ((left,), rhs_column)
+        key_rev = ((rhs_column,), left)
+
+        schema = self.context.get_schema()
+        lhs_name = schema[left]
+        rhs_name = schema[rhs_column]
 
         with global_table_lock:  # 加锁确保线程安全
-            if key in global_conclusion_table:  # 如果缓存中存在数据，直接返回
-                logger.info(f"从全局结论表中命中缓存: {key}，当前搜索空间: {rhs_column}")
-                return global_conclusion_table[key]
+            if key_fwd in global_conclusion_table:
+                logger.info(f"从全局结论表中命中缓存: {lhs_name}->{rhs_name}")
+                return global_conclusion_table[key_fwd]
 
-        # 如果缓存中没有，计算相关性
+        # 如果缓存中没有，则计算相关性
         correlation = self.correlation_calculator.compute_correlation(rhs_column, lhs_columns)
 
-        with global_table_lock:
-            global_conclusion_table[key] = correlation  # 更新缓存
-            logger.info(f"将结果存入全局结论表: {key} -> {correlation}, 当前搜索空间: {rhs_column}")
+        # 根据计算结果构建正反两个方向的结果
+        if correlation == "mutual":
+            result_fwd = True
+            result_rev = True
+        elif correlation == "left_to_right":
+            result_fwd = True
+            result_rev = False
+        elif correlation == "right_to_left":
+            result_fwd = False
+            result_rev = True
+        elif correlation == "invalid":
+            result_fwd = False
+            result_rev = False
+        elif correlation == "pending":
+            result_fwd = "pending"
+            result_rev = "pending"
+        else:
+            raise ValueError(f"未知的相关性结果: {correlation}")
 
-        return correlation
-# TODO:方向错误的应该怎么处理？
+        # 存入全局结论表，更新正向和反向缓存
+        with global_table_lock:
+            global_conclusion_table[key_fwd] = result_fwd
+            # global_conclusion_table[key_rev] = result_rev
+            # logger.info(f"将结果存入全局结论表: {lhs_name}->{rhs_name} -> {result_fwd}, {rhs_name}->{lhs_name} -> {result_rev}")
+            logger.info(
+                f"将结果存入全局结论表: {lhs_name}->{rhs_name} -> {result_fwd}")
+
+        return result_fwd
+
+    # TODO:方向错误的应该怎么处理？
     def recursive_discover(self, current_level_combinations):
         """
         递归发现函数依赖。
@@ -107,39 +138,45 @@ class SearchSpace:
             # 解析组合，将二进制位转换为属性索引列表
             column_b = [idx for idx in range(self.context.num_columns()) if (combination & (1 << idx)) > 0]
 
-            # # 计算组合的相关性
-            # if len(column_b) == 1:
-            #     correlation = self.compute_correlation_with_cache(column_b, self.column_id - 1)
-            # else:
-            #     correlation = self.correlation_calculator.compute_correlation(self.column_id - 1, column_b)
+            # 计算组合的相关性
+            if len(column_b) == 1:
+                correlation = self.compute_correlation_with_cache(self.column_id - 1, column_b)
+            else:
+                correlation = self.correlation_calculator.compute_correlation(self.column_id - 1, column_b)
 
-            correlation = self.correlation_calculator.compute_correlation(self.column_id - 1, column_b)
-
-            if correlation > self.upper_threshold:
+            if correlation is True:
                 # 发现函数依赖，记录
                 schema = self.context.get_schema()
                 lhs_columns = [schema[attr] for attr in column_b]
                 rhs_column = schema[self.column_id - 1]
-
-                if len(column_b) == 1:  # 如果左部属性只有一个，判断方向
-                    if self.correlation_calculator.check_dependency_direction_new(self.column_id - 1, column_b):
-                        logger.info(f"发现函数依赖: {lhs_columns} -> {rhs_column}")
-                        self.discovered_dependencies.append((lhs_columns, rhs_column))  # 记录发现的依赖
-                        current_level_pruned.add(combination)  # 将当前组合加入当前层的剪枝集
-                    else:
-                        logger.info(f"方向错误: {lhs_columns} -> {rhs_column}")
-                        # next_level_combinations.add(combination)  # 方向有问题，加入扩展节点
-                else:  # 如果左部属性超过一个，直接存储依赖
-                    logger.info(f"发现函数依赖: {lhs_columns} -> {rhs_column}")
-                    self.discovered_dependencies.append((lhs_columns, rhs_column))  # 记录发现的依赖
-                    current_level_pruned.add(combination)  # 将当前组合加入当前层的剪枝集
-
-            elif correlation < self.lower_threshold:
+                logger.info(f"发现函数依赖: {lhs_columns} -> {rhs_column}")
+                self.discovered_dependencies.append((lhs_columns, rhs_column))  # 记录发现的依赖
+                current_level_pruned.add(combination)  # 将当前组合加入当前层的剪枝集
+            elif correlation is False or correlation == "invalid":
                 # 相关性过低，加入当前层的剪枝集
                 current_level_pruned.add(combination)
-            else:
+            elif correlation == "pending":
                 # 相关性介于上下阈值之间，保留作为下一层候选
                 next_level_combinations.add(combination)
+                # if len(column_b) == 1:  # 如果左部属性只有一个，判断方向
+                #     if self.correlation_calculator.check_dependency_direction_new(self.column_id - 1, column_b):
+                #         logger.info(f"发现函数依赖: {lhs_columns} -> {rhs_column}")
+                #         self.discovered_dependencies.append((lhs_columns, rhs_column))  # 记录发现的依赖
+                #         current_level_pruned.add(combination)  # 将当前组合加入当前层的剪枝集
+                #     else:
+                #         logger.info(f"方向错误: {lhs_columns} -> {rhs_column}")
+                #         # next_level_combinations.add(combination)  # 方向有问题，加入扩展节点
+                # else:  # 如果左部属性超过一个，直接存储依赖
+                #     logger.info(f"发现函数依赖: {lhs_columns} -> {rhs_column}")
+                #     self.discovered_dependencies.append((lhs_columns, rhs_column))  # 记录发现的依赖
+                #     current_level_pruned.add(combination)  # 将当前组合加入当前层的剪枝集
+
+            # elif correlation < self.lower_threshold:
+            #     # 相关性过低，加入当前层的剪枝集
+            #     current_level_pruned.add(combination)
+            # else:
+            #     # 相关性介于上下阈值之间，保留作为下一层候选
+            #     next_level_combinations.add(combination)
 
         # 生成下一层组合，仅检查当前层的剪枝集
         next_combinations = self.generate_next_combinations(next_level_combinations, current_level_pruned)

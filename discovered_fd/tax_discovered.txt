@@ -1,14 +1,16 @@
-FName(String)->Gender(String)
-Zip(String)->City(String)
-AreaCode(String)->State(String)
-Zip(String)->State(String)
-HasChild(String)->MaritalStatus(String)
-SingleExemp(Integer)->MaritalStatus(String)
-MarriedExemp(Integer)->MaritalStatus(String)
-MaritalStatus(String)->HasChild(String)
-ChildExemp(Integer)->HasChild(String)
-MarriedExemp(Integer),SingleExemp(Integer)->HasChild(String)
-精度: 0.00
-召回率: 0.00
-F1分数: 0.00
-总运行时间: 19488 ms
+FName->Gender
+Zip->City
+AreaCode->State
+Zip->State
+HasChild(String)->MaritalStatus
+SingleExemp->MaritalStatus
+MarriedExemp->MaritalStatus
+MaritalStatus->HasChild(String)
+ChildExemp->HasChild(String)
+MarriedExemp,SingleExemp->HasChild(String)
+State->ChildExemp
+SingleExemp->ChildExemp
+精度: 0.25
+召回率: 1.00
+F1分数: 0.40
+总运行时间: 81048 ms

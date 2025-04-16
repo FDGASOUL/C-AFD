@@ -9,7 +9,7 @@ def calculate_full_formula(v, p, delta, d):
     numerator = math.sqrt(-16 * v * log_term) - 8 * log_term
 
     # Calculate the denominator
-    denominator = 1.69 * delta * (d - 1) * v ** (-0.071)
+    denominator = 1.69 * delta * (d - 1) * (v ** (-0.071))
 
     # Final result: numerator / denominator
     result = numerator / denominator
@@ -17,10 +17,11 @@ def calculate_full_formula(v, p, delta, d):
 
 
 # Example usage:
-p = 0.01
+p = 0.000001
+# p = 0.01
 delta = 0.005
-d1 = 2
-d2 = 2
+d1 = 10000
+d2 = 10000
 d = min(d1, d2)
 v = (d1-1) * (d2-1)
 result = calculate_full_formula(v, p, delta, d)

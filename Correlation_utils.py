@@ -1,14 +1,10 @@
-# TODO: 对计算结果的缓存，是否需要？都什么结果能够用上缓存？
-# TODO: 一次检测正反的方向，前面代码需要改变，只影响速度，不影响结果
-import math
-
-import numpy as np
-import pandas as pd
-from scipy.stats import fisher_exact
-
-from Incorporate_into import Incorporate
 import logging
+import random
+import time
+import numpy as np
 
+# from Incorporate_into_DBSCAN import Incorporate
+from Incorporate_into_new import Incorporate
 # 获取日志实例
 logger = logging.getLogger(__name__)
 
@@ -18,7 +14,8 @@ class CorrelationCalculator:
     相关性计算工具类。
     用于封装不同的相关性计算方法，以便在项目中复用。
     """
-    directional_threshold = 0.7  # 方向判断阈值
+    upper_threshold = 0.5  # 上限阈值
+    lower_threshold = 0.1  # 下限阈值
 
     def __init__(self, column_layout_data):
         """
@@ -37,7 +34,6 @@ class CorrelationCalculator:
         """
         return self.schema[column_index]
 
-    # TODO: 应该采取左部PLI，右部vectors的方式，但是PLI应该怎么交叉呢？
     def build_linked_table(self, lhs, rhs):
         """
         构建列联表（linked table），左部 (lhs) 使用 PLI，右部 (rhs) 使用 columnVectors。
@@ -54,7 +50,7 @@ class CorrelationCalculator:
             pli_lhs = self._cross_plis([self.columnData[col]["PLI"] for col in lhs])
 
         # 2. **筛选前 5 大簇**
-        # pli_lhs = sorted(pli_lhs, key=len, reverse=True)[:5]  # 按大小降序，取前 5 个
+        # pli_lhs = sorted(pli_lhs, key=len, reverse=True)[:20]  # 按大小降序，取前 5 个
 
         # 3. 计算 RHS 的 columnVectors
         column_vectors_rhs = self.columnVectors[rhs]
@@ -82,59 +78,61 @@ class CorrelationCalculator:
 
         return crosstab
 
-    # def build_linked_table_test(self, lhs, rhs):
-    #     df = self.testData
-    #     # 获取列名
-    #     rhs_name = self.schema[rhs]
-    #     lhs_names = [self.schema[col] for col in lhs]
-    #
-    #     # 构建列联表后转置（交换行和列）
-    #     contingency_table = pd.crosstab(
-    #         index=df[rhs_name],
-    #         columns=[df[col] for col in lhs_names]
-    #     ).T  # 添加转置操作
-    #
-    #     # 转换为二维数组并返回（保持与其他方法一致的输出格式）
-    #     return contingency_table.values.tolist()
-
-
-    def build_linked_table_old(self, column_a, column_b):
+    def build_linked_table_new(self, lhs, rhs):
         """
-        利用 Probing Table 构建列连表（linked table）。
-        :param column_a: 列 A 的索引。
-        :param column_b: 列 B 的索引或组合（可以是单个索引，也可以是集合）。
-        :return: 一个包含映射关系的二维数组，表示列连表。
-        """
-        pli_a = self.columnData[column_a]["PLI"]
+        构建列联表（linked table），左部 (lhs) 使用 PLI，右部 (rhs) 使用 columnVectors。
 
-        if len(column_b) == 1:
-            # 如果只有一个列，直接获取其 columnVectors
-            column_vectors_b = self.columnVectors[column_b[0]]
+        :param lhs: 左部属性索引列表（可以是单个属性，也可以是多个属性）。
+        :param rhs: 右部属性索引（单个属性）。
+        :return: 一个包含映射关系的二维数组，表示列联表。
+        """
+
+        # 1. 计算 LHS 的 PLI
+        if len(lhs) == 1:
+            pli_lhs = self.columnData[lhs[0]]["PLI"]
         else:
-            # 对多个列的 columnVectors 进行交叉，形成新 columnVectors
-            column_vectors_b = self._cross_column_vectors([self.columnVectors[col] for col in column_b])
+            pli_lhs = self._cross_plis([self.columnData[col]["PLI"] for col in lhs])
 
-        # 根据 pli_a 中所有实际出现的行构建 column_b 的索引，避免出现空索引的情况
+        # 2. 加权抽样簇：如果簇的总数大于 50，则根据簇大小的权重抽样 50 个簇，否则全部选取
+        if len(pli_lhs) > 50:
+            sizes = [len(cluster) for cluster in pli_lhs]
+            total_size = sum(sizes)
+            # 计算权重，权重之和为 1
+            weights = [size / total_size for size in sizes]
+            indices = np.random.choice(range(len(pli_lhs)), size=50, replace=False, p=weights)
+            sampled_clusters = [pli_lhs[i] for i in indices]
+        else:
+            sampled_clusters = pli_lhs
+
+        # 3. 对每个簇再进行抽样操作：每个簇中抽取 100 条数据（如果不足 100 条则全部选取）
+        sampled_clusters = [random.sample(cluster, 100) if len(cluster) > 100 else cluster for cluster in
+                            sampled_clusters]
+
+        # 4. 计算 RHS 的 columnVectors
+        column_vectors_rhs = self.columnVectors[rhs]
+
+        # 5. 获取 RHS 唯一值，初始化映射表
         unique_values = set()
-        for cluster in pli_a:
+        for cluster in sampled_clusters:
             for pos in cluster:
-                value = column_vectors_b[pos]
-                unique_values.add(value)
-        lhs_index = {value: 0 for value in unique_values}
+                unique_values.add(column_vectors_rhs[pos])
+        rhs_index = {value: 0 for value in unique_values}
 
-        # 填充列联表：每个 cluster 克隆一份初始化后的索引，并更新计数
+        # 6. 构建列联表
         crosstab_list = []
-        for cluster in pli_a:
-            cluster_map = lhs_index.copy()
+        for cluster in sampled_clusters:
+            # 这里对每个簇先复制初始的映射结构
+            cluster_map = rhs_index.copy()
             for position in cluster:
-                value_b = column_vectors_b[position]
-                cluster_map[value_b] = cluster_map.get(value_b, 0) + 1
+                value_rhs = column_vectors_rhs[position]
+                cluster_map[value_rhs] = cluster_map.get(value_rhs, 0) + 1
             crosstab_list.append(cluster_map)
 
-        # 转换为二维数组：按照排序后的索引键形成每一行的计数列表
+        # 7. 转换为二维数组，按 RHS 唯一值字典序排列
+        sorted_keys = sorted(rhs_index.keys())
         crosstab = []
         for cluster_map in crosstab_list:
-            crosstab.append([cluster_map.get(key, 0) for key in sorted(lhs_index.keys())])
+            crosstab.append([cluster_map.get(key, 0) for key in sorted_keys])
 
         return crosstab
 
@@ -186,218 +184,42 @@ class CorrelationCalculator:
         # 不再过滤单元素簇，保持所有簇
         return [sorted(list(cluster)) for cluster in merged_clusters.values()]
 
-    def check_dependency_direction(self, rhs_column, lhs_columns):
+    def check_dependency_direction(self, rhs_column, lhs_columns, linked_table):
         """
-        检查函数依赖的方向是否正确（按行计算）。
-        :param lhs_columns: 左部属性列表。
-        :param rhs_column: 右部属性。
-        :return: 如果所有行都满足方向阈值返回 True，否则返回 False。
+        检查函数依赖方向（加权平均比较行列方向）
+        :param lhs_columns: 左部属性列表（潜在决定因素）
+        :param rhs_column: 右部属性（被决定属性）
+        :param linked_table: 预先构建的列联表
+        :return: 方向判断结果字符串
         """
-        # 构建列联表
-        crosstab = self.build_linked_table(lhs_columns, rhs_column)
-        logger.info(f"目前的左部属性列表：{lhs_columns}")
-        logger.info(f"目前的右部属性：{rhs_column}")
-
-        # 记录不符合条件的行
-        failed_rows = []
-
-        # 遍历行联表（按行计算）
-        for row_index, row in enumerate(crosstab):
-            row_sum = sum(row)  # 当前行的总数
-            if row_sum == 0:
-                continue  # 跳过没有数据的行
-            max_value = max(row)  # 当前行的最大值
-            ratio = max_value / row_sum
-            # logger.info(f"行 {row_index} 的 max_value / row_sum = {ratio}")
-
-            if ratio < self.directional_threshold:
-                failed_rows.append((row_index, ratio))  # 记录不符合条件的行
-
-        # 如果有不符合条件的行，返回 False，并输出不符合条件的行信息
-        if failed_rows:
-            logger.info(f"以下行不满足阈值：{failed_rows}")
-            return False
-
-        # 所有行都满足阈值，返回 True
-        return True
-
-    def check_dependency_direction_new(self, rhs_column, lhs_columns):
-        """
-        检查函数依赖的方向是否正确（加权平均比较行列方向）
-        :param lhs_columns: 左部属性列表。
-        :param rhs_column: 右部属性。
-        :return: 如果行方向加权平均 >= 列方向且超过阈值返回True
-        """
-        crosstab = self.build_linked_table(lhs_columns, rhs_column)
-        logger.info(f"左部属性：{lhs_columns}，右部属性：{rhs_column}")
-
-        # 计算行方向加权平均
-        total = sum(sum(row) for row in crosstab)
+        total = sum(sum(row) for row in linked_table)
         if total == 0:
             logger.warning("列联表总数为零")
-            return False
+            return "invalid"
 
-        row_scores = []
-        for row in crosstab:
-            row_sum = sum(row)
-            if row_sum == 0:
-                continue
-            max_val = max(row)
-            row_scores.append((max_val / row_sum) * (row_sum / total))
-        row_avg = sum(row_scores) if row_scores else 0
+        # 计算行方向（左→右）加权平均
+        row_avg = sum(
+            (max(row) / row_sum) * (row_sum / total)
+            for row in linked_table
+            if (row_sum := sum(row)) > 0
+        )
 
-        # 计算列方向加权平均（转置列联表）
-        col_scores = []
-        for col in zip(*crosstab):  # 转置列联表
-            col_sum = sum(col)
-            if col_sum == 0:
-                continue
-            max_val = max(col)
-            col_scores.append((max_val / col_sum) * (col_sum / total))
-        col_avg = sum(col_scores) if col_scores else 0
+        # 计算列方向（右→左）加权平均
+        col_avg = sum(
+            (max(col) / col_sum) * (col_sum / total)
+            for col in zip(*linked_table)  # 转置列联表
+            if (col_sum := sum(col)) > 0
+        )
 
         logger.info(f"行方向得分: {row_avg:.2f}, 列方向得分: {col_avg:.2f}")
 
-        # 最终判断：行方向得分需超过阈值且大于等于列方向得分
-        return row_avg >= col_avg
-
-
-
-    # def check_dependency_direction(self, lhs_columns, rhs_column):
-    #     """
-    #     检查函数依赖的方向是否正确。
-    #     :param lhs_columns: 左部属性列表。
-    #     :param rhs_column: 右部属性。
-    #     :return: 如果所有列都满足方向阈值，返回一个包含正向和反向方向判断结果的字典。
-    #     """
-    #     # 构建列联表
-    #     crosstab = self.build_linked_table(lhs_columns, rhs_column)
-    #
-    #     # 判断正向（左部决定右部）方向是否满足阈值
-    #     forward_check = True
-    #     for col_index in range(len(crosstab[0])):
-    #         column_sum = sum(row[col_index] for row in crosstab)  # 当前列的总数
-    #         if column_sum == 0:
-    #             continue  # 跳过没有数据的列
-    #         max_value = max(row[col_index] for row in crosstab)  # 当前列的最大值
-    #         if max_value / column_sum < self.directional_threshold:
-    #             forward_check = False  # 如果有列不满足阈值，标记为 False
-    #             break
-    #
-    #     # 判断反向（右部决定左部）方向是否满足阈值
-    #     reverse_check = True
-    #     for row_index in range(len(crosstab)):
-    #         row_sum = sum(crosstab[row_index])  # 当前行的总数
-    #         if row_sum == 0:
-    #             continue  # 跳过没有数据的行
-    #         max_value = max(crosstab[row_index])  # 当前行的最大值
-    #         if max_value / row_sum < self.directional_threshold:
-    #             reverse_check = False  # 如果有行不满足阈值，标记为 False
-    #             break
-    #
-    #     return {
-    #         "forward_check": forward_check,  # 正向判断结果
-    #         "reverse_check": reverse_check  # 反向判断结果
-    #     }
-
-    # def compute_correlation(self, column_a, column_b):
-    #     """
-    #     计算两个列之间的相关性。
-    #     :param column_a: 列 A 的索引。
-    #     :param column_b: 列 B 的索引或组合。
-    #     :return: 相关性值。
-    #     """
-    #     # 构建列连表
-    #     linked_table = self.build_linked_table(column_a, column_b)
-    #     expected_frequencies = self.compute_expected_frequencies(linked_table)
-    #     # 检查期望分布频数表
-    #     if not self._check_expected_frequencies(expected_frequencies):
-    #         logger.warning("期望分布频数表中超过 20% 的格子期望计数未大于 5，进行归并操作。")
-    #         inc = Incorporate()
-    #         result = inc.merge_tables(linked_table, expected_frequencies)
-    #         if not result:
-    #             logger.warning("归并操作失败，改用最大似然比卡方检验计算相关性。")
-    #
-    #             # 改用最大似然比卡方检验
-    #             total = sum(sum(row) for row in linked_table)
-    #             if total == 0:
-    #                 logger.warning("总观测数为零，设置 φ² 为 0。")
-    #                 return 0
-    #
-    #             g_squared = 0
-    #             for i, row in enumerate(linked_table):
-    #                 for j, observed in enumerate(row):
-    #                     expected = expected_frequencies[i][j]
-    #                     if observed > 0 and expected > 0:
-    #                         g_squared += 2 * observed * math.log(observed / expected)
-    #                     elif observed > 0 and expected == 0:
-    #                         logger.warning(f"期望频数为 0（{i}, {j}），无法计算最大似然比卡方统计量。")
-    #
-    #             chi_squared = 0
-    #             for i, row in enumerate(linked_table):
-    #                 for j, observed in enumerate(row):
-    #                     expected = expected_frequencies[i][j]
-    #                     if expected > 0:
-    #                         chi_squared += ((observed - expected) ** 2) / expected
-    #                     else:
-    #                         logger.warning(f"期望频数为零（{i}, {j}），跳过此格子。")
-    #
-    #             d1, d2 = len(linked_table), len(linked_table[0])
-    #             d = min(d1, d2)
-    #             if d <= 1:
-    #                 logger.warning("自由度为零，设置 φ² 为 0。")
-    #                 return 0
-    #
-    #             phi_squared = g_squared / (total * (d - 1))
-    #             phi_squared_1 = chi_squared / (total * (d - 1))
-    #
-    #             # # 使用creamV
-    #             # # 保留四位小数
-    #             # g_ratio = np.round(g_squared / (total * (d - 1)), 4)
-    #             # chi_ratio = np.round(chi_squared / (total * (d - 1)), 4)
-    #             #
-    #             # # 计算平方根
-    #             # phi_squared = np.sqrt(g_ratio)
-    #             # phi_squared_1 = np.sqrt(chi_ratio)
-    #
-    #             column_a_name = self._get_column_name(column_a)
-    #             column_b_names = [self._get_column_name(col) for col in column_b]
-    #             logger.info(
-    #                 f"计算列 {column_a_name} 和列 {column_b_names} 之间的相关性 (φ², 基于最大似然比卡方): {phi_squared}, 基于原卡方：{phi_squared_1}")
-    #             return phi_squared
-    #
-    #         # 如果归并成功，更新表格和期望频数
-    #         linked_table, expected_frequencies = result
-    #
-    #     # 总观测数
-    #     total = sum(sum(row) for row in linked_table)
-    #     if total == 0:
-    #         logger.warning("总观测数为零，设置 φ² 为 0。")
-    #         return 0
-    #
-    #     # 计算 χ²
-    #     chi_squared = 0
-    #     for i, row in enumerate(linked_table):
-    #         for j, observed in enumerate(row):
-    #             expected = expected_frequencies[i][j]
-    #             if expected > 0:
-    #                 chi_squared += ((observed - expected) ** 2) / expected
-    #             else:
-    #                 logger.warning(f"期望频数为零（{i}, {j}），跳过此格子。")
-    #
-    #     # 计算 φ²
-    #     d1, d2 = len(linked_table), len(linked_table[0])
-    #     d = min(d1, d2)
-    #     if d <= 1:
-    #         logger.warning("自由度为零，设置 φ² 为 0。")
-    #         return 0
-    #
-    #     phi_squared = chi_squared / (total * (d - 1))
-    #
-    #     column_a_name = self._get_column_name(column_a)
-    #     column_b_names = [self._get_column_name(col) for col in column_b]
-    #     logger.info(f"计算列 {column_a_name} 和列 {column_b_names} 之间的相关性 (φ²): {phi_squared}")
-    #     return phi_squared
+        # 判断依赖方向
+        if abs(row_avg - col_avg) < 1e-6:  # 浮点数相等判断
+            return "mutual"
+        elif row_avg > col_avg:
+            return "left_to_right"
+        else:
+            return "right_to_left"
 
     def compute_correlation(self, column_a, column_b):
         """
@@ -408,28 +230,38 @@ class CorrelationCalculator:
         """
         # 构建列联表
         linked_table = self.build_linked_table(column_b, column_a)
+
         if not linked_table:
             logger.warning("列联表为空，无法计算相关性。")
-            return 0
+            return "invalid"
+
+        # 检查列联表,如果列联表的列数远大于行数，认为相关性为 0
+        # if len(linked_table[0]) > len(linked_table) * 10:
+        #     logger.warning("列联表的列数远大于行数，相关性设置为 0。")
+        #     return "invalid"
 
         expected_frequencies = self.compute_expected_frequencies(linked_table)
-
+        start_time = time.time()
         # 检查期望分布频数表
-        if not self._check_expected_frequencies(expected_frequencies):
-            logger.warning("期望分布频数表中超过 20% 的格子期望计数未大于 5，进行归并操作。")
-            inc = Incorporate()
-            result = inc.merge_tables(linked_table, expected_frequencies)
-            if not result:
-                logger.warning("归并操作失败，相关性设置为 0。")
-                return 0
-
-            linked_table, expected_frequencies = result
+        # if not self._check_expected_frequencies(expected_frequencies):
+        #     if len(column_b) == 1:
+        #         logger.warning("期望分布频数表中超过 20% 的格子期望计数未大于 5，进行归并操作。")
+        #         inc = Incorporate()
+        #         result = inc.merge_tables(linked_table, expected_frequencies)
+        #         # if not result:
+        #         #     logger.warning("归并操作失败，相关性设置为 0。")
+        #         #     return "invalid"
+        #         # logger.info("归并成功。")
+        #         linked_table, expected_frequencies = result
+        #     else:
+        #         logger.warning("期望分布频数表中超过 80% 的格子期望计数未大于 5，相关性设置为 0。")
+        #         return "invalid"
 
         # 总观测数
         total = sum(sum(row) for row in linked_table)
         if total == 0:
             logger.warning("总观测数为零，设置 φ² 为 0。")
-            return 0
+            return "invalid"
 
         # 计算 χ²
         chi_squared = 0
@@ -446,7 +278,7 @@ class CorrelationCalculator:
         d = min(d1, d2)
         if d <= 1:
             logger.warning("自由度为零，设置 φ² 为 0。")
-            return 0
+            return "invalid"
 
         phi_squared = chi_squared / (total * (d - 1))
 
@@ -468,4 +300,24 @@ class CorrelationCalculator:
         column_b_names = [self._get_column_name(col) for col in column_b]
         logger.info(f"计算列 {column_a_name} 和列 {column_b_names} 之间的相关性 (φ²): {normalized_phi_squared_plus}")
 
-        return normalized_phi_squared_plus
+        runtime = time.time() - start_time
+        logger.info(f"计算列 {column_a_name} 和列 {column_b_names} 之间的相关性 (φ²) 耗时: {runtime:.2f} 秒")
+
+        if len(column_b) == 1:
+            # 添加方向检查逻辑
+            if normalized_phi_squared_plus >= self.upper_threshold:
+                direction_check = self.check_dependency_direction(rhs_column=column_a, lhs_columns=column_b,
+                                                                  linked_table=linked_table)
+                return direction_check
+            elif normalized_phi_squared_plus < self.lower_threshold:
+                return "invalid"
+            else:
+                return "pending"
+        else:
+            if normalized_phi_squared_plus >= self.upper_threshold:
+                return True
+            elif normalized_phi_squared_plus < self.lower_threshold:
+                return "invalid"
+            else:
+                return "pending"
+

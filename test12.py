@@ -71,6 +71,6 @@ def build_and_test_crosstab(csv_file, column1, column2):
 if __name__ == "__main__":
     # 计算时间
     time_start = time.time()
-    build_and_test_crosstab("data/0_99.csv", "lhs", "rhs")
+    build_and_test_crosstab("data/rwd/test.csv", "lhs", "rhs")
     time_end = time.time()
     print(f"\n运行时间：{time_end - time_start:.2f} 秒")

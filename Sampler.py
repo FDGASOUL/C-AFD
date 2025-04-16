@@ -1,5 +1,8 @@
+import math
 import os
 import random
+
+import numpy as np
 import pandas as pd
 import logging
 
@@ -32,17 +35,26 @@ class Sampler:
             data = pd.read_csv(
                 self.input_file_path,
                 sep=self.config.input_file_separator,
-                header=0 if self.config.input_file_has_header else None,
+                header=0 if self.config.input_file_has_header else None, low_memory=False
             )
         except Exception as e:
             raise ValueError(f"Failed to read the input dataset: {e}")
 
+        data.replace("NULL", np.nan, inplace=True)
+        # 删除空值超过70%的列
+        # thresh 参数表示每一列需要至少有多少个非空值才能保留
+        required_non_null = math.ceil(len(data) * 0.7)
+        data.dropna(axis=1, thresh=required_non_null, inplace=True)
+        logger.info(f"Dropped columns with more than 70% missing values (required non-null: {required_non_null}).")
+
         # 删除含有空值的行
-        # data.dropna(inplace=True)
+        data.dropna(inplace=True)
+        logger.info("Dropped rows containing any missing values.")
 
         # 检查抽样数量是否合理
         if self.sample_size > len(data):
-            logger.info(f"Sample size ({self.sample_size}) exceeds dataset size ({len(data)}). Returning the entire dataset.")
+            logger.info(
+                f"Sample size ({self.sample_size}) exceeds dataset size ({len(data)}). Returning the entire dataset.")
             return data
 
         # 随机抽样
