@@ -143,6 +143,7 @@ class SearchSpace:
                 correlation = self.compute_correlation_with_cache(self.column_id - 1, column_b)
             else:
                 correlation = self.correlation_calculator.compute_correlation(self.column_id - 1, column_b)
+                # correlation = False
 
             if correlation is True:
                 # 发现函数依赖，记录

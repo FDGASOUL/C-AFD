@@ -1,11 +1,4 @@
-_unitguid->_timestamp
-FullScientificNameString->ScientificName
-ScientificName->FullScientificNameString
-ScientificName->GenusOrMonomial
-FullScientificNameString->GenusOrMonomial
-ScientificName->SpeciesEpithet
-FullScientificNameString->SpeciesEpithet
-精度: 0.86
-召回率: 0.43
-F1分数: 0.57
-总运行时间: 2744 ms
+精度: 0.00
+召回率: 0.00
+F1分数: 0.00
+总运行时间: 553 ms

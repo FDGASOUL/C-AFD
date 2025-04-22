@@ -6,8 +6,120 @@ import numpy as np
 import pandas as pd
 from scipy.stats.contingency import association
 from sklearn.cluster import AgglomerativeClustering
+
 # 获取日志实例
 logger = logging.getLogger(__name__)
+
+
+def compute_expected_frequencies(crosstab):
+    """
+    根据实际分布频数表计算期望分布频数表。
+    :param crosstab: 实际分布频数表（二维列表）。
+    :return: 期望分布频数表（二维列表）。
+    """
+    row_totals = [sum(row) for row in crosstab]  # 每一行的总和
+    col_totals = [sum(col) for col in zip(*crosstab)]  # 每一列的总和
+    total = sum(row_totals)  # 整个列联表的总和
+
+    # 构建期望频数表
+    expected_frequencies = [
+        [(row_total * col_total) / total for col_total in col_totals]
+        for row_total in row_totals
+    ]
+
+    return expected_frequencies
+
+
+def compute_normalized_phi_squared_one(linked_table, expected_frequencies):
+    # 计算总观测数
+    total = sum(sum(row) for row in linked_table)
+    if total == 0:
+        msg = "总观测数为零，设置 φ² 为 0。"
+        if logger:
+            logger.warning(msg)
+        else:
+            print(msg)
+        return "invalid"
+
+    # 计算卡方统计量
+    chi_squared = 0.0
+    for i, row in enumerate(linked_table):
+        for j, observed in enumerate(row):
+            expected = expected_frequencies[i][j]
+            if expected > 0:
+                chi_squared += ((observed - expected) ** 2) / expected
+
+    # 自由度 d
+    d1 = len(linked_table)
+    d2 = len(linked_table[0]) if d1 > 0 else 0
+    d = min(d1, d2)
+    if d <= 1:
+        msg = "自由度为零，设置 φ² 为 0。"
+        if logger:
+            logger.warning(msg)
+        else:
+            print(msg)
+        return "invalid"
+
+    # 计算 φ² 指标
+    phi_squared = chi_squared / (total * (d - 1))
+
+    print(f"φ² = {phi_squared:.3f}")
+
+    # # 定义 N, M, K
+    # N = total
+    # M = len(linked_table[0])
+    # K = len(linked_table)
+    #
+    # # 期望的 φ²
+    # expected_phi = ((M - 1) * (K - 1)) / ((N - 1) * (d - 1))
+    #
+    # if expected_phi == 1:
+    #     normalized_phi_squared = 0
+    # else:
+    #     normalized_phi_squared = (phi_squared - expected_phi) / (1 - expected_phi)
+    #
+    # normalized_phi_squared_plus = max(normalized_phi_squared, 0)
+    #
+    # msg = f"归一化的 φ² = {normalized_phi_squared_plus:.3f}"
+    # if logger:
+    #     logger.info(msg)
+    # else:
+    #     print(msg)
+
+    return phi_squared
+
+
+def compute_normalized_phi_squared_two(linked_table):
+    # 计算总观测数
+    total = sum(sum(row) for row in linked_table)
+
+    # 自由度 d
+    d1 = len(linked_table)
+    d2 = len(linked_table[0]) if d1 > 0 else 0
+    d = min(d1, d2)
+    # 定义 N, M, K
+    N = total
+    M = len(linked_table[0])
+    K = len(linked_table)
+
+    # 期望的 φ²
+    expected_phi = ((M - 1) * (K - 1)) / ((N - 1) * (d - 1))
+
+    # if expected_phi == 1:
+    #     normalized_phi_squared = 0
+    # else:
+    #     normalized_phi_squared = (phi_squared - expected_phi) / (1 - expected_phi)
+    #
+    # normalized_phi_squared_plus = max(normalized_phi_squared, 0)
+    #
+    # msg = f"归一化的 φ² = {normalized_phi_squared_plus:.3f}"
+    # if logger:
+    #     logger.info(msg)
+    # else:
+    #     print(msg)
+
+    return expected_phi
 
 
 class Incorporate:
@@ -48,7 +160,7 @@ class Incorporate:
     def cluster_rows(self, matrix):
         """
         对矩阵的行进行聚类：先归一化每一行（视为分布），再使用 AgglomerativeClustering
-        （余弦距离，平均连接）得到聚类标签。
+        （余弦距离，平均连接）得到聚类标签。euclidean  cosine
 
         :param matrix: 二维列表或 NumPy 数组，形状为 (n_rows, n_features)
         :return: 聚类标签（NumPy 数组）
@@ -60,7 +172,7 @@ class Incorporate:
             return np.array([0])
         clustering = AgglomerativeClustering(
             n_clusters=None,
-            metric="cosine",
+            metric="euclidean",
             linkage='average',
             distance_threshold=self.similarity_threshold
         )
@@ -82,7 +194,7 @@ class Incorporate:
             return np.array([0])
         clustering = AgglomerativeClustering(
             n_clusters=None,
-            metric="cosine",
+            metric="euclidean",
             linkage="average",
             distance_threshold=self.similarity_threshold
         )
@@ -144,7 +256,7 @@ class Incorporate:
         dirty_count = np.sum(arr < threshold_value)
         return dirty_count / total_cells
 
-    def merge_tables(self, actual_table, expected_table=None):
+    def merge_tables(self, actual_table):
         """
         归并操作：仅对实际分布列联表进行归并，
         然后利用归并后的实际计数表计算期望计数表。
@@ -157,74 +269,77 @@ class Incorporate:
              返回 False；否则返回归并后的 (actual, expected) 表。
 
         :param actual_table: 实际分布列联表（二维列表）。
-        :param expected_table: 可选参数，此处忽略，直接根据实际表计算期望表。
         :return: 若归并成功，返回归并后的 (actual, expected) 表，否则返回 False。
         """
-        # 对实际计数表做深拷贝
-        # actual_copy = copy.deepcopy(actual_table)
         # 转换为 NumPy 数组
         actual_arr = np.array(actual_table, dtype=float)
 
         # 使用实际计数表做聚类（行和列均依据实际分布）
         row_labels = self.cluster_rows(actual_arr)
         col_labels = self.cluster_columns(actual_arr)
-        #
-        # print(row_labels)
-        # print(col_labels)
+
         # 如果聚类结果与原始行列数完全一致，说明未能归并
-        if len(np.unique(row_labels)) == actual_arr.shape[0] and len(np.unique(col_labels)) == actual_arr.shape[1]:
-            logger.info("聚类归并无效：未发现足够相似的行或列")
-            return False
+        # if len(np.unique(row_labels)) == actual_arr.shape[0] and len(np.unique(col_labels)) == actual_arr.shape[1]:
+        #     logger.info("聚类归并无效：未发现足够相似的行或列")
+        #     return False
 
         # 根据聚类标签对实际计数表进行归并
         merged_actual = self.merge_by_clusters(actual_arr, row_labels, col_labels)
 
-        # 根据归并后的实际计数表计算期望计数表
-        merged_expected = self.compute_expected(merged_actual)
-
-        return merged_actual.tolist(), merged_expected.tolist()
+        return merged_actual.tolist()
 
 
 if __name__ == "__main__":
-    data = pd.read_csv("data/rwd/hospital.csv")
+    data = pd.read_csv("data/rwd/tax.csv")
     # 随机抽样5000
-    data = data.sample(n=5000, random_state=42)
+    # data = data.sample(n=5000, random_state=42)
     # 取指定两列构建列联表
-    contingency_table = pd.crosstab(data.iloc[:, 13], data.iloc[:, 14])
+    contingency_table = pd.crosstab(data.iloc[:, 8], data.iloc[:, 9])
 
+    # cramers_v = association(contingency_table, method="cramer")
     # 转为二维列表
     contingency_table = contingency_table.values.tolist()
+
+    # 计算crameV
+    # cramers_v = association(contingency_table, method="cramer")
+
+    # print(f"cramers_v = {cramers_v:.3f}")
+
+    # 计算期望计数
+    expected_frequencies = compute_expected_frequencies(contingency_table)
+
     start_time = time.time()
-    cramer_v = association(contingency_table, method="cramer")
-    print(f"Cramér's V = {cramer_v:.3f}")
+    # 计算相关性
+    phi_squared = compute_normalized_phi_squared_one(contingency_table, expected_frequencies)
+    expected_phi = compute_normalized_phi_squared_two(contingency_table)
+    if expected_phi == 1:
+        normalized_phi_squared = 0
+    else:
+        normalized_phi_squared = (phi_squared - expected_phi) / (1 - expected_phi)
+
+    normalized_phi_squared_plus = max(normalized_phi_squared, 0)
     runtime = time.time() - start_time
-    print(f"计算Cramér's V耗时：{runtime:.3f}秒")
-    # print(contingency_table)
+    print(f"计算耗时：{runtime:.3f}秒")
+    print(f"归一化的 φ² = {normalized_phi_squared_plus:.3f}")
+
     # 初始化归并器
     start_time = time.time()
     incorporator = Incorporate()
     # 归并操作
-    merged_actual, merged_expected = incorporator.merge_tables(contingency_table)
+    merged_actual = incorporator.merge_tables(contingency_table)
 
     runtime = time.time() - start_time
     print(f"归并耗时：{runtime:.3f}秒")
 
-    #计算crameV
-    # 计算Cramér's V系数
-    observed = np.array(merged_actual)
-    expected = np.array(merged_expected)
+    # # 计算crameV
+    # cramers_v = association(merged_actual, method="cramer")
+    #
+    # print(f"cramers_v = {cramers_v:.3f}")
 
-    # 计算卡方统计量
-    chi2 = np.sum((observed - expected) ** 2 / np.where(expected == 0, 1e-10, expected))
+    # 计算期望计数表
+    merged_expected = compute_expected_frequencies(merged_actual)
+    # 计算相关性
+    phi_squared = compute_normalized_phi_squared_one(merged_actual, merged_expected)
+    normalized_phi_squared_plus = (phi_squared - expected_phi) / (1 - expected_phi)
 
-    # 计算样本总量
-    n = observed.sum()
-
-    # 计算最小维度 (行数-1 和 列数-1 中的较小值)
-    min_dim = min(observed.shape[0] - 1, observed.shape[1] - 1)
-
-    # 计算Cramér's V（处理除零保护）
-    cramers_v = np.sqrt(chi2 / (n * min_dim)) if n * min_dim > 0 else 0
-    print(f"Cramér's V = {cramers_v:.3f}")
-
-
+    print(f"归一化的 φ² = {normalized_phi_squared_plus:.3f}")

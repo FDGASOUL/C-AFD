@@ -2,15 +2,12 @@ FName->Gender
 Zip->City
 AreaCode->State
 Zip->State
-HasChild(String)->MaritalStatus
-SingleExemp->MaritalStatus
-MarriedExemp->MaritalStatus
-MaritalStatus->HasChild(String)
-ChildExemp->HasChild(String)
-MarriedExemp,SingleExemp->HasChild(String)
-State->ChildExemp
+HasChild->MaritalStatus
+MarriedExemp,SingleExemp->MaritalStatus
+MaritalStatus->HasChild
+MarriedExemp,SingleExemp->HasChild
 SingleExemp->ChildExemp
-精度: 0.25
+精度: 0.33
 召回率: 1.00
-F1分数: 0.40
-总运行时间: 81048 ms
+F1分数: 0.50
+总运行时间: 24666 ms

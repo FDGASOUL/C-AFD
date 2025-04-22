@@ -1,3 +1,5 @@
+author1->sameentity
+author2->sameentity
 key1->sameentity
 key2->sameentity
 p1author->sameentity
@@ -8,6 +10,8 @@ p2author->sameentity
 p2title->sameentity
 p2id->sameentity
 p2key->sameentity
+author1->samename
+author2->samename
 key1->samename
 key2->samename
 p1author->samename
@@ -18,7 +22,6 @@ p2author->samename
 p2title->samename
 p2id->samename
 p2key->samename
-author2->author1
 key1->author1
 key2->author1
 p1author->author1
@@ -29,7 +32,6 @@ p2author->author1
 p2title->author1
 p2id->author1
 p2key->author1
-author1->author2
 key1->author2
 key2->author2
 p1author->author2
@@ -45,7 +47,6 @@ p1key->key1
 p2id->key2
 p2key->key2
 key1->p1type
-p1author->p1type
 p1title->p1type
 p1id->p1type
 p1key->p1type
@@ -65,6 +66,7 @@ p1key->p1id
 key1->p1key
 p1id->p1key
 key2->p2type
+p2author->p2type
 p2title->p2type
 p2id->p2type
 p2key->p2type
@@ -76,7 +78,6 @@ key2->p2title
 p2id->p2title
 p2key->p2title
 key2->p2year
-p2author->p2year
 p2title->p2year
 p2id->p2year
 p2key->p2year
@@ -84,7 +85,7 @@ key2->p2id
 p2key->p2id
 key2->p2key
 p2id->p2key
-精度: 0.42
+精度: 0.41
 召回率: 0.47
 F1分数: 0.44
-总运行时间: 2444 ms
+总运行时间: 26179 ms

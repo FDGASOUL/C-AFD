@@ -47,6 +47,12 @@ class Sampler:
         data.dropna(axis=1, thresh=required_non_null, inplace=True)
         logger.info(f"Dropped columns with more than 70% missing values (required non-null: {required_non_null}).")
 
+        # # 删除全空的列
+        # # thresh=1 表示只要有一个非空值就保留
+        # required_non_null = 1
+        # data.dropna(axis=1, thresh=required_non_null, inplace=True)
+        # logger.info(f"Dropped completely empty columns (required non-null: {required_non_null}).")
+
         # 删除含有空值的行
         data.dropna(inplace=True)
         logger.info("Dropped rows containing any missing values.")
@@ -60,6 +66,8 @@ class Sampler:
         # 随机抽样
         sampled_data = data.sample(n=self.sample_size, random_state=random.randint(0, 10000))
         logger.info(f"Sampled {self.sample_size} rows from the dataset.")
+        # 保存抽样后的数据
+        # sampled_data.to_csv("data/rwd/hospital_sample.csv", index=False)
 
         return sampled_data
 

@@ -4,7 +4,8 @@ import time
 import numpy as np
 
 # from Incorporate_into_DBSCAN import Incorporate
-from Incorporate_into_new import Incorporate
+from Incorporate_into_hierarchical import Incorporate
+
 # 获取日志实例
 logger = logging.getLogger(__name__)
 
@@ -14,7 +15,7 @@ class CorrelationCalculator:
     相关性计算工具类。
     用于封装不同的相关性计算方法，以便在项目中复用。
     """
-    upper_threshold = 0.5  # 上限阈值
+    upper_threshold = 0.61  # 上限阈值
     lower_threshold = 0.1  # 下限阈值
 
     def __init__(self, column_layout_data):
@@ -164,6 +165,60 @@ class CorrelationCalculator:
         total_cells = len(expected_frequencies) * len(expected_frequencies[0])
         return valid_count / total_cells >= 0.8
 
+    def _check_linked_table(self, linked_table, lhs):
+        """
+        检查列联表是否有效。
+        :param linked_table: 列联表（二位列表）。
+        :return: 根据检查结果返回 "suspected_fd" 或 "incorporated"
+        """
+        # 随机抽取 10 行（不足 10 行则全抽）
+        if len(linked_table) < 10:
+            sampled_rows = linked_table
+        else:
+            sampled_rows = random.sample(linked_table, 10)
+        # 检查每行：判断最大值占整行和是否达到或超过 90%
+        for row in sampled_rows:
+            row_sum = sum(row)
+            # 如果总和为零，则跳过该行检查
+            if row_sum == 0:
+                continue
+            if max(row) / row_sum >= 0.9:
+                if len(lhs) == 1:
+                    logger.warning("疑似FD，不进行聚类合并")
+                    return "suspected_fd"
+                else:
+                    logger.warning("疑似多左部FD，舍弃")
+                    return "suspected_fd_more"
+
+        # 检查列
+        n_cols = len(linked_table[0])
+        # 如果列数小于10则取所有列，否则随机抽取10列
+        if n_cols < 10:
+            # 使用 zip(*) 转置数据
+            sampled_columns = list(zip(*linked_table))
+        else:
+            # 随机抽取 10 个列索引
+            indices = random.sample(range(n_cols), 10)
+            sampled_columns = []
+            for j in indices:
+                # 构造第 j 列：遍历每一行取第 j 个元素
+                col = [row[j] for row in linked_table]
+                sampled_columns.append(col)
+        # 检查每列是否有 90% 以上的占比
+        for col in sampled_columns:
+            col_sum = sum(col)
+            if col_sum == 0:
+                continue  # 避免除以零
+            if max(col) / col_sum >= 0.9:
+                if len(lhs) == 1:
+                    logger.warning("疑似FD，不进行聚类合并")
+                    return "suspected_fd"
+                else:
+                    logger.warning("疑似多右部FD，舍弃")
+                    return "suspected_fd_more"
+
+        return "incorporated"
+
     def _cross_plis(self, pli_list):
         """
         交叉多个 PLI 形成新的 PLI（不过滤单元素簇）。
@@ -214,7 +269,9 @@ class CorrelationCalculator:
         logger.info(f"行方向得分: {row_avg:.2f}, 列方向得分: {col_avg:.2f}")
 
         # 判断依赖方向
-        if abs(row_avg - col_avg) < 1e-6:  # 浮点数相等判断
+        avg = (row_avg + col_avg) / 2
+        if abs(row_avg - col_avg) < 0.003 * avg:
+        # if abs(row_avg - col_avg) < 1e-6:  # 浮点数相等判断
             return "mutual"
         elif row_avg > col_avg:
             return "left_to_right"
@@ -235,27 +292,109 @@ class CorrelationCalculator:
             logger.warning("列联表为空，无法计算相关性。")
             return "invalid"
 
-        # 检查列联表,如果列联表的列数远大于行数，认为相关性为 0
-        # if len(linked_table[0]) > len(linked_table) * 10:
-        #     logger.warning("列联表的列数远大于行数，相关性设置为 0。")
-        #     return "invalid"
-
         expected_frequencies = self.compute_expected_frequencies(linked_table)
-        start_time = time.time()
         # 检查期望分布频数表
-        # if not self._check_expected_frequencies(expected_frequencies):
-        #     if len(column_b) == 1:
-        #         logger.warning("期望分布频数表中超过 20% 的格子期望计数未大于 5，进行归并操作。")
-        #         inc = Incorporate()
-        #         result = inc.merge_tables(linked_table, expected_frequencies)
-        #         # if not result:
-        #         #     logger.warning("归并操作失败，相关性设置为 0。")
-        #         #     return "invalid"
-        #         # logger.info("归并成功。")
-        #         linked_table, expected_frequencies = result
-        #     else:
-        #         logger.warning("期望分布频数表中超过 80% 的格子期望计数未大于 5，相关性设置为 0。")
-        #         return "invalid"
+        if not self._check_expected_frequencies(expected_frequencies):
+            logger.warning("期望分布频数表不符合要求，无法计算相关性。")
+            result = self._check_linked_table(linked_table, column_b)
+            if result == "incorporated":
+                total = sum(sum(row) for row in linked_table)
+                # 计算 χ²
+                chi_squared = 0
+                for i, row in enumerate(linked_table):
+                    for j, observed in enumerate(row):
+                        expected = expected_frequencies[i][j]
+                        if expected > 0:
+                            chi_squared += ((observed - expected) ** 2) / expected
+                d1, d2 = len(linked_table), len(linked_table[0])
+                d = min(d1, d2)
+                if d <= 1:
+                    logger.warning("自由度为零，设置 φ² 为 0。")
+                    return "invalid"
+
+                phi_squared = chi_squared / (total * (d - 1))
+
+                N = total
+                M = len(linked_table[0])
+                K = len(linked_table)
+
+                # 计算
+                expected_phi = ((M - 1) * (K - 1)) / ((N - 1) * (d - 1))
+
+                if expected_phi == 1:
+                    normalized_phi_squared = 0
+                else:
+                    normalized_phi_squared = (phi_squared - expected_phi) / (1 - expected_phi)
+
+                normalized_phi_squared_plus = max(normalized_phi_squared, 0)
+
+                column_a_name = self._get_column_name(column_a)
+                column_b_names = [self._get_column_name(col) for col in column_b]
+                logger.info(
+                    f"归并前计算列 {column_a_name} 和列 {column_b_names} 之间的相关性 (φ²): {normalized_phi_squared_plus}")
+
+                incorporate = Incorporate()
+                linked_table = incorporate.merge_tables(linked_table)
+                expected_frequencies = self.compute_expected_frequencies(linked_table)
+
+                # 总观测数
+                total = sum(sum(row) for row in linked_table)
+                if total == 0:
+                    logger.warning("总观测数为零，设置 φ² 为 0。")
+                    return "invalid"
+
+                # 计算 χ²
+                chi_squared = 0
+                for i, row in enumerate(linked_table):
+                    for j, observed in enumerate(row):
+                        expected = expected_frequencies[i][j]
+                        if expected > 0:
+                            chi_squared += ((observed - expected) ** 2) / expected
+
+                # 计算 φ²
+                d1, d2 = len(linked_table), len(linked_table[0])
+                d = min(d1, d2)
+                if d <= 1:
+                    logger.warning("自由度为零，设置 φ² 为 0。")
+                    return "invalid"
+
+                phi_squared = chi_squared / (total * (d - 1))
+
+                logger.info(f"归并后计算列 {column_a_name} 和列 {column_b_names} 之间的未修正相关性 (φ²): {phi_squared}")
+
+                if expected_phi == 1:
+                    normalized_phi_squared = 0
+                else:
+                    normalized_phi_squared = (phi_squared - expected_phi) / (1 - expected_phi)
+
+                normalized_phi_squared_plus = max(normalized_phi_squared, 0)
+
+                column_a_name = self._get_column_name(column_a)
+                column_b_names = [self._get_column_name(col) for col in column_b]
+                logger.info(
+                    f"计算列 {column_a_name} 和列 {column_b_names} 之间的相关性 (φ²): {normalized_phi_squared_plus}")
+
+                if len(column_b) == 1:
+                    # 添加方向检查逻辑
+                    if normalized_phi_squared_plus >= self.upper_threshold:
+                        direction_check = self.check_dependency_direction(rhs_column=column_a, lhs_columns=column_b,
+                                                                          linked_table=linked_table)
+                        return direction_check
+                    elif normalized_phi_squared_plus < self.lower_threshold:
+                        return "invalid"
+                    else:
+                        return "pending"
+                else:
+                    if normalized_phi_squared_plus >= self.upper_threshold:
+                        return True
+                    elif normalized_phi_squared_plus < self.lower_threshold:
+                        return "invalid"
+                    else:
+                        return "pending"
+            elif result == "suspected_fd_more":
+                return False
+        else:
+            logger.info("期望分布频数表符合要求，开始计算相关性。")
 
         # 总观测数
         total = sum(sum(row) for row in linked_table)
@@ -270,8 +409,6 @@ class CorrelationCalculator:
                 expected = expected_frequencies[i][j]
                 if expected > 0:
                     chi_squared += ((observed - expected) ** 2) / expected
-                else:
-                    logger.warning(f"期望频数为零（{i}, {j}），跳过此格子。")
 
         # 计算 φ²
         d1, d2 = len(linked_table), len(linked_table[0])
@@ -298,10 +435,8 @@ class CorrelationCalculator:
 
         column_a_name = self._get_column_name(column_a)
         column_b_names = [self._get_column_name(col) for col in column_b]
+        logger.info(f"计算列 {column_a_name} 和列 {column_b_names} 之间的未修正相关性 (φ²): {phi_squared}")
         logger.info(f"计算列 {column_a_name} 和列 {column_b_names} 之间的相关性 (φ²): {normalized_phi_squared_plus}")
-
-        runtime = time.time() - start_time
-        logger.info(f"计算列 {column_a_name} 和列 {column_b_names} 之间的相关性 (φ²) 耗时: {runtime:.2f} 秒")
 
         if len(column_b) == 1:
             # 添加方向检查逻辑
@@ -320,4 +455,3 @@ class CorrelationCalculator:
                 return "invalid"
             else:
                 return "pending"
-

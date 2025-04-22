@@ -1,0 +1,12 @@
+AreaClass->Sequence
+AreaCode->Sequence
+AreaName->Sequence
+Sequence->AreaClass
+AreaCode->AreaClass
+AreaName->AreaClass
+AreaName->AreaCode
+AreaCode->AreaName
+精度: 0.50
+召回率: 0.80
+F1分数: 0.62
+总运行时间: 1921 ms

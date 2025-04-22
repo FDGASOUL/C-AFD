@@ -31,7 +31,7 @@ def setup_logging():
 class Config:
     DATASET_CONFIG = {
         "IRIS": {"path": "iris", "has_header": False},
-        "DATA": {"path": "data-n10", "has_header": True},
+        "DATA": {"path": "data-n5", "has_header": True},
         "BEERS": {"path": "beers", "has_header": True},
         "FLIGHTS": {"path": "flights", "has_header": True},
         "HOSPITAL": {"path": "hospital", "has_header": True},
@@ -46,6 +46,10 @@ class Config:
         "RWD-HOSPITAL": {"path": "rwd/hospital", "has_header": True},
         "RWD-CLAIMS": {"path": "rwd/claims", "has_header": True},
         "RWD-DBLP": {"path": "rwd/dblp10k", "has_header": True},
+        "RWD-C18": {"path": "rwd/t_biocase_gathering_agent_r72738_c18", "has_header": True},
+        "RWD-C11": {"path": "rwd/t_biocase_gathering_namedareas_r137711_c11", "has_header": True},
+        "RWD-C35": {"path": "rwd/t_biocase_gathering_r90992_c35", "has_header": True},
+        "RWD-C3": {"path": "rwd/t_biocase_identification_highertaxon_r562959_c3", "has_header": True},
         "RWD-C38": {"path": "rwd/t_biocase_identification_r91800_c38", "has_header": True},
     }
 
@@ -75,7 +79,7 @@ if __name__ == "__main__":
     start_time = time.time()
     setup_logging()
     logging.info("全局日志配置已完成！")
-    conf = Config("RWD-HOSPITAL")
+    conf = Config("RWD-DBLP")
     logging.info(conf)  # 使用日志代替打印
     logging.info("Starting CAFD execution...")
 

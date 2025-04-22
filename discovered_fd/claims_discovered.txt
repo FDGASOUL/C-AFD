@@ -1,10 +1,8 @@
 AirportName->AirportCode
 AirportCode->AirportName
-CloseAmount->Status
 Disposition->Status
 Status->Disposition
-CloseAmount->Disposition
-精度: 0.67
+精度: 1.00
 召回率: 1.00
-F1分数: 0.80
-总运行时间: 2451 ms
+F1分数: 1.00
+总运行时间: 14674 ms
