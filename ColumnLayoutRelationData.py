@@ -15,61 +15,53 @@ class ColumnLayoutRelationData:
         :param data: pandas DataFrame，包含抽样后的数据。
         """
         self.schema = list(data.columns)  # 模式：列名列表
+        self.null_value_id = -1
         self.columnVectors = self._compute_column_vectors(data)  # 每列的数值索引表示
         self.columnData = self._compute_column_data()  # 包含列的元信息、PLI 和 Probing Table
-        # self.testData = data
 
     def _compute_column_vectors(self, data):
         """
-        将原始数据表中的字符串值转化为整数值数组表示。
-        :param data: pandas DataFrame，包含抽样后的数据。
-        :return: List[IntList]，每列的数值索引。
+        将原始数据表中的值转化为整数索引表示。
+        空值使用 self.null_value_id 标识（-1）。
+        :param data: pandas DataFrame
+        :return: List[List[int]]
         """
         column_vectors = []
+        # value_to_id 每遇到一个新的非空值，就分配一个新的整数 id
         value_to_id = defaultdict(lambda: len(value_to_id))
-        nullValueId = -1
 
-        for column in data.columns:
-            column_vector = []
-            for value in data[column]:
-                if pd.isnull(value):
-                    column_vector.append(nullValueId)
+        for col in data.columns:
+            vec = []
+            for val in data[col]:
+                if pd.isnull(val):
+                    vec.append(self.null_value_id)
                 else:
-                    column_vector.append(value_to_id[value])
-            column_vectors.append(column_vector)
+                    vec.append(value_to_id[val])
+            column_vectors.append(vec)
+
         return column_vectors
 
     def _compute_column_data(self):
         """
-        计算每列的 PLI 和 Probing Table。
-
-        :return: 列的元信息，包括 PLI 和 Probing Table。
+        计算每列的 PLI（排除单例簇且不含空值簇）。
+        :return: List[Dict]，每个 dict 仅包含 "PLI"
         """
         column_data = []
-        nullValueId = 0
 
-        for col_vector in self.columnVectors:
-            equivalence_classes = defaultdict(list)
-            for index, value in enumerate(col_vector):
-                equivalence_classes[value].append(index)
+        for vec in self.columnVectors:
+            eq_classes = defaultdict(list)
+            # 构建等价类
+            for idx, v in enumerate(vec):
+                eq_classes[v].append(idx)
 
-            # 获取 PLI，排除单列簇（只包含一个元素的簇）
-            pli = [cluster for cluster in equivalence_classes.values() if len(cluster) > 1]
+            # 排除空值簇（key == self.null_value_id），以及单例簇（len<=1）
+            pli = [
+                cluster
+                for val, cluster in eq_classes.items()
+                if val != self.null_value_id and len(cluster) > 1
+            ]
 
-            # 初始化 Probing Table，所有位置初始为 0
-            probing_table = [nullValueId] * len(col_vector)
-            next_cluster_id = 1  # 非单列簇的簇编号从 1 开始
-
-            # 为非单列簇赋值
-            for cluster in pli:
-                for position in cluster:
-                    probing_table[position] = next_cluster_id
-                next_cluster_id += 1
-
-            column_data.append({
-                "PLI": pli,
-                "ProbingTable": probing_table
-            })
+            column_data.append({"PLI": pli})
 
         return column_data
 
@@ -100,3 +92,6 @@ class ColumnLayoutRelationData:
         :return: 数据的列数。
         """
         return len(self.columnVectors)
+
+    def get_null_value_id(self):
+        return self.null_value_id

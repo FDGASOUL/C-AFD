@@ -1,8 +1,12 @@
 PersonFullName->_datasetguid
+PersonFullName->AgentText
+PersonInheritedName->AgentText
+AgentText->PersonFullName
+AgentText->PersonInheritedName
 PersonFullName->PersonInheritedName
 PersonFullName->PersonGivenNames
 PersonInheritedName->PersonGivenNames
-精度: 0.50
-召回率: 0.29
-F1分数: 0.36
-总运行时间: 4054 ms
+精度: 0.62
+召回率: 0.71
+F1分数: 0.67
+总运行时间: 5261 ms

@@ -128,7 +128,7 @@ class Incorporate:
     """
     # similarity_threshold 用于聚类时的距离阈值，
     # 较小的值要求归一化后向量更加相似。
-    similarity_threshold = 0.5  # 可根据需要调整
+    similarity_threshold = 0.1  # 可根据需要调整
 
     @staticmethod
     def normalize_rows(matrix):

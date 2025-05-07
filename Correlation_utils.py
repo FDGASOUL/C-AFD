@@ -16,7 +16,7 @@ class CorrelationCalculator:
     用于封装不同的相关性计算方法，以便在项目中复用。
     """
     upper_threshold = 0.61  # 上限阈值
-    lower_threshold = 0.1  # 下限阈值
+    lower_threshold = 0.01  # 下限阈值
 
     def __init__(self, column_layout_data):
         """
@@ -26,6 +26,7 @@ class CorrelationCalculator:
         self.columnVectors = column_layout_data.get_column_vectors()
         self.columnData = column_layout_data.get_column_data()
         self.schema = column_layout_data.get_schema()  # 获取列名映射
+        self.null_value_id = column_layout_data.get_null_value_id()  # 获取空值标识符
 
     def _get_column_name(self, column_index):
         """
@@ -60,7 +61,9 @@ class CorrelationCalculator:
         unique_values = set()
         for cluster in pli_lhs:
             for pos in cluster:
-                unique_values.add(column_vectors_rhs[pos])
+                val = column_vectors_rhs[pos]
+                if val != self.null_value_id:  # 跳过空值
+                    unique_values.add(val)
         rhs_index = {value: 0 for value in unique_values}
 
         # 5. 构建列联表
@@ -68,8 +71,12 @@ class CorrelationCalculator:
         for cluster in pli_lhs:
             cluster_map = rhs_index.copy()
             for position in cluster:
-                value_rhs = column_vectors_rhs[position]
-                cluster_map[value_rhs] = cluster_map.get(value_rhs, 0) + 1
+                val = column_vectors_rhs[position]
+                if val == self.null_value_id:  # 跳过空值
+                    continue
+                cluster_map[val] = cluster_map.get(val, 0) + 1
+            if all(count == 0 for count in cluster_map.values()):
+                continue
             crosstab_list.append(cluster_map)
 
         # 6. 转换为二维数组
@@ -78,6 +85,8 @@ class CorrelationCalculator:
             crosstab.append([cluster_map.get(key, 0) for key in sorted(rhs_index.keys())])
 
         return crosstab
+
+
 
     def build_linked_table_new(self, lhs, rhs):
         """
@@ -288,7 +297,7 @@ class CorrelationCalculator:
         # 构建列联表
         linked_table = self.build_linked_table(column_b, column_a)
 
-        if not linked_table:
+        if not linked_table or len(linked_table[0]) == 0:
             logger.warning("列联表为空，无法计算相关性。")
             return "invalid"
 

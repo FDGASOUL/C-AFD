@@ -1,3 +1,4 @@
+_unitguid->_datasetguid
 AreaClass->Sequence
 AreaCode->Sequence
 AreaName->Sequence
@@ -6,7 +7,7 @@ AreaCode->AreaClass
 AreaName->AreaClass
 AreaName->AreaCode
 AreaCode->AreaName
-精度: 0.50
-召回率: 0.80
-F1分数: 0.62
-总运行时间: 1921 ms
+精度: 0.56
+召回率: 1.00
+F1分数: 0.71
+总运行时间: 2082 ms

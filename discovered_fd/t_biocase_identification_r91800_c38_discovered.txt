@@ -1,4 +1,36 @@
-精度: 0.00
-召回率: 0.00
-F1分数: 0.00
-总运行时间: 553 ms
+_unitguid->_timestamp
+FullScientificNameString->ScientificName
+Notes->ScientificName
+ScientificName->FullScientificNameString
+Notes->FullScientificNameString
+ScientificName->GenusOrMonomial
+FullScientificNameString->GenusOrMonomial
+Subgenus->GenusOrMonomial
+Notes->GenusOrMonomial
+ScientificName->Subgenus
+FullScientificNameString->Subgenus
+SpeciesEpithet->Subgenus
+ScientificName->SpeciesEpithet
+FullScientificNameString->SpeciesEpithet
+Notes->SpeciesEpithet
+ScientificName->SubspeciesEpithet
+FullScientificNameString->SubspeciesEpithet
+ScientificName->AuthorTeamOriginalAndYear
+FullScientificNameString->AuthorTeamOriginalAndYear
+Subgenus->AuthorTeamOriginalAndYear
+SpeciesEpithet->AuthorTeamOriginalAndYear
+SubspeciesEpithet->AuthorTeamOriginalAndYear
+Notes->AuthorTeamOriginalAndYear
+ScientificName->AuthorTeamParenthesisAndYear
+FullScientificNameString->AuthorTeamParenthesisAndYear
+Subgenus->AuthorTeamParenthesisAndYear
+SpeciesEpithet->AuthorTeamParenthesisAndYear
+SubspeciesEpithet->AuthorTeamParenthesisAndYear
+ScientificName->Notes
+FullScientificNameString->Notes
+SpeciesEpithet->Notes
+AuthorTeamParenthesisAndYear->Notes
+精度: 0.44
+召回率: 1.00
+F1分数: 0.61
+总运行时间: 23145 ms

@@ -22,6 +22,7 @@ PhoneNumber->CountyName
 ProviderNumber->PhoneNumber
 ProviderNumber->HospitalType
 HospitalName->HospitalType
+ZIPCode->HospitalType
 PhoneNumber->HospitalType
 ProviderNumber->HospitalOwner
 HospitalName->HospitalOwner
@@ -38,7 +39,7 @@ MeasureName->MeasureCode
 StateAvg->MeasureCode
 MeasureCode->MeasureName
 StateAvg->MeasureName
-精度: 0.70
+精度: 0.68
 召回率: 1.00
-F1分数: 0.82
-总运行时间: 33083 ms
+F1分数: 0.81
+总运行时间: 54441 ms

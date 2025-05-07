@@ -1,7 +1,8 @@
 education-num->education
 education->education-num
+ fnlwgt-> race
  fnlwgt-> sex
-精度: 0.67
+精度: 0.50
 召回率: 1.00
-F1分数: 0.80
-总运行时间: 7333 ms
+F1分数: 0.67
+总运行时间: 11417 ms
