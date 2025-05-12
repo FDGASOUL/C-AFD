@@ -5,7 +5,6 @@ import copy
 import numpy as np
 import pandas as pd
 from scipy.stats.contingency import association
-from sklearn.cluster import AgglomerativeClustering
 
 # 获取日志实例
 logger = logging.getLogger(__name__)
@@ -126,92 +125,118 @@ class Incorporate:
     """
     归并工具类（使用聚类方法归并，仅归并实际计数表，然后依据归并结果计算期望计数表）。
     """
-    # similarity_threshold 用于聚类时的距离阈值，
-    # 较小的值要求归一化后向量更加相似。
-    similarity_threshold = 0.1  # 可根据需要调整
+    similarity_threshold = 0.001  # DP-Means 阈值，可调整
+    small_ratio_threshold = 0.001  # 小簇占比阈值，例如5%
+    big_k = 5  # 大簇数量
+
+    @staticmethod
+    def dpmeans_with_groups(X, lambda_, init_centers_idx, small_idx, max_iter=100):
+        """
+        按大簇、中簇、小簇策略的 DP-Means：
+        - init_centers_idx: 大簇行/列索引，初始质心
+        - small_idx: 小簇行/列索引，总是硬分配，不新建簇
+        """
+        n_samples, _ = X.shape
+        # 若样本数不足，则每行一簇
+        if n_samples < len(init_centers_idx):
+            labels = np.arange(n_samples, dtype=int)
+            return labels, X.copy()
+
+        # 初始化质心列表
+        centers = [X[i].copy() for i in init_centers_idx]
+        labels = np.zeros(n_samples, dtype=int)
+
+        for _ in range(max_iter):
+            changed = False
+            # 分配阶段
+            for i in range(n_samples):
+                x = X[i]
+                dists2 = np.sum((np.vstack(centers) - x) ** 2, axis=1)
+                j_min = np.argmin(dists2)
+                if i in small_idx:
+                    # 小簇：总是归并到最近簇
+                    labels[i] = j_min
+                else:
+                    # 大簇和中簇
+                    if dists2[j_min] > lambda_ and i not in init_centers_idx:
+                        # 中簇且超阈值，新建簇
+                        centers.append(x.copy())
+                        labels[i] = len(centers) - 1
+                        changed = True
+                    else:
+                        labels[i] = j_min
+            # 更新阶段
+            new_centers = []
+            for k in range(len(centers)):
+                members = X[labels == k]
+                if len(members) > 0:
+                    new_centers.append(members.mean(axis=0))
+                else:
+                    new_centers.append(centers[k])
+            centers = new_centers
+            if not changed:
+                break
+        return labels, np.vstack(centers)
+
+    def cluster_rows(self, matrix):
+        arr = np.array(matrix, dtype=float)
+        n_rows = arr.shape[0]
+        if n_rows <= 1:
+            return np.zeros(n_rows, dtype=int)
+        # 计算每行总和
+        row_sums = arr.sum(axis=1)
+        total = row_sums.sum()
+        # 大簇：前 big_k 行
+        big_idx = np.argsort(row_sums)[-self.big_k:]
+        # 小簇：占比 < small_ratio_threshold
+        small_idx = np.where(row_sums / total < self.small_ratio_threshold)[0]
+        # 中簇：剩余
+        # 对行归一化
+        norm_data = self.normalize_rows(arr)
+        labels, _ = self.dpmeans_with_groups(
+            norm_data,
+            lambda_=self.similarity_threshold,
+            init_centers_idx=big_idx.tolist(),
+            small_idx=small_idx.tolist()
+        )
+        return labels
+
+    def cluster_columns(self, matrix):
+        arr = np.array(matrix, dtype=float)
+        n_cols = arr.shape[1]
+        if n_cols <= 1:
+            return np.zeros(n_cols, dtype=int)
+        # 计算每列总和
+        col_sums = arr.sum(axis=0)
+        total = col_sums.sum()
+        big_idx = np.argsort(col_sums)[-self.big_k:]
+        small_idx = np.where(col_sums / total < self.small_ratio_threshold)[0]
+        # 对列归一化并转置
+        norm_data = self.normalize_columns(arr).T
+        labels, _ = self.dpmeans_with_groups(
+            norm_data,
+            lambda_=self.similarity_threshold,
+            init_centers_idx=big_idx.tolist(),
+            small_idx=small_idx.tolist()
+        )
+        return labels
 
     @staticmethod
     def normalize_rows(matrix):
-        """
-        对二维列表中的每一行归一化（转为概率分布）。
-
-        :param matrix: 二维列表或 NumPy 数组
-        :return: 归一化后的 NumPy 数组，每行之和为 1（若某行全为0，则归一化后仍为0）
-        """
         arr = np.array(matrix, dtype=float)
         row_sums = arr.sum(axis=1, keepdims=True)
-        # 避免除以0：将和为0的行设置为1，归一化后该行仍为0
         row_sums[row_sums == 0] = 1
         return arr / row_sums
 
     @staticmethod
     def normalize_columns(matrix):
-        """
-        对二维列表中的每一列归一化（转为概率分布）。
-
-        :param matrix: 二维列表或 NumPy 数组
-        :return: 归一化后的 NumPy 数组，每列之和为 1（若某列全为0，则归一化后仍为0）
-        """
         arr = np.array(matrix, dtype=float)
         col_sums = arr.sum(axis=0, keepdims=True)
         col_sums[col_sums == 0] = 1
         return arr / col_sums
 
-    def cluster_rows(self, matrix):
-        """
-        对矩阵的行进行聚类：先归一化每一行（视为分布），再使用 AgglomerativeClustering
-        （余弦距离，平均连接）得到聚类标签。euclidean  cosine
-
-        :param matrix: 二维列表或 NumPy 数组，形状为 (n_rows, n_features)
-        :return: 聚类标签（NumPy 数组）
-        """
-        norm_data = self.normalize_rows(matrix)
-        n_rows = norm_data.shape[0]
-
-        if n_rows <= 1:
-            return np.array([0])
-        clustering = AgglomerativeClustering(
-            n_clusters=None,
-            metric="euclidean",
-            linkage='average',
-            distance_threshold=self.similarity_threshold
-        )
-        labels = clustering.fit_predict(norm_data)
-        return labels
-
-    def cluster_columns(self, matrix):
-        """
-        对矩阵的列进行聚类：先对每列归一化（视为分布），
-        再对转置后的数据进行聚类，得到聚类标签。
-
-        :param matrix: 二维列表或 NumPy 数组，形状为 (n_rows, n_columns)
-        :return: 聚类标签（NumPy 数组）
-        """
-        # 对列进行归一化：转置后每一行对应原矩阵的一列
-        norm_data = self.normalize_columns(matrix).T
-        n_cols = norm_data.shape[0]
-        if n_cols <= 1:
-            return np.array([0])
-        clustering = AgglomerativeClustering(
-            n_clusters=None,
-            metric="euclidean",
-            linkage="average",
-            distance_threshold=self.similarity_threshold
-        )
-        labels = clustering.fit_predict(norm_data)
-        return labels
-
     @staticmethod
     def merge_by_clusters(matrix, row_labels, col_labels):
-        """
-        根据行和列聚类标签对矩阵进行归并。对于每个（行簇, 列簇）的组合，
-        将原始矩阵中对应区域的值累加。
-
-        :param matrix: 二维 NumPy 数组
-        :param row_labels: 行聚类标签（NumPy 数组）
-        :param col_labels: 列聚类标签（NumPy 数组）
-        :return: 归并后的二维数组
-        """
         arr = np.array(matrix, dtype=float)
         unique_row = np.unique(row_labels)
         unique_col = np.unique(col_labels)
@@ -225,67 +250,31 @@ class Incorporate:
 
     @staticmethod
     def compute_expected(table):
-        """
-        根据归并后的实际计数表计算期望计数表。
-        使用公式：expected_{ij} = (row_total_i * col_total_j) / grand_total
-
-        :param table: 归并后的实际计数表（二维 NumPy 数组）
-        :return: 期望计数表（二维 NumPy 数组）
-        """
         arr = np.array(table, dtype=float)
         row_totals = arr.sum(axis=1, keepdims=True)
         col_totals = arr.sum(axis=0, keepdims=True)
         grand_total = arr.sum()
-        # 当grand_total为0时，避免除法错误
         if grand_total == 0:
             return np.zeros_like(arr)
-        expected = (row_totals * col_totals) / grand_total
-        return expected
+        return (row_totals * col_totals) / grand_total
 
     @staticmethod
     def compute_dirty_ratio(matrix, threshold_value=5):
-        """
-        计算矩阵中小于 threshold_value 的格子所占比例。
-
-        :param matrix: 二维 NumPy 数组
-        :param threshold_value: 临界值（默认5）
-        :return: 小于 threshold_value 的格子比例（0-1之间）
-        """
         arr = np.array(matrix, dtype=float)
         total_cells = arr.size
         dirty_count = np.sum(arr < threshold_value)
         return dirty_count / total_cells
 
     def merge_tables(self, actual_table):
-        """
-        归并操作：仅对实际分布列联表进行归并，
-        然后利用归并后的实际计数表计算期望计数表。
-        归并过程：
-          1. 使用聚类方法对实际计数表的行和列分别进行分组，
-             得到各方向的聚类标签。
-          2. 根据聚类标签对实际计数表进行归并。
-          3. 根据归并后的实际计数表计算期望计数表。
-          4. 如果期望计数表中小于 5 的格子比例超过 20%，则认为归并失败，
-             返回 False；否则返回归并后的 (actual, expected) 表。
-
-        :param actual_table: 实际分布列联表（二维列表）。
-        :return: 若归并成功，返回归并后的 (actual, expected) 表，否则返回 False。
-        """
-        # 转换为 NumPy 数组
         actual_arr = np.array(actual_table, dtype=float)
-
-        # 使用实际计数表做聚类（行和列均依据实际分布）
-        row_labels = self.cluster_rows(actual_arr)
-        col_labels = self.cluster_columns(actual_arr)
-
-        # 如果聚类结果与原始行列数完全一致，说明未能归并
-        # if len(np.unique(row_labels)) == actual_arr.shape[0] and len(np.unique(col_labels)) == actual_arr.shape[1]:
-        #     logger.info("聚类归并无效：未发现足够相似的行或列")
-        #     return False
-
-        # 根据聚类标签对实际计数表进行归并
+        # 判断行多还是列多，多的先归并
+        if actual_arr.shape[0] > actual_arr.shape[1]:
+            row_labels = self.cluster_rows(actual_arr)
+            col_labels = self.cluster_columns(actual_arr)
+        else:
+            col_labels = self.cluster_columns(actual_arr)
+            row_labels = self.cluster_rows(actual_arr)
         merged_actual = self.merge_by_clusters(actual_arr, row_labels, col_labels)
-
         return merged_actual.tolist()
 
 

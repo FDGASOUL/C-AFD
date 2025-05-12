@@ -63,23 +63,23 @@ class Sampler:
                 data.drop(col, axis=1, inplace=True)
                 logger.info(f"Dropped column '{col}' with only one unique value.")
 
-        # 计算抽样数量
-        cols = data.columns.tolist()
-        p = 0.000001  # 用户可根据需求调整
-        delta = 0.005  # 用户可根据需求调整
-        max_n = 0
-        # 遍历每一对列，计算样本量并取最大值
-        for i in range(len(cols)):
-            for j in range(i + 1, len(cols)):
-                d1 = data[cols[i]].nunique(dropna=True)
-                d2 = data[cols[j]].nunique(dropna=True)
-                d = min(d1, d2)
-                v = (d1 - 1) * (d2 - 1)
-                n_ij = self.calculate_full_formula(v, p, delta, d)
-                if n_ij > max_n:
-                    max_n = n_ij
-        # 向上取整，并更新实例样本量
-        self.sample_size = math.ceil(max_n)
+        # # 计算抽样数量
+        # cols = data.columns.tolist()
+        # p = 0.000001  # 用户可根据需求调整
+        # delta = 0.005  # 用户可根据需求调整
+        # max_n = 0
+        # # 遍历每一对列，计算样本量并取最大值
+        # for i in range(len(cols)):
+        #     for j in range(i + 1, len(cols)):
+        #         d1 = data[cols[i]].nunique(dropna=True)
+        #         d2 = data[cols[j]].nunique(dropna=True)
+        #         d = min(d1, d2)
+        #         v = (d1 - 1) * (d2 - 1)
+        #         n_ij = self.calculate_full_formula(v, p, delta, d)
+        #         if n_ij > max_n:
+        #             max_n = n_ij
+        # # 向上取整，并更新实例样本量
+        # self.sample_size = math.ceil(max_n)
         logger.info(f"Calculated dynamic sample size: {self.sample_size} rows based on domain sizes.")
 
         # 检查抽样数量是否合理

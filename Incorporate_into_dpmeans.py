@@ -5,7 +5,6 @@ import copy
 import numpy as np
 import pandas as pd
 from scipy.stats.contingency import association
-from sklearn.cluster import AgglomerativeClustering
 
 # 获取日志实例
 logger = logging.getLogger(__name__)
@@ -128,7 +127,59 @@ class Incorporate:
     """
     # similarity_threshold 用于聚类时的距离阈值，
     # 较小的值要求归一化后向量更加相似。
-    similarity_threshold = 0.1  # 可根据需要调整
+    similarity_threshold = 0.3  # 可根据需要调整
+
+    @staticmethod
+    def dpmeans(X, lambda_, max_iter=100):
+        """
+        DP-Means 算法修改版：
+        1. 如果样本数 < 5，不进行归并，返回每点各自为簇
+        2. 随机初始化5个质心
+        3. 对每个样本，找到距离最近的质心，若最小距离^2 > lambda_，则新建簇
+        """
+        n_samples, n_features = X.shape
+        # 若样本数小于5，则不做合并，每个样本为一个簇
+        if n_samples < 50:
+            labels = np.arange(n_samples, dtype=int)
+            return labels, X.copy()
+
+        # 随机初始化5个不同的质心
+        init_idx = np.random.choice(n_samples, size=50, replace=False)
+        centers = [X[i].copy() for i in init_idx]
+        labels = np.zeros(n_samples, dtype=int)
+
+        for _ in range(max_iter):
+            changed = False
+            # Assignment step
+            for i in range(n_samples):
+                x = X[i]
+                # 计算到所有中心的平方距离
+                dists2 = np.sum((np.vstack(centers) - x) ** 2, axis=1)
+                j_min = np.argmin(dists2)
+                # 若与最近中心的距离超出阈值，则创建新簇
+                if dists2[j_min] > lambda_:
+                    logger.info(f"New cluster created at sample {i} with distance {dists2[j_min]:.3f}")
+                    centers.append(x.copy())
+                    labels[i] = len(centers) - 1
+                    changed = True
+                else:
+                    labels[i] = j_min
+
+            # Update step
+            new_centers = []
+            for k in range(len(centers)):
+                members = X[labels == k]
+                if len(members) > 0:
+                    new_centers.append(members.mean(axis=0))
+                else:
+                    new_centers.append(centers[k])
+            centers = new_centers
+
+            # 若本次无新簇产生，可提前退出
+            if not changed:
+                break
+
+        return labels, np.vstack(centers)
 
     @staticmethod
     def normalize_rows(matrix):
@@ -159,46 +210,24 @@ class Incorporate:
 
     def cluster_rows(self, matrix):
         """
-        对矩阵的行进行聚类：先归一化每一行（视为分布），再使用 AgglomerativeClustering
-        （余弦距离，平均连接）得到聚类标签。euclidean  cosine
-
-        :param matrix: 二维列表或 NumPy 数组，形状为 (n_rows, n_features)
-        :return: 聚类标签（NumPy 数组）
+        用 DP-Means 对行聚类，阈值由 similarity_threshold 控制。
         """
         norm_data = self.normalize_rows(matrix)
         n_rows = norm_data.shape[0]
-
         if n_rows <= 1:
-            return np.array([0])
-        clustering = AgglomerativeClustering(
-            n_clusters=None,
-            metric="euclidean",
-            linkage='average',
-            distance_threshold=self.similarity_threshold
-        )
-        labels = clustering.fit_predict(norm_data)
+            return np.zeros(n_rows, dtype=int)
+        labels, _ = self.dpmeans(norm_data, lambda_=self.similarity_threshold)
         return labels
 
     def cluster_columns(self, matrix):
         """
-        对矩阵的列进行聚类：先对每列归一化（视为分布），
-        再对转置后的数据进行聚类，得到聚类标签。
-
-        :param matrix: 二维列表或 NumPy 数组，形状为 (n_rows, n_columns)
-        :return: 聚类标签（NumPy 数组）
+        用 DP-Means 对列聚类：先归一化后转置，再调用 dpmeans。
         """
-        # 对列进行归一化：转置后每一行对应原矩阵的一列
         norm_data = self.normalize_columns(matrix).T
         n_cols = norm_data.shape[0]
         if n_cols <= 1:
-            return np.array([0])
-        clustering = AgglomerativeClustering(
-            n_clusters=None,
-            metric="euclidean",
-            linkage="average",
-            distance_threshold=self.similarity_threshold
-        )
-        labels = clustering.fit_predict(norm_data)
+            return np.zeros(n_cols, dtype=int)
+        labels, _ = self.dpmeans(norm_data, lambda_=self.similarity_threshold)
         return labels
 
     @staticmethod
@@ -277,11 +306,6 @@ class Incorporate:
         # 使用实际计数表做聚类（行和列均依据实际分布）
         row_labels = self.cluster_rows(actual_arr)
         col_labels = self.cluster_columns(actual_arr)
-
-        # 如果聚类结果与原始行列数完全一致，说明未能归并
-        # if len(np.unique(row_labels)) == actual_arr.shape[0] and len(np.unique(col_labels)) == actual_arr.shape[1]:
-        #     logger.info("聚类归并无效：未发现足够相似的行或列")
-        #     return False
 
         # 根据聚类标签对实际计数表进行归并
         merged_actual = self.merge_by_clusters(actual_arr, row_labels, col_labels)

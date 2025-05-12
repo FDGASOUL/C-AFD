@@ -30,17 +30,7 @@ def setup_logging():
 
 class Config:
     DATASET_CONFIG = {
-        "IRIS": {"path": "iris", "has_header": False},
         "DATA": {"path": "data-new", "has_header": True},
-        "BEERS": {"path": "beers", "has_header": True},
-        "FLIGHTS": {"path": "flights", "has_header": True},
-        "HOSPITAL": {"path": "hospital", "has_header": True},
-        "RAYYAN": {"path": "rayyan", "has_header": True},
-        "TAX": {"path": "tax", "has_header": True},
-        "ALARM": {"path": "alarm", "has_header": True},
-        "ASIA": {"path": "asia", "has_header": True},
-        "EARTHQUAKE": {"path": "earthquake", "has_header": True},
-        "CANCER": {"path": "cancer", "has_header": True},
         "RWD-ADULT": {"path": "rwd/adult", "has_header": True},
         "RWD-TAX": {"path": "rwd/tax", "has_header": True},
         "RWD-HOSPITAL": {"path": "rwd/hospital", "has_header": True},
@@ -79,7 +69,7 @@ if __name__ == "__main__":
     start_time = time.time()
     setup_logging()
     logging.info("全局日志配置已完成！")
-    conf = Config("DATA")
+    conf = Config("RWD-HOSPITAL")
     logging.info(conf)  # 使用日志代替打印
     logging.info("Starting CAFD execution...")
 

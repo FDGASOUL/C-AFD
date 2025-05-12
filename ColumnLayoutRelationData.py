@@ -6,8 +6,6 @@ import logging
 logger = logging.getLogger(__name__)
 
 
-# TODO: 通过排除单例簇，降低了计算复杂度，同时解决了index的问题。目前只排除PLI中的单列簇，构造交叉表时对RHS使用PLI，而LHS使用Vectors，是否合理，应该是LHS的单列簇没有用
-# TODO: 对数字可以不计算vectors
 class ColumnLayoutRelationData:
     def __init__(self, data):
         """

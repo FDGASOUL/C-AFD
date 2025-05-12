@@ -2,9 +2,13 @@ import logging
 import random
 import time
 import numpy as np
+from line_profiler import profile
+from scipy.sparse import coo_matrix
 
 # from Incorporate_into_DBSCAN import Incorporate
-from Incorporate_into_hierarchical import Incorporate
+# from Incorporate_into_hierarchical import Incorporate
+# from Incorporate_into_dpmeans import Incorporate
+from Incorporate_into_dpmeans_top import Incorporate
 
 # 获取日志实例
 logger = logging.getLogger(__name__)
@@ -86,6 +90,60 @@ class CorrelationCalculator:
 
         return crosstab
 
+    def build_linked_table_new_new(self, lhs, rhs):
+        """
+        构建列联表（linked table），左部 (lhs) 使用 PLI，右部 (rhs) 使用 columnVectors。
+        优化思路：将“簇×值”的计数问题转换为稀疏矩阵聚合，只遍历非零项。
+
+        :param lhs: 左部属性索引列表（单个或多个属性）。
+        :param rhs: 右部属性索引（单个属性）。
+        :return: NumPy 二维数组，shape=(n_clusters, n_unique_rhs_values)。
+        """
+        # 1. 计算 LHS 的 PLI 列表
+        if len(lhs) == 1:
+            pli_lhs = self.columnData[lhs[0]]["PLI"]
+        else:
+            pli_lhs = self._cross_plis([self.columnData[col]["PLI"] for col in lhs])
+
+        # 2. 取出 RHS 向量
+        column_vectors_rhs = self.columnVectors[rhs]
+
+        # 3. 收集所有非空的 RHS 唯一值，并排序以稳定列顺序
+        unique_values = sorted({
+            column_vectors_rhs[pos]
+            for cluster in pli_lhs
+            for pos in cluster
+            if column_vectors_rhs[pos] != self.null_value_id
+        })
+        n_vals = len(unique_values)
+        # 为每个 RHS 值分配一个列索引
+        val2col = {val: idx for idx, val in enumerate(unique_values)}
+
+        # 4. 构造稀疏计数对 (cluster_idx, value_idx)
+        rows = []  # 存放簇索引
+        cols = []  # 存放 RHS 值的列索引
+        for cluster_idx, cluster in enumerate(pli_lhs):
+            for pos in cluster:
+                val = column_vectors_rhs[pos]
+                if val == self.null_value_id:
+                    continue
+                rows.append(cluster_idx)
+                cols.append(val2col[val])
+        data = np.ones(len(rows), dtype=int)
+
+        # 5. 用 coo_matrix 在 C 层进行累加
+        n_clusters = len(pli_lhs)
+        cmat = coo_matrix((data, (rows, cols)),
+                          shape=(n_clusters, n_vals),
+                          dtype=int)
+
+        # 6. 转为稠密数组，并过滤掉全零的簇
+        linked = cmat.toarray()  # shape (n_clusters, n_vals)
+        nonzero_mask = linked.sum(axis=1) > 0  # 找到至少有一个非零的簇
+        linked = linked[nonzero_mask]
+
+        return linked
+
 
 
     def build_linked_table_new(self, lhs, rhs):
@@ -146,23 +204,30 @@ class CorrelationCalculator:
 
         return crosstab
 
+    # todo:精度问题
     def compute_expected_frequencies(self, crosstab):
         """
         根据实际分布频数表计算期望分布频数表。
         :param crosstab: 实际分布频数表（二维列表）。
         :return: 期望分布频数表（二维列表）。
         """
-        row_totals = [sum(row) for row in crosstab]  # 每一行的总和
-        col_totals = [sum(col) for col in zip(*crosstab)]  # 每一列的总和
-        total = sum(row_totals)  # 整个列联表的总和
-
-        # 构建期望频数表
-        expected_frequencies = [
-            [(row_total * col_total) / total for col_total in col_totals]
-            for row_total in row_totals
-        ]
-
-        return expected_frequencies
+        # row_totals = [sum(row) for row in crosstab]  # 每一行的总和
+        # col_totals = [sum(col) for col in zip(*crosstab)]  # 每一列的总和
+        # total = sum(row_totals)  # 整个列联表的总和
+        #
+        # # 构建期望频数表
+        # expected_frequencies = [
+        #     [(row_total * col_total) / total for col_total in col_totals]
+        #     for row_total in row_totals
+        # ]
+        #
+        # return expected_frequencies
+        arr = np.array(crosstab, dtype=float)
+        row_totals = arr.sum(axis=1)
+        col_totals = arr.sum(axis=0)
+        total = row_totals.sum()
+        # 向量化外积
+        return np.outer(row_totals, col_totals) / total
 
     def _check_expected_frequencies(self, expected_frequencies):
         """
@@ -170,9 +235,12 @@ class CorrelationCalculator:
         :param expected_frequencies: 期望分布频数表。
         :return: 如果满足条件，返回 True；否则，返回 False。
         """
-        valid_count = sum(1 for row in expected_frequencies for value in row if value > 5)
-        total_cells = len(expected_frequencies) * len(expected_frequencies[0])
-        return valid_count / total_cells >= 0.8
+        # valid_count = sum(1 for row in expected_frequencies for value in row if value > 5)
+        # total_cells = len(expected_frequencies) * len(expected_frequencies[0])
+        # return valid_count / total_cells >= 0.8
+        arr = np.array(expected_frequencies, dtype=float)
+        # 计算大于 5 的比例
+        return np.mean(arr > 5) >= 0.8
 
     def _check_linked_table(self, linked_table, lhs):
         """
@@ -286,7 +354,8 @@ class CorrelationCalculator:
             return "left_to_right"
         else:
             return "right_to_left"
-
+    @profile
+    # kernprof -l -v Config.py
     def compute_correlation(self, column_a, column_b):
         """
         计算两个列之间的相关性。
@@ -296,10 +365,12 @@ class CorrelationCalculator:
         """
         # 构建列联表
         linked_table = self.build_linked_table(column_b, column_a)
+        # 打印归并前列联表维度
 
         if not linked_table or len(linked_table[0]) == 0:
             logger.warning("列联表为空，无法计算相关性。")
             return "invalid"
+        logger.info(f"归并前列联表维度: {len(linked_table)} 行, {len(linked_table[0])} 列")
 
         expected_frequencies = self.compute_expected_frequencies(linked_table)
         # 检查期望分布频数表
@@ -317,6 +388,8 @@ class CorrelationCalculator:
                             chi_squared += ((observed - expected) ** 2) / expected
                 d1, d2 = len(linked_table), len(linked_table[0])
                 d = min(d1, d2)
+                # 打印 χ²
+                logger.info(f"归并前计算列 {column_a} 和列 {column_b} 之间的 χ²: {chi_squared}")
                 if d <= 1:
                     logger.warning("自由度为零，设置 φ² 为 0。")
                     return "invalid"
@@ -344,6 +417,8 @@ class CorrelationCalculator:
 
                 incorporate = Incorporate()
                 linked_table = incorporate.merge_tables(linked_table)
+                # 打印归并后列联表维度
+                logger.info(f"归并后列联表维度: {len(linked_table)} 行, {len(linked_table[0])} 列")
                 expected_frequencies = self.compute_expected_frequencies(linked_table)
 
                 # 总观测数
@@ -363,6 +438,8 @@ class CorrelationCalculator:
                 # 计算 φ²
                 d1, d2 = len(linked_table), len(linked_table[0])
                 d = min(d1, d2)
+                # 打印 χ²
+                logger.info(f"归并后计算列 {column_a} 和列 {column_b} 之间的 χ²: {chi_squared}")
                 if d <= 1:
                     logger.warning("自由度为零，设置 φ² 为 0。")
                     return "invalid"
@@ -411,13 +488,37 @@ class CorrelationCalculator:
             logger.warning("总观测数为零，设置 φ² 为 0。")
             return "invalid"
 
-        # 计算 χ²
-        chi_squared = 0
-        for i, row in enumerate(linked_table):
-            for j, observed in enumerate(row):
-                expected = expected_frequencies[i][j]
-                if expected > 0:
-                    chi_squared += ((observed - expected) ** 2) / expected
+        # # 计算 χ²
+        # chi_squared = 0
+        # for i, row in enumerate(linked_table):
+        #     for j, observed in enumerate(row):
+        #         expected = expected_frequencies[i][j]
+        #         if expected > 0:
+        #             chi_squared += ((observed - expected) ** 2) / expected
+        #
+        # logger.info(f"111计算列 {column_a} 和列 {column_b} 之间的 χ²: {chi_squared}")
+
+        # 先将 Python 嵌套列表转换为稀疏矩阵
+        arr = np.array(linked_table, dtype=float)
+        row_sum = arr.sum(axis=1)
+        col_sum = arr.sum(axis=0)
+        T = row_sum.sum()
+
+        # 构造 coo_matrix，只遍历非零项
+        sparse = coo_matrix(arr)
+        # 计算期望：E_ij = row_sum[i] * col_sum[j] / T
+        # 对于每一个 (i,j,o) in sparse:
+        #   contrib = o^2 / E_ij
+        chi2_num = 0.0
+        for i, j, o in zip(sparse.row, sparse.col, sparse.data):
+            E = row_sum[i] * col_sum[j] / T
+            # E>0 保证
+            chi2_num += (o * o) / E
+
+        # 最终 χ²
+        chi_squared = chi2_num - T
+
+        logger.info(f"111计算列 {column_a} 和列 {column_b} 之间的 χ²: {chi_squared}")
 
         # 计算 φ²
         d1, d2 = len(linked_table), len(linked_table[0])

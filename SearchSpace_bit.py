@@ -117,10 +117,10 @@ class SearchSpace:
         # 存入全局结论表，更新正向和反向缓存
         with global_table_lock:
             global_conclusion_table[key_fwd] = result_fwd
-            # global_conclusion_table[key_rev] = result_rev
-            # logger.info(f"将结果存入全局结论表: {lhs_name}->{rhs_name} -> {result_fwd}, {rhs_name}->{lhs_name} -> {result_rev}")
-            logger.info(
-                f"将结果存入全局结论表: {lhs_name}->{rhs_name} -> {result_fwd}")
+            global_conclusion_table[key_rev] = result_rev
+            logger.info(f"将结果存入全局结论表: {lhs_name}->{rhs_name} -> {result_fwd}, {rhs_name}->{lhs_name} -> {result_rev}")
+            # logger.info(
+            #     f"将结果存入全局结论表: {lhs_name}->{rhs_name} -> {result_fwd}")
 
         return result_fwd
 
