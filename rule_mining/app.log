@@ -1,0 +1,611 @@
+2025-05-13 21:22:44 - root - INFO - 日志配置完成。
+2025-05-13 21:22:44 - root - INFO - Config: dataset=hospital.csv, sample_size=5000, null_equal_null=True
+2025-05-13 21:22:44 - root - INFO - 开始执行 CAFD...
+2025-05-13 21:22:44 - Cafd - INFO - Executing CAFD on: E:\资料\C-AFD\rule_mining\data\real_world_data\hospital.csv
+2025-05-13 21:22:44 - Cafd - INFO - Using ground truth: E:\资料\C-AFD\rule_mining\groundtruth\real_world_data\hospital.txt
+2025-05-13 21:22:44 - Sampler - INFO - Reading dataset from: E:\资料\C-AFD\rule_mining\data\real_world_data\hospital.csv
+2025-05-13 21:22:44 - Sampler - INFO - 移除全空列：0 / 15
+2025-05-13 21:22:44 - Sampler - INFO - 移除单一值列：0 个
+2025-05-13 21:22:44 - Sampler - INFO - 抽样 5000 行，随机种子：2981524454
+2025-05-13 21:22:44 - Sampler - INFO - 抽样结果已保存至: rule_mining/data/sample_data/sample_data.csv
+2025-05-13 21:22:45 - Cafd - INFO - Processing search space: <SearchSpace_bit.SearchSpace object at 0x000001FBAFC85970>
+2025-05-13 21:22:45 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:45 - rule_mining.Correlation_utils - INFO - 计算列 ['CountyName'] 和列 ProviderNumber 之间的相关性 (φ²): 1.0000000000000016
+2025-05-13 21:22:45 - rule_mining.Correlation_utils - INFO - 行方向得分: 0.4320, 列方向得分: 1.0000
+2025-05-13 21:22:45 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:45 - rule_mining.Correlation_utils - INFO - 计算列 ['PhoneNumber'] 和列 ProviderNumber 之间的相关性 (φ²): 1.0
+2025-05-13 21:22:45 - rule_mining.Correlation_utils - INFO - 行方向得分: 0.9979, 列方向得分: 1.0000
+2025-05-13 21:22:45 - SearchSpace_bit - INFO - 发现函数依赖: ['PhoneNumber'] -> ProviderNumber
+2025-05-13 21:22:45 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:45 - rule_mining.Correlation_utils - INFO - 计算列 ['HospitalName'] 和列 ProviderNumber 之间的相关性 (φ²): 1.0
+2025-05-13 21:22:45 - rule_mining.Correlation_utils - INFO - 行方向得分: 0.9621, 列方向得分: 1.0000
+2025-05-13 21:22:45 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:45 - rule_mining.Correlation_utils - INFO - 计算列 ['HospitalType'] 和列 ProviderNumber 之间的相关性 (φ²): 1.000000000000001
+2025-05-13 21:22:45 - rule_mining.Correlation_utils - INFO - 行方向得分: 0.0034, 列方向得分: 1.0000
+2025-05-13 21:22:45 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:45 - rule_mining.Correlation_utils - INFO - 计算列 ['City'] 和列 ProviderNumber 之间的相关性 (φ²): 0.9999999999999971
+2025-05-13 21:22:45 - rule_mining.Correlation_utils - INFO - 行方向得分: 0.6508, 列方向得分: 1.0000
+2025-05-13 21:22:45 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:45 - rule_mining.Correlation_utils - INFO - 计算列 ['HospitalOwner'] 和列 ProviderNumber 之间的相关性 (φ²): 1.0000000000000666
+2025-05-13 21:22:45 - rule_mining.Correlation_utils - INFO - 行方向得分: 0.0084, 列方向得分: 1.0000
+2025-05-13 21:22:45 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:45 - rule_mining.Correlation_utils - INFO - 计算列 ['EmergencyService'] 和列 ProviderNumber 之间的相关性 (φ²): 0.9999999999999198
+2025-05-13 21:22:45 - rule_mining.Correlation_utils - INFO - 行方向得分: 0.0022, 列方向得分: 1.0000
+2025-05-13 21:22:45 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:45 - rule_mining.Correlation_utils - INFO - 计算列 ['Condition'] 和列 ProviderNumber 之间的相关性 (φ²): 0.0
+2025-05-13 21:22:45 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:45 - rule_mining.Correlation_utils - INFO - 计算列 ['State'] 和列 ProviderNumber 之间的相关性 (φ²): 1.0000000000000036
+2025-05-13 21:22:45 - rule_mining.Correlation_utils - INFO - 行方向得分: 0.0412, 列方向得分: 1.0000
+2025-05-13 21:22:45 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:45 - rule_mining.Correlation_utils - INFO - 计算列 ['MeasureCode'] 和列 ProviderNumber 之间的相关性 (φ²): 0.0
+2025-05-13 21:22:45 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:45 - rule_mining.Correlation_utils - INFO - 计算列 ['MeasureName'] 和列 ProviderNumber 之间的相关性 (φ²): 0.0
+2025-05-13 21:22:45 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:45 - rule_mining.Correlation_utils - INFO - 计算列 ['Sample'] 和列 ProviderNumber 之间的相关性 (φ²): 0.008155822891389277
+2025-05-13 21:22:45 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:45 - rule_mining.Correlation_utils - INFO - 计算列 ['ZIPCode'] 和列 ProviderNumber 之间的相关性 (φ²): 1.0
+2025-05-13 21:22:45 - rule_mining.Correlation_utils - INFO - 行方向得分: 0.9336, 列方向得分: 1.0000
+2025-05-13 21:22:45 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:45 - rule_mining.Correlation_utils - INFO - 计算列 ['StateAvg'] 和列 ProviderNumber 之间的相关性 (φ²): 0.019058748019098726
+2025-05-13 21:22:45 - Cafd - INFO - Processing search space: <SearchSpace_bit.SearchSpace object at 0x000001FBAFDE8F70>
+2025-05-13 21:22:45 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:45 - rule_mining.Correlation_utils - INFO - 计算列 ['CountyName'] 和列 HospitalName 之间的相关性 (φ²): 0.9400947830762053
+2025-05-13 21:22:45 - rule_mining.Correlation_utils - INFO - 行方向得分: 0.4324, 列方向得分: 0.9766
+2025-05-13 21:22:45 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: ProviderNumber->HospitalName
+2025-05-13 21:22:45 - SearchSpace_bit - INFO - 发现函数依赖: ['ProviderNumber'] -> HospitalName
+2025-05-13 21:22:45 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:45 - rule_mining.Correlation_utils - INFO - 计算列 ['PhoneNumber'] 和列 HospitalName 之间的相关性 (φ²): 0.992427473913542
+2025-05-13 21:22:45 - rule_mining.Correlation_utils - INFO - 行方向得分: 0.9979, 列方向得分: 0.9870
+2025-05-13 21:22:45 - SearchSpace_bit - INFO - 发现函数依赖: ['PhoneNumber'] -> HospitalName
+2025-05-13 21:22:45 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:45 - rule_mining.Correlation_utils - INFO - 计算列 ['HospitalType'] 和列 HospitalName 之间的相关性 (φ²): 0.9831805361334184
+2025-05-13 21:22:45 - rule_mining.Correlation_utils - INFO - 行方向得分: 0.0048, 列方向得分: 0.9948
+2025-05-13 21:22:45 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:45 - rule_mining.Correlation_utils - INFO - 计算列 ['City'] 和列 HospitalName 之间的相关性 (φ²): 0.962132849821636
+2025-05-13 21:22:45 - rule_mining.Correlation_utils - INFO - 行方向得分: 0.6510, 列方向得分: 0.9801
+2025-05-13 21:22:45 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:45 - rule_mining.Correlation_utils - INFO - 计算列 ['HospitalOwner'] 和列 HospitalName 之间的相关性 (φ²): 0.9350666155880997
+2025-05-13 21:22:45 - rule_mining.Correlation_utils - INFO - 行方向得分: 0.0096, 列方向得分: 0.9836
+2025-05-13 21:22:45 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:45 - rule_mining.Correlation_utils - INFO - 计算列 ['EmergencyService'] 和列 HospitalName 之间的相关性 (φ²): 0.948171446231925
+2025-05-13 21:22:45 - rule_mining.Correlation_utils - INFO - 行方向得分: 0.0034, 列方向得分: 0.9966
+2025-05-13 21:22:45 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:45 - rule_mining.Correlation_utils - INFO - 计算列 ['Condition'] 和列 HospitalName 之间的相关性 (φ²): 0.0
+2025-05-13 21:22:45 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:45 - rule_mining.Correlation_utils - INFO - 计算列 ['State'] 和列 HospitalName 之间的相关性 (φ²): 0.9257657243373777
+2025-05-13 21:22:45 - rule_mining.Correlation_utils - INFO - 行方向得分: 0.0414, 列方向得分: 0.9756
+2025-05-13 21:22:45 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:45 - rule_mining.Correlation_utils - INFO - 计算列 ['MeasureCode'] 和列 HospitalName 之间的相关性 (φ²): 0.0
+2025-05-13 21:22:45 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:45 - rule_mining.Correlation_utils - INFO - 计算列 ['MeasureName'] 和列 HospitalName 之间的相关性 (φ²): 0.0
+2025-05-13 21:22:45 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:45 - rule_mining.Correlation_utils - INFO - 计算列 ['Sample'] 和列 HospitalName 之间的相关性 (φ²): 0.0
+2025-05-13 21:22:45 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:45 - rule_mining.Correlation_utils - INFO - 计算列 ['ZIPCode'] 和列 HospitalName 之间的相关性 (φ²): 0.9694350728307478
+2025-05-13 21:22:45 - rule_mining.Correlation_utils - INFO - 行方向得分: 0.9336, 列方向得分: 0.9851
+2025-05-13 21:22:45 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:45 - rule_mining.Correlation_utils - INFO - 计算列 ['StateAvg'] 和列 HospitalName 之间的相关性 (φ²): 0.01767287027882526
+2025-05-13 21:22:45 - Cafd - INFO - Processing search space: <SearchSpace_bit.SearchSpace object at 0x000001FBAFDE8FD0>
+2025-05-13 21:22:45 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:45 - rule_mining.Correlation_utils - INFO - 计算列 ['CountyName'] 和列 City 之间的相关性 (φ²): 0.7573142318198299
+2025-05-13 21:22:45 - rule_mining.Correlation_utils - INFO - 行方向得分: 0.5809, 列方向得分: 0.8790
+2025-05-13 21:22:45 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: ProviderNumber->City
+2025-05-13 21:22:45 - SearchSpace_bit - INFO - 发现函数依赖: ['ProviderNumber'] -> City
+2025-05-13 21:22:45 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: HospitalName->City
+2025-05-13 21:22:45 - SearchSpace_bit - INFO - 发现函数依赖: ['HospitalName'] -> City
+2025-05-13 21:22:45 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:45 - rule_mining.Correlation_utils - INFO - 计算列 ['PhoneNumber'] 和列 City 之间的相关性 (φ²): 0.9999999999999997
+2025-05-13 21:22:45 - rule_mining.Correlation_utils - INFO - 行方向得分: 1.0000, 列方向得分: 0.7847
+2025-05-13 21:22:45 - SearchSpace_bit - INFO - 发现函数依赖: ['PhoneNumber'] -> City
+2025-05-13 21:22:45 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:45 - rule_mining.Correlation_utils - INFO - 计算列 ['HospitalType'] 和列 City 之间的相关性 (φ²): 0.029427389402172897
+2025-05-13 21:22:45 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:45 - rule_mining.Correlation_utils - INFO - 计算列 ['HospitalOwner'] 和列 City 之间的相关性 (φ²): 0.40199609912508283
+2025-05-13 21:22:45 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:45 - rule_mining.Correlation_utils - INFO - 计算列 ['EmergencyService'] 和列 City 之间的相关性 (φ²): 0.34308355274813424
+2025-05-13 21:22:45 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:45 - rule_mining.Correlation_utils - INFO - 计算列 ['Condition'] 和列 City 之间的相关性 (φ²): 0.0
+2025-05-13 21:22:45 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:45 - rule_mining.Correlation_utils - INFO - 计算列 ['State'] 和列 City 之间的相关性 (φ²): 0.7274710096515655
+2025-05-13 21:22:45 - rule_mining.Correlation_utils - INFO - 行方向得分: 0.1008, 列方向得分: 0.8746
+2025-05-13 21:22:45 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:45 - rule_mining.Correlation_utils - INFO - 计算列 ['MeasureCode'] 和列 City 之间的相关性 (φ²): 0.0
+2025-05-13 21:22:45 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:45 - rule_mining.Correlation_utils - INFO - 计算列 ['MeasureName'] 和列 City 之间的相关性 (φ²): 0.0
+2025-05-13 21:22:45 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:45 - rule_mining.Correlation_utils - INFO - 计算列 ['Sample'] 和列 City 之间的相关性 (φ²): 0.0
+2025-05-13 21:22:45 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:45 - rule_mining.Correlation_utils - INFO - 计算列 ['ZIPCode'] 和列 City 之间的相关性 (φ²): 1.0000000000000018
+2025-05-13 21:22:45 - rule_mining.Correlation_utils - INFO - 行方向得分: 1.0000, 列方向得分: 0.7962
+2025-05-13 21:22:45 - SearchSpace_bit - INFO - 发现函数依赖: ['ZIPCode'] -> City
+2025-05-13 21:22:45 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:45 - rule_mining.Correlation_utils - INFO - 计算列 ['StateAvg'] 和列 City 之间的相关性 (φ²): 0.03278457408040229
+2025-05-13 21:22:45 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:45 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:45 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:45 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:46 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:46 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:46 - Cafd - INFO - Processing search space: <SearchSpace_bit.SearchSpace object at 0x000001FBB01200A0>
+2025-05-13 21:22:46 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:46 - rule_mining.Correlation_utils - INFO - 计算列 ['CountyName'] 和列 State 之间的相关性 (φ²): 0.6511875457839024
+2025-05-13 21:22:46 - rule_mining.Correlation_utils - INFO - 行方向得分: 0.7753, 列方向得分: 0.1586
+2025-05-13 21:22:46 - SearchSpace_bit - INFO - 发现函数依赖: ['CountyName'] -> State
+2025-05-13 21:22:46 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: ProviderNumber->State
+2025-05-13 21:22:46 - SearchSpace_bit - INFO - 发现函数依赖: ['ProviderNumber'] -> State
+2025-05-13 21:22:46 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: HospitalName->State
+2025-05-13 21:22:46 - SearchSpace_bit - INFO - 发现函数依赖: ['HospitalName'] -> State
+2025-05-13 21:22:46 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:46 - rule_mining.Correlation_utils - INFO - 计算列 ['PhoneNumber'] 和列 State 之间的相关性 (φ²): 1.0000000000000118
+2025-05-13 21:22:46 - rule_mining.Correlation_utils - INFO - 行方向得分: 1.0000, 列方向得分: 0.0624
+2025-05-13 21:22:46 - SearchSpace_bit - INFO - 发现函数依赖: ['PhoneNumber'] -> State
+2025-05-13 21:22:46 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: City->State
+2025-05-13 21:22:46 - SearchSpace_bit - INFO - 发现函数依赖: ['City'] -> State
+2025-05-13 21:22:46 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:46 - rule_mining.Correlation_utils - INFO - 计算列 ['HospitalType'] 和列 State 之间的相关性 (φ²): 0.07564263787319496
+2025-05-13 21:22:46 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:46 - rule_mining.Correlation_utils - INFO - 计算列 ['HospitalOwner'] 和列 State 之间的相关性 (φ²): 0.06349857103680903
+2025-05-13 21:22:46 - rule_mining.Correlation_utils - INFO - 计算列 ['EmergencyService'] 和列 State 之间的相关性 (φ²): 0.0215916570742985
+2025-05-13 21:22:46 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:46 - rule_mining.Correlation_utils - INFO - 计算列 ['Condition'] 和列 State 之间的相关性 (φ²): 0.0
+2025-05-13 21:22:46 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:46 - rule_mining.Correlation_utils - INFO - 计算列 ['MeasureCode'] 和列 State 之间的相关性 (φ²): 0.0
+2025-05-13 21:22:46 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:46 - rule_mining.Correlation_utils - INFO - 计算列 ['MeasureName'] 和列 State 之间的相关性 (φ²): 0.0
+2025-05-13 21:22:46 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:46 - rule_mining.Correlation_utils - INFO - 计算列 ['Sample'] 和列 State 之间的相关性 (φ²): 0.0
+2025-05-13 21:22:46 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:46 - rule_mining.Correlation_utils - INFO - 计算列 ['ZIPCode'] 和列 State 之间的相关性 (φ²): 1.0000000000000007
+2025-05-13 21:22:46 - rule_mining.Correlation_utils - INFO - 行方向得分: 1.0000, 列方向得分: 0.0693
+2025-05-13 21:22:46 - SearchSpace_bit - INFO - 发现函数依赖: ['ZIPCode'] -> State
+2025-05-13 21:22:46 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:46 - rule_mining.Correlation_utils - INFO - 计算列 ['StateAvg'] 和列 State 之间的相关性 (φ²): 0.9999999999999992
+2025-05-13 21:22:46 - rule_mining.Correlation_utils - INFO - 行方向得分: 1.0000, 列方向得分: 0.0836
+2025-05-13 21:22:46 - SearchSpace_bit - INFO - 发现函数依赖: ['StateAvg'] -> State
+2025-05-13 21:22:46 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:46 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:46 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:46 - rule_mining.Correlation_utils - INFO - 计算列 ['HospitalType', 'EmergencyService'] 和列 State 之间的相关性 (φ²): 0.06953815308570788
+2025-05-13 21:22:46 - Cafd - INFO - Processing search space: <SearchSpace_bit.SearchSpace object at 0x000001FBB0120130>
+2025-05-13 21:22:46 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:46 - rule_mining.Correlation_utils - INFO - 计算列 ['CountyName'] 和列 ZIPCode 之间的相关性 (φ²): 0.9968653385539114
+2025-05-13 21:22:46 - rule_mining.Correlation_utils - INFO - 行方向得分: 0.4622, 列方向得分: 0.9991
+2025-05-13 21:22:46 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: ProviderNumber->ZIPCode
+2025-05-13 21:22:46 - SearchSpace_bit - INFO - 发现函数依赖: ['ProviderNumber'] -> ZIPCode
+2025-05-13 21:22:46 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: HospitalName->ZIPCode
+2025-05-13 21:22:46 - SearchSpace_bit - INFO - 发现函数依赖: ['HospitalName'] -> ZIPCode
+2025-05-13 21:22:46 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:46 - rule_mining.Correlation_utils - INFO - 计算列 ['PhoneNumber'] 和列 ZIPCode 之间的相关性 (φ²): 1.0
+2025-05-13 21:22:46 - rule_mining.Correlation_utils - INFO - 行方向得分: 1.0000, 列方向得分: 0.9770
+2025-05-13 21:22:46 - SearchSpace_bit - INFO - 发现函数依赖: ['PhoneNumber'] -> ZIPCode
+2025-05-13 21:22:46 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: City->ZIPCode
+2025-05-13 21:22:46 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:46 - rule_mining.Correlation_utils - INFO - 计算列 ['HospitalType'] 和列 ZIPCode 之间的相关性 (φ²): 0.5701191377363144
+2025-05-13 21:22:46 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:46 - rule_mining.Correlation_utils - INFO - 计算列 ['HospitalOwner'] 和列 ZIPCode 之间的相关性 (φ²): 0.8217106252445917
+2025-05-13 21:22:46 - rule_mining.Correlation_utils - INFO - 行方向得分: 0.0086, 列方向得分: 0.9636
+2025-05-13 21:22:46 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:46 - rule_mining.Correlation_utils - INFO - 计算列 ['EmergencyService'] 和列 ZIPCode 之间的相关性 (φ²): 0.7594266869141268
+2025-05-13 21:22:46 - rule_mining.Correlation_utils - INFO - 行方向得分: 0.0030, 列方向得分: 0.9820
+2025-05-13 21:22:46 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: State->ZIPCode
+2025-05-13 21:22:46 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:46 - rule_mining.Correlation_utils - INFO - 计算列 ['Condition'] 和列 ZIPCode 之间的相关性 (φ²): 0.0
+2025-05-13 21:22:46 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:46 - rule_mining.Correlation_utils - INFO - 计算列 ['MeasureCode'] 和列 ZIPCode 之间的相关性 (φ²): 0.0
+2025-05-13 21:22:46 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:46 - rule_mining.Correlation_utils - INFO - 计算列 ['MeasureName'] 和列 ZIPCode 之间的相关性 (φ²): 0.0
+2025-05-13 21:22:46 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:46 - rule_mining.Correlation_utils - INFO - 计算列 ['Sample'] 和列 ZIPCode 之间的相关性 (φ²): 0.0
+2025-05-13 21:22:46 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:46 - rule_mining.Correlation_utils - INFO - 计算列 ['StateAvg'] 和列 ZIPCode 之间的相关性 (φ²): 0.029322541224508645
+2025-05-13 21:22:46 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:46 - Cafd - INFO - Processing search space: <SearchSpace_bit.SearchSpace object at 0x000001FBB01201C0>
+2025-05-13 21:22:46 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:46 - rule_mining.Correlation_utils - INFO - 计算列 ['PhoneNumber'] 和列 CountyName 之间的相关性 (φ²): 0.9964183998239723
+2025-05-13 21:22:46 - rule_mining.Correlation_utils - INFO - 行方向得分: 0.9994, 列方向得分: 0.5816
+2025-05-13 21:22:46 - SearchSpace_bit - INFO - 发现函数依赖: ['PhoneNumber'] -> CountyName
+2025-05-13 21:22:46 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: ProviderNumber->CountyName
+2025-05-13 21:22:46 - SearchSpace_bit - INFO - 发现函数依赖: ['ProviderNumber'] -> CountyName
+2025-05-13 21:22:46 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: HospitalName->CountyName
+2025-05-13 21:22:46 - SearchSpace_bit - INFO - 发现函数依赖: ['HospitalName'] -> CountyName
+2025-05-13 21:22:46 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:46 - rule_mining.Correlation_utils - INFO - 计算列 ['HospitalType'] 和列 CountyName 之间的相关性 (φ²): 0.08415776002100504
+2025-05-13 21:22:46 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: City->CountyName
+2025-05-13 21:22:46 - SearchSpace_bit - INFO - 发现函数依赖: ['City'] -> CountyName
+2025-05-13 21:22:46 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:46 - rule_mining.Correlation_utils - INFO - 计算列 ['HospitalOwner'] 和列 CountyName 之间的相关性 (φ²): 0.2386389397048339
+2025-05-13 21:22:46 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:46 - rule_mining.Correlation_utils - INFO - 计算列 ['EmergencyService'] 和列 CountyName 之间的相关性 (φ²): 0.1729804779594686
+2025-05-13 21:22:46 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:46 - rule_mining.Correlation_utils - INFO - 计算列 ['Condition'] 和列 CountyName 之间的相关性 (φ²): 0.0
+2025-05-13 21:22:46 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: State->CountyName
+2025-05-13 21:22:46 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:46 - rule_mining.Correlation_utils - INFO - 计算列 ['MeasureCode'] 和列 CountyName 之间的相关性 (φ²): 0.0
+2025-05-13 21:22:46 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:46 - rule_mining.Correlation_utils - INFO - 计算列 ['MeasureName'] 和列 CountyName 之间的相关性 (φ²): 0.0
+2025-05-13 21:22:46 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:46 - rule_mining.Correlation_utils - INFO - 计算列 ['Sample'] 和列 CountyName 之间的相关性 (φ²): 0.0
+2025-05-13 21:22:46 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: ZIPCode->CountyName
+2025-05-13 21:22:46 - SearchSpace_bit - INFO - 发现函数依赖: ['ZIPCode'] -> CountyName
+2025-05-13 21:22:46 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:46 - rule_mining.Correlation_utils - INFO - 计算列 ['StateAvg'] 和列 CountyName 之间的相关性 (φ²): 0.0435497689666311
+2025-05-13 21:22:46 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:46 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:46 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:46 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:46 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:46 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:46 - Cafd - INFO - Processing search space: <SearchSpace_bit.SearchSpace object at 0x000001FBB0120250>
+2025-05-13 21:22:46 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: CountyName->PhoneNumber
+2025-05-13 21:22:46 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: ProviderNumber->PhoneNumber
+2025-05-13 21:22:46 - SearchSpace_bit - INFO - 发现函数依赖: ['ProviderNumber'] -> PhoneNumber
+2025-05-13 21:22:46 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: HospitalName->PhoneNumber
+2025-05-13 21:22:46 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:46 - rule_mining.Correlation_utils - INFO - 计算列 ['HospitalType'] 和列 PhoneNumber 之间的相关性 (φ²): 0.9993087766830969
+2025-05-13 21:22:46 - rule_mining.Correlation_utils - INFO - 行方向得分: 0.0034, 列方向得分: 0.9998
+2025-05-13 21:22:46 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: City->PhoneNumber
+2025-05-13 21:22:46 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:46 - rule_mining.Correlation_utils - INFO - 计算列 ['HospitalOwner'] 和列 PhoneNumber 之间的相关性 (φ²): 0.9994954704209383
+2025-05-13 21:22:46 - rule_mining.Correlation_utils - INFO - 行方向得分: 0.0084, 列方向得分: 0.9998
+2025-05-13 21:22:46 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:46 - rule_mining.Correlation_utils - INFO - 计算列 ['EmergencyService'] 和列 PhoneNumber 之间的相关性 (φ²): 0.9946148071627341
+2025-05-13 21:22:46 - rule_mining.Correlation_utils - INFO - 行方向得分: 0.0022, 列方向得分: 0.9996
+2025-05-13 21:22:46 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:46 - rule_mining.Correlation_utils - INFO - 计算列 ['Condition'] 和列 PhoneNumber 之间的相关性 (φ²): 0.0
+2025-05-13 21:22:46 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: State->PhoneNumber
+2025-05-13 21:22:46 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:46 - rule_mining.Correlation_utils - INFO - 计算列 ['MeasureCode'] 和列 PhoneNumber 之间的相关性 (φ²): 0.0
+2025-05-13 21:22:46 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:46 - rule_mining.Correlation_utils - INFO - 计算列 ['MeasureName'] 和列 PhoneNumber 之间的相关性 (φ²): 0.0
+2025-05-13 21:22:46 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:46 - rule_mining.Correlation_utils - INFO - 计算列 ['Sample'] 和列 PhoneNumber 之间的相关性 (φ²): 0.007350385608383319
+2025-05-13 21:22:46 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: ZIPCode->PhoneNumber
+2025-05-13 21:22:46 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:46 - rule_mining.Correlation_utils - INFO - 计算列 ['StateAvg'] 和列 PhoneNumber 之间的相关性 (φ²): 0.019868412550968974
+2025-05-13 21:22:46 - Cafd - INFO - Processing search space: <SearchSpace_bit.SearchSpace object at 0x000001FBB01202E0>
+2025-05-13 21:22:46 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: CountyName->HospitalType
+2025-05-13 21:22:46 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: ProviderNumber->HospitalType
+2025-05-13 21:22:46 - SearchSpace_bit - INFO - 发现函数依赖: ['ProviderNumber'] -> HospitalType
+2025-05-13 21:22:46 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: HospitalName->HospitalType
+2025-05-13 21:22:46 - SearchSpace_bit - INFO - 发现函数依赖: ['HospitalName'] -> HospitalType
+2025-05-13 21:22:46 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: PhoneNumber->HospitalType
+2025-05-13 21:22:46 - SearchSpace_bit - INFO - 发现函数依赖: ['PhoneNumber'] -> HospitalType
+2025-05-13 21:22:46 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: City->HospitalType
+2025-05-13 21:22:46 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:46 - rule_mining.Correlation_utils - INFO - 计算列 ['HospitalOwner'] 和列 HospitalType 之间的相关性 (φ²): 0.3549793358686782
+2025-05-13 21:22:46 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:46 - rule_mining.Correlation_utils - INFO - 计算列 ['EmergencyService'] 和列 HospitalType 之间的相关性 (φ²): 0.19709140466431588
+2025-05-13 21:22:46 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:46 - rule_mining.Correlation_utils - INFO - 计算列 ['Condition'] 和列 HospitalType 之间的相关性 (φ²): 0.035140164817193176
+2025-05-13 21:22:46 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: State->HospitalType
+2025-05-13 21:22:46 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:46 - rule_mining.Correlation_utils - INFO - 计算列 ['MeasureCode'] 和列 HospitalType 之间的相关性 (φ²): 0.06574676552387955
+2025-05-13 21:22:46 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:46 - rule_mining.Correlation_utils - INFO - 计算列 ['MeasureName'] 和列 HospitalType 之间的相关性 (φ²): 0.06574676552387955
+2025-05-13 21:22:46 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:46 - rule_mining.Correlation_utils - INFO - 计算列 ['Sample'] 和列 HospitalType 之间的相关性 (φ²): 0.08642382688739958
+2025-05-13 21:22:46 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: ZIPCode->HospitalType
+2025-05-13 21:22:46 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:46 - rule_mining.Correlation_utils - INFO - 计算列 ['StateAvg'] 和列 HospitalType 之间的相关性 (φ²): 0.1292407225301378
+2025-05-13 21:22:46 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:46 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:46 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:46 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:46 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:46 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:46 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:46 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:46 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:46 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:46 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:46 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:46 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:46 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:46 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:46 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:46 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:46 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:46 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:46 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:46 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:46 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:46 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:46 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:46 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:47 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:47 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:47 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:47 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:47 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:47 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:47 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:47 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:47 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:47 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:47 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:47 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:47 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:47 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:47 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:47 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:47 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:47 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:47 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:47 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:47 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:47 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:47 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:47 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:47 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:47 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:47 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:47 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:47 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:47 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:47 - Cafd - INFO - Processing search space: <SearchSpace_bit.SearchSpace object at 0x000001FBB0120370>
+2025-05-13 21:22:47 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: CountyName->HospitalOwner
+2025-05-13 21:22:47 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: ProviderNumber->HospitalOwner
+2025-05-13 21:22:47 - SearchSpace_bit - INFO - 发现函数依赖: ['ProviderNumber'] -> HospitalOwner
+2025-05-13 21:22:47 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: HospitalName->HospitalOwner
+2025-05-13 21:22:47 - SearchSpace_bit - INFO - 发现函数依赖: ['HospitalName'] -> HospitalOwner
+2025-05-13 21:22:47 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: PhoneNumber->HospitalOwner
+2025-05-13 21:22:47 - SearchSpace_bit - INFO - 发现函数依赖: ['PhoneNumber'] -> HospitalOwner
+2025-05-13 21:22:47 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: City->HospitalOwner
+2025-05-13 21:22:47 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: HospitalType->HospitalOwner
+2025-05-13 21:22:47 - rule_mining.Correlation_utils - INFO - 计算列 ['EmergencyService'] 和列 HospitalOwner 之间的相关性 (φ²): 0.2071879317321638
+2025-05-13 21:22:47 - rule_mining.Correlation_utils - INFO - 计算列 ['Condition'] 和列 HospitalOwner 之间的相关性 (φ²): 0.0
+2025-05-13 21:22:47 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: State->HospitalOwner
+2025-05-13 21:22:47 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:47 - rule_mining.Correlation_utils - INFO - 计算列 ['MeasureCode'] 和列 HospitalOwner 之间的相关性 (φ²): 0.0
+2025-05-13 21:22:47 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:47 - rule_mining.Correlation_utils - INFO - 计算列 ['MeasureName'] 和列 HospitalOwner 之间的相关性 (φ²): 0.0
+2025-05-13 21:22:47 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:47 - rule_mining.Correlation_utils - INFO - 计算列 ['Sample'] 和列 HospitalOwner 之间的相关性 (φ²): 0.0
+2025-05-13 21:22:47 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: ZIPCode->HospitalOwner
+2025-05-13 21:22:47 - SearchSpace_bit - INFO - 发现函数依赖: ['ZIPCode'] -> HospitalOwner
+2025-05-13 21:22:47 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:47 - rule_mining.Correlation_utils - INFO - 计算列 ['StateAvg'] 和列 HospitalOwner 之间的相关性 (φ²): 0.05315262547303865
+2025-05-13 21:22:47 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:47 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:47 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:47 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:47 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:47 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:47 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:47 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:47 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:47 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:47 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:47 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:47 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:47 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:47 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:47 - Cafd - INFO - Processing search space: <SearchSpace_bit.SearchSpace object at 0x000001FBB0120400>
+2025-05-13 21:22:47 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: CountyName->EmergencyService
+2025-05-13 21:22:47 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: ProviderNumber->EmergencyService
+2025-05-13 21:22:47 - SearchSpace_bit - INFO - 发现函数依赖: ['ProviderNumber'] -> EmergencyService
+2025-05-13 21:22:47 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: HospitalName->EmergencyService
+2025-05-13 21:22:47 - SearchSpace_bit - INFO - 发现函数依赖: ['HospitalName'] -> EmergencyService
+2025-05-13 21:22:47 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: PhoneNumber->EmergencyService
+2025-05-13 21:22:47 - SearchSpace_bit - INFO - 发现函数依赖: ['PhoneNumber'] -> EmergencyService
+2025-05-13 21:22:47 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: City->EmergencyService
+2025-05-13 21:22:47 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: HospitalType->EmergencyService
+2025-05-13 21:22:47 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: HospitalOwner->EmergencyService
+2025-05-13 21:22:47 - rule_mining.Correlation_utils - INFO - 计算列 ['Condition'] 和列 EmergencyService 之间的相关性 (φ²): 0.0
+2025-05-13 21:22:47 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: State->EmergencyService
+2025-05-13 21:22:47 - rule_mining.Correlation_utils - INFO - 计算列 ['MeasureCode'] 和列 EmergencyService 之间的相关性 (φ²): 0.0
+2025-05-13 21:22:47 - rule_mining.Correlation_utils - INFO - 计算列 ['MeasureName'] 和列 EmergencyService 之间的相关性 (φ²): 0.0
+2025-05-13 21:22:47 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:47 - rule_mining.Correlation_utils - INFO - 计算列 ['Sample'] 和列 EmergencyService 之间的相关性 (φ²): 0.0
+2025-05-13 21:22:47 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: ZIPCode->EmergencyService
+2025-05-13 21:22:47 - SearchSpace_bit - INFO - 发现函数依赖: ['ZIPCode'] -> EmergencyService
+2025-05-13 21:22:47 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:47 - rule_mining.Correlation_utils - INFO - 计算列 ['StateAvg'] 和列 EmergencyService 之间的相关性 (φ²): 0.007611327921025839
+2025-05-13 21:22:47 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:47 - rule_mining.Correlation_utils - INFO - 计算列 ['HospitalType', 'HospitalOwner'] 和列 EmergencyService 之间的相关性 (φ²): 0.2102521613970127
+2025-05-13 21:22:47 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:47 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:47 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:47 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:47 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:47 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:47 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:47 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:47 - Cafd - INFO - Processing search space: <SearchSpace_bit.SearchSpace object at 0x000001FBB0120490>
+2025-05-13 21:22:47 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: CountyName->Condition
+2025-05-13 21:22:47 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: ProviderNumber->Condition
+2025-05-13 21:22:47 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: HospitalName->Condition
+2025-05-13 21:22:47 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: PhoneNumber->Condition
+2025-05-13 21:22:47 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: City->Condition
+2025-05-13 21:22:47 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: HospitalType->Condition
+2025-05-13 21:22:47 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: HospitalOwner->Condition
+2025-05-13 21:22:47 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: EmergencyService->Condition
+2025-05-13 21:22:47 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: State->Condition
+2025-05-13 21:22:47 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:47 - rule_mining.Correlation_utils - INFO - 计算列 ['MeasureCode'] 和列 Condition 之间的相关性 (φ²): 0.9999999999999998
+2025-05-13 21:22:47 - rule_mining.Correlation_utils - INFO - 行方向得分: 1.0000, 列方向得分: 0.1740
+2025-05-13 21:22:47 - SearchSpace_bit - INFO - 发现函数依赖: ['MeasureCode'] -> Condition
+2025-05-13 21:22:47 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:47 - rule_mining.Correlation_utils - INFO - 计算列 ['MeasureName'] 和列 Condition 之间的相关性 (φ²): 0.9999999999999998
+2025-05-13 21:22:47 - rule_mining.Correlation_utils - INFO - 行方向得分: 1.0000, 列方向得分: 0.1740
+2025-05-13 21:22:47 - SearchSpace_bit - INFO - 发现函数依赖: ['MeasureName'] -> Condition
+2025-05-13 21:22:47 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:47 - rule_mining.Correlation_utils - INFO - 计算列 ['Sample'] 和列 Condition 之间的相关性 (φ²): 0.07079303006728356
+2025-05-13 21:22:47 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: ZIPCode->Condition
+2025-05-13 21:22:47 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:47 - rule_mining.Correlation_utils - INFO - 计算列 ['StateAvg'] 和列 Condition 之间的相关性 (φ²): 0.999999999999997
+2025-05-13 21:22:47 - rule_mining.Correlation_utils - INFO - 行方向得分: 1.0000, 列方向得分: 0.0178
+2025-05-13 21:22:47 - SearchSpace_bit - INFO - 发现函数依赖: ['StateAvg'] -> Condition
+2025-05-13 21:22:47 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:47 - Cafd - INFO - Processing search space: <SearchSpace_bit.SearchSpace object at 0x000001FBB0120520>
+2025-05-13 21:22:47 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: CountyName->MeasureCode
+2025-05-13 21:22:47 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: ProviderNumber->MeasureCode
+2025-05-13 21:22:47 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: HospitalName->MeasureCode
+2025-05-13 21:22:47 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: PhoneNumber->MeasureCode
+2025-05-13 21:22:47 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: City->MeasureCode
+2025-05-13 21:22:47 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: HospitalType->MeasureCode
+2025-05-13 21:22:47 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: HospitalOwner->MeasureCode
+2025-05-13 21:22:47 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: EmergencyService->MeasureCode
+2025-05-13 21:22:47 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: State->MeasureCode
+2025-05-13 21:22:47 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: Condition->MeasureCode
+2025-05-13 21:22:47 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:47 - rule_mining.Correlation_utils - INFO - 计算列 ['MeasureName'] 和列 MeasureCode 之间的相关性 (φ²): 1.0
+2025-05-13 21:22:47 - rule_mining.Correlation_utils - INFO - 行方向得分: 1.0000, 列方向得分: 1.0000
+2025-05-13 21:22:47 - SearchSpace_bit - INFO - 发现函数依赖: ['MeasureName'] -> MeasureCode
+2025-05-13 21:22:47 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:47 - rule_mining.Correlation_utils - INFO - 计算列 ['Sample'] 和列 MeasureCode 之间的相关性 (φ²): 0.0213114686338495
+2025-05-13 21:22:47 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: ZIPCode->MeasureCode
+2025-05-13 21:22:47 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:47 - rule_mining.Correlation_utils - INFO - 计算列 ['StateAvg'] 和列 MeasureCode 之间的相关性 (φ²): 0.9999999999999987
+2025-05-13 21:22:47 - rule_mining.Correlation_utils - INFO - 行方向得分: 1.0000, 列方向得分: 0.0901
+2025-05-13 21:22:47 - SearchSpace_bit - INFO - 发现函数依赖: ['StateAvg'] -> MeasureCode
+2025-05-13 21:22:47 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:47 - Cafd - INFO - Processing search space: <SearchSpace_bit.SearchSpace object at 0x000001FBB01205B0>
+2025-05-13 21:22:47 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: CountyName->MeasureName
+2025-05-13 21:22:47 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: ProviderNumber->MeasureName
+2025-05-13 21:22:47 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: HospitalName->MeasureName
+2025-05-13 21:22:47 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: PhoneNumber->MeasureName
+2025-05-13 21:22:47 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: City->MeasureName
+2025-05-13 21:22:47 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: HospitalType->MeasureName
+2025-05-13 21:22:47 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: HospitalOwner->MeasureName
+2025-05-13 21:22:47 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: EmergencyService->MeasureName
+2025-05-13 21:22:47 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: State->MeasureName
+2025-05-13 21:22:47 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: Condition->MeasureName
+2025-05-13 21:22:47 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: MeasureCode->MeasureName
+2025-05-13 21:22:47 - SearchSpace_bit - INFO - 发现函数依赖: ['MeasureCode'] -> MeasureName
+2025-05-13 21:22:47 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:48 - rule_mining.Correlation_utils - INFO - 计算列 ['Sample'] 和列 MeasureName 之间的相关性 (φ²): 0.0213114686338495
+2025-05-13 21:22:48 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: ZIPCode->MeasureName
+2025-05-13 21:22:48 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:48 - rule_mining.Correlation_utils - INFO - 计算列 ['StateAvg'] 和列 MeasureName 之间的相关性 (φ²): 0.9999999999999987
+2025-05-13 21:22:48 - rule_mining.Correlation_utils - INFO - 行方向得分: 1.0000, 列方向得分: 0.0901
+2025-05-13 21:22:48 - SearchSpace_bit - INFO - 发现函数依赖: ['StateAvg'] -> MeasureName
+2025-05-13 21:22:48 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:48 - rule_mining.Correlation_utils - INFO - 计算列 ['HospitalType', 'Sample'] 和列 MeasureName 之间的相关性 (φ²): 0.029850742398032808
+2025-05-13 21:22:48 - Cafd - INFO - Processing search space: <SearchSpace_bit.SearchSpace object at 0x000001FBB0120640>
+2025-05-13 21:22:48 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: CountyName->Sample
+2025-05-13 21:22:48 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: ProviderNumber->Sample
+2025-05-13 21:22:48 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: HospitalName->Sample
+2025-05-13 21:22:48 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: PhoneNumber->Sample
+2025-05-13 21:22:48 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: City->Sample
+2025-05-13 21:22:48 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: HospitalType->Sample
+2025-05-13 21:22:48 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: HospitalOwner->Sample
+2025-05-13 21:22:48 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: EmergencyService->Sample
+2025-05-13 21:22:48 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: State->Sample
+2025-05-13 21:22:48 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: Condition->Sample
+2025-05-13 21:22:48 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: MeasureCode->Sample
+2025-05-13 21:22:48 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: MeasureName->Sample
+2025-05-13 21:22:48 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: ZIPCode->Sample
+2025-05-13 21:22:48 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:48 - rule_mining.Correlation_utils - INFO - 计算列 ['StateAvg'] 和列 Sample 之间的相关性 (φ²): 0.0
+2025-05-13 21:22:48 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:48 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:49 - rule_mining.Correlation_utils - INFO - 计算列 ['Condition', 'MeasureName'] 和列 Sample 之间的相关性 (φ²): 0.01577758620337249
+2025-05-13 21:22:49 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:49 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:49 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:49 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:49 - Cafd - INFO - Processing search space: <SearchSpace_bit.SearchSpace object at 0x000001FBB01206D0>
+2025-05-13 21:22:49 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: CountyName->StateAvg
+2025-05-13 21:22:49 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: ProviderNumber->StateAvg
+2025-05-13 21:22:49 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: HospitalName->StateAvg
+2025-05-13 21:22:49 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: PhoneNumber->StateAvg
+2025-05-13 21:22:49 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: City->StateAvg
+2025-05-13 21:22:49 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: HospitalType->StateAvg
+2025-05-13 21:22:49 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: HospitalOwner->StateAvg
+2025-05-13 21:22:49 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: EmergencyService->StateAvg
+2025-05-13 21:22:49 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: State->StateAvg
+2025-05-13 21:22:49 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: Condition->StateAvg
+2025-05-13 21:22:49 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: MeasureCode->StateAvg
+2025-05-13 21:22:49 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: MeasureName->StateAvg
+2025-05-13 21:22:49 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: Sample->StateAvg
+2025-05-13 21:22:49 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: ZIPCode->StateAvg
+2025-05-13 21:22:49 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:49 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:49 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:49 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:49 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:49 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:49 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:49 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:49 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:49 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:49 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:49 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:49 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:49 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:49 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:49 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:49 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:49 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:49 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:49 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:49 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:49 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:49 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:49 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:49 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:49 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:49 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:49 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-05-13 21:22:49 - Cafd - INFO - Total dependencies found: 41
+2025-05-13 21:22:49 - root - INFO - 发现的函数依赖如下：
+2025-05-13 21:22:49 - root - INFO - ['PhoneNumber'] -> ProviderNumber
+2025-05-13 21:22:49 - root - INFO - ['ProviderNumber'] -> HospitalName
+2025-05-13 21:22:49 - root - INFO - ['PhoneNumber'] -> HospitalName
+2025-05-13 21:22:49 - root - INFO - ['ProviderNumber'] -> City
+2025-05-13 21:22:49 - root - INFO - ['HospitalName'] -> City
+2025-05-13 21:22:49 - root - INFO - ['PhoneNumber'] -> City
+2025-05-13 21:22:49 - root - INFO - ['ZIPCode'] -> City
+2025-05-13 21:22:49 - root - INFO - ['CountyName'] -> State
+2025-05-13 21:22:49 - root - INFO - ['ProviderNumber'] -> State
+2025-05-13 21:22:49 - root - INFO - ['HospitalName'] -> State
+2025-05-13 21:22:49 - root - INFO - ['PhoneNumber'] -> State
+2025-05-13 21:22:49 - root - INFO - ['City'] -> State
+2025-05-13 21:22:49 - root - INFO - ['ZIPCode'] -> State
+2025-05-13 21:22:49 - root - INFO - ['StateAvg'] -> State
+2025-05-13 21:22:49 - root - INFO - ['ProviderNumber'] -> ZIPCode
+2025-05-13 21:22:49 - root - INFO - ['HospitalName'] -> ZIPCode
+2025-05-13 21:22:49 - root - INFO - ['PhoneNumber'] -> ZIPCode
+2025-05-13 21:22:49 - root - INFO - ['PhoneNumber'] -> CountyName
+2025-05-13 21:22:49 - root - INFO - ['ProviderNumber'] -> CountyName
+2025-05-13 21:22:49 - root - INFO - ['HospitalName'] -> CountyName
+2025-05-13 21:22:49 - root - INFO - ['City'] -> CountyName
+2025-05-13 21:22:49 - root - INFO - ['ZIPCode'] -> CountyName
+2025-05-13 21:22:49 - root - INFO - ['ProviderNumber'] -> PhoneNumber
+2025-05-13 21:22:49 - root - INFO - ['ProviderNumber'] -> HospitalType
+2025-05-13 21:22:49 - root - INFO - ['HospitalName'] -> HospitalType
+2025-05-13 21:22:49 - root - INFO - ['PhoneNumber'] -> HospitalType
+2025-05-13 21:22:49 - root - INFO - ['ProviderNumber'] -> HospitalOwner
+2025-05-13 21:22:49 - root - INFO - ['HospitalName'] -> HospitalOwner
+2025-05-13 21:22:49 - root - INFO - ['PhoneNumber'] -> HospitalOwner
+2025-05-13 21:22:49 - root - INFO - ['ZIPCode'] -> HospitalOwner
+2025-05-13 21:22:49 - root - INFO - ['ProviderNumber'] -> EmergencyService
+2025-05-13 21:22:49 - root - INFO - ['HospitalName'] -> EmergencyService
+2025-05-13 21:22:49 - root - INFO - ['PhoneNumber'] -> EmergencyService
+2025-05-13 21:22:49 - root - INFO - ['ZIPCode'] -> EmergencyService
+2025-05-13 21:22:49 - root - INFO - ['MeasureCode'] -> Condition
+2025-05-13 21:22:49 - root - INFO - ['MeasureName'] -> Condition
+2025-05-13 21:22:49 - root - INFO - ['StateAvg'] -> Condition
+2025-05-13 21:22:49 - root - INFO - ['MeasureName'] -> MeasureCode
+2025-05-13 21:22:49 - root - INFO - ['StateAvg'] -> MeasureCode
+2025-05-13 21:22:49 - root - INFO - ['MeasureCode'] -> MeasureName
+2025-05-13 21:22:49 - root - INFO - ['StateAvg'] -> MeasureName
+2025-05-13 21:22:49 - Evaluate_fd - INFO - 评估结果: TP=28, FP=13, FN=0
+2025-05-13 21:22:49 - Evaluate_fd - WARNING - 误报 FD (13 个):
+City->State
+ZIPCode->EmergencyService
+HospitalName->HospitalType
+HospitalName->CountyName
+CountyName->State
+City->CountyName
+HospitalName->HospitalOwner
+ZIPCode->HospitalOwner
+HospitalName->ZIPCode
+HospitalName->EmergencyService
+HospitalName->State
+ProviderNumber->HospitalName
+HospitalName->City
+2025-05-13 21:22:49 - root - INFO - Precision: 0.68, Recall: 1.00, F1: 0.81
+2025-05-13 21:22:49 - root - INFO - 总运行时长: 5522 ms
+2025-05-13 21:22:49 - root - INFO - 结果已保存至: rule_mining\discovered_fd\hospital_discovered.txt

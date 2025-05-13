@@ -1,3 +1,0 @@
-Burglary,Earthquake->Alarm
-Alarm->JohnCalls
-Alarm->MaryCalls

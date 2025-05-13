@@ -1,7 +1,0 @@
-zip->city
-zip->state
-area_code->state
-state,has_child->child_exemp
-state,marital_status->single_exemp
-state,marital_status->married_exemp
-f_name->gender
