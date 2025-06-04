@@ -140,7 +140,7 @@ class SearchSpace:
         next_level: Set[int] = set()
         pruned: Set[int] = set()
 
-        for combo in level_combos:
+        for combo in sorted(level_combos):
             # 解码bitmask为属性0-based索引列表
             lhs = [i for i in range(self.context.num_columns()) if combo & (1<<i)]
             if len(lhs) == 1:

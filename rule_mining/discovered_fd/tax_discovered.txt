@@ -1,0 +1,15 @@
+FName->LName
+FName->Gender
+Zip->City
+AreaCode->State
+City->State
+Zip->State
+HasChild->MaritalStatus
+MarriedExemp,SingleExemp->MaritalStatus
+MaritalStatus->HasChild
+MarriedExemp,SingleExemp->HasChild
+SingleExemp->ChildExemp
+Precision: 0.2727
+Recall: 1.0000
+F1: 0.4286
+Runtime: 21866 ms

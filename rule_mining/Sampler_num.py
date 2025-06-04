@@ -17,11 +17,11 @@ def calculate_full_formula(v, p, delta, d):
 
 
 # Example usage:
-# p = 0.000001
-p = 0.01
+p = 0.000001
+# p = 0.01
 delta = 0.005
-d1 = 5
-d2 = 3
+d1 = 1000
+d2 = 1000
 d = min(d1, d2)
 v = (d1-1) * (d2-1)
 result = calculate_full_formula(v, p, delta, d)

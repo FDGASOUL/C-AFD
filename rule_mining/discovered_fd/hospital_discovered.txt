@@ -3,35 +3,36 @@ ProviderNumber->HospitalName
 PhoneNumber->HospitalName
 ProviderNumber->City
 HospitalName->City
-PhoneNumber->City
 ZIPCode->City
-CountyName->State
+PhoneNumber->City
 ProviderNumber->State
 HospitalName->State
-PhoneNumber->State
 City->State
 ZIPCode->State
+CountyName->State
+PhoneNumber->State
 StateAvg->State
 ProviderNumber->ZIPCode
 HospitalName->ZIPCode
 PhoneNumber->ZIPCode
-PhoneNumber->CountyName
 ProviderNumber->CountyName
 HospitalName->CountyName
 City->CountyName
 ZIPCode->CountyName
+PhoneNumber->CountyName
 ProviderNumber->PhoneNumber
 ProviderNumber->HospitalType
 HospitalName->HospitalType
+ZIPCode->HospitalType
 PhoneNumber->HospitalType
 ProviderNumber->HospitalOwner
 HospitalName->HospitalOwner
-PhoneNumber->HospitalOwner
 ZIPCode->HospitalOwner
+PhoneNumber->HospitalOwner
 ProviderNumber->EmergencyService
 HospitalName->EmergencyService
-PhoneNumber->EmergencyService
 ZIPCode->EmergencyService
+PhoneNumber->EmergencyService
 MeasureCode->Condition
 MeasureName->Condition
 StateAvg->Condition
@@ -39,7 +40,7 @@ MeasureName->MeasureCode
 StateAvg->MeasureCode
 MeasureCode->MeasureName
 StateAvg->MeasureName
-Precision: 0.68
-Recall: 1.00
-F1: 0.81
-Runtime: 5522 ms
+Precision: 0.6667
+Recall: 1.0000
+F1: 0.8000
+Runtime: 4359 ms

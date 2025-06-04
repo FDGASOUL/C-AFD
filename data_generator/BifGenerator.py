@@ -64,7 +64,7 @@ class BIFGenerator:
                 if not parents:
                     bif_file.write(f"probability ({col}) {{\n")
                     probs = self.generate_random_probabilities(dom)
-                    bif_file.write("  table " + ", ".join(f"{p:.2f}" for p in probs) + ";\n")
+                    bif_file.write("  table " + ", ".join(f"{p:.4f}" for p in probs) + ";\n")
                     bif_file.write("}\n\n")
                     continue
 
@@ -85,12 +85,12 @@ class BIFGenerator:
                     # 计算主值概率，根据是否弱决定列设置上限
                     if col in self.weak_children:
                         raw_main = 1.0 - self.error_rate
-                        main_prob = round(min(raw_main, 0.5), 2)
+                        main_prob = round(min(raw_main, 0.5), 4)
                     else:
-                        main_prob = round(1.0 - self.error_rate, 2)
+                        main_prob = round(1.0 - self.error_rate, 4)
 
                     # 剩余总概率分配
-                    rem_mass = round(1.0 - main_prob, 2)
+                    rem_mass = round(1.0 - main_prob, 4)
                     others = self.generate_remaining_probabilities(dom - 1, rem_mass)
 
                     # 构造该组合下的概率列表
@@ -98,7 +98,7 @@ class BIFGenerator:
 
                     # 格式化父取值组合
                     combo_str = f"({', '.join(map(str, combo))})"
-                    prob_str = ", ".join(f"{p:.2f}" for p in row_probs)
+                    prob_str = ", ".join(f"{p:.4f}" for p in row_probs)
                     bif_file.write(f"  {combo_str} {prob_str};\n")
 
                 bif_file.write("}\n\n")
@@ -108,18 +108,18 @@ class BIFGenerator:
     def generate_random_probabilities(self, domain_size, concentration=5.0):
         """使用 Dirichlet 分布生成平滑概率，四舍五入并修正总和为1.00。"""
         raw = np.random.dirichlet([concentration] * domain_size)
-        probs = np.round(raw, 2)
+        probs = np.round(raw, 4)
         diff = 1.0 - probs.sum()
         idx = int(np.argmax(probs))
-        probs[idx] = round(probs[idx] + diff, 2)
+        probs[idx] = round(probs[idx] + diff, 4)
         return probs.tolist()
 
     def generate_remaining_probabilities(self, num_values, remaining_prob):
         """将 remaining_prob 分配给 num_values 个概率，保留两位小数，保证和不变。"""
         probs = []
         for _ in range(num_values - 1):
-            p = round(np.random.uniform(0, remaining_prob), 2)
+            p = round(np.random.uniform(0, remaining_prob), 4)
             probs.append(p)
-            remaining_prob = round(remaining_prob - p, 2)
-        probs.append(round(remaining_prob, 2))
+            remaining_prob = round(remaining_prob - p, 4)
+        probs.append(round(remaining_prob, 4))
         return probs

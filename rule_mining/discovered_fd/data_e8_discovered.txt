@@ -1,0 +1,12 @@
+column1->column2
+column3->column4
+column5,column6->column7
+column21,column22->column7
+column8,column9->column10
+column19,column20,column8->column10
+column19,column20,column9->column10
+column12,column13,column23,column24->column14
+Precision: 0.5000
+Recall: 0.8000
+F1: 0.6154
+Runtime: 5066 ms

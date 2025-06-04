@@ -1,0 +1,44 @@
+_unitguid->_timestamp
+FullScientificNameString->ScientificName
+Notes->ScientificName
+ScientificName->FullScientificNameString
+Notes->FullScientificNameString
+_unitguid->GenusOrMonomial
+ScientificName->GenusOrMonomial
+FullScientificNameString->GenusOrMonomial
+Subgenus->GenusOrMonomial
+Notes->GenusOrMonomial
+ScientificName->Subgenus
+FullScientificNameString->Subgenus
+SpeciesEpithet->Subgenus
+SubspeciesEpithet->Subgenus
+_unitguid->SpeciesEpithet
+ScientificName->SpeciesEpithet
+FullScientificNameString->SpeciesEpithet
+Notes->SpeciesEpithet
+ScientificName->SubspeciesEpithet
+FullScientificNameString->SubspeciesEpithet
+Subgenus->SubspeciesEpithet
+_unitguid->AuthorTeamOriginalAndYear
+ScientificName->AuthorTeamOriginalAndYear
+FullScientificNameString->AuthorTeamOriginalAndYear
+GenusOrMonomial->AuthorTeamOriginalAndYear
+SpeciesEpithet->AuthorTeamOriginalAndYear
+SubspeciesEpithet->AuthorTeamOriginalAndYear
+Notes->AuthorTeamOriginalAndYear
+ScientificName->AuthorTeamParenthesisAndYear
+FullScientificNameString->AuthorTeamParenthesisAndYear
+Subgenus->AuthorTeamParenthesisAndYear
+SpeciesEpithet->AuthorTeamParenthesisAndYear
+SubspeciesEpithet->AuthorTeamParenthesisAndYear
+ScientificName->PreferredFlag
+FullScientificNameString->PreferredFlag
+ScientificName->Notes
+FullScientificNameString->Notes
+GenusOrMonomial->Notes
+SpeciesEpithet->Notes
+AuthorTeamOriginalAndYear->Notes
+Precision: 0.3500
+Recall: 1.0000
+F1: 0.5185
+Runtime: 3646 ms

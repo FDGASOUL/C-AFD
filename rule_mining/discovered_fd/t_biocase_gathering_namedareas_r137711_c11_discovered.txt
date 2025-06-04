@@ -1,0 +1,13 @@
+_unitguid->_datasetguid
+AreaClass->Sequence
+AreaCode->Sequence
+AreaName->Sequence
+Sequence->AreaClass
+AreaCode->AreaClass
+AreaName->AreaClass
+AreaName->AreaCode
+AreaCode->AreaName
+Precision: 0.5556
+Recall: 1.0000
+F1: 0.7143
+Runtime: 3068 ms

@@ -59,7 +59,7 @@ class Config:
 
     # 支持的数据集及对应相对路径
     DATASET_MAP = {
-        "DATA": "synthetic_data/data-new",
+        "DATA": "synthetic_data/error/data_e6",
         "RWD-ADULT": "real_world_data/adult",
         "RWD-TAX": "real_world_data/tax",
         "RWD-HOSPITAL": "real_world_data/hospital",
@@ -75,12 +75,14 @@ class Config:
     def __init__(self, dataset_name: str):
         self.dataset_name = dataset_name
         self.input_separator: str = ","
-        self.sample_size: int = 5000
+        self.sample_size: int = 4000
         self.null_equal_null: bool = True
 
         self.data_dir: Path = Path("rule_mining/data").resolve()
         self.groundtruth_dir: Path = Path("rule_mining/groundtruth").resolve()
         self.input_file_ending: str = ".csv"
+        self.p = 0.01
+        self.delta = 0.005
 
         self._initialize_dataset()
 
@@ -114,7 +116,7 @@ def main() -> None:
     setup_logging()
     logging.info("日志配置完成。")
 
-    config = Config("RWD-HOSPITAL")
+    config = Config("RWD-DBLP")
     logging.info(config)
 
     logging.info("开始执行 CAFD...")
@@ -138,9 +140,9 @@ def main() -> None:
         for lhs, rhs in discovered:
             lhs_str = ",".join(map(str, sorted(lhs)))
             fw.write(f"{lhs_str}->{rhs}\n")
-        fw.write(f"Precision: {precision:.2f}\n")
-        fw.write(f"Recall: {recall:.2f}\n")
-        fw.write(f"F1: {f1:.2f}\n")
+        fw.write(f"Precision: {precision:.4f}\n")
+        fw.write(f"Recall: {recall:.4f}\n")
+        fw.write(f"F1: {f1:.4f}\n")
         fw.write(f"Runtime: {elapsed_ms} ms\n")
 
     logging.info(f"结果已保存至: {out_file}")

@@ -2,4 +2,7 @@ column1->column2
 column3->column4
 column5,column6->column7
 column8,column9->column10
-column11,column12,column13->column14
+Precision: 1.0000
+Recall: 0.8000
+F1: 0.8889
+Runtime: 4325 ms

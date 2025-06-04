@@ -133,13 +133,13 @@ class CorrelationCalculator:
         rs = rows.sum(axis=1)
         rr = rows.max(axis=1) / np.where(rs == 0, 1, rs)
         if np.any(rr >= 0.9):
-            return "suspected_fd" if len(lhs) == 1 else "suspected_fd_more"
+            return "suspected_fd"
         # 列抽样检查
         cols = linked if C <= 10 else linked[:, np.random.choice(C, 10, replace=False)]
         cs = cols.sum(axis=0)
         cr = cols.max(axis=0) / np.where(cs == 0, 1, cs)
         if np.any(cr >= 0.9):
-            return "suspected_fd" if len(lhs) == 1 else "suspected_fd_more"
+            return "suspected_fd"
         return "incorporated"
 
     def _cross_plis(
@@ -281,9 +281,13 @@ class CorrelationCalculator:
             return "invalid"
         exp_freq = self.compute_expected_frequencies(linked)
         if not self._check_expected_frequencies(exp_freq):
-            logger.warning("期望分布频数表不符合要求，无法计算相关性。")
+            if len(lhs) > 1:
+                logger.warning("期望分布频数表不符合要求，无法计算相关性。")
+                return False
+            logger.warning("期望分布频数表不符合要求，检查归并条件。")
             result = self._check_linked_table(linked, lhs)
             if result == "incorporated":
+                logger.info("尝试聚类归并。")
                 phi2_pre, exp_phi = self.compute_phi_stats(linked)
                 linked = Incorporate().merge_tables(linked)
                 phi2_post, _ = self.compute_phi_stats(linked)
@@ -293,8 +297,6 @@ class CorrelationCalculator:
                 logger.info(
                     f"计算列 {lhs_names} 和列 {rhs_name} 之间的相关性 (φ²): {norm_phi}")
                 return self.determine_correlation_result(norm_phi, lhs, linked)
-            if result == "suspected_fd_more":
-                return False
         phi2_pre, exp_phi = self.compute_phi_stats(linked)
         norm_phi = self.normalize_phi(phi2_pre, exp_phi)
         rhs_name = self._get_column_name(rhs)

@@ -30,7 +30,7 @@ class FDDataGeneratorConfig:
         # Step 2: 解析 FD 规则
         self.fd_rules = self.parse_fd_rules(self.input_path_fd)
 
-        # # Step 3: 生成 BIF 文件
+        # Step 3: 生成 BIF 文件
         self.generate_bif_file()
 
         # Step 4: 生成数据集
@@ -74,39 +74,36 @@ class FDDataGeneratorConfig:
         """根据FD生成BIF文件"""
         bif_file_path = self.output_path_csv.replace('.csv', '.bif')  # 假设bif文件路径
         bif_generator = BIFGenerator(self.num_attributes, self.fd_rules, bif_file_path, self.error_rate, domain_sizes={
-                'column1': 5,
-                'column2': 3,
-                'column3': 5,
-                'column4': 4,
-                'column5': 5,
+                'column1': 216,
+                'column2': 5,
+                'column3': 216,
+                'column4': 5,
+                'column5': 4,
                 'column6': 4,
                 'column7': 4,
-                'column8': 5,
-                'column9': 4,
-                'column10': 3,
-                'column11': 4,
-                'column12': 5,
-                'column13': 3,
-                'column14': 6,
-                'column15': 3,
-                'column16': 3,
+                'column8': 10,
+                'column9': 10,
+                'column10': 10,
+                'column11': 6,
+                'column12': 6,
+                'column13': 6,
+                'column14': 5,
+                'column15': 5,
+                'column16': 5,
                 'column17': 5,
-                'column18': 7,
-                'column19': 4,
-                'column20': 4,
-                'column21': 4,
-                'column22': 4,
-                'column23': 4,
-                'column24': 4,
-                'column25': 4,
-                'column26': 4,
-                'column27': 4,
-                'column28': 4,
-                'column29': 4,
-                'column30': 4,
-                'column31': 4,
-                'column32': 4,
-                'column33': 4,
+                'column18': 5,
+                'column19': 5,
+                'column20': 5,
+                'column21': 5,
+                'column22': 5,
+                'column23': 5,
+                'column24': 5,
+                'column25': 5,
+                'column26': 5,
+                'column27': 5,
+                'column28': 5,
+                'column29': 5,
+                'column30': 5,
             })
         bif_generator.generate_bif()
 
@@ -128,12 +125,12 @@ class FDDataGeneratorConfig:
 
 if __name__ == "__main__":
     config = FDDataGeneratorConfig(
-        num_tuples=10000,
-        num_attributes=33,
-        error_rate=0.1,
-        domain_size=5,
+        num_tuples=5000,
+        num_attributes=30,
+        error_rate=0.06,
+        domain_size=216,
         input_path_fd='data_generator/data/input_fd.txt',
-        output_path_csv='data_generator/data/data.csv',
+        output_path_csv='data_generator/data/data_e6.csv',
     )
 
     config.run()
