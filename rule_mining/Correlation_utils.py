@@ -1,10 +1,11 @@
 import logging
+from math import sqrt
 from typing import List, Tuple, Optional, Any
 
 import numpy as np
 from scipy.sparse import coo_matrix
 
-from rule_mining.Cluster_merging import Incorporate
+from rule_mining.Cluster_old import Incorporate
 
 # 获取日志实例
 logger = logging.getLogger(__name__)
@@ -280,24 +281,14 @@ class CorrelationCalculator:
             logger.warning("列联表为空，返回 invalid")
             return "invalid"
         exp_freq = self.compute_expected_frequencies(linked)
-        if not self._check_expected_frequencies(exp_freq):
-            if len(lhs) > 1:
-                logger.warning("期望分布频数表不符合要求，无法计算相关性。")
-                return False
-            logger.warning("期望分布频数表不符合要求，检查归并条件。")
-            result = self._check_linked_table(linked, lhs)
-            if result == "incorporated":
-                logger.info("尝试聚类归并。")
-                phi2_pre, exp_phi = self.compute_phi_stats(linked)
-                linked = Incorporate().merge_tables(linked)
-                phi2_post, _ = self.compute_phi_stats(linked)
-                norm_phi = self.normalize_phi(phi2_post, exp_phi)
-                rhs_name = self._get_column_name(rhs)
-                lhs_names = [self._get_column_name(col) for col in lhs]
-                logger.info(
-                    f"计算列 {lhs_names} 和列 {rhs_name} 之间的相关性 (φ²): {norm_phi}")
-                return self.determine_correlation_result(norm_phi, lhs, linked)
+        if len(lhs) > 2 and not self._check_expected_frequencies(exp_freq):
+            logger.warning("期望分布频数表不符合要求，无法计算相关性。")
+            return False
         phi2_pre, exp_phi = self.compute_phi_stats(linked)
+        logger.info(
+            f"计算列 {[self._get_column_name(col) for col in lhs]} 和列 {self._get_column_name(rhs)} 之间的φ²: {phi2_pre}")
+        logger.info(
+            f"计算列 {[self._get_column_name(col) for col in lhs]} 和列 {self._get_column_name(rhs)} 之间的期望: {exp_phi}")
         norm_phi = self.normalize_phi(phi2_pre, exp_phi)
         rhs_name = self._get_column_name(rhs)
         lhs_names = [self._get_column_name(col) for col in lhs]

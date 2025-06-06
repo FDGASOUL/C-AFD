@@ -1,4 +1,3 @@
-PhoneNumber->ProviderNumber
 ProviderNumber->HospitalName
 PhoneNumber->HospitalName
 ProviderNumber->City
@@ -33,14 +32,14 @@ ProviderNumber->EmergencyService
 HospitalName->EmergencyService
 ZIPCode->EmergencyService
 PhoneNumber->EmergencyService
+City,HospitalOwner->EmergencyService
 MeasureCode->Condition
 MeasureName->Condition
 StateAvg->Condition
-MeasureName->MeasureCode
 StateAvg->MeasureCode
 MeasureCode->MeasureName
 StateAvg->MeasureName
-Precision: 0.6667
-Recall: 1.0000
-F1: 0.8000
-Runtime: 4359 ms
+Precision: 0.6341
+Recall: 0.9286
+F1: 0.7536
+Runtime: 5095 ms

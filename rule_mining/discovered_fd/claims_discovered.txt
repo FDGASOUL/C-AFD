@@ -1,9 +1,37 @@
 AirportName->AirportCode
 AirportCode->AirportName
+AirportCode,IncidentDate,Item->ClaimSite
+AirportName,IncidentDate,Item->ClaimSite
+IncidentDate,Item,Status->ClaimSite
+AirportCode,ClaimType,DateReceived,Item->ClaimSite
+AirportName,ClaimType,DateReceived,Item->ClaimSite
+AirportCode,ClaimType,IncidentDate,Status->ClaimSite
+AirportName,ClaimType,IncidentDate,Status->ClaimSite
+ClaimType,DateReceived,Item,Status->ClaimSite
+AirportCode,AirportName,ClaimType,IncidentDate,Item->ClaimSite
+AirportCode,DateReceived,IncidentDate,Item,Status->ClaimSite
+AirportName,DateReceived,IncidentDate,Item,Status->ClaimSite
+AirportCode,AirportName,IncidentDate,Item,Status->ClaimSite
+AirportCode,AirportName,ClaimType,DateReceived,Item,Status->ClaimSite
 Disposition->Status
+AirportCode,ClaimSite,ClaimType,CloseAmount,IncidentDate->Status
+AirportName,ClaimSite,ClaimType,CloseAmount,IncidentDate->Status
+AirlineName,AirportCode,ClaimSite,ClaimType,DateReceived,IncidentDate->Status
+AirlineName,AirportName,ClaimSite,ClaimType,DateReceived,IncidentDate->Status
+AirlineName,AirportCode,ClaimSite,CloseAmount,DateReceived,IncidentDate->Status
+AirlineName,AirportName,ClaimSite,CloseAmount,DateReceived,IncidentDate->Status
+AirlineName,AirportCode,AirportName,ClaimSite,CloseAmount,DateReceived->Status
+AirlineName,AirportCode,ClaimSite,ClaimType,CloseAmount,DateReceived->Status
+AirlineName,AirportName,ClaimSite,ClaimType,CloseAmount,DateReceived->Status
+AirportCode,ClaimAmount,ClaimSite,ClaimType,CloseAmount,DateReceived->Status
+AirportName,ClaimAmount,ClaimSite,ClaimType,CloseAmount,DateReceived->Status
+AirlineName,AirportCode,AirportName,ClaimAmount,ClaimSite,ClaimType,DateReceived,IncidentDate->Status
+AirlineName,AirportCode,AirportName,ClaimAmount,ClaimSite,ClaimType,CloseAmount,DateReceived->Status
+ClaimAmount,Status->CloseAmount
 Status->Disposition
 CloseAmount->Disposition
-Precision: 0.8000
+AirportCode,AirportName,ClaimAmount,IncidentDate,Item->Disposition
+Precision: 0.1212
 Recall: 1.0000
-F1: 0.8889
-Runtime: 2418 ms
+F1: 0.2162
+Runtime: 13303 ms

@@ -12,4 +12,4 @@ SingleExemp->ChildExemp
 Precision: 0.2727
 Recall: 1.0000
 F1: 0.4286
-Runtime: 21866 ms
+Runtime: 15111 ms

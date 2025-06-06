@@ -4,70 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4bcd1cd3-41f3-4013-aa96-cbdac4f83526" name="更改" comment="5.12">
-      <change afterPath="$PROJECT_DIR$/data_generator/data/data_e0.bif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data_generator/data/data_e0.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data_generator/data/data_e10.bif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data_generator/data/data_e10.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data_generator/data/data_e2.bif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data_generator/data/data_e2.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data_generator/data/data_e4.bif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data_generator/data/data_e4.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data_generator/data/data_e6.bif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data_generator/data/data_e6.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data_generator/data/data_e8.bif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data_generator/data/data_e8.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rule_mining/data/synthetic_data/error/data_e0.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rule_mining/data/synthetic_data/error/data_e10.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rule_mining/data/synthetic_data/error/data_e2.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rule_mining/data/synthetic_data/error/data_e4.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rule_mining/data/synthetic_data/error/data_e6.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rule_mining/data/synthetic_data/error/data_e8.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rule_mining/discovered_fd/claims_discovered.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rule_mining/discovered_fd/data_discovered.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rule_mining/discovered_fd/data_e0_discovered.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rule_mining/discovered_fd/data_e10_discovered.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rule_mining/discovered_fd/data_e6_discovered.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rule_mining/discovered_fd/data_e8_discovered.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rule_mining/discovered_fd/dblp10k_discovered.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rule_mining/discovered_fd/t_biocase_gathering_agent_r72738_c18_discovered.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rule_mining/discovered_fd/t_biocase_gathering_namedareas_r137711_c11_discovered.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rule_mining/discovered_fd/t_biocase_gathering_r90992_c35_discovered.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rule_mining/discovered_fd/t_biocase_identification_highertaxon_r562959_c3_discovered.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rule_mining/discovered_fd/t_biocase_identification_r91800_c38_discovered.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rule_mining/discovered_fd/tax_discovered.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rule_mining/groundtruth/synthetic_data/error/data_e0.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rule_mining/groundtruth/synthetic_data/error/data_e10.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rule_mining/groundtruth/synthetic_data/error/data_e2.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rule_mining/groundtruth/synthetic_data/error/data_e4.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rule_mining/groundtruth/synthetic_data/error/data_e6.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rule_mining/groundtruth/synthetic_data/error/data_e8.txt" afterDir="false" />
+    <list default="true" id="4bcd1cd3-41f3-4013-aa96-cbdac4f83526" name="更改" comment="6.4">
+      <change afterPath="$PROJECT_DIR$/rule_mining/groundtruth/real_world_data/hospital_old.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_generator/BifGenerator.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_generator/BifGenerator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_generator/CreateData.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_generator/CreateData.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_generator/data/data.bif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_generator/data/data.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_generator/data/input_fd.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data_generator/data/input_fd.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/rule_mining/Config.py" beforeDir="false" afterPath="$PROJECT_DIR$/rule_mining/Config.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/rule_mining/Correlation_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/rule_mining/Correlation_utils.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rule_mining/Sampler.py" beforeDir="false" afterPath="$PROJECT_DIR$/rule_mining/Sampler.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rule_mining/Sampler_num.py" beforeDir="false" afterPath="$PROJECT_DIR$/rule_mining/Sampler_num.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rule_mining/SearchSpace_bit.py" beforeDir="false" afterPath="$PROJECT_DIR$/rule_mining/SearchSpace_bit.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/rule_mining/app.log" beforeDir="false" afterPath="$PROJECT_DIR$/rule_mining/app.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rule_mining/data/real_world_data/adult.csv" beforeDir="false" afterPath="$PROJECT_DIR$/rule_mining/data/real_world_data/adult.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/rule_mining/data/sample_data/sample_data.csv" beforeDir="false" afterPath="$PROJECT_DIR$/rule_mining/data/sample_data/sample_data.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rule_mining/data/synthetic_data/data-n0.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rule_mining/data/synthetic_data/data-n1.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rule_mining/data/synthetic_data/data-n10.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rule_mining/data/synthetic_data/data-n5.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rule_mining/data/synthetic_data/data-new.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rule_mining/discovered_fd/data-new_discovered.txt" beforeDir="false" afterPath="$PROJECT_DIR$/rule_mining/discovered_fd/data-new_discovered.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/rule_mining/discovered_fd/hospital_discovered.txt" beforeDir="false" afterPath="$PROJECT_DIR$/rule_mining/discovered_fd/hospital_discovered.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rule_mining/groundtruth/synthetic_data/data-n0.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rule_mining/groundtruth/synthetic_data/data-n1.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rule_mining/groundtruth/synthetic_data/data-n10.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rule_mining/groundtruth/synthetic_data/data-n5.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rule_mining/groundtruth/synthetic_data/data-new.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/rule_mining/groundtruth/real_world_data/hospital.txt" beforeDir="false" afterPath="$PROJECT_DIR$/rule_mining/groundtruth/real_world_data/hospital.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -129,40 +74,40 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;Python.Cafd.executor&quot;: &quot;Debug&quot;,
-    &quot;Python.Config.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Correlation_utils.executor&quot;: &quot;Run&quot;,
-    &quot;Python.CreateData.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Incorporate_into_DBSCAN.executor&quot;: &quot;Debug&quot;,
-    &quot;Python.Incorporate_into_dpmeans.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Incorporate_into_dpmeans_top.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Incorporate_into_hierarchical.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Sampler_num.executor&quot;: &quot;Run&quot;,
-    &quot;Python.SearchSpace_bit.executor&quot;: &quot;Run&quot;,
-    &quot;Python.test.executor&quot;: &quot;Run&quot;,
-    &quot;Python.test11.executor&quot;: &quot;Run&quot;,
-    &quot;Python.test12.executor&quot;: &quot;Run&quot;,
-    &quot;Python.test13.executor&quot;: &quot;Run&quot;,
-    &quot;Python.test14.executor&quot;: &quot;Debug&quot;,
-    &quot;Python.test6.executor&quot;: &quot;Run&quot;,
-    &quot;Python.test9.executor&quot;: &quot;Run&quot;,
-    &quot;Python.test_birch.executor&quot;: &quot;Debug&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;E:/资料/C-AFD/data_generator/CreateData.py&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Python.Cafd.executor": "Debug",
+    "Python.Config.executor": "Run",
+    "Python.Correlation_utils.executor": "Run",
+    "Python.CreateData.executor": "Run",
+    "Python.Incorporate_into_DBSCAN.executor": "Debug",
+    "Python.Incorporate_into_dpmeans.executor": "Run",
+    "Python.Incorporate_into_dpmeans_top.executor": "Run",
+    "Python.Incorporate_into_hierarchical.executor": "Run",
+    "Python.Sampler_num.executor": "Run",
+    "Python.SearchSpace_bit.executor": "Run",
+    "Python.test.executor": "Run",
+    "Python.test11.executor": "Run",
+    "Python.test12.executor": "Run",
+    "Python.test13.executor": "Run",
+    "Python.test14.executor": "Debug",
+    "Python.test6.executor": "Run",
+    "Python.test9.executor": "Run",
+    "Python.test_birch.executor": "Debug",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "E:/资料/C-AFD/data_generator/CreateData.py",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\资料\C-AFD\rule_mining" />
@@ -293,6 +238,7 @@
       <workItem from="1748568916601" duration="36564000" />
       <workItem from="1748951898086" duration="4873000" />
       <workItem from="1748961153506" duration="89000" />
+      <workItem from="1749002475429" duration="18154000" />
     </task>
     <task id="LOCAL-00001" summary="不使用依赖树版本，获取候选依赖组合存在问题">
       <option name="closed" value="true" />
@@ -486,7 +432,15 @@
       <option name="project" value="LOCAL" />
       <updated>1747035051862</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="6.4">
+      <option name="closed" value="true" />
+      <created>1749023907901</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1749023907901</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -529,16 +483,17 @@
     <MESSAGE value="4.22" />
     <MESSAGE value="5.7" />
     <MESSAGE value="5.12" />
-    <option name="LAST_COMMIT_MESSAGE" value="5.12" />
+    <MESSAGE value="6.4" />
+    <option name="LAST_COMMIT_MESSAGE" value="6.4" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <condition expression="rhs==9" language="Python" />
+          <condition expression="rhs==7" language="Python" />
           <url>file://$PROJECT_DIR$/rule_mining/Correlation_utils.py</url>
-          <line>277</line>
-          <option name="timeStamp" value="2" />
+          <line>278</line>
+          <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
@@ -551,8 +506,8 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/C_AFD$test6.coverage" NAME="test6 覆盖结果" MODIFIED="1736940396626" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/C_AFD$CreateData.coverage" NAME="CreateData 覆盖结果" MODIFIED="1748599290813" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/C_AFD$test6.coverage" NAME="test6 覆盖结果" MODIFIED="1736940396626" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/C_AFD$SearchSpace_bit.coverage" NAME="SearchSpace_bit 覆盖结果" MODIFIED="1741341969538" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/C_AFD$test9.coverage" NAME="test9 覆盖结果" MODIFIED="1740645843362" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/C_AFD$test_birch.coverage" NAME="test_birch 覆盖结果" MODIFIED="1744712189106" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
@@ -568,6 +523,6 @@
     <SUITE FILE_PATH="coverage/C_AFD$Incorporate_into_dpmeans.coverage" NAME="Incorporate_into_dpmeans 覆盖结果" MODIFIED="1746756040524" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/C_AFD$Cafd.coverage" NAME="Cafd 覆盖结果" MODIFIED="1734085271666" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/C_AFD$Correlation_utils.coverage" NAME="Correlation_utils 覆盖结果" MODIFIED="1744963070875" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/C_AFD$Config.coverage" NAME="Config 覆盖结果" MODIFIED="1748961213519" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/C_AFD$Config.coverage" NAME="Config 覆盖结果" MODIFIED="1749031212430" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
   </component>
 </project>

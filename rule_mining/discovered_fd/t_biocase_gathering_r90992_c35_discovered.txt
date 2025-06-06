@@ -3,13 +3,10 @@ Gath_DateTime_Begin->_datasetguid
 Gath_DateTime_End->_datasetguid
 Gath_AreaDetail->Gath_Country_Name
 Gath_DateTime_Text->Gath_Country_Name
-Gath_Notes->Gath_Country_Name
-Gath_DateTime_End->Gath_DateTime_Begin
+Gath_AreaDetail->Gath_DateTime_Text
+Gath_AreaDetail,Gath_Country_Name->Gath_DateTime_Begin
 Gath_DateTime_Begin->Gath_DateTime_End
-Gath_AreaDetail->Gath_Notes
-Gath_Country_Name->Gath_Notes
-Gath_DateTime_Begin->Gath_Notes
-Precision: 0.0909
+Precision: 0.1250
 Recall: 1.0000
-F1: 0.1667
-Runtime: 2628 ms
+F1: 0.2222
+Runtime: 1178 ms

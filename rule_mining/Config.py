@@ -62,7 +62,7 @@ class Config:
         "DATA": "synthetic_data/error/data_e6",
         "RWD-ADULT": "real_world_data/adult",
         "RWD-TAX": "real_world_data/tax",
-        "RWD-HOSPITAL": "real_world_data/hospital",
+        "RWD-HOSPITAL": "real_world_data/hospital.txt",
         "RWD-CLAIMS": "real_world_data/claims",
         "RWD-DBLP": "real_world_data/dblp10k",
         "RWD-C18": "real_world_data/t_biocase_gathering_agent_r72738_c18",

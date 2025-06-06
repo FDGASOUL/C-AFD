@@ -48,6 +48,7 @@ p1key->key1
 p2id->key2
 p2key->key2
 key1->p1type
+key2->p1type
 p1author->p1type
 p1title->p1type
 p1booktitle->p1type
@@ -57,6 +58,11 @@ key1->p1author
 p1title->p1author
 p1id->p1author
 p1key->p1author
+key2,p2type->p1author
+key2,p2booktitle->p1author
+key2,p2booktitlefull->p1author
+key2,p2year->p1author
+key2,p2journal->p1author
 key1->p1title
 p1id->p1title
 p1key->p1title
@@ -72,6 +78,7 @@ p1title->p1booktitlefull
 p1booktitle->p1booktitlefull
 p1id->p1booktitlefull
 p1key->p1booktitlefull
+author1,p1year->p1booktitlefull
 key1->p1year
 p1author->p1year
 p1title->p1year
@@ -81,14 +88,18 @@ key1->p1journal
 p1author->p1journal
 p1title->p1journal
 p1journalfull->p1journal
-p1publisher->p1journal
 p1id->p1journal
 p1key->p1journal
+author1,p1year->p1journal
+author2,p1year->p1journal
+author1->p1journalfull
+key1->p1journalfull
+p1author->p1journalfull
+p1title->p1journalfull
 p1journal->p1journalfull
-key1->p1publisher
-p1title->p1publisher
-p1year->p1publisher
-p1journal->p1publisher
+p2journal->p1journalfull
+p2booktitle->p1publisher
+p2booktitlefull->p1publisher
 p2year->p1publisher
 key1->p1id
 p1title->p1id
@@ -102,6 +113,7 @@ p2booktitle->p2type
 p2id->p2type
 p2key->p2type
 key2->p2author
+p1author->p2author
 p2title->p2author
 p2id->p2author
 p2key->p2author
@@ -131,8 +143,17 @@ p2title->p2journal
 p2journalfull->p2journal
 p2id->p2journal
 p2key->p2journal
+author1,p2year->p2journal
+author2,p2year->p2journal
+key1,p2year->p2journal
+p1author,p2year->p2journal
+p1title,p2year->p2journal
+p1id,p2year->p2journal
+p1key,p2year->p2journal
+author1->p2journalfull
+author2->p2journalfull
 key2->p2journalfull
-p1journal->p2journalfull
+p1booktitle->p2journalfull
 p2author->p2journalfull
 p2title->p2journalfull
 p2journal->p2journalfull
@@ -148,7 +169,7 @@ p1author->p2key
 p2title->p2key
 p2journalfull->p2key
 p2id->p2key
-Precision: 0.4467
-Recall: 0.8701
-F1: 0.5903
-Runtime: 7449 ms
+Precision: 0.3801
+Recall: 0.8442
+F1: 0.5242
+Runtime: 24129 ms

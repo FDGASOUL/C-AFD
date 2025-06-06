@@ -31,6 +31,10 @@ class ColumnLayoutRelationData:
         self.null_value_id: int = -1
         self.column_vectors: List[List[int]] = self._compute_column_vectors(data)
         self.column_data: List[Dict[str, Any]] = self._compute_column_data()
+        self.domain_size: List[int] = []
+        for vec in self.column_vectors:
+            unique_vals = set(v for v in vec if v != self.null_value_id)
+            self.domain_size.append(len(unique_vals))
 
     def _compute_column_vectors(self, data: pd.DataFrame) -> List[List[int]]:
         """

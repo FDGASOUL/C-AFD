@@ -2,9 +2,12 @@ import logging
 from pathlib import Path
 from typing import List, Tuple
 
+import numpy as np
+
 from Sampler import Sampler
 from ColumnLayoutRelationData import ColumnLayoutRelationData
 from SearchSpace_bit import SearchSpace
+from rule_mining.Incorporate_into import FDAnalyzer
 
 # 获取日志实例
 logger = logging.getLogger(__name__)
@@ -82,6 +85,9 @@ class CAFD:
         # 构建列布局关系数据
         layout_data = ColumnLayoutRelationData(sample)
         schema = layout_data.get_schema()
+
+        analyzer = FDAnalyzer(layout_data)
+        analyzer.refine_column_plis()
 
         # 初始化并设置上下文
         spaces: List[SearchSpace] = []
