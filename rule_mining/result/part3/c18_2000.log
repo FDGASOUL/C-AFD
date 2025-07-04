@@ -1,0 +1,158 @@
+2025-06-10 19:22:20 - root - INFO - 日志配置完成。
+2025-06-10 19:22:20 - root - INFO - Config: dataset=t_biocase_gathering_agent_r72738_c18.csv, sample_size=4000, null_equal_null=True
+2025-06-10 19:22:20 - root - INFO - 开始执行 CAFD...
+2025-06-10 19:22:20 - Cafd - INFO - Executing CAFD on: E:\资料\C-AFD\rule_mining\data\real_world_data\t_biocase_gathering_agent_r72738_c18.csv
+2025-06-10 19:22:20 - Cafd - INFO - Using ground truth: E:\资料\C-AFD\rule_mining\groundtruth\real_world_data\t_biocase_gathering_agent_r72738_c18.txt
+2025-06-10 19:22:20 - Sampler - INFO - Reading dataset from: E:\资料\C-AFD\rule_mining\data\real_world_data\t_biocase_gathering_agent_r72738_c18.csv
+2025-06-10 19:22:20 - Sampler - INFO - 移除全空列：8 / 18
+2025-06-10 19:22:21 - Sampler - INFO - 移除单一值列：2 个
+2025-06-10 19:22:21 - Sampler - INFO - 使用用户指定的抽样数: 2000
+2025-06-10 19:22:21 - Sampler - INFO - 抽样 2000 行，随机种子：2914266549
+2025-06-10 19:22:21 - Sampler - INFO - 抽样结果已保存至: rule_mining/data/sample_data/sample_data.csv
+2025-06-10 19:22:21 - rule_mining.Incorporate_into - INFO - 所有列的 PLI 更新完成。
+2025-06-10 19:22:21 - Cafd - INFO - Processing search space: <SearchSpace_bit.SearchSpace object at 0x000002A9FD624820>
+2025-06-10 19:22:21 - rule_mining.Correlation_utils - INFO - 计算列 ['_unitguid'] 和列 _datasetguid 之间的φ²: 0.0
+2025-06-10 19:22:21 - rule_mining.Correlation_utils - INFO - 计算列 ['_unitguid'] 和列 _datasetguid 之间的相关性 (φ²): 0.0
+2025-06-10 19:22:21 - rule_mining.Correlation_utils - WARNING - 列联表为空，返回 invalid
+2025-06-10 19:22:21 - rule_mining.Correlation_utils - WARNING - 列联表为空，返回 invalid
+2025-06-10 19:22:21 - rule_mining.Correlation_utils - INFO - 计算列 ['PersonFullName'] 和列 _datasetguid 之间的φ²: 0.972683932482925
+2025-06-10 19:22:21 - rule_mining.Correlation_utils - INFO - 计算列 ['PersonFullName'] 和列 _datasetguid 之间的相关性 (φ²): 0.9673708707248468
+2025-06-10 19:22:21 - rule_mining.Correlation_utils - INFO - 行方向得分: 0.9976, 列方向得分: 0.0725
+2025-06-10 19:22:21 - SearchSpace_bit - INFO - 发现函数依赖: ['PersonFullName'] -> _datasetguid
+2025-06-10 19:22:21 - rule_mining.Correlation_utils - INFO - 计算列 ['PersonInheritedName'] 和列 _datasetguid 之间的φ²: 0.6260833615132236
+2025-06-10 19:22:21 - rule_mining.Correlation_utils - INFO - 计算列 ['PersonInheritedName'] 和列 _datasetguid 之间的相关性 (φ²): 0.5604089048207279
+2025-06-10 19:22:21 - rule_mining.Correlation_utils - INFO - 计算列 ['PersonGivenNames'] 和列 _datasetguid 之间的φ²: 0.5390935477347596
+2025-06-10 19:22:21 - rule_mining.Correlation_utils - INFO - 计算列 ['PersonGivenNames'] 和列 _datasetguid 之间的相关性 (φ²): 0.4845576253910023
+2025-06-10 19:22:21 - rule_mining.Correlation_utils - INFO - 计算列 ['Sequence'] 和列 _datasetguid 之间的φ²: 0.0015876593784607848
+2025-06-10 19:22:21 - rule_mining.Correlation_utils - INFO - 计算列 ['Sequence'] 和列 _datasetguid 之间的相关性 (φ²): 0.001087953502273828
+2025-06-10 19:22:21 - rule_mining.Correlation_utils - INFO - 计算列 ['PersonInheritedName', 'PersonGivenNames'] 和列 _datasetguid 之间的φ²: 0.9676903326410242
+2025-06-10 19:22:21 - rule_mining.Correlation_utils - INFO - 计算列 ['PersonInheritedName', 'PersonGivenNames'] 和列 _datasetguid 之间的相关性 (φ²): 0.9604172588526433
+2025-06-10 19:22:21 - SearchSpace_bit - INFO - 发现函数依赖: ['PersonInheritedName', 'PersonGivenNames'] -> _datasetguid
+2025-06-10 19:22:21 - Cafd - INFO - Processing search space: <SearchSpace_bit.SearchSpace object at 0x000002A9FD6248B0>
+2025-06-10 19:22:21 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: _datasetguid->_unitguid
+2025-06-10 19:22:21 - rule_mining.Correlation_utils - WARNING - 列联表为空，返回 invalid
+2025-06-10 19:22:21 - rule_mining.Correlation_utils - WARNING - 列联表为空，返回 invalid
+2025-06-10 19:22:21 - rule_mining.Correlation_utils - INFO - 计算列 ['PersonFullName'] 和列 _unitguid 之间的φ²: 0.9990798251667823
+2025-06-10 19:22:21 - rule_mining.Correlation_utils - INFO - 计算列 ['PersonFullName'] 和列 _unitguid 之间的相关性 (φ²): 0.22015182884797
+2025-06-10 19:22:21 - rule_mining.Correlation_utils - INFO - 计算列 ['PersonInheritedName'] 和列 _unitguid 之间的φ²: 0.9993399658714021
+2025-06-10 19:22:21 - rule_mining.Correlation_utils - INFO - 计算列 ['PersonInheritedName'] 和列 _unitguid 之间的相关性 (φ²): 0.42346018866967367
+2025-06-10 19:22:21 - rule_mining.Correlation_utils - INFO - 计算列 ['PersonGivenNames'] 和列 _unitguid 之间的φ²: 0.9988265306122465
+2025-06-10 19:22:21 - rule_mining.Correlation_utils - INFO - 计算列 ['PersonGivenNames'] 和列 _unitguid 之间的相关性 (φ²): 0.029540816327786403
+2025-06-10 19:22:21 - rule_mining.Correlation_utils - INFO - 计算列 ['Sequence'] 和列 _unitguid 之间的φ²: 0.9869791666666947
+2025-06-10 19:22:21 - rule_mining.Correlation_utils - INFO - 计算列 ['Sequence'] 和列 _unitguid 之间的相关性 (φ²): 0.0
+2025-06-10 19:22:21 - rule_mining.Correlation_utils - INFO - 计算列 ['PersonFullName', 'PersonInheritedName'] 和列 _unitguid 之间的φ²: 0.9990798251667823
+2025-06-10 19:22:21 - rule_mining.Correlation_utils - INFO - 计算列 ['PersonFullName', 'PersonInheritedName'] 和列 _unitguid 之间的相关性 (φ²): 0.22015182884797
+2025-06-10 19:22:21 - rule_mining.Correlation_utils - INFO - 计算列 ['PersonFullName', 'PersonGivenNames'] 和列 _unitguid 之间的φ²: 0.9990798251667823
+2025-06-10 19:22:21 - rule_mining.Correlation_utils - INFO - 计算列 ['PersonFullName', 'PersonGivenNames'] 和列 _unitguid 之间的相关性 (φ²): 0.22015182884797
+2025-06-10 19:22:21 - rule_mining.Correlation_utils - INFO - 计算列 ['PersonInheritedName', 'PersonGivenNames'] 和列 _unitguid 之间的φ²: 0.9992088216387258
+2025-06-10 19:22:21 - rule_mining.Correlation_utils - INFO - 计算列 ['PersonInheritedName', 'PersonGivenNames'] 和列 _unitguid 之间的相关性 (φ²): 0.308905701426974
+2025-06-10 19:22:21 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-10 19:22:21 - Cafd - INFO - Processing search space: <SearchSpace_bit.SearchSpace object at 0x000002A9FD624910>
+2025-06-10 19:22:21 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: _datasetguid->_gatheringagentguid
+2025-06-10 19:22:21 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: _unitguid->_gatheringagentguid
+2025-06-10 19:22:21 - rule_mining.Correlation_utils - WARNING - 列联表为空，返回 invalid
+2025-06-10 19:22:21 - rule_mining.Correlation_utils - INFO - 计算列 ['PersonFullName'] 和列 _gatheringagentguid 之间的φ²: 1.0000000000000004
+2025-06-10 19:22:21 - rule_mining.Correlation_utils - INFO - 计算列 ['PersonFullName'] 和列 _gatheringagentguid 之间的相关性 (φ²): 0.0
+2025-06-10 19:22:21 - rule_mining.Correlation_utils - INFO - 计算列 ['PersonInheritedName'] 和列 _gatheringagentguid 之间的φ²: 0.9999999999999962
+2025-06-10 19:22:21 - rule_mining.Correlation_utils - INFO - 计算列 ['PersonInheritedName'] 和列 _gatheringagentguid 之间的相关性 (φ²): 0.0
+2025-06-10 19:22:21 - rule_mining.Correlation_utils - INFO - 计算列 ['PersonGivenNames'] 和列 _gatheringagentguid 之间的φ²: 1.0000000000000013
+2025-06-10 19:22:21 - rule_mining.Correlation_utils - INFO - 计算列 ['PersonGivenNames'] 和列 _gatheringagentguid 之间的相关性 (φ²): 0.0
+2025-06-10 19:22:21 - rule_mining.Correlation_utils - INFO - 计算列 ['Sequence'] 和列 _gatheringagentguid 之间的φ²: 1.0000000000000282
+2025-06-10 19:22:21 - rule_mining.Correlation_utils - INFO - 计算列 ['Sequence'] 和列 _gatheringagentguid 之间的相关性 (φ²): 0.0
+2025-06-10 19:22:21 - Cafd - INFO - Processing search space: <SearchSpace_bit.SearchSpace object at 0x000002A9FD6249A0>
+2025-06-10 19:22:21 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: _datasetguid->AgentText
+2025-06-10 19:22:21 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: _unitguid->AgentText
+2025-06-10 19:22:21 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: _gatheringagentguid->AgentText
+2025-06-10 19:22:21 - rule_mining.Correlation_utils - WARNING - 列联表为空，返回 invalid
+2025-06-10 19:22:21 - rule_mining.Correlation_utils - INFO - 计算列 ['PersonInheritedName'] 和列 AgentText 之间的φ²: 1.0
+2025-06-10 19:22:21 - rule_mining.Correlation_utils - INFO - 计算列 ['PersonInheritedName'] 和列 AgentText 之间的相关性 (φ²): 0.0
+2025-06-10 19:22:21 - rule_mining.Correlation_utils - INFO - 计算列 ['PersonGivenNames'] 和列 AgentText 之间的φ²: 0.0
+2025-06-10 19:22:21 - rule_mining.Correlation_utils - INFO - 计算列 ['PersonGivenNames'] 和列 AgentText 之间的相关性 (φ²): 0.0
+2025-06-10 19:22:21 - rule_mining.Correlation_utils - INFO - 计算列 ['Sequence'] 和列 AgentText 之间的φ²: 0.0
+2025-06-10 19:22:21 - rule_mining.Correlation_utils - INFO - 计算列 ['Sequence'] 和列 AgentText 之间的相关性 (φ²): 0.0
+2025-06-10 19:22:21 - Cafd - INFO - Processing search space: <SearchSpace_bit.SearchSpace object at 0x000002A9FD624A30>
+2025-06-10 19:22:21 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: _datasetguid->PersonFullName
+2025-06-10 19:22:21 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: _unitguid->PersonFullName
+2025-06-10 19:22:21 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: _gatheringagentguid->PersonFullName
+2025-06-10 19:22:21 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: AgentText->PersonFullName
+2025-06-10 19:22:21 - rule_mining.Correlation_utils - INFO - 计算列 ['PersonInheritedName'] 和列 PersonFullName 之间的φ²: 1.0000000000000004
+2025-06-10 19:22:21 - rule_mining.Correlation_utils - INFO - 计算列 ['PersonInheritedName'] 和列 PersonFullName 之间的相关性 (φ²): 1.0000000000000004
+2025-06-10 19:22:21 - rule_mining.Correlation_utils - INFO - 行方向得分: 0.9245, 列方向得分: 1.0000
+2025-06-10 19:22:21 - rule_mining.Correlation_utils - INFO - 计算列 ['PersonGivenNames'] 和列 PersonFullName 之间的φ²: 0.9999999999999998
+2025-06-10 19:22:21 - rule_mining.Correlation_utils - INFO - 计算列 ['PersonGivenNames'] 和列 PersonFullName 之间的相关性 (φ²): 0.9999999999999997
+2025-06-10 19:22:21 - rule_mining.Correlation_utils - INFO - 行方向得分: 0.7776, 列方向得分: 1.0000
+2025-06-10 19:22:21 - rule_mining.Correlation_utils - INFO - 计算列 ['Sequence'] 和列 PersonFullName 之间的φ²: 0.7053604815323633
+2025-06-10 19:22:21 - rule_mining.Correlation_utils - INFO - 计算列 ['Sequence'] 和列 PersonFullName 之间的相关性 (φ²): 0.5849299524899184
+2025-06-10 19:22:21 - rule_mining.Correlation_utils - INFO - 计算列 ['_unitguid', 'Sequence'] 和列 PersonFullName 之间的φ²: 1.0
+2025-06-10 19:22:21 - rule_mining.Correlation_utils - INFO - 计算列 ['_unitguid', 'Sequence'] 和列 PersonFullName 之间的相关性 (φ²): 0.0
+2025-06-10 19:22:21 - Cafd - INFO - Processing search space: <SearchSpace_bit.SearchSpace object at 0x000002A9FD624AC0>
+2025-06-10 19:22:21 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: _datasetguid->PersonInheritedName
+2025-06-10 19:22:21 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: _unitguid->PersonInheritedName
+2025-06-10 19:22:21 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: _gatheringagentguid->PersonInheritedName
+2025-06-10 19:22:21 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: AgentText->PersonInheritedName
+2025-06-10 19:22:21 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: PersonFullName->PersonInheritedName
+2025-06-10 19:22:21 - SearchSpace_bit - INFO - 发现函数依赖: ['PersonFullName'] -> PersonInheritedName
+2025-06-10 19:22:21 - rule_mining.Correlation_utils - INFO - 计算列 ['PersonGivenNames'] 和列 PersonInheritedName 之间的φ²: 0.9281350866097278
+2025-06-10 19:22:21 - rule_mining.Correlation_utils - INFO - 计算列 ['PersonGivenNames'] 和列 PersonInheritedName 之间的相关性 (φ²): 0.9115591021223882
+2025-06-10 19:22:21 - rule_mining.Correlation_utils - INFO - 行方向得分: 0.7776, 列方向得分: 0.9595
+2025-06-10 19:22:21 - rule_mining.Correlation_utils - INFO - 计算列 ['Sequence'] 和列 PersonInheritedName 之间的φ²: 0.6128497171815639
+2025-06-10 19:22:21 - rule_mining.Correlation_utils - INFO - 计算列 ['Sequence'] 和列 PersonInheritedName 之间的相关性 (φ²): 0.4791968941089813
+2025-06-10 19:22:21 - rule_mining.Correlation_utils - INFO - 计算列 ['_datasetguid', '_unitguid'] 和列 PersonInheritedName 之间的φ²: 0.2977422268319881
+2025-06-10 19:22:21 - rule_mining.Correlation_utils - INFO - 计算列 ['_datasetguid', '_unitguid'] 和列 PersonInheritedName 之间的相关性 (φ²): 0.05530734282445773
+2025-06-10 19:22:21 - rule_mining.Correlation_utils - INFO - 计算列 ['_datasetguid', 'Sequence'] 和列 PersonInheritedName 之间的φ²: 0.628916011468868
+2025-06-10 19:22:21 - rule_mining.Correlation_utils - INFO - 计算列 ['_datasetguid', 'Sequence'] 和列 PersonInheritedName 之间的相关性 (φ²): 0.5008096278104086
+2025-06-10 19:22:21 - rule_mining.Correlation_utils - INFO - 计算列 ['_unitguid', 'Sequence'] 和列 PersonInheritedName 之间的φ²: 1.0
+2025-06-10 19:22:21 - rule_mining.Correlation_utils - INFO - 计算列 ['_unitguid', 'Sequence'] 和列 PersonInheritedName 之间的相关性 (φ²): 0.0
+2025-06-10 19:22:21 - Cafd - INFO - Processing search space: <SearchSpace_bit.SearchSpace object at 0x000002A9FD624B50>
+2025-06-10 19:22:21 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: _datasetguid->PersonGivenNames
+2025-06-10 19:22:21 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: _unitguid->PersonGivenNames
+2025-06-10 19:22:21 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: _gatheringagentguid->PersonGivenNames
+2025-06-10 19:22:21 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: AgentText->PersonGivenNames
+2025-06-10 19:22:21 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: PersonFullName->PersonGivenNames
+2025-06-10 19:22:21 - SearchSpace_bit - INFO - 发现函数依赖: ['PersonFullName'] -> PersonGivenNames
+2025-06-10 19:22:21 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: PersonInheritedName->PersonGivenNames
+2025-06-10 19:22:21 - SearchSpace_bit - INFO - 发现函数依赖: ['PersonInheritedName'] -> PersonGivenNames
+2025-06-10 19:22:21 - rule_mining.Correlation_utils - INFO - 计算列 ['Sequence'] 和列 PersonGivenNames 之间的φ²: 0.4840310622800195
+2025-06-10 19:22:21 - rule_mining.Correlation_utils - INFO - 计算列 ['Sequence'] 和列 PersonGivenNames 之间的相关性 (φ²): 0.3856515893678934
+2025-06-10 19:22:21 - rule_mining.Correlation_utils - INFO - 计算列 ['_datasetguid', '_unitguid'] 和列 PersonGivenNames 之间的φ²: 0.258620581785591
+2025-06-10 19:22:21 - rule_mining.Correlation_utils - INFO - 计算列 ['_datasetguid', '_unitguid'] 和列 PersonGivenNames 之间的相关性 (φ²): 0.1172622342964339
+2025-06-10 19:22:21 - rule_mining.Correlation_utils - INFO - 计算列 ['_datasetguid', 'Sequence'] 和列 PersonGivenNames 之间的φ²: 0.4283902516095962
+2025-06-10 19:22:21 - rule_mining.Correlation_utils - INFO - 计算列 ['_datasetguid', 'Sequence'] 和列 PersonGivenNames 之间的相关性 (φ²): 0.3194017803140628
+2025-06-10 19:22:21 - rule_mining.Correlation_utils - INFO - 计算列 ['_unitguid', 'Sequence'] 和列 PersonGivenNames 之间的φ²: 1.0
+2025-06-10 19:22:21 - rule_mining.Correlation_utils - INFO - 计算列 ['_unitguid', 'Sequence'] 和列 PersonGivenNames 之间的相关性 (φ²): 0.0
+2025-06-10 19:22:21 - Cafd - INFO - Processing search space: <SearchSpace_bit.SearchSpace object at 0x000002A9FD624BE0>
+2025-06-10 19:22:21 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: _datasetguid->Sequence
+2025-06-10 19:22:21 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: _unitguid->Sequence
+2025-06-10 19:22:21 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: _gatheringagentguid->Sequence
+2025-06-10 19:22:21 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: AgentText->Sequence
+2025-06-10 19:22:21 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: PersonFullName->Sequence
+2025-06-10 19:22:21 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: PersonInheritedName->Sequence
+2025-06-10 19:22:21 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: PersonGivenNames->Sequence
+2025-06-10 19:22:21 - rule_mining.Correlation_utils - INFO - 计算列 ['PersonFullName', 'PersonInheritedName'] 和列 Sequence 之间的φ²: 0.6379981863786939
+2025-06-10 19:22:21 - rule_mining.Correlation_utils - INFO - 计算列 ['PersonFullName', 'PersonInheritedName'] 和列 Sequence 之间的相关性 (φ²): 0.567587685632055
+2025-06-10 19:22:21 - rule_mining.Correlation_utils - INFO - 计算列 ['PersonFullName', 'PersonGivenNames'] 和列 Sequence 之间的φ²: 0.6379981863786939
+2025-06-10 19:22:21 - rule_mining.Correlation_utils - INFO - 计算列 ['PersonFullName', 'PersonGivenNames'] 和列 Sequence 之间的相关性 (φ²): 0.567587685632055
+2025-06-10 19:22:21 - rule_mining.Correlation_utils - INFO - 计算列 ['PersonInheritedName', 'PersonGivenNames'] 和列 Sequence 之间的φ²: 0.6693658176077388
+2025-06-10 19:22:21 - rule_mining.Correlation_utils - INFO - 计算列 ['PersonInheritedName', 'PersonGivenNames'] 和列 Sequence 之间的相关性 (φ²): 0.5949383473777838
+2025-06-10 19:22:21 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-10 19:22:21 - Cafd - INFO - Total dependencies found: 5
+2025-06-10 19:22:21 - root - INFO - 发现的函数依赖如下：
+2025-06-10 19:22:21 - root - INFO - ['PersonFullName'] -> _datasetguid
+2025-06-10 19:22:21 - root - INFO - ['PersonGivenNames', 'PersonInheritedName'] -> _datasetguid
+2025-06-10 19:22:21 - root - INFO - ['PersonFullName'] -> PersonInheritedName
+2025-06-10 19:22:21 - root - INFO - ['PersonFullName'] -> PersonGivenNames
+2025-06-10 19:22:21 - root - INFO - ['PersonInheritedName'] -> PersonGivenNames
+2025-06-10 19:22:21 - Evaluate_fd - INFO - 评估结果: TP=2, FP=3, FN=5
+2025-06-10 19:22:21 - Evaluate_fd - WARNING - 误报 FD (3 个):
+PersonFullName->_datasetguid
+PersonInheritedName->PersonGivenNames
+PersonGivenNames,PersonInheritedName->_datasetguid
+2025-06-10 19:22:21 - Evaluate_fd - WARNING - 漏报 FD (5 个):
+AgentText->PersonFullName
+PersonFullName->AgentText
+AgentText->PersonInheritedName
+_unitguid->_datasetguid
+AgentText->PersonGivenNames
+2025-06-10 19:22:21 - root - INFO - Precision: 0.40, Recall: 0.29, F1: 0.33
+2025-06-10 19:22:21 - root - INFO - 总运行时长: 425 ms
+2025-06-10 19:22:21 - root - INFO - 结果已保存至: rule_mining\discovered_fd\t_biocase_gathering_agent_r72738_c18_discovered.txt

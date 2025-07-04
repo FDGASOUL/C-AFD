@@ -22,11 +22,11 @@ class Incorporate:
 
     @staticmethod
     def dpmeans_with_groups(
-        X: np.ndarray,
-        lambda_: float,
-        init_centers_idx: List[int],
-        small_idx: List[int],
-        max_iter: int = 100
+            X: np.ndarray,
+            lambda_: float,
+            init_centers_idx: List[int],
+            small_idx: List[int],
+            max_iter: int = 100
     ) -> Tuple[np.ndarray, np.ndarray]:
         """
         分层 DP-Means 聚类：仅聚类，不输出合并结果。
@@ -44,32 +44,41 @@ class Incorporate:
 
         centers: List[np.ndarray] = [X[i].copy() for i in init_centers_idx]
         labels = np.zeros(n_samples, dtype=int)
+        small_idx_set = set(small_idx)
+
+        # 最大列总和的索引在 init_centers_idx 中的位置（作为归并目标）
+        largest_sum_idx = init_centers_idx[-1]  # 默认最后一个是最大，因为已按 col_sum 排序
+        target_cluster_id = init_centers_idx.index(largest_sum_idx)
 
         for _ in range(max_iter):
             changed = False
             # 分配阶段
             for i in range(n_samples):
-                # 计算当前样本到每个簇心的距离平方
+                if i in small_idx_set:
+                    # 小簇强制合并到目标簇
+                    labels[i] = target_cluster_id
+                    continue
+
                 dists2 = np.sum((np.vstack(centers) - X[i]) ** 2, axis=1)
                 j_min = int(np.argmin(dists2))
-                if i in small_idx:
-                    labels[i] = j_min
+                if dists2[j_min] > lambda_:
+                    centers.append(X[i].copy())
+                    labels[i] = len(centers) - 1
+                    changed = True
                 else:
-                    if dists2[j_min] > lambda_ and i not in init_centers_idx:
-                        # 若最小距离仍大于阈值，则以该样本作为新簇心
-                        centers.append(X[i].copy())
-                        labels[i] = len(centers) - 1
-                        changed = True
-                    else:
-                        labels[i] = j_min
-            # 更新阶段：重新计算每个簇的簇心
+                    labels[i] = j_min
+
+            # 更新阶段：重新计算每个簇的簇心（忽略小样本）
             new_centers: List[np.ndarray] = []
             for k in range(len(centers)):
-                members = X[labels == k]
-                if len(members):
+                members_idx = [i for i in range(n_samples) if labels[i] == k and i not in small_idx_set]
+                if members_idx:
+                    members = X[members_idx]
                     new_centers.append(members.mean(axis=0))
                 else:
+                    # 没有中/大样本属于该簇，保留原簇心
                     new_centers.append(centers[k])
+
             centers = new_centers
             if not changed:
                 break

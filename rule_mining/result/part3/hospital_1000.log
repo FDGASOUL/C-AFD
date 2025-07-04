@@ -1,0 +1,1022 @@
+2025-06-10 16:05:36 - root - INFO - 日志配置完成。
+2025-06-10 16:05:36 - root - INFO - Config: dataset=hospital.csv, sample_size=4000, null_equal_null=True
+2025-06-10 16:05:36 - root - INFO - 开始执行 CAFD...
+2025-06-10 16:05:36 - Cafd - INFO - Executing CAFD on: E:\资料\C-AFD\rule_mining\data\real_world_data\hospital.csv
+2025-06-10 16:05:36 - Cafd - INFO - Using ground truth: E:\资料\C-AFD\rule_mining\groundtruth\real_world_data\hospital.txt
+2025-06-10 16:05:36 - Sampler - INFO - Reading dataset from: E:\资料\C-AFD\rule_mining\data\real_world_data\hospital.csv
+2025-06-10 16:05:36 - Sampler - INFO - 移除全空列：0 / 15
+2025-06-10 16:05:37 - Sampler - INFO - 移除单一值列：0 个
+2025-06-10 16:05:37 - Sampler - INFO - 使用用户指定的抽样数: 1000
+2025-06-10 16:05:37 - Sampler - INFO - 抽样 1000 行，随机种子：617199642
+2025-06-10 16:05:37 - Sampler - INFO - 抽样结果已保存至: rule_mining/data/sample_data/sample_data.csv
+2025-06-10 16:05:37 - rule_mining.Incorporate_into - INFO - 列 8 的值被合并替换，替换对：{(1, 8)}，新 PLI 簇数：8
+2025-06-10 16:05:37 - rule_mining.Incorporate_into - INFO - 所有列的 PLI 更新完成。
+2025-06-10 16:05:37 - Cafd - INFO - Processing search space: <SearchSpace_bit.SearchSpace object at 0x0000026CACAAF040>
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['HospitalName'] 和列 ProviderNumber 之间的φ²: 1.0
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['HospitalName'] 和列 ProviderNumber 之间的相关性 (φ²): 1.0
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 行方向得分: 0.9608, 列方向得分: 1.0000
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['City'] 和列 ProviderNumber 之间的φ²: 1.0000000000000009
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['City'] 和列 ProviderNumber 之间的相关性 (φ²): 1.0000000000000038
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 行方向得分: 0.6340, 列方向得分: 1.0000
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['State'] 和列 ProviderNumber 之间的φ²: 0.9999999999999929
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['State'] 和列 ProviderNumber 之间的相关性 (φ²): 0.9999999999999268
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 行方向得分: 0.0930, 列方向得分: 1.0000
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['ZIPCode'] 和列 ProviderNumber 之间的φ²: 1.0
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['ZIPCode'] 和列 ProviderNumber 之间的相关性 (φ²): 1.0
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 行方向得分: 0.9132, 列方向得分: 1.0000
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['CountyName'] 和列 ProviderNumber 之间的φ²: 1.0
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['CountyName'] 和列 ProviderNumber 之间的相关性 (φ²): 1.0
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 行方向得分: 0.4547, 列方向得分: 1.0000
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['PhoneNumber'] 和列 ProviderNumber 之间的φ²: 1.0
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['PhoneNumber'] 和列 ProviderNumber 之间的相关性 (φ²): 1.0
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 行方向得分: 0.9947, 列方向得分: 1.0000
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['HospitalType'] 和列 ProviderNumber 之间的φ²: 1.0000000000000016
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['HospitalType'] 和列 ProviderNumber 之间的相关性 (φ²): 1.000000000000016
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 行方向得分: 0.0080, 列方向得分: 1.0000
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['HospitalOwner'] 和列 ProviderNumber 之间的φ²: 0.9999999999999959
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['HospitalOwner'] 和列 ProviderNumber 之间的相关性 (φ²): 0.9999999999999577
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 行方向得分: 0.0200, 列方向得分: 1.0000
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['EmergencyService'] 和列 ProviderNumber 之间的φ²: 1.0000000000000149
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['EmergencyService'] 和列 ProviderNumber 之间的相关性 (φ²): 1.0000000000001532
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 行方向得分: 0.0050, 列方向得分: 1.0000
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['Condition'] 和列 ProviderNumber 之间的φ²: 0.9320534658363919
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['Condition'] 和列 ProviderNumber 之间的相关性 (φ²): 0.3002207460882016
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['MeasureCode'] 和列 ProviderNumber 之间的φ²: 0.9025560742531891
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['MeasureCode'] 和列 ProviderNumber 之间的相关性 (φ²): 0.0
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['MeasureName'] 和列 ProviderNumber 之间的φ²: 0.9025560742531891
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['MeasureName'] 和列 ProviderNumber 之间的相关性 (φ²): 0.0
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['Sample'] 和列 ProviderNumber 之间的φ²: 0.9207221860484933
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['Sample'] 和列 ProviderNumber 之间的相关性 (φ²): 0.03089706738589227
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['StateAvg'] 和列 ProviderNumber 之间的φ²: 0.9332374338624334
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['StateAvg'] 和列 ProviderNumber 之间的相关性 (φ²): 0.03737695336531866
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['Condition', 'Sample'] 和列 ProviderNumber 之间的φ²: 0.9064457674637958
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['Condition', 'Sample'] 和列 ProviderNumber 之间的相关性 (φ²): 0.03648785253950544
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['Condition', 'StateAvg'] 和列 ProviderNumber 之间的φ²: 0.9073348533594515
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['Condition', 'StateAvg'] 和列 ProviderNumber 之间的相关性 (φ²): 0.04564452068136186
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['Sample', 'StateAvg'] 和列 ProviderNumber 之间的φ²: 0.9161416781164681
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['Sample', 'StateAvg'] 和列 ProviderNumber 之间的相关性 (φ²): 0.0
+2025-06-10 16:05:37 - Cafd - INFO - Processing search space: <SearchSpace_bit.SearchSpace object at 0x0000026CACAAF0A0>
+2025-06-10 16:05:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: ProviderNumber->HospitalName
+2025-06-10 16:05:37 - SearchSpace_bit - INFO - 发现函数依赖: ['ProviderNumber'] -> HospitalName
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['City'] 和列 HospitalName 之间的φ²: 0.9979289940828412
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['City'] 和列 HospitalName 之间的相关性 (φ²): 0.9912766720459069
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 行方向得分: 0.6364, 列方向得分: 0.9976
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['State'] 和列 HospitalName 之间的φ²: 0.9927873963467999
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['State'] 和列 HospitalName 之间的相关性 (φ²): 0.9313772280995534
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 行方向得分: 0.0930, 列方向得分: 0.9920
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['ZIPCode'] 和列 HospitalName 之间的φ²: 1.0
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['ZIPCode'] 和列 HospitalName 之间的相关性 (φ²): 1.0
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 行方向得分: 0.9132, 列方向得分: 1.0000
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['CountyName'] 和列 HospitalName 之间的φ²: 0.9950348899624263
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['CountyName'] 和列 HospitalName 之间的相关性 (φ²): 0.9680463215403672
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 行方向得分: 0.4547, 列方向得分: 0.9954
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['PhoneNumber'] 和列 HospitalName 之间的φ²: 1.0
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['PhoneNumber'] 和列 HospitalName 之间的相关性 (φ²): 1.0
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 行方向得分: 0.9947, 列方向得分: 1.0000
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['HospitalType'] 和列 HospitalName 之间的φ²: 0.9955909090909106
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['HospitalType'] 和列 HospitalName 之间的相关性 (φ²): 0.9580506493506641
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 行方向得分: 0.0080, 列方向得分: 0.9970
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['HospitalOwner'] 和列 HospitalName 之间的φ²: 0.997117269257117
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['HospitalOwner'] 和列 HospitalName 之间的相关性 (φ²): 0.9725728760748557
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 行方向得分: 0.0200, 列方向得分: 0.9970
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['EmergencyService'] 和列 HospitalName 之间的φ²: 0.9917436570645546
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['EmergencyService'] 和列 HospitalName 之间的相关性 (φ²): 0.9214467943570479
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 行方向得分: 0.0050, 列方向得分: 0.9980
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['Condition'] 和列 HospitalName 之间的φ²: 0.9259607663391596
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['Condition'] 和列 HospitalName 之间的相关性 (φ²): 0.29556957688400376
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['MeasureCode'] 和列 HospitalName 之间的φ²: 0.8945372331849697
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['MeasureCode'] 和列 HospitalName 之间的相关性 (φ²): 0.0
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['MeasureName'] 和列 HospitalName 之间的φ²: 0.8945372331849697
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['MeasureName'] 和列 HospitalName 之间的相关性 (φ²): 0.0
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['Sample'] 和列 HospitalName 之间的φ²: 0.9174591258596425
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['Sample'] 和列 HospitalName 之间的相关性 (φ²): 0.056105165072363274
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['StateAvg'] 和列 HospitalName 之间的φ²: 0.9283763227513223
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['StateAvg'] 和列 HospitalName 之间的相关性 (φ²): 0.03463739360477931
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['Condition', 'Sample'] 和列 HospitalName 之间的φ²: 0.9028930268129198
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['Condition', 'Sample'] 和列 HospitalName 之间的相关性 (φ²): 0.07609651224863691
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['Condition', 'StateAvg'] 和列 HospitalName 之间的φ²: 0.900077023513439
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['Condition', 'StateAvg'] 和列 HospitalName 之间的相关性 (φ²): 0.04930425228500491
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['Sample', 'StateAvg'] 和列 HospitalName 之间的φ²: 0.9127680676000003
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['Sample', 'StateAvg'] 和列 HospitalName 之间的相关性 (φ²): 0.0024606440064546217
+2025-06-10 16:05:37 - Cafd - INFO - Processing search space: <SearchSpace_bit.SearchSpace object at 0x0000026CACAAF0D0>
+2025-06-10 16:05:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: ProviderNumber->City
+2025-06-10 16:05:37 - SearchSpace_bit - INFO - 发现函数依赖: ['ProviderNumber'] -> City
+2025-06-10 16:05:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: HospitalName->City
+2025-06-10 16:05:37 - SearchSpace_bit - INFO - 发现函数依赖: ['HospitalName'] -> City
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['State'] 和列 City 之间的φ²: 0.9179497746346151
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['State'] 和列 City 之间的相关性 (φ²): 0.6694831647579859
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 行方向得分: 0.1270, 列方向得分: 0.9340
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['ZIPCode'] 和列 City 之间的φ²: 1.0
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['ZIPCode'] 和列 City 之间的相关性 (φ²): 1.0
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 行方向得分: 1.0000, 列方向得分: 0.9726
+2025-06-10 16:05:37 - SearchSpace_bit - INFO - 发现函数依赖: ['ZIPCode'] -> City
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['CountyName'] 和列 City 之间的φ²: 0.9425390900028582
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['CountyName'] 和列 City 之间的相关性 (φ²): 0.8212938205830518
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 行方向得分: 0.5745, 列方向得分: 0.9493
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['PhoneNumber'] 和列 City 之间的φ²: 1.0
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['PhoneNumber'] 和列 City 之间的相关性 (φ²): 1.0
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 行方向得分: 1.0000, 列方向得分: 0.9789
+2025-06-10 16:05:37 - SearchSpace_bit - INFO - 发现函数依赖: ['PhoneNumber'] -> City
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['HospitalType'] 和列 City 之间的φ²: 0.787413852813853
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['HospitalType'] 和列 City 之间的相关性 (φ²): 0.14365499581064162
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['HospitalOwner'] 和列 City 之间的φ²: 0.8785790892034191
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['HospitalOwner'] 和列 City 之间的相关性 (φ²): 0.5108891536863535
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['EmergencyService'] 和列 City 之间的φ²: 0.8164732913203552
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['EmergencyService'] 和列 City 之间的相关性 (φ²): 0.2607129759235274
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['Condition'] 和列 City 之间的φ²: 0.665635593617125
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['Condition'] 和列 City 之间的相关性 (φ²): 0.0
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['MeasureCode'] 和列 City 之间的φ²: 0.7327252010658034
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['MeasureCode'] 和列 City 之间的相关性 (φ²): 0.0
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['MeasureName'] 和列 City 之间的φ²: 0.7327252010658034
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['MeasureName'] 和列 City 之间的相关性 (φ²): 0.0
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['Sample'] 和列 City 之间的φ²: 0.7906383800609552
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['Sample'] 和列 City 之间的相关性 (φ²): 0.0
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['StateAvg'] 和列 City 之间的φ²: 0.8259678819444443
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['StateAvg'] 和列 City 之间的相关性 (φ²): 0.05350953338206512
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['HospitalType', 'HospitalOwner'] 和列 City 之间的φ²: 0.8932198044560541
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['HospitalType', 'HospitalOwner'] 和列 City 之间的相关性 (φ²): 0.5698652606919274
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['HospitalType', 'EmergencyService'] 和列 City 之间的φ²: 0.8374271773388412
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['HospitalType', 'EmergencyService'] 和列 City 之间的相关性 (φ²): 0.34511996032863845
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['HospitalOwner', 'EmergencyService'] 和列 City 之间的φ²: 0.8770040104174965
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['HospitalOwner', 'EmergencyService'] 和列 City 之间的相关性 (φ²): 0.5045443806737058
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['HospitalType', 'StateAvg'] 和列 City 之间的φ²: 0.7669057792403914
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['HospitalType', 'StateAvg'] 和列 City 之间的相关性 (φ²): 0.061043844601415126
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['HospitalOwner', 'StateAvg'] 和列 City 之间的φ²: 0.7503375382660076
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['HospitalOwner', 'StateAvg'] 和列 City 之间的相关性 (φ²): 0.0
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['EmergencyService', 'StateAvg'] 和列 City 之间的φ²: 0.7491514662011046
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['EmergencyService', 'StateAvg'] 和列 City 之间的相关性 (φ²): 0.0
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-10 16:05:37 - Cafd - INFO - Processing search space: <SearchSpace_bit.SearchSpace object at 0x0000026CACAAF190>
+2025-06-10 16:05:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: ProviderNumber->State
+2025-06-10 16:05:37 - SearchSpace_bit - INFO - 发现函数依赖: ['ProviderNumber'] -> State
+2025-06-10 16:05:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: HospitalName->State
+2025-06-10 16:05:37 - SearchSpace_bit - INFO - 发现函数依赖: ['HospitalName'] -> State
+2025-06-10 16:05:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: City->State
+2025-06-10 16:05:37 - SearchSpace_bit - INFO - 发现函数依赖: ['City'] -> State
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['ZIPCode'] 和列 State 之间的φ²: 1.0
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['ZIPCode'] 和列 State 之间的相关性 (φ²): 1.0
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 行方向得分: 1.0000, 列方向得分: 0.4201
+2025-06-10 16:05:37 - SearchSpace_bit - INFO - 发现函数依赖: ['ZIPCode'] -> State
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['CountyName'] 和列 State 之间的φ²: 0.6878031075459877
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['CountyName'] 和列 State 之间的相关性 (φ²): 0.5419232954963702
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['PhoneNumber'] 和列 State 之间的φ²: 0.9999999999999997
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['PhoneNumber'] 和列 State 之间的相关性 (φ²): 0.9999999999999991
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 行方向得分: 1.0000, 列方向得分: 0.4211
+2025-06-10 16:05:37 - SearchSpace_bit - INFO - 发现函数依赖: ['PhoneNumber'] -> State
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['HospitalType'] 和列 State 之间的φ²: 0.14415394692662598
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['HospitalType'] 和列 State 之间的相关性 (φ²): 0.09906195256027328
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['HospitalOwner'] 和列 State 之间的φ²: 0.12786098712491445
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['HospitalOwner'] 和列 State 之间的相关性 (φ²): 0.0819105649502524
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['EmergencyService'] 和列 State 之间的φ²: 0.07788190805860835
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['EmergencyService'] 和列 State 之间的相关性 (φ²): 0.02929823619657507
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['Condition'] 和列 State 之间的φ²: 0.04971164279865019
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['Condition'] 和列 State 之间的相关性 (φ²): 0.0
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['MeasureCode'] 和列 State 之间的φ²: 0.04933007332336522
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['MeasureCode'] 和列 State 之间的相关性 (φ²): 0.0
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['MeasureName'] 和列 State 之间的φ²: 0.04933007332336522
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['MeasureName'] 和列 State 之间的相关性 (φ²): 0.0
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['Sample'] 和列 State 之间的φ²: 0.2226392837878252
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['Sample'] 和列 State 之间的相关性 (φ²): 0.0
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['StateAvg'] 和列 State 之间的φ²: 0.9999999999999994
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['StateAvg'] 和列 State 之间的相关性 (φ²): 0.9999999999999991
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 行方向得分: 1.0000, 列方向得分: 0.2158
+2025-06-10 16:05:37 - SearchSpace_bit - INFO - 发现函数依赖: ['StateAvg'] -> State
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['CountyName', 'HospitalType'] 和列 State 之间的φ²: 0.8038601728716541
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['CountyName', 'HospitalType'] 和列 State 之间的相关性 (φ²): 0.6544962394758135
+2025-06-10 16:05:37 - SearchSpace_bit - INFO - 发现函数依赖: ['CountyName', 'HospitalType'] -> State
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['CountyName', 'HospitalOwner'] 和列 State 之间的φ²: 0.9011181304502079
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['CountyName', 'HospitalOwner'] 和列 State 之间的相关性 (φ²): 0.7253281401394664
+2025-06-10 16:05:37 - SearchSpace_bit - INFO - 发现函数依赖: ['CountyName', 'HospitalOwner'] -> State
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['HospitalType', 'HospitalOwner'] 和列 State 之间的φ²: 0.10767293945236026
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['HospitalType', 'HospitalOwner'] 和列 State 之间的相关性 (φ²): 0.06065886882287449
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['CountyName', 'EmergencyService'] 和列 State 之间的φ²: 0.7460928820741507
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['CountyName', 'EmergencyService'] 和列 State 之间的相关性 (φ²): 0.5679590925345496
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['HospitalType', 'EmergencyService'] 和列 State 之间的φ²: 0.11271111225202855
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['HospitalType', 'EmergencyService'] 和列 State 之间的相关性 (φ²): 0.06596248802926925
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['HospitalOwner', 'EmergencyService'] 和列 State 之间的φ²: 0.091669455455783
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['HospitalOwner', 'EmergencyService'] 和列 State 之间的相关性 (φ²): 0.043812208641019194
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-10 16:05:37 - Cafd - INFO - Processing search space: <SearchSpace_bit.SearchSpace object at 0x0000026CACAAF220>
+2025-06-10 16:05:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: ProviderNumber->ZIPCode
+2025-06-10 16:05:37 - SearchSpace_bit - INFO - 发现函数依赖: ['ProviderNumber'] -> ZIPCode
+2025-06-10 16:05:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: HospitalName->ZIPCode
+2025-06-10 16:05:37 - SearchSpace_bit - INFO - 发现函数依赖: ['HospitalName'] -> ZIPCode
+2025-06-10 16:05:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: City->ZIPCode
+2025-06-10 16:05:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: State->ZIPCode
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['CountyName'] 和列 ZIPCode 之间的φ²: 0.999657809983897
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['CountyName'] 和列 ZIPCode 之间的相关性 (φ²): 0.9980658825176786
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 行方向得分: 0.4793, 列方向得分: 0.9985
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['PhoneNumber'] 和列 ZIPCode 之间的φ²: 1.0
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['PhoneNumber'] 和列 ZIPCode 之间的相关性 (φ²): 1.0
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 行方向得分: 1.0000, 列方向得分: 1.0000
+2025-06-10 16:05:37 - SearchSpace_bit - INFO - 发现函数依赖: ['PhoneNumber'] -> ZIPCode
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['HospitalType'] 和列 ZIPCode 之间的φ²: 0.9393333333333348
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['HospitalType'] 和列 ZIPCode 之间的相关性 (φ²): 0.4775344827586335
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['HospitalOwner'] 和列 ZIPCode 之间的φ²: 0.983493319811479
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['HospitalOwner'] 和列 ZIPCode 之间的相关性 (φ²): 0.8578433318247203
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 行方向得分: 0.0220, 列方向得分: 0.9870
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['EmergencyService'] 和列 ZIPCode 之间的φ²: 0.9545901138549836
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['EmergencyService'] 和列 ZIPCode 之间的相关性 (φ²): 0.6089269288028331
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['Condition'] 和列 ZIPCode 之间的φ²: 0.9181861660066117
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['Condition'] 和列 ZIPCode 之间的相关性 (φ²): 0.2954136193155617
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['MeasureCode'] 和列 ZIPCode 之间的φ²: 0.8854146304899815
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['MeasureCode'] 和列 ZIPCode 之间的相关性 (φ²): 0.014170700250013123
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['MeasureName'] 和列 ZIPCode 之间的φ²: 0.8854146304899815
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['MeasureName'] 和列 ZIPCode 之间的相关性 (φ²): 0.014170700250013123
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['Sample'] 和列 ZIPCode 之间的φ²: 0.9103758428698717
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['Sample'] 和列 ZIPCode 之间的相关性 (φ²): 0.0
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['StateAvg'] 和列 ZIPCode 之间的φ²: 0.9229563492063487
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['StateAvg'] 和列 ZIPCode 之间的相关性 (φ²): 0.08140262515261933
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['HospitalType', 'EmergencyService'] 和列 ZIPCode 之间的φ²: 0.9617660429933578
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['HospitalType', 'EmergencyService'] 和列 ZIPCode 之间的相关性 (φ²): 0.6707265254341761
+2025-06-10 16:05:37 - SearchSpace_bit - INFO - 发现函数依赖: ['HospitalType', 'EmergencyService'] -> ZIPCode
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['HospitalType', 'Condition'] 和列 ZIPCode 之间的φ²: 0.8767720571552637
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['HospitalType', 'Condition'] 和列 ZIPCode 之间的相关性 (φ²): 0.0
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['EmergencyService', 'Condition'] 和列 ZIPCode 之间的φ²: 0.9262842580446272
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['EmergencyService', 'Condition'] 和列 ZIPCode 之间的相关性 (φ²): 0.36515494643605706
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['HospitalType', 'MeasureCode'] 和列 ZIPCode 之间的φ²: 0.8635327605038784
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['HospitalType', 'MeasureCode'] 和列 ZIPCode 之间的相关性 (φ²): 0.0
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['EmergencyService', 'MeasureCode'] 和列 ZIPCode 之间的φ²: 0.8837163306304945
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['EmergencyService', 'MeasureCode'] 和列 ZIPCode 之间的相关性 (φ²): 0.0
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['Condition', 'MeasureCode'] 和列 ZIPCode 之间的φ²: 0.8898217600865271
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['Condition', 'MeasureCode'] 和列 ZIPCode 之间的相关性 (φ²): 0.051137399365867704
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['HospitalType', 'MeasureName'] 和列 ZIPCode 之间的φ²: 0.8635327605038784
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['HospitalType', 'MeasureName'] 和列 ZIPCode 之间的相关性 (φ²): 0.0
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['EmergencyService', 'MeasureName'] 和列 ZIPCode 之间的φ²: 0.8837163306304945
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['EmergencyService', 'MeasureName'] 和列 ZIPCode 之间的相关性 (φ²): 0.0
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['Condition', 'MeasureName'] 和列 ZIPCode 之间的φ²: 0.8898217600865271
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['Condition', 'MeasureName'] 和列 ZIPCode 之间的相关性 (φ²): 0.051137399365867704
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['MeasureCode', 'MeasureName'] 和列 ZIPCode 之间的φ²: 0.8854146304899815
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['MeasureCode', 'MeasureName'] 和列 ZIPCode 之间的相关性 (φ²): 0.014170700250013123
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['HospitalType', 'StateAvg'] 和列 ZIPCode 之间的φ²: 0.8911948205458963
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['HospitalType', 'StateAvg'] 和列 ZIPCode 之间的相关性 (φ²): 0.06296229073577948
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['EmergencyService', 'StateAvg'] 和列 ZIPCode 之间的φ²: 0.885132738214749
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['EmergencyService', 'StateAvg'] 和列 ZIPCode 之间的相关性 (φ²): 0.0107552196252959
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['Condition', 'StateAvg'] 和列 ZIPCode 之间的φ²: 0.8915406438239918
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['Condition', 'StateAvg'] 和列 ZIPCode 之间的相关性 (φ²): 0.06594054465661929
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['MeasureCode', 'StateAvg'] 和列 ZIPCode 之间的φ²: 0.8903006001688029
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['MeasureCode', 'StateAvg'] 和列 ZIPCode 之间的相关性 (φ²): 0.056206887659183254
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['MeasureName', 'StateAvg'] 和列 ZIPCode 之间的φ²: 0.8903006001688029
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['MeasureName', 'StateAvg'] 和列 ZIPCode 之间的相关性 (φ²): 0.056206887659183254
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-10 16:05:37 - Cafd - INFO - Processing search space: <SearchSpace_bit.SearchSpace object at 0x0000026CACAAF2B0>
+2025-06-10 16:05:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: ProviderNumber->CountyName
+2025-06-10 16:05:37 - SearchSpace_bit - INFO - 发现函数依赖: ['ProviderNumber'] -> CountyName
+2025-06-10 16:05:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: HospitalName->CountyName
+2025-06-10 16:05:37 - SearchSpace_bit - INFO - 发现函数依赖: ['HospitalName'] -> CountyName
+2025-06-10 16:05:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: City->CountyName
+2025-06-10 16:05:37 - SearchSpace_bit - INFO - 发现函数依赖: ['City'] -> CountyName
+2025-06-10 16:05:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: State->CountyName
+2025-06-10 16:05:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: ZIPCode->CountyName
+2025-06-10 16:05:37 - SearchSpace_bit - INFO - 发现函数依赖: ['ZIPCode'] -> CountyName
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['PhoneNumber'] 和列 CountyName 之间的φ²: 1.0000000000000002
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['PhoneNumber'] 和列 CountyName 之间的相关性 (φ²): 1.0000000000000004
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 行方向得分: 1.0000, 列方向得分: 0.9053
+2025-06-10 16:05:37 - SearchSpace_bit - INFO - 发现函数依赖: ['PhoneNumber'] -> CountyName
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['HospitalType'] 和列 CountyName 之间的φ²: 0.637548560278105
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['HospitalType'] 和列 CountyName 之间的相关性 (φ²): 0.18264336730886438
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['HospitalOwner'] 和列 CountyName 之间的φ²: 0.6648505260488848
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['HospitalOwner'] 和列 CountyName 之间的相关性 (φ²): 0.2442114571621579
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['EmergencyService'] 和列 CountyName 之间的φ²: 0.5984897540392644
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['EmergencyService'] 和列 CountyName 之间的相关性 (φ²): 0.09456267333007932
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['Condition'] 和列 CountyName 之间的φ²: 0.520702349943603
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['Condition'] 和列 CountyName 之间的相关性 (φ²): 0.0
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['MeasureCode'] 和列 CountyName 之间的φ²: 0.5410862777918231
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['MeasureCode'] 和列 CountyName 之间的相关性 (φ²): 0.0
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['MeasureName'] 和列 CountyName 之间的φ²: 0.5410862777918231
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['MeasureName'] 和列 CountyName 之间的相关性 (φ²): 0.0
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['Sample'] 和列 CountyName 之间的φ²: 0.582615045334444
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['Sample'] 和列 CountyName 之间的相关性 (φ²): 0.0
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['StateAvg'] 和列 CountyName 之间的φ²: 0.637621624173934
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['StateAvg'] 和列 CountyName 之间的相关性 (φ²): 0.0599389413717116
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['State', 'HospitalType'] 和列 CountyName 之间的φ²: 0.7308000361971498
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['State', 'HospitalType'] 和列 CountyName 之间的相关性 (φ²): 0.39293281300440785
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['State', 'HospitalOwner'] 和列 CountyName 之间的φ²: 0.6819751513891545
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['State', 'HospitalOwner'] 和列 CountyName 之间的相关性 (φ²): 0.2828288402658361
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['HospitalType', 'HospitalOwner'] 和列 CountyName 之间的φ²: 0.7134936057720326
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['HospitalType', 'HospitalOwner'] 和列 CountyName 之间的相关性 (φ²): 0.35390544507056554
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['State', 'EmergencyService'] 和列 CountyName 之间的φ²: 0.7156910437115774
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['State', 'EmergencyService'] 和列 CountyName 之间的相关性 (φ²): 0.3588608412367175
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['HospitalType', 'EmergencyService'] 和列 CountyName 之间的φ²: 0.6430831762302336
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['HospitalType', 'EmergencyService'] 和列 CountyName 之间的相关性 (φ²): 0.19512436355305499
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['HospitalOwner', 'EmergencyService'] 和列 CountyName 之间的φ²: 0.6600161494509028
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['HospitalOwner', 'EmergencyService'] 和列 CountyName 之间的相关性 (φ²): 0.23330955598521874
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['State', 'StateAvg'] 和列 CountyName 之间的φ²: 0.5839155646493851
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['State', 'StateAvg'] 和列 CountyName 之间的相关性 (φ²): 0.06169672479624314
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['HospitalType', 'StateAvg'] 和列 CountyName 之间的φ²: 0.5733540817094015
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['HospitalType', 'StateAvg'] 和列 CountyName 之间的相关性 (φ²): 0.037879746337905404
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['HospitalOwner', 'StateAvg'] 和列 CountyName 之间的φ²: 0.5347147554162802
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['HospitalOwner', 'StateAvg'] 和列 CountyName 之间的相关性 (φ²): 0.0
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['EmergencyService', 'StateAvg'] 和列 CountyName 之间的φ²: 0.557285694927885
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['EmergencyService', 'StateAvg'] 和列 CountyName 之间的相关性 (φ²): 0.0016442646342148025
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-10 16:05:37 - Cafd - INFO - Processing search space: <SearchSpace_bit.SearchSpace object at 0x0000026CACAAF340>
+2025-06-10 16:05:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: ProviderNumber->PhoneNumber
+2025-06-10 16:05:37 - SearchSpace_bit - INFO - 发现函数依赖: ['ProviderNumber'] -> PhoneNumber
+2025-06-10 16:05:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: HospitalName->PhoneNumber
+2025-06-10 16:05:37 - SearchSpace_bit - INFO - 发现函数依赖: ['HospitalName'] -> PhoneNumber
+2025-06-10 16:05:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: City->PhoneNumber
+2025-06-10 16:05:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: State->PhoneNumber
+2025-06-10 16:05:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: ZIPCode->PhoneNumber
+2025-06-10 16:05:37 - SearchSpace_bit - INFO - 发现函数依赖: ['ZIPCode'] -> PhoneNumber
+2025-06-10 16:05:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: CountyName->PhoneNumber
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['HospitalType'] 和列 PhoneNumber 之间的φ²: 1.0000000000000016
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['HospitalType'] 和列 PhoneNumber 之间的相关性 (φ²): 1.0000000000000158
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 行方向得分: 0.0080, 列方向得分: 1.0000
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['HospitalOwner'] 和列 PhoneNumber 之间的φ²: 0.999999999999996
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['HospitalOwner'] 和列 PhoneNumber 之间的相关性 (φ²): 0.9999999999999593
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 行方向得分: 0.0200, 列方向得分: 1.0000
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['EmergencyService'] 和列 PhoneNumber 之间的φ²: 1.0000000000000149
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['EmergencyService'] 和列 PhoneNumber 之间的相关性 (φ²): 1.0000000000001517
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 行方向得分: 0.0050, 列方向得分: 1.0000
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['Condition'] 和列 PhoneNumber 之间的φ²: 0.9309072898495498
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['Condition'] 和列 PhoneNumber 之间的相关性 (φ²): 0.2956773730581664
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['MeasureCode'] 和列 PhoneNumber 之间的φ²: 0.9017051970602067
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['MeasureCode'] 和列 PhoneNumber 之间的相关性 (φ²): 0.0
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['MeasureName'] 和列 PhoneNumber 之间的φ²: 0.9017051970602067
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['MeasureName'] 和列 PhoneNumber 之间的相关性 (φ²): 0.0
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['Sample'] 和列 PhoneNumber 之间的φ²: 0.9183487683269743
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['Sample'] 和列 PhoneNumber 之间的相关性 (φ²): 0.018801300742792865
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['StateAvg'] 和列 PhoneNumber 之间的φ²: 0.9332374338624334
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['StateAvg'] 和列 PhoneNumber 之间的相关性 (φ²): 0.03737695336531866
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['Condition', 'Sample'] 和列 PhoneNumber 之间的φ²: 0.9043965871359269
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['Condition', 'Sample'] 和列 PhoneNumber 之间的相关性 (φ²): 0.025430515803989157
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['Condition', 'StateAvg'] 和列 PhoneNumber 之间的φ²: 0.9068050260439098
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['Condition', 'StateAvg'] 和列 PhoneNumber 之间的相关性 (φ²): 0.049981847121080385
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['Sample', 'StateAvg'] 和列 PhoneNumber 之间的φ²: 0.9147502124392879
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['Sample', 'StateAvg'] 和列 PhoneNumber 之间的相关性 (φ²): 0.0
+2025-06-10 16:05:37 - Cafd - INFO - Processing search space: <SearchSpace_bit.SearchSpace object at 0x0000026CACAAF3D0>
+2025-06-10 16:05:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: ProviderNumber->HospitalType
+2025-06-10 16:05:37 - SearchSpace_bit - INFO - 发现函数依赖: ['ProviderNumber'] -> HospitalType
+2025-06-10 16:05:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: HospitalName->HospitalType
+2025-06-10 16:05:37 - SearchSpace_bit - INFO - 发现函数依赖: ['HospitalName'] -> HospitalType
+2025-06-10 16:05:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: City->HospitalType
+2025-06-10 16:05:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: State->HospitalType
+2025-06-10 16:05:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: ZIPCode->HospitalType
+2025-06-10 16:05:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: CountyName->HospitalType
+2025-06-10 16:05:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: PhoneNumber->HospitalType
+2025-06-10 16:05:37 - SearchSpace_bit - INFO - 发现函数依赖: ['PhoneNumber'] -> HospitalType
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['HospitalOwner'] 和列 HospitalType 之间的φ²: 0.1394058169726104
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['HospitalOwner'] 和列 HospitalType 之间的相关性 (φ²): 0.13245853799761637
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['EmergencyService'] 和列 HospitalType 之间的φ²: 0.19908569758717135
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['EmergencyService'] 和列 HospitalType 之间的相关性 (φ²): 0.19747904903669425
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['Condition'] 和列 HospitalType 之间的φ²: 0.00395157403749414
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['Condition'] 和列 HospitalType 之间的相关性 (φ²): 0.0
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['MeasureCode'] 和列 HospitalType 之间的φ²: 0.025775057532652565
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['MeasureCode'] 和列 HospitalType 之间的相关性 (φ²): 0.0007435841907371624
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['MeasureName'] 和列 HospitalType 之间的φ²: 0.025775057532652565
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['MeasureName'] 和列 HospitalType 之间的相关性 (φ²): 0.0007435841907371624
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['Sample'] 和列 HospitalType 之间的φ²: 0.2581751807663849
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['Sample'] 和列 HospitalType 之间的相关性 (φ²): 0.04545590410774393
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['StateAvg'] 和列 HospitalType 之间的φ²: 0.4653408628581275
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['StateAvg'] 和列 HospitalType 之间的相关性 (φ²): 0.12766140782115537
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['City', 'State'] 和列 HospitalType 之间的φ²: 0.7827486577486577
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['City', 'State'] 和列 HospitalType 之间的相关性 (φ²): 0.504951859460056
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['City', 'ZIPCode'] 和列 HospitalType 之间的φ²: 0.689580814580813
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['City', 'ZIPCode'] 和列 HospitalType 之间的相关性 (φ²): 0.42723539681503997
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['State', 'ZIPCode'] 和列 HospitalType 之间的φ²: 0.36286493150356647
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['State', 'ZIPCode'] 和列 HospitalType 之间的相关性 (φ²): 0.2476383765627221
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['City', 'CountyName'] 和列 HospitalType 之间的φ²: 0.7995349245349241
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['City', 'CountyName'] 和列 HospitalType 之间的相关性 (φ²): 0.5481408839516939
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['State', 'CountyName'] 和列 HospitalType 之间的φ²: 0.5622669133616084
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['State', 'CountyName'] 和列 HospitalType 之间的相关性 (φ²): 0.27719776272437485
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['ZIPCode', 'CountyName'] 和列 HospitalType 之间的φ²: 0.8757396449704131
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['ZIPCode', 'CountyName'] 和列 HospitalType 之间的相关性 (φ²): 0.7623793210837725
+2025-06-10 16:05:37 - SearchSpace_bit - INFO - 发现函数依赖: ['ZIPCode', 'CountyName'] -> HospitalType
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['City', 'HospitalOwner'] 和列 HospitalType 之间的φ²: 0.9188295438295446
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['City', 'HospitalOwner'] 和列 HospitalType 之间的相关性 (φ²): 0.7697409508634021
+2025-06-10 16:05:37 - SearchSpace_bit - INFO - 发现函数依赖: ['City', 'HospitalOwner'] -> HospitalType
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['State', 'HospitalOwner'] 和列 HospitalType 之间的φ²: 0.5011840037697982
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['State', 'HospitalOwner'] 和列 HospitalType 之间的相关性 (φ²): 0.33646181060722824
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['ZIPCode', 'HospitalOwner'] 和列 HospitalType 之间的φ²: 0.9723865877712021
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['ZIPCode', 'HospitalOwner'] 和列 HospitalType 之间的相关性 (φ²): 0.9421180397511737
+2025-06-10 16:05:37 - SearchSpace_bit - INFO - 发现函数依赖: ['ZIPCode', 'HospitalOwner'] -> HospitalType
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['CountyName', 'HospitalOwner'] 和列 HospitalType 之间的φ²: 0.8685352134381271
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['CountyName', 'HospitalOwner'] 和列 HospitalType 之间的相关性 (φ²): 0.6348200373281309
+2025-06-10 16:05:37 - SearchSpace_bit - INFO - 发现函数依赖: ['CountyName', 'HospitalOwner'] -> HospitalType
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['City', 'EmergencyService'] 和列 HospitalType 之间的φ²: 0.8828926328926336
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['City', 'EmergencyService'] 和列 HospitalType 之间的相关性 (φ²): 0.77391772183439
+2025-06-10 16:05:37 - SearchSpace_bit - INFO - 发现函数依赖: ['City', 'EmergencyService'] -> HospitalType
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['State', 'EmergencyService'] 和列 HospitalType 之间的φ²: 0.36839215912761686
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['State', 'EmergencyService'] 和列 HospitalType 之间的相关性 (φ²): 0.30585672933827196
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['ZIPCode', 'EmergencyService'] 和列 HospitalType 之间的φ²: 0.9999999999999992
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['ZIPCode', 'EmergencyService'] 和列 HospitalType 之间的相关性 (φ²): 0.9999999999999984
+2025-06-10 16:05:37 - SearchSpace_bit - INFO - 发现函数依赖: ['ZIPCode', 'EmergencyService'] -> HospitalType
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['CountyName', 'EmergencyService'] 和列 HospitalType 之间的φ²: 0.7485323101732604
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['CountyName', 'EmergencyService'] 和列 HospitalType 之间的相关性 (φ²): 0.5721099518654954
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['HospitalOwner', 'EmergencyService'] 和列 HospitalType 之间的φ²: 0.38468814671380736
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['HospitalOwner', 'EmergencyService'] 和列 HospitalType 之间的相关性 (φ²): 0.37530839285273737
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['City', 'Sample'] 和列 HospitalType 之间的φ²: 0.9631157131157113
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['City', 'Sample'] 和列 HospitalType 之间的相关性 (φ²): 0.5952434834013584
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['State', 'Sample'] 和列 HospitalType 之间的φ²: 0.6339179708338764
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['State', 'Sample'] 和列 HospitalType 之间的相关性 (φ²): 0.0
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['ZIPCode', 'Sample'] 和列 HospitalType 之间的φ²: 1.0000000000000042
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['ZIPCode', 'Sample'] 和列 HospitalType 之间的相关性 (φ²): 1.000000000000051
+2025-06-10 16:05:37 - SearchSpace_bit - INFO - 发现函数依赖: ['ZIPCode', 'Sample'] -> HospitalType
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['CountyName', 'Sample'] 和列 HospitalType 之间的φ²: 0.8801934042225319
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['CountyName', 'Sample'] 和列 HospitalType 之间的相关性 (φ²): 0.0
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['HospitalOwner', 'Sample'] 和列 HospitalType 之间的φ²: 0.5378925284618747
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['HospitalOwner', 'Sample'] 和列 HospitalType 之间的相关性 (φ²): 0.18002599632933014
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['EmergencyService', 'Sample'] 和列 HospitalType 之间的φ²: 0.4064182373454412
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['EmergencyService', 'Sample'] 和列 HospitalType 之间的相关性 (φ²): 0.24652073584256132
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['City', 'StateAvg'] 和列 HospitalType 之间的φ²: 0.8835280085280082
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['City', 'StateAvg'] 和列 HospitalType 之间的相关性 (φ²): 0.2037898287898262
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['State', 'StateAvg'] 和列 HospitalType 之间的φ²: 0.34096872294372466
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['State', 'StateAvg'] 和列 HospitalType 之间的相关性 (φ²): 0.07009569805195048
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['ZIPCode', 'StateAvg'] 和列 HospitalType 之间的φ²: 0.9585798816568086
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['ZIPCode', 'StateAvg'] 和列 HospitalType 之间的相关性 (φ²): 0.6775147928994386
+2025-06-10 16:05:37 - SearchSpace_bit - INFO - 发现函数依赖: ['ZIPCode', 'StateAvg'] -> HospitalType
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['CountyName', 'StateAvg'] 和列 HospitalType 之间的φ²: 0.8251599662248943
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['CountyName', 'StateAvg'] 和列 HospitalType 之间的相关性 (φ²): 0.1324731148563458
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['HospitalOwner', 'StateAvg'] 和列 HospitalType 之间的φ²: 0.5239947970909973
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['HospitalOwner', 'StateAvg'] 和列 HospitalType 之间的相关性 (φ²): 0.027547652952773498
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['EmergencyService', 'StateAvg'] 和列 HospitalType 之间的φ²: 0.43302851121796115
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['EmergencyService', 'StateAvg'] 和列 HospitalType 之间的相关性 (φ²): 0.18502947152049376
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['Sample', 'StateAvg'] 和列 HospitalType 之间的φ²: 0.7465073756445755
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['Sample', 'StateAvg'] 和列 HospitalType 之间的相关性 (φ²): 0.0
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-10 16:05:37 - Cafd - INFO - Processing search space: <SearchSpace_bit.SearchSpace object at 0x0000026CACAAF460>
+2025-06-10 16:05:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: ProviderNumber->HospitalOwner
+2025-06-10 16:05:37 - SearchSpace_bit - INFO - 发现函数依赖: ['ProviderNumber'] -> HospitalOwner
+2025-06-10 16:05:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: HospitalName->HospitalOwner
+2025-06-10 16:05:37 - SearchSpace_bit - INFO - 发现函数依赖: ['HospitalName'] -> HospitalOwner
+2025-06-10 16:05:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: City->HospitalOwner
+2025-06-10 16:05:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: State->HospitalOwner
+2025-06-10 16:05:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: ZIPCode->HospitalOwner
+2025-06-10 16:05:37 - SearchSpace_bit - INFO - 发现函数依赖: ['ZIPCode'] -> HospitalOwner
+2025-06-10 16:05:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: CountyName->HospitalOwner
+2025-06-10 16:05:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: PhoneNumber->HospitalOwner
+2025-06-10 16:05:37 - SearchSpace_bit - INFO - 发现函数依赖: ['PhoneNumber'] -> HospitalOwner
+2025-06-10 16:05:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: HospitalType->HospitalOwner
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['EmergencyService'] 和列 HospitalOwner 之间的φ²: 0.05506289716299102
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['EmergencyService'] 和列 HospitalOwner 之间的相关性 (φ²): 0.04743474698872657
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['Condition'] 和列 HospitalOwner 之间的φ²: 0.008030555844932905
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['Condition'] 和列 HospitalOwner 之间的相关性 (φ²): 2.2729857808246258e-05
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['MeasureCode'] 和列 HospitalOwner 之间的φ²: 0.021926813470389352
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['MeasureCode'] 和列 HospitalOwner 之间的相关性 (φ²): 0.0
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['MeasureName'] 和列 HospitalOwner 之间的φ²: 0.021926813470389352
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['MeasureName'] 和列 HospitalOwner 之间的相关性 (φ²): 0.0
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['Sample'] 和列 HospitalOwner 之间的φ²: 0.2240874562801723
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['Sample'] 和列 HospitalOwner 之间的相关性 (φ²): 0.0015934782262108254
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['StateAvg'] 和列 HospitalOwner 之间的φ²: 0.41362793241377743
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['StateAvg'] 和列 HospitalOwner 之间的相关性 (φ²): 0.04328767920142636
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['City', 'State'] 和列 HospitalOwner 之间的φ²: 0.8159618546806
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['City', 'State'] 和列 HospitalOwner 之间的相关性 (φ²): 0.5806343901738263
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['City', 'CountyName'] 和列 HospitalOwner 之间的φ²: 0.8155103456779231
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['City', 'CountyName'] 和列 HospitalOwner 之间的相关性 (φ²): 0.5841503467442917
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['State', 'CountyName'] 和列 HospitalOwner 之间的φ²: 0.5168212880787216
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['State', 'CountyName'] 和列 HospitalOwner 之间的相关性 (φ²): 0.20215614345560812
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['City', 'HospitalType'] 和列 HospitalOwner 之间的φ²: 0.7692871261993957
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['City', 'HospitalType'] 和列 HospitalOwner 之间的相关性 (φ²): 0.5461921303073018
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['State', 'HospitalType'] 和列 HospitalOwner 之间的φ²: 0.21312690644016286
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['State', 'HospitalType'] 和列 HospitalOwner 之间的相关性 (φ²): 0.11276950285973215
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['CountyName', 'HospitalType'] 和列 HospitalOwner 之间的φ²: 0.5926939592696298
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['CountyName', 'HospitalType'] 和列 HospitalOwner 之间的相关性 (φ²): 0.2825232344857977
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['City', 'EmergencyService'] 和列 HospitalOwner 之间的φ²: 0.7679017315163759
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['City', 'EmergencyService'] 和列 HospitalOwner 之间的相关性 (φ²): 0.5519213983441145
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['State', 'EmergencyService'] 和列 HospitalOwner 之间的φ²: 0.18033598988957317
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['State', 'EmergencyService'] 和列 HospitalOwner 之间的相关性 (φ²): 0.0991811374033923
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['CountyName', 'EmergencyService'] 和列 HospitalOwner 之间的φ²: 0.5640432697971884
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['CountyName', 'EmergencyService'] 和列 HospitalOwner 之间的相关性 (φ²): 0.25818880986432585
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['HospitalType', 'EmergencyService'] 和列 HospitalOwner 之间的φ²: 0.07490642994577194
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['HospitalType', 'EmergencyService'] 和列 HospitalOwner 之间的相关性 (φ²): 0.06837855193127639
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['City', 'StateAvg'] 和列 HospitalOwner 之间的φ²: 0.9127413628350627
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['City', 'StateAvg'] 和列 HospitalOwner 之间的相关性 (φ²): 0.40349423446264154
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['State', 'StateAvg'] 和列 HospitalOwner 之间的φ²: 0.3314889958570303
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['State', 'StateAvg'] 和列 HospitalOwner 之间的相关性 (φ²): 0.056719642459284285
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['CountyName', 'StateAvg'] 和列 HospitalOwner 之间的φ²: 0.8011803842561117
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['CountyName', 'StateAvg'] 和列 HospitalOwner 之间的相关性 (φ²): 0.01349045623261544
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['HospitalType', 'StateAvg'] 和列 HospitalOwner 之间的φ²: 0.3325119849366013
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['HospitalType', 'StateAvg'] 和列 HospitalOwner 之间的相关性 (φ²): 0.0
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['EmergencyService', 'StateAvg'] 和列 HospitalOwner 之间的φ²: 0.29923598665353557
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['EmergencyService', 'StateAvg'] 和列 HospitalOwner 之间的相关性 (φ²): 0.0
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-10 16:05:37 - Cafd - INFO - Processing search space: <SearchSpace_bit.SearchSpace object at 0x0000026CACAAF4F0>
+2025-06-10 16:05:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: ProviderNumber->EmergencyService
+2025-06-10 16:05:37 - SearchSpace_bit - INFO - 发现函数依赖: ['ProviderNumber'] -> EmergencyService
+2025-06-10 16:05:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: HospitalName->EmergencyService
+2025-06-10 16:05:37 - SearchSpace_bit - INFO - 发现函数依赖: ['HospitalName'] -> EmergencyService
+2025-06-10 16:05:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: City->EmergencyService
+2025-06-10 16:05:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: State->EmergencyService
+2025-06-10 16:05:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: ZIPCode->EmergencyService
+2025-06-10 16:05:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: CountyName->EmergencyService
+2025-06-10 16:05:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: PhoneNumber->EmergencyService
+2025-06-10 16:05:37 - SearchSpace_bit - INFO - 发现函数依赖: ['PhoneNumber'] -> EmergencyService
+2025-06-10 16:05:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: HospitalType->EmergencyService
+2025-06-10 16:05:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: HospitalOwner->EmergencyService
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['Condition'] 和列 EmergencyService 之间的φ²: 0.002690429764067858
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['Condition'] 和列 EmergencyService 之间的相关性 (φ²): 0.0
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['MeasureCode'] 和列 EmergencyService 之间的φ²: 0.015176723489113962
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['MeasureCode'] 和列 EmergencyService 之间的相关性 (φ²): 0.0
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['MeasureName'] 和列 EmergencyService 之间的φ²: 0.015176723489113962
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['MeasureName'] 和列 EmergencyService 之间的相关性 (φ²): 0.0
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['Sample'] 和列 EmergencyService 之间的φ²: 0.1937910406658439
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['Sample'] 和列 EmergencyService 之间的相关性 (φ²): 0.0
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['StateAvg'] 和列 EmergencyService 之间的φ²: 0.4304357010826507
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['StateAvg'] 和列 EmergencyService 之间的相关性 (φ²): 0.07071088071379857
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['City', 'State'] 和列 EmergencyService 之间的φ²: 0.6762726913970035
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['City', 'State'] 和列 EmergencyService 之间的相关性 (φ²): 0.26232629678989333
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['City', 'ZIPCode'] 和列 EmergencyService 之间的φ²: 0.6157886082609884
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['City', 'ZIPCode'] 和列 EmergencyService 之间的相关性 (φ²): 0.29107898072934585
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['State', 'ZIPCode'] 和列 EmergencyService 之间的φ²: 0.24800769233046663
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['State', 'ZIPCode'] 和列 EmergencyService 之间的相关性 (φ²): 0.11200908349661486
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['City', 'CountyName'] 和列 EmergencyService 之间的φ²: 0.7003288608261021
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['City', 'CountyName'] 和列 EmergencyService 之间的相关性 (φ²): 0.32452505386207886
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['State', 'CountyName'] 和列 EmergencyService 之间的φ²: 0.43885431649532075
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['State', 'CountyName'] 和列 EmergencyService 之间的相关性 (φ²): 0.07341398707243874
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['ZIPCode', 'CountyName'] 和列 EmergencyService 之间的φ²: 0.8216031280547418
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['ZIPCode', 'CountyName'] 和列 EmergencyService 之间的相关性 (φ²): 0.6588551045257343
+2025-06-10 16:05:37 - SearchSpace_bit - INFO - 发现函数依赖: ['ZIPCode', 'CountyName'] -> EmergencyService
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['City', 'HospitalType'] 和列 EmergencyService 之间的φ²: 0.7859000920810345
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['City', 'HospitalType'] 和列 EmergencyService 之间的相关性 (φ²): 0.5788695207442991
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['State', 'HospitalType'] 和列 EmergencyService 之间的φ²: 0.32441110940120393
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['State', 'HospitalType'] 和列 EmergencyService 之间的相关性 (φ²): 0.23824683780113173
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['ZIPCode', 'HospitalType'] 和列 EmergencyService 之间的φ²: 0.9286412512218972
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['ZIPCode', 'HospitalType'] 和列 EmergencyService 之间的相关性 (φ²): 0.85857993423976
+2025-06-10 16:05:37 - SearchSpace_bit - INFO - 发现函数依赖: ['ZIPCode', 'HospitalType'] -> EmergencyService
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['CountyName', 'HospitalType'] 和列 EmergencyService 之间的φ²: 0.62349071001106
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['CountyName', 'HospitalType'] 和列 EmergencyService 之间的相关性 (φ²): 0.3367722534070164
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['City', 'HospitalOwner'] 和列 EmergencyService 之间的φ²: 0.903775322283613
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['City', 'HospitalOwner'] 和列 EmergencyService 之间的相关性 (φ²): 0.727036118314739
+2025-06-10 16:05:37 - SearchSpace_bit - INFO - 发现函数依赖: ['City', 'HospitalOwner'] -> EmergencyService
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['State', 'HospitalOwner'] 和列 EmergencyService 之间的φ²: 0.3679286282015846
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['State', 'HospitalOwner'] 和列 EmergencyService 之间的相关性 (φ²): 0.15920199676881894
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['ZIPCode', 'HospitalOwner'] 和列 EmergencyService 之间的φ²: 0.9583740632127739
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['ZIPCode', 'HospitalOwner'] 和列 EmergencyService 之间的相关性 (φ²): 0.912745632503699
+2025-06-10 16:05:37 - SearchSpace_bit - INFO - 发现函数依赖: ['ZIPCode', 'HospitalOwner'] -> EmergencyService
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['CountyName', 'HospitalOwner'] 和列 EmergencyService 之间的φ²: 0.8060098364588666
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['CountyName', 'HospitalOwner'] 和列 EmergencyService 之间的相关性 (φ²): 0.4611384346079627
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['HospitalType', 'HospitalOwner'] 和列 EmergencyService 之间的φ²: 0.21746672443580065
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['HospitalType', 'HospitalOwner'] 和列 EmergencyService 之间的相关性 (φ²): 0.20472966196476586
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['City', 'StateAvg'] 和列 EmergencyService 之间的φ²: 0.8642544725072355
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['City', 'StateAvg'] 和列 EmergencyService 之间的相关性 (φ²): 0.07203467271339684
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['State', 'StateAvg'] 和列 EmergencyService 之间的φ²: 0.32531143241271343
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['State', 'StateAvg'] 和列 EmergencyService 之间的相关性 (φ²): 0.04800299573488804
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['ZIPCode', 'StateAvg'] 和列 EmergencyService 之间的φ²: 0.9464809384164258
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['ZIPCode', 'StateAvg'] 和列 EmergencyService 之间的相关性 (φ²): 0.5833158776707436
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['CountyName', 'StateAvg'] 和列 EmergencyService 之间的φ²: 0.8068671944766467
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['CountyName', 'StateAvg'] 和列 EmergencyService 之间的相关性 (φ²): 0.041707453510079005
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['HospitalType', 'StateAvg'] 和列 EmergencyService 之间的φ²: 0.4808544413657391
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['HospitalType', 'StateAvg'] 和列 EmergencyService 之间的相关性 (φ²): 0.2201106570291329
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['HospitalOwner', 'StateAvg'] 和列 EmergencyService 之间的φ²: 0.52275029800733
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['HospitalOwner', 'StateAvg'] 和列 EmergencyService 之间的相关性 (φ²): 0.025005210039514524
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-10 16:05:37 - Cafd - INFO - Processing search space: <SearchSpace_bit.SearchSpace object at 0x0000026CACAAF580>
+2025-06-10 16:05:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: ProviderNumber->Condition
+2025-06-10 16:05:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: HospitalName->Condition
+2025-06-10 16:05:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: City->Condition
+2025-06-10 16:05:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: State->Condition
+2025-06-10 16:05:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: ZIPCode->Condition
+2025-06-10 16:05:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: CountyName->Condition
+2025-06-10 16:05:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: PhoneNumber->Condition
+2025-06-10 16:05:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: HospitalType->Condition
+2025-06-10 16:05:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: HospitalOwner->Condition
+2025-06-10 16:05:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: EmergencyService->Condition
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['MeasureCode'] 和列 Condition 之间的φ²: 0.9999999999999998
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['MeasureCode'] 和列 Condition 之间的相关性 (φ²): 0.9999999999999998
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 行方向得分: 1.0000, 列方向得分: 0.1942
+2025-06-10 16:05:37 - SearchSpace_bit - INFO - 发现函数依赖: ['MeasureCode'] -> Condition
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['MeasureName'] 和列 Condition 之间的φ²: 0.9999999999999998
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['MeasureName'] 和列 Condition 之间的相关性 (φ²): 0.9999999999999998
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 行方向得分: 1.0000, 列方向得分: 0.1942
+2025-06-10 16:05:37 - SearchSpace_bit - INFO - 发现函数依赖: ['MeasureName'] -> Condition
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['Sample'] 和列 Condition 之间的φ²: 0.26841484296032775
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['Sample'] 和列 Condition 之间的相关性 (φ²): 0.058631803373634085
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['StateAvg'] 和列 Condition 之间的φ²: 0.9999999999999998
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['StateAvg'] 和列 Condition 之间的相关性 (φ²): 0.9999999999999997
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 行方向得分: 1.0000, 列方向得分: 0.0435
+2025-06-10 16:05:37 - SearchSpace_bit - INFO - 发现函数依赖: ['StateAvg'] -> Condition
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['ProviderNumber', 'HospitalName'] 和列 Condition 之间的φ²: 0.5110567075115596
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['ProviderNumber', 'HospitalName'] 和列 Condition 之间的相关性 (φ²): 0.05739798252228508
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['ProviderNumber', 'ZIPCode'] 和列 Condition 之间的φ²: 0.5110567075115596
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['ProviderNumber', 'ZIPCode'] 和列 Condition 之间的相关性 (φ²): 0.05739798252228508
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['HospitalName', 'ZIPCode'] 和列 Condition 之间的φ²: 0.5079472885343673
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['HospitalName', 'ZIPCode'] 和列 Condition 之间的相关性 (φ²): 0.04869809116644346
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['ProviderNumber', 'PhoneNumber'] 和列 Condition 之间的φ²: 0.5110567075115596
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['ProviderNumber', 'PhoneNumber'] 和列 Condition 之间的相关性 (φ²): 0.05739798252228508
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['HospitalName', 'PhoneNumber'] 和列 Condition 之间的φ²: 0.5079472885343673
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['HospitalName', 'PhoneNumber'] 和列 Condition 之间的相关性 (φ²): 0.04869809116644346
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['ZIPCode', 'PhoneNumber'] 和列 Condition 之间的φ²: 0.5160453127119784
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['ZIPCode', 'PhoneNumber'] 和列 Condition 之间的相关性 (φ²): 0.04088980155646623
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['ProviderNumber', 'Sample'] 和列 Condition 之间的φ²: 0.9412041602535404
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['ProviderNumber', 'Sample'] 和列 Condition 之间的相关性 (φ²): 0.21465556910086026
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['HospitalName', 'Sample'] 和列 Condition 之间的φ²: 0.940698568978853
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['HospitalName', 'Sample'] 和列 Condition 之间的相关性 (φ²): 0.24761309391919703
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['ZIPCode', 'Sample'] 和列 Condition 之间的φ²: 0.9217582417582411
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['ZIPCode', 'Sample'] 和列 Condition 之间的相关性 (φ²): 0.05240537240536335
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['PhoneNumber', 'Sample'] 和列 Condition 之间的φ²: 0.942190431519699
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['PhoneNumber', 'Sample'] 和列 Condition 之间的相关性 (φ²): 0.2195708255159357
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-10 16:05:37 - Cafd - INFO - Processing search space: <SearchSpace_bit.SearchSpace object at 0x0000026CACAAF610>
+2025-06-10 16:05:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: ProviderNumber->MeasureCode
+2025-06-10 16:05:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: HospitalName->MeasureCode
+2025-06-10 16:05:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: City->MeasureCode
+2025-06-10 16:05:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: State->MeasureCode
+2025-06-10 16:05:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: ZIPCode->MeasureCode
+2025-06-10 16:05:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: CountyName->MeasureCode
+2025-06-10 16:05:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: PhoneNumber->MeasureCode
+2025-06-10 16:05:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: HospitalType->MeasureCode
+2025-06-10 16:05:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: HospitalOwner->MeasureCode
+2025-06-10 16:05:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: EmergencyService->MeasureCode
+2025-06-10 16:05:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: Condition->MeasureCode
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['MeasureName'] 和列 MeasureCode 之间的φ²: 1.0
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['MeasureName'] 和列 MeasureCode 之间的相关性 (φ²): 1.0
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 行方向得分: 1.0000, 列方向得分: 1.0000
+2025-06-10 16:05:37 - SearchSpace_bit - INFO - 发现函数依赖: ['MeasureName'] -> MeasureCode
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['Sample'] 和列 MeasureCode 之间的φ²: 0.2572362507154683
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['Sample'] 和列 MeasureCode 之间的相关性 (φ²): 0.044247734586691526
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['StateAvg'] 和列 MeasureCode 之间的φ²: 0.9999999999999996
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['StateAvg'] 和列 MeasureCode 之间的相关性 (φ²): 0.9999999999999992
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 行方向得分: 1.0000, 列方向得分: 0.1900
+2025-06-10 16:05:37 - SearchSpace_bit - INFO - 发现函数依赖: ['StateAvg'] -> MeasureCode
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['ZIPCode', 'Sample'] 和列 MeasureCode 之间的φ²: 0.9210309944684957
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['ZIPCode', 'Sample'] 和列 MeasureCode 之间的相关性 (φ²): 0.043597599674002625
+2025-06-10 16:05:37 - Cafd - INFO - Processing search space: <SearchSpace_bit.SearchSpace object at 0x0000026CACAAF6A0>
+2025-06-10 16:05:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: ProviderNumber->MeasureName
+2025-06-10 16:05:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: HospitalName->MeasureName
+2025-06-10 16:05:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: City->MeasureName
+2025-06-10 16:05:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: State->MeasureName
+2025-06-10 16:05:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: ZIPCode->MeasureName
+2025-06-10 16:05:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: CountyName->MeasureName
+2025-06-10 16:05:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: PhoneNumber->MeasureName
+2025-06-10 16:05:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: HospitalType->MeasureName
+2025-06-10 16:05:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: HospitalOwner->MeasureName
+2025-06-10 16:05:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: EmergencyService->MeasureName
+2025-06-10 16:05:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: Condition->MeasureName
+2025-06-10 16:05:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: MeasureCode->MeasureName
+2025-06-10 16:05:37 - SearchSpace_bit - INFO - 发现函数依赖: ['MeasureCode'] -> MeasureName
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['Sample'] 和列 MeasureName 之间的φ²: 0.2572362507154683
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['Sample'] 和列 MeasureName 之间的相关性 (φ²): 0.044247734586691526
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['StateAvg'] 和列 MeasureName 之间的φ²: 0.9999999999999996
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['StateAvg'] 和列 MeasureName 之间的相关性 (φ²): 0.9999999999999992
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 行方向得分: 1.0000, 列方向得分: 0.1900
+2025-06-10 16:05:37 - SearchSpace_bit - INFO - 发现函数依赖: ['StateAvg'] -> MeasureName
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['ZIPCode', 'Sample'] 和列 MeasureName 之间的φ²: 0.9210309944684957
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['ZIPCode', 'Sample'] 和列 MeasureName 之间的相关性 (φ²): 0.043597599674002625
+2025-06-10 16:05:37 - Cafd - INFO - Processing search space: <SearchSpace_bit.SearchSpace object at 0x0000026CACAAF730>
+2025-06-10 16:05:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: ProviderNumber->Sample
+2025-06-10 16:05:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: HospitalName->Sample
+2025-06-10 16:05:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: City->Sample
+2025-06-10 16:05:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: State->Sample
+2025-06-10 16:05:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: ZIPCode->Sample
+2025-06-10 16:05:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: CountyName->Sample
+2025-06-10 16:05:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: PhoneNumber->Sample
+2025-06-10 16:05:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: HospitalType->Sample
+2025-06-10 16:05:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: HospitalOwner->Sample
+2025-06-10 16:05:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: EmergencyService->Sample
+2025-06-10 16:05:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: Condition->Sample
+2025-06-10 16:05:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: MeasureCode->Sample
+2025-06-10 16:05:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: MeasureName->Sample
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['StateAvg'] 和列 Sample 之间的φ²: 0.43400131295258404
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['StateAvg'] 和列 Sample 之间的相关性 (φ²): 0.0
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['ProviderNumber', 'HospitalName'] 和列 Sample 之间的φ²: 0.6585564480142794
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['ProviderNumber', 'HospitalName'] 和列 Sample 之间的相关性 (φ²): 0.0
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['ProviderNumber', 'PhoneNumber'] 和列 Sample 之间的φ²: 0.6585564480142794
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['ProviderNumber', 'PhoneNumber'] 和列 Sample 之间的相关性 (φ²): 0.0
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['HospitalName', 'PhoneNumber'] 和列 Sample 之间的φ²: 0.6286717251002965
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['HospitalName', 'PhoneNumber'] 和列 Sample 之间的相关性 (φ²): 0.0
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['ProviderNumber', 'HospitalType'] 和列 Sample 之间的φ²: 0.6585564480142794
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['ProviderNumber', 'HospitalType'] 和列 Sample 之间的相关性 (φ²): 0.0
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['HospitalName', 'HospitalType'] 和列 Sample 之间的φ²: 0.6285927632701825
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['HospitalName', 'HospitalType'] 和列 Sample 之间的相关性 (φ²): 0.0
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['PhoneNumber', 'HospitalType'] 和列 Sample 之间的φ²: 0.6566688712522045
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['PhoneNumber', 'HospitalType'] 和列 Sample 之间的相关性 (φ²): 0.0
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['ProviderNumber', 'Condition'] 和列 Sample 之间的φ²: 0.8197040498442367
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['ProviderNumber', 'Condition'] 和列 Sample 之间的相关性 (φ²): 0.0
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['HospitalName', 'Condition'] 和列 Sample 之间的φ²: 0.8235012755102039
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['HospitalName', 'Condition'] 和列 Sample 之间的相关性 (φ²): 0.0
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['PhoneNumber', 'Condition'] 和列 Sample 之间的φ²: 0.8236882716049382
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['PhoneNumber', 'Condition'] 和列 Sample 之间的相关性 (φ²): 0.0
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['HospitalType', 'Condition'] 和列 Sample 之间的φ²: 0.3281407973362931
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['HospitalType', 'Condition'] 和列 Sample 之间的相关性 (φ²): 0.0
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['ProviderNumber', 'MeasureCode'] 和列 Sample 之间的φ²: 1.0
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['ProviderNumber', 'MeasureCode'] 和列 Sample 之间的相关性 (φ²): 0.0
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['HospitalName', 'MeasureCode'] 和列 Sample 之间的φ²: 0.9999999999999997
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['HospitalName', 'MeasureCode'] 和列 Sample 之间的相关性 (φ²): 0.0
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['PhoneNumber', 'MeasureCode'] 和列 Sample 之间的φ²: 0.9999999999999998
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['PhoneNumber', 'MeasureCode'] 和列 Sample 之间的相关性 (φ²): 0.0
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['HospitalType', 'MeasureCode'] 和列 Sample 之间的φ²: 0.29001163644642947
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['HospitalType', 'MeasureCode'] 和列 Sample 之间的相关性 (φ²): 0.0
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['Condition', 'MeasureCode'] 和列 Sample 之间的φ²: 0.3732180680269216
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['Condition', 'MeasureCode'] 和列 Sample 之间的相关性 (φ²): 0.037645164338975794
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['ProviderNumber', 'MeasureName'] 和列 Sample 之间的φ²: 1.0
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['ProviderNumber', 'MeasureName'] 和列 Sample 之间的相关性 (φ²): 0.0
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['HospitalName', 'MeasureName'] 和列 Sample 之间的φ²: 0.9999999999999997
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['HospitalName', 'MeasureName'] 和列 Sample 之间的相关性 (φ²): 0.0
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['PhoneNumber', 'MeasureName'] 和列 Sample 之间的φ²: 0.9999999999999998
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['PhoneNumber', 'MeasureName'] 和列 Sample 之间的相关性 (φ²): 0.0
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['HospitalType', 'MeasureName'] 和列 Sample 之间的φ²: 0.29001163644642947
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['HospitalType', 'MeasureName'] 和列 Sample 之间的相关性 (φ²): 0.0
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['Condition', 'MeasureName'] 和列 Sample 之间的φ²: 0.3732180680269216
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['Condition', 'MeasureName'] 和列 Sample 之间的相关性 (φ²): 0.037645164338975794
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['MeasureCode', 'MeasureName'] 和列 Sample 之间的φ²: 0.3839048948090439
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['MeasureCode', 'MeasureName'] 和列 Sample 之间的相关性 (φ²): 0.05345388384298559
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-10 16:05:37 - Cafd - INFO - Processing search space: <SearchSpace_bit.SearchSpace object at 0x0000026CACAAF7C0>
+2025-06-10 16:05:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: ProviderNumber->StateAvg
+2025-06-10 16:05:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: HospitalName->StateAvg
+2025-06-10 16:05:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: City->StateAvg
+2025-06-10 16:05:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: State->StateAvg
+2025-06-10 16:05:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: ZIPCode->StateAvg
+2025-06-10 16:05:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: CountyName->StateAvg
+2025-06-10 16:05:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: PhoneNumber->StateAvg
+2025-06-10 16:05:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: HospitalType->StateAvg
+2025-06-10 16:05:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: HospitalOwner->StateAvg
+2025-06-10 16:05:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: EmergencyService->StateAvg
+2025-06-10 16:05:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: Condition->StateAvg
+2025-06-10 16:05:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: MeasureCode->StateAvg
+2025-06-10 16:05:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: MeasureName->StateAvg
+2025-06-10 16:05:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: Sample->StateAvg
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['ProviderNumber', 'HospitalName'] 和列 StateAvg 之间的φ²: 0.8966049382716048
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['ProviderNumber', 'HospitalName'] 和列 StateAvg 之间的相关性 (φ²): 0.03325617283950484
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['ProviderNumber', 'City'] 和列 StateAvg 之间的φ²: 0.8966049382716048
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['ProviderNumber', 'City'] 和列 StateAvg 之间的相关性 (φ²): 0.03325617283950484
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['HospitalName', 'City'] 和列 StateAvg 之间的φ²: 0.8965141612200437
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['HospitalName', 'City'] 和列 StateAvg 之间的相关性 (φ²): 0.04510794216676651
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['ProviderNumber', 'ZIPCode'] 和列 StateAvg 之间的φ²: 0.8966049382716048
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['ProviderNumber', 'ZIPCode'] 和列 StateAvg 之间的相关性 (φ²): 0.03325617283950484
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['HospitalName', 'ZIPCode'] 和列 StateAvg 之间的φ²: 0.8948412698412699
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['HospitalName', 'ZIPCode'] 和列 StateAvg 之间的相关性 (φ²): 0.029671717171717356
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['City', 'ZIPCode'] 和列 StateAvg 之间的φ²: 0.7963278068644561
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['City', 'ZIPCode'] 和列 StateAvg 之间的相关性 (φ²): 0.023778108764117546
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['ProviderNumber', 'CountyName'] 和列 StateAvg 之间的φ²: 0.8966049382716048
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['ProviderNumber', 'CountyName'] 和列 StateAvg 之间的相关性 (φ²): 0.03325617283950484
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['HospitalName', 'CountyName'] 和列 StateAvg 之间的φ²: 0.8970899470899472
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['HospitalName', 'CountyName'] 和列 StateAvg 之间的相关性 (φ²): 0.05042087542087587
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['City', 'CountyName'] 和列 StateAvg 之间的φ²: 0.8133949952107281
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['City', 'CountyName'] 和列 StateAvg 之间的相关性 (φ²): 0.1055829080790073
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['ZIPCode', 'CountyName'] 和列 StateAvg 之间的φ²: 0.8693910256410257
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['ZIPCode', 'CountyName'] 和列 StateAvg 之间的相关性 (φ²): 0.05090811965811947
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['ProviderNumber', 'PhoneNumber'] 和列 StateAvg 之间的φ²: 0.8966049382716048
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['ProviderNumber', 'PhoneNumber'] 和列 StateAvg 之间的相关性 (φ²): 0.03325617283950484
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['HospitalName', 'PhoneNumber'] 和列 StateAvg 之间的φ²: 0.8948412698412699
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['HospitalName', 'PhoneNumber'] 和列 StateAvg 之间的相关性 (φ²): 0.029671717171717356
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['City', 'PhoneNumber'] 和列 StateAvg 之间的φ²: 0.7978548574752767
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['City', 'PhoneNumber'] 和列 StateAvg 之间的相关性 (φ²): 0.03109742031253348
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['ZIPCode', 'PhoneNumber'] 和列 StateAvg 之间的φ²: 0.8701131687242799
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['ZIPCode', 'PhoneNumber'] 和列 StateAvg 之间的相关性 (φ²): 0.05615569272976699
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['CountyName', 'PhoneNumber'] 和列 StateAvg 之间的φ²: 0.730028407907345
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['CountyName', 'PhoneNumber'] 和列 StateAvg 之间的相关性 (φ²): 0.09545600587512502
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['ProviderNumber', 'HospitalType'] 和列 StateAvg 之间的φ²: 0.8966049382716048
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['ProviderNumber', 'HospitalType'] 和列 StateAvg 之间的相关性 (φ²): 0.03325617283950484
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['HospitalName', 'HospitalType'] 和列 StateAvg 之间的φ²: 0.897964796479648
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['HospitalName', 'HospitalType'] 和列 StateAvg 之间的相关性 (φ²): 0.05849334933493361
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['City', 'HospitalType'] 和列 StateAvg 之间的φ²: 0.8109180216802165
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['City', 'HospitalType'] 和列 StateAvg 之间的相关性 (φ²): 0.09371051770862425
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['ZIPCode', 'HospitalType'] 和列 StateAvg 之间的φ²: 0.8688271604938271
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['ZIPCode', 'HospitalType'] 和列 StateAvg 之间的相关性 (φ²): 0.046810699588476834
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['CountyName', 'HospitalType'] 和列 StateAvg 之间的φ²: 0.7489069649211997
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['CountyName', 'HospitalType'] 和列 StateAvg 之间的相关性 (φ²): 0.15870890308649374
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['PhoneNumber', 'HospitalType'] 和列 StateAvg 之间的φ²: 0.8922466422466424
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['PhoneNumber', 'HospitalType'] 和列 StateAvg 之间的相关性 (φ²): 0.030219780219782097
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['ProviderNumber', 'HospitalOwner'] 和列 StateAvg 之间的φ²: 0.8966049382716048
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['ProviderNumber', 'HospitalOwner'] 和列 StateAvg 之间的相关性 (φ²): 0.03325617283950484
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['HospitalName', 'HospitalOwner'] 和列 StateAvg 之间的φ²: 0.893014301430143
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['HospitalName', 'HospitalOwner'] 和列 StateAvg 之间的相关性 (φ²): 0.01281378137813788
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['City', 'HospitalOwner'] 和列 StateAvg 之间的φ²: 0.7966049382716051
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['City', 'HospitalOwner'] 和列 StateAvg 之间的相关性 (φ²): 0.02510642826734854
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['ZIPCode', 'HospitalOwner'] 和列 StateAvg 之间的φ²: 0.8601364522417153
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['ZIPCode', 'HospitalOwner'] 和列 StateAvg 之间的相关性 (φ²): 0.0
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['CountyName', 'HospitalOwner'] 和列 StateAvg 之间的φ²: 0.7139547084859585
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['CountyName', 'HospitalOwner'] 和列 StateAvg 之间的相关性 (φ²): 0.04160082740140744
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['PhoneNumber', 'HospitalOwner'] 和列 StateAvg 之间的φ²: 0.8922466422466424
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['PhoneNumber', 'HospitalOwner'] 和列 StateAvg 之间的相关性 (φ²): 0.030219780219782097
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['HospitalType', 'HospitalOwner'] 和列 StateAvg 之间的φ²: 0.6803977054936069
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['HospitalType', 'HospitalOwner'] 和列 StateAvg 之间的相关性 (φ²): 0.15978238891608756
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['ProviderNumber', 'EmergencyService'] 和列 StateAvg 之间的φ²: 0.8966049382716048
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['ProviderNumber', 'EmergencyService'] 和列 StateAvg 之间的相关性 (φ²): 0.03325617283950484
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['HospitalName', 'EmergencyService'] 和列 StateAvg 之间的φ²: 0.8969444444444445
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['HospitalName', 'EmergencyService'] 和列 StateAvg 之间的相关性 (φ²): 0.04907828282828356
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['City', 'EmergencyService'] 和列 StateAvg 之间的φ²: 0.8033305693753455
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['City', 'EmergencyService'] 和列 StateAvg 之间的相关性 (φ²): 0.057343073902518374
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['ZIPCode', 'EmergencyService'] 和列 StateAvg 之间的φ²: 0.8618618618618619
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['ZIPCode', 'EmergencyService'] 和列 StateAvg 之间的相关性 (φ²): 0.0
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['CountyName', 'EmergencyService'] 和列 StateAvg 之间的φ²: 0.7262819425599275
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['CountyName', 'EmergencyService'] 和列 StateAvg 之间的相关性 (φ²): 0.0829034157935715
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['PhoneNumber', 'EmergencyService'] 和列 StateAvg 之间的φ²: 0.8922466422466424
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['PhoneNumber', 'EmergencyService'] 和列 StateAvg 之间的相关性 (φ²): 0.030219780219782097
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['HospitalType', 'EmergencyService'] 和列 StateAvg 之间的φ²: 0.6851155785316028
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['HospitalType', 'EmergencyService'] 和列 StateAvg 之间的相关性 (φ²): 0.17218542882387142
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['HospitalOwner', 'EmergencyService'] 和列 StateAvg 之间的φ²: 0.6483704533952639
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - INFO - 计算列 ['HospitalOwner', 'EmergencyService'] 和列 StateAvg 之间的相关性 (φ²): 0.07558442879439106
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-10 16:05:37 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-10 16:05:37 - Cafd - INFO - Total dependencies found: 54
+2025-06-10 16:05:37 - root - INFO - 发现的函数依赖如下：
+2025-06-10 16:05:37 - root - INFO - ['ProviderNumber'] -> HospitalName
+2025-06-10 16:05:37 - root - INFO - ['ProviderNumber'] -> City
+2025-06-10 16:05:37 - root - INFO - ['HospitalName'] -> City
+2025-06-10 16:05:37 - root - INFO - ['ZIPCode'] -> City
+2025-06-10 16:05:37 - root - INFO - ['PhoneNumber'] -> City
+2025-06-10 16:05:37 - root - INFO - ['ProviderNumber'] -> State
+2025-06-10 16:05:37 - root - INFO - ['HospitalName'] -> State
+2025-06-10 16:05:37 - root - INFO - ['City'] -> State
+2025-06-10 16:05:37 - root - INFO - ['ZIPCode'] -> State
+2025-06-10 16:05:37 - root - INFO - ['PhoneNumber'] -> State
+2025-06-10 16:05:37 - root - INFO - ['StateAvg'] -> State
+2025-06-10 16:05:37 - root - INFO - ['CountyName', 'HospitalType'] -> State
+2025-06-10 16:05:37 - root - INFO - ['CountyName', 'HospitalOwner'] -> State
+2025-06-10 16:05:37 - root - INFO - ['ProviderNumber'] -> ZIPCode
+2025-06-10 16:05:37 - root - INFO - ['HospitalName'] -> ZIPCode
+2025-06-10 16:05:37 - root - INFO - ['PhoneNumber'] -> ZIPCode
+2025-06-10 16:05:37 - root - INFO - ['EmergencyService', 'HospitalType'] -> ZIPCode
+2025-06-10 16:05:37 - root - INFO - ['ProviderNumber'] -> CountyName
+2025-06-10 16:05:37 - root - INFO - ['HospitalName'] -> CountyName
+2025-06-10 16:05:37 - root - INFO - ['City'] -> CountyName
+2025-06-10 16:05:37 - root - INFO - ['ZIPCode'] -> CountyName
+2025-06-10 16:05:37 - root - INFO - ['PhoneNumber'] -> CountyName
+2025-06-10 16:05:37 - root - INFO - ['ProviderNumber'] -> PhoneNumber
+2025-06-10 16:05:37 - root - INFO - ['HospitalName'] -> PhoneNumber
+2025-06-10 16:05:37 - root - INFO - ['ZIPCode'] -> PhoneNumber
+2025-06-10 16:05:37 - root - INFO - ['ProviderNumber'] -> HospitalType
+2025-06-10 16:05:37 - root - INFO - ['HospitalName'] -> HospitalType
+2025-06-10 16:05:37 - root - INFO - ['PhoneNumber'] -> HospitalType
+2025-06-10 16:05:37 - root - INFO - ['CountyName', 'ZIPCode'] -> HospitalType
+2025-06-10 16:05:37 - root - INFO - ['City', 'HospitalOwner'] -> HospitalType
+2025-06-10 16:05:37 - root - INFO - ['HospitalOwner', 'ZIPCode'] -> HospitalType
+2025-06-10 16:05:37 - root - INFO - ['CountyName', 'HospitalOwner'] -> HospitalType
+2025-06-10 16:05:37 - root - INFO - ['City', 'EmergencyService'] -> HospitalType
+2025-06-10 16:05:37 - root - INFO - ['EmergencyService', 'ZIPCode'] -> HospitalType
+2025-06-10 16:05:37 - root - INFO - ['Sample', 'ZIPCode'] -> HospitalType
+2025-06-10 16:05:37 - root - INFO - ['StateAvg', 'ZIPCode'] -> HospitalType
+2025-06-10 16:05:37 - root - INFO - ['ProviderNumber'] -> HospitalOwner
+2025-06-10 16:05:37 - root - INFO - ['HospitalName'] -> HospitalOwner
+2025-06-10 16:05:37 - root - INFO - ['ZIPCode'] -> HospitalOwner
+2025-06-10 16:05:37 - root - INFO - ['PhoneNumber'] -> HospitalOwner
+2025-06-10 16:05:37 - root - INFO - ['ProviderNumber'] -> EmergencyService
+2025-06-10 16:05:37 - root - INFO - ['HospitalName'] -> EmergencyService
+2025-06-10 16:05:37 - root - INFO - ['PhoneNumber'] -> EmergencyService
+2025-06-10 16:05:37 - root - INFO - ['CountyName', 'ZIPCode'] -> EmergencyService
+2025-06-10 16:05:37 - root - INFO - ['HospitalType', 'ZIPCode'] -> EmergencyService
+2025-06-10 16:05:37 - root - INFO - ['City', 'HospitalOwner'] -> EmergencyService
+2025-06-10 16:05:37 - root - INFO - ['HospitalOwner', 'ZIPCode'] -> EmergencyService
+2025-06-10 16:05:37 - root - INFO - ['MeasureCode'] -> Condition
+2025-06-10 16:05:37 - root - INFO - ['MeasureName'] -> Condition
+2025-06-10 16:05:37 - root - INFO - ['StateAvg'] -> Condition
+2025-06-10 16:05:37 - root - INFO - ['MeasureName'] -> MeasureCode
+2025-06-10 16:05:37 - root - INFO - ['StateAvg'] -> MeasureCode
+2025-06-10 16:05:37 - root - INFO - ['MeasureCode'] -> MeasureName
+2025-06-10 16:05:37 - root - INFO - ['StateAvg'] -> MeasureName
+2025-06-10 16:05:37 - Evaluate_fd - INFO - 评估结果: TP=26, FP=28, FN=2
+2025-06-10 16:05:37 - Evaluate_fd - WARNING - 误报 FD (28 个):
+ZIPCode->HospitalOwner
+City,HospitalOwner->EmergencyService
+Sample,ZIPCode->HospitalType
+ProviderNumber->HospitalName
+EmergencyService,ZIPCode->HospitalType
+City,HospitalOwner->HospitalType
+CountyName,ZIPCode->EmergencyService
+HospitalName->State
+City->State
+HospitalName->ZIPCode
+CountyName,ZIPCode->HospitalType
+ZIPCode->PhoneNumber
+HospitalName->City
+CountyName,HospitalOwner->State
+HospitalName->CountyName
+HospitalName->EmergencyService
+HospitalName->HospitalOwner
+City,EmergencyService->HospitalType
+City->CountyName
+CountyName,HospitalType->State
+HospitalName->HospitalType
+CountyName,HospitalOwner->HospitalType
+HospitalOwner,ZIPCode->EmergencyService
+HospitalName->PhoneNumber
+HospitalType,ZIPCode->EmergencyService
+EmergencyService,HospitalType->ZIPCode
+HospitalOwner,ZIPCode->HospitalType
+StateAvg,ZIPCode->HospitalType
+2025-06-10 16:05:37 - Evaluate_fd - WARNING - 漏报 FD (2 个):
+PhoneNumber->HospitalName
+PhoneNumber->ProviderNumber
+2025-06-10 16:05:37 - root - INFO - Precision: 0.48, Recall: 0.93, F1: 0.63
+2025-06-10 16:05:37 - root - INFO - 总运行时长: 1051 ms
+2025-06-10 16:05:37 - root - INFO - 结果已保存至: rule_mining\discovered_fd\hospital_discovered.txt

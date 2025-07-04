@@ -1,14 +1,13 @@
 _unitguid->_datasetguid
 PersonFullName->_datasetguid
-PersonGivenNames,PersonInheritedName->_datasetguid
-PersonFullName->AgentText
-PersonInheritedName->AgentText
+PersonInheritedName->_datasetguid
 AgentText->PersonFullName
 AgentText->PersonInheritedName
 PersonFullName->PersonInheritedName
+AgentText->PersonGivenNames
 PersonFullName->PersonGivenNames
 PersonInheritedName->PersonGivenNames
-Precision: 0.6000
+Precision: 0.6667
 Recall: 0.8571
-F1: 0.7059
-Runtime: 1082 ms
+F1: 0.7500
+Runtime: 16842 ms

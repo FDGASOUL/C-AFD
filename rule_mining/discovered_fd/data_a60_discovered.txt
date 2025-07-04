@@ -1,0 +1,17 @@
+column1->column2
+column4->column3
+column3->column4
+column5,column6->column7
+column8,column9->column10
+column16->column15
+column15->column16
+column17,column18->column19
+column21->column20
+column20->column21
+column26->column25
+column25->column26
+column27,column28->column29
+Precision: 0.6923
+Recall: 0.8182
+F1: 0.7500
+Runtime: 8002 ms

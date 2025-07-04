@@ -34,6 +34,7 @@ class CorrelationCalculator:
         self.column_data: List[Any] = column_layout_data.get_column_data()
         self.schema: List[str] = column_layout_data.get_schema()
         self.null_value_id: int = column_layout_data.get_null_value_id()
+        self.rhs_expected_phi_records = column_layout_data.rhs_expected_phi_records
 
     def _get_column_name(self, index: int) -> str:
         """
@@ -162,31 +163,45 @@ class CorrelationCalculator:
             merged[key].add(pos)
         return [sorted(cluster) for cluster in merged.values()]
 
-    def compute_phi_stats(
-            self,
-            table: np.ndarray
-    ) -> Tuple[Optional[float], Optional[float]]:
+    def compute_phi2(self, table: np.ndarray) -> Optional[float]:
         """
-        计算 φ² 统计量和期望 φ²。
+        计算 φ² 统计量。
 
         :param table: 列联表
-        :return: (phi2, expected_phi)；无效返回 (None, None)
+        :return: phi² 值；无效时返回 None
         """
         arr = np.asarray(table, dtype=float)
         if arr.size == 0 or arr.sum() == 0:
-            return None, None
+            return None
         R, C = arr.shape
         d = min(R, C)
         if d <= 1:
-            return 0.0, None
+            return 0.0
         T = arr.sum()
         rs = arr.sum(axis=1)
         cs = arr.sum(axis=0)
         sparse = coo_matrix(arr)
         chi2 = sum((o * o) / (rs[i] * cs[j] / T) for i, j, o in zip(sparse.row, sparse.col, sparse.data)) - T
         phi2 = chi2 / (T * (d - 1))
-        expected_phi = ((C - 1) * (R - 1)) / ((T - 1) * (d - 1)) if T > 1 else None
-        return phi2, expected_phi
+        return phi2
+
+    def compute_expected_phi2(self, table: np.ndarray) -> Optional[float]:
+        """
+        计算期望 φ²。
+
+        :param table: 列联表
+        :return: 期望 φ² 值；无效时返回 None
+        """
+        arr = np.asarray(table, dtype=float)
+        if arr.size == 0 or arr.sum() == 0:
+            return None
+        R, C = arr.shape
+        d = min(R, C)
+        T = arr.sum()
+        if d <= 1 or T <= 1:
+            return None
+        expected_phi = ((C - 1) * (R - 1)) / ((T - 1) * (d - 1))
+        return expected_phi
 
     def normalize_phi(
             self,
@@ -284,11 +299,19 @@ class CorrelationCalculator:
         if len(lhs) > 2 and not self._check_expected_frequencies(exp_freq):
             logger.warning("期望分布频数表不符合要求，无法计算相关性。")
             return False
-        phi2_pre, exp_phi = self.compute_phi_stats(linked)
+        phi2_pre = self.compute_phi2(linked)
         logger.info(
             f"计算列 {[self._get_column_name(col) for col in lhs]} 和列 {self._get_column_name(rhs)} 之间的φ²: {phi2_pre}")
-        logger.info(
-            f"计算列 {[self._get_column_name(col) for col in lhs]} 和列 {self._get_column_name(rhs)} 之间的期望: {exp_phi}")
+        if len(lhs) == 1:
+            lhs_idx = lhs[0]
+            # 从预存字典获取
+            if rhs in self.rhs_expected_phi_records and lhs_idx in self.rhs_expected_phi_records[rhs]:
+                exp_phi = self.rhs_expected_phi_records[rhs][lhs_idx]
+            else:
+                # 备用方案：落回到动态计算
+                exp_phi = self.compute_expected_phi2(linked)
+        else:
+            exp_phi = self.compute_expected_phi2(linked)
         norm_phi = self.normalize_phi(phi2_pre, exp_phi)
         rhs_name = self._get_column_name(rhs)
         lhs_names = [self._get_column_name(col) for col in lhs]

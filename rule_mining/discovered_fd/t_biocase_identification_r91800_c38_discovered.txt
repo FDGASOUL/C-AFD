@@ -4,21 +4,18 @@ ScientificName->FullScientificNameString
 ScientificName->GenusOrMonomial
 FullScientificNameString->GenusOrMonomial
 Subgenus->GenusOrMonomial
-Notes->GenusOrMonomial
-AuthorTeamParenthesisAndYear,_unitguid->GenusOrMonomial
+AuthorTeamParenthesisAndYear,SpeciesEpithet->GenusOrMonomial
 AuthorTeamParenthesisAndYear,SubspeciesEpithet->GenusOrMonomial
-AuthorTeamParenthesisAndYear,PreferredFlag,SpeciesEpithet->GenusOrMonomial
 ScientificName->Subgenus
 FullScientificNameString->Subgenus
 SpeciesEpithet->Subgenus
 ScientificName->SpeciesEpithet
 FullScientificNameString->SpeciesEpithet
 GenusOrMonomial,PreferredFlag->SpeciesEpithet
-_unitguid->SubspeciesEpithet
 ScientificName->SubspeciesEpithet
 FullScientificNameString->SubspeciesEpithet
-GenusOrMonomial,_timestamp->SubspeciesEpithet
-SpeciesEpithet,_timestamp->SubspeciesEpithet
+SpeciesEpithet,_unitguid->SubspeciesEpithet
+GenusOrMonomial,SpeciesEpithet->SubspeciesEpithet
 GenusOrMonomial,PreferredFlag->SubspeciesEpithet
 PreferredFlag,SpeciesEpithet->SubspeciesEpithet
 ScientificName->AuthorTeamOriginalAndYear
@@ -26,7 +23,6 @@ FullScientificNameString->AuthorTeamOriginalAndYear
 GenusOrMonomial->AuthorTeamOriginalAndYear
 SpeciesEpithet->AuthorTeamOriginalAndYear
 SubspeciesEpithet->AuthorTeamOriginalAndYear
-Notes->AuthorTeamOriginalAndYear
 ScientificName->AuthorTeamParenthesisAndYear
 FullScientificNameString->AuthorTeamParenthesisAndYear
 SpeciesEpithet->AuthorTeamParenthesisAndYear
@@ -35,17 +31,9 @@ ScientificName->PreferredFlag
 FullScientificNameString->PreferredFlag
 GenusOrMonomial,_timestamp->PreferredFlag
 SpeciesEpithet,_timestamp->PreferredFlag
-AuthorTeamOriginalAndYear,SubspeciesEpithet,_timestamp->PreferredFlag
-AuthorTeamParenthesisAndYear,SubspeciesEpithet,_timestamp->PreferredFlag
-AuthorTeamOriginalAndYear,AuthorTeamParenthesisAndYear,_timestamp->PreferredFlag
-ScientificName->Notes
-FullScientificNameString->Notes
-GenusOrMonomial->Notes
-SpeciesEpithet->Notes
-SubspeciesEpithet->Notes
-AuthorTeamOriginalAndYear->Notes
-AuthorTeamParenthesisAndYear->Notes
-Precision: 0.2979
+SubspeciesEpithet,_timestamp->PreferredFlag
+AuthorTeamParenthesisAndYear,_timestamp->PreferredFlag
+Precision: 0.4000
 Recall: 1.0000
-F1: 0.4590
-Runtime: 4687 ms
+F1: 0.5714
+Runtime: 5521 ms

@@ -1,0 +1,9 @@
+column1->column2
+column4->column3
+column3->column4
+column5,column6->column7
+column8,column9->column10
+Precision: 1.0000
+Recall: 1.0000
+F1: 1.0000
+Runtime: 1479 ms

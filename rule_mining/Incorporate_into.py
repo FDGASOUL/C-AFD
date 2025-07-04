@@ -1,5 +1,5 @@
 import logging
-from typing import List, Tuple, Any, Set, Dict
+from typing import List, Tuple, Any, Set, Dict, Optional
 
 import numpy as np
 from scipy.sparse import coo_matrix
@@ -17,6 +17,7 @@ class FDAnalyzer:
       3. 调用列归并工具获取可合并的列对；
       4. 对所有不满足条件的 LHS 计算的可合并列对求交集；
       5. 根据最终交集更新 RHS 列的 PLI 索引。
+
     """
     def __init__(self, layout_data: ColumnLayoutRelationData):
         """
@@ -24,7 +25,6 @@ class FDAnalyzer:
             - layout_data.column_vectors: List[List[int]] 形式的列向量
             - layout_data.column_data: List[{"PLI": ...}, ...] 形式的 PLI 信息
             - layout_data.null_value_id: 空值标记
-        构造时会将 layout_data.column_vectors 转为 List[np.ndarray] 并写回 layout_data。
         """
         self.layout_data = layout_data
 
@@ -39,37 +39,21 @@ class FDAnalyzer:
         self.null_value_id = layout_data.get_null_value_id()
         self.n_cols = len(self.column_vectors)
 
+        setattr(layout_data, 'rhs_expected_phi_records', {})
+
     def build_linked_table(
-            self,
-            lhs: List[int],
-            rhs: int
+        self,
+        lhs: List[int],
+        rhs: int
     ) -> Tuple[np.ndarray, List[Any]]:
         """
-        构建列联表并返回同时返回 rhs 的所有非空值的有序列表 unique_vals。
-        这样后续可以将列索引（column index）映射回实际值。
-
-        步骤：
-        1. 获取 LHS 的 PLI 列表（支持多属性交叉）。
-        2. 提取 RHS 列向量并映射非空值至列索引。
-        3. 使用 COO 稀疏矩阵聚合计数。
-        4. 转为密集矩阵并过滤全零簇。
-
-        :param lhs: LHS 属性索引列表（0-based）
-        :param rhs: RHS 属性索引（0-based）
-        :return:
-            - dense: NumPy 数组，形状 (n_clusters, n_unique_rhs_values)
-            - unique_vals: 列表，长度 = n_unique_rhs_values，存储排序后所有出现过的非空值
+        构建列联表并返回对应的非空值列表。
         """
-        # 获取 PLI 列表
         plis = self.column_data[lhs[0]]["PLI"]
-
-        # 提取 RHS 向量并映射值
         rhs_vec = self.column_vectors[rhs]
         unique_vals = sorted({rhs_vec[pos] for cluster in plis for pos in cluster
                               if rhs_vec[pos] != self.null_value_id})
         val2col = {val: idx for idx, val in enumerate(unique_vals)}
-
-        # 构造 COO 数据
         rows: List[int] = []
         cols: List[int] = []
         for cid, cluster in enumerate(plis):
@@ -79,7 +63,6 @@ class FDAnalyzer:
                     rows.append(cid)
                     cols.append(val2col[val])
         data = np.ones(len(rows), dtype=int)
-
         mat = coo_matrix((data, (rows, cols)), shape=(len(plis), len(unique_vals)))
         dense = mat.toarray()
         mask = dense.sum(axis=1) > 0
@@ -102,6 +85,24 @@ class FDAnalyzer:
         ct = arr.sum(axis=0, keepdims=True)
         total = rt.sum() or 1.0
         return (rt * ct) / total
+
+    def compute_expected_value(
+            self,
+            table: np.ndarray
+    ) -> Optional[float]:
+        """
+        计算期望值：((C-1)*(R-1)) / ((T-1)*(d-1))，其中 d=min(R,C), T=总和
+        若 T<=1 或 d<=1，则返回 None
+        """
+        arr = np.asarray(table, dtype=float)
+        if arr.size == 0 or arr.sum() <= 1:
+            return None
+        R, C = arr.shape
+        d = min(R, C)
+        if d <= 1:
+            return None
+        T = arr.sum()
+        return ((C - 1) * (R - 1)) / ((T - 1) * (d - 1))
 
     def _check_expected_frequencies(self, expected: np.ndarray) -> bool:
         """
@@ -184,8 +185,11 @@ class FDAnalyzer:
           4. 根据最终交集，直接在该列的 column_vectors[rhs] 上做值替换，然后重建 PLI。
         """
         for rhs in range(self.n_cols):
+            records: Dict[int, Optional[float]] = getattr(self.layout_data, 'rhs_expected_phi_records')
+            records.setdefault(rhs, {})
             intersect_pairs: Set[Tuple[int, int]] = None
             rhs_unique_vals: List[Any] = []
+            no_more_merge = False
 
             # 先遍历所有 lhs，收集每次不满足条件时返回的可合并对
             for lhs in range(rhs + 1, self.n_cols):
@@ -193,7 +197,14 @@ class FDAnalyzer:
                 # 1. 构建列联表并取出 unique_vals
                 linked, unique_vals = self.build_linked_table([lhs], rhs)
                 if linked.size == 0 or len(unique_vals) <= 1:
-                    # 无法构建有效列联表／只有一个取值，跳过
+                    records[rhs][lhs] = None
+                    continue
+
+                # 记录期望值
+                expected_val = self.compute_expected_value(linked)
+                records[rhs][lhs] = expected_val
+
+                if no_more_merge:
                     continue
 
                 # 2. 初步调用 _check_linked_table
@@ -222,42 +233,22 @@ class FDAnalyzer:
                     intersect_pairs &= set(pairs)
 
                 if not intersect_pairs:
-                    # 如果交集已空，则不可能再恢复，提前退出 lhs 循环
-                    break
+                    no_more_merge = True
 
-            # 5. 如果交集为空或 None，则本列无需更改，继续下一列
-            if not intersect_pairs:
-                continue
-
-            # 6. 根据 intersect_pairs 直接在 column_vectors[rhs] 上做“值替换”
-            vec = self.column_vectors[rhs]
-
-            # （1）先把每个 (i,j) 转为原始映射 raw_map[val_j] = val_i
-            raw_map: Dict[Any, Any] = {}
-            for (i, j) in intersect_pairs:
-                val_i = rhs_unique_vals[i]
-                val_j = rhs_unique_vals[j]
-                raw_map[val_j] = val_i
-
-            # （2）“压平” raw_map，得到 final_map
-            final_map: Dict[Any, Any] = {}
-            for val_j, val_i in raw_map.items():
-                tgt = val_i
-                # 如果 tgt 也是 raw_map 的 key，就继续向下找
-                while tgt in raw_map:
-                    tgt = raw_map[tgt]
-                final_map[val_j] = tgt
-
-            # （3）遍历整列，用 final_map 进行一次替换
-            for row_idx in range(len(vec)):
-                v = vec[row_idx]
-                if v in final_map:
-                    vec[row_idx] = final_map[v]
-
-            # 7. 替换完成后，基于新的列向量重新构建 PLI
-            new_pli = self.rebuild_pli_from_vector(rhs)
-            self.column_data[rhs]["PLI"] = new_pli
-
-            logger.info(f"列 {rhs} 的值被合并替换，替换对：{intersect_pairs}，新 PLI 簇数：{len(new_pli)}")
+            if intersect_pairs:
+                vec = self.column_vectors[rhs]
+                raw_map: Dict[Any, Any] = {rhs_unique_vals[j]: rhs_unique_vals[i] for i, j in intersect_pairs}
+                final_map: Dict[Any, Any] = {}
+                for k, v in raw_map.items():
+                    tgt = v
+                    while tgt in raw_map:
+                        tgt = raw_map[tgt]
+                    final_map[k] = tgt
+                for idx in range(len(vec)):
+                    if vec[idx] in final_map:
+                        vec[idx] = final_map[vec[idx]]
+                new_pli = self.rebuild_pli_from_vector(rhs)
+                self.column_data[rhs]["PLI"] = new_pli
+                logger.info(f"列 {rhs} 的值被合并替换，替换对：{intersect_pairs}，新 PLI 簇数：{len(new_pli)}")
 
         logger.info("所有列的 PLI 更新完成。")

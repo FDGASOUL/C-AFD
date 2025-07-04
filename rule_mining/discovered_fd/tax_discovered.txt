@@ -4,12 +4,43 @@ Zip->City
 AreaCode->State
 City->State
 Zip->State
+Rate,SingleExemp->State
+MarriedExemp,Rate->State
+ChildExemp,Rate->State
 HasChild->MaritalStatus
 MarriedExemp,SingleExemp->MaritalStatus
+ChildExemp,MarriedExemp->MaritalStatus
 MaritalStatus->HasChild
 MarriedExemp,SingleExemp->HasChild
+ChildExemp,MarriedExemp->HasChild
+AreaCode,Salary->Rate
+City,Salary->Rate
+Salary,State->Rate
+Salary,Zip->Rate
+AreaCode,MaritalStatus->SingleExemp
+City,MaritalStatus->SingleExemp
+MaritalStatus,State->SingleExemp
+MaritalStatus,Zip->SingleExemp
+AreaCode,HasChild->SingleExemp
+HasChild,State->SingleExemp
+HasChild,Zip->SingleExemp
+AreaCode,MaritalStatus->MarriedExemp
+MaritalStatus,State->MarriedExemp
+MaritalStatus,Zip->MarriedExemp
+AreaCode,HasChild->MarriedExemp
+HasChild,State->MarriedExemp
+HasChild,Zip->MarriedExemp
+FName,Rate->MarriedExemp
+LName,Rate->MarriedExemp
 SingleExemp->ChildExemp
-Precision: 0.2727
+AreaCode,MaritalStatus->ChildExemp
+MaritalStatus,State->ChildExemp
+MaritalStatus,Zip->ChildExemp
+AreaCode,HasChild->ChildExemp
+City,HasChild->ChildExemp
+HasChild,State->ChildExemp
+HasChild,Zip->ChildExemp
+Precision: 0.0714
 Recall: 1.0000
-F1: 0.4286
-Runtime: 15111 ms
+F1: 0.1333
+Runtime: 13360 ms

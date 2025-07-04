@@ -1,0 +1,1201 @@
+2025-06-06 21:48:10 - root - INFO - 日志配置完成。
+2025-06-06 21:48:10 - root - INFO - Config: dataset=claims.csv, sample_size=4000, null_equal_null=True
+2025-06-06 21:48:10 - root - INFO - 开始执行 CAFD...
+2025-06-06 21:48:10 - Cafd - INFO - Executing CAFD on: E:\资料\C-AFD\rule_mining\data\real_world_data\claims.csv
+2025-06-06 21:48:10 - Cafd - INFO - Using ground truth: E:\资料\C-AFD\rule_mining\groundtruth\real_world_data\claims.txt
+2025-06-06 21:48:10 - Sampler - INFO - Reading dataset from: E:\资料\C-AFD\rule_mining\data\real_world_data\claims.csv
+2025-06-06 21:48:10 - Sampler - INFO - 移除全空列：0 / 13
+2025-06-06 21:48:10 - Sampler - INFO - 移除单一值列：0 个
+2025-06-06 21:48:10 - Sampler - INFO - 移除大于数据集行数 (97231) 的不现实样本量：11 个
+2025-06-06 21:48:10 - Sampler - INFO - 最终采样方式 'mode_bin_2000'，样本量: 4000
+2025-06-06 21:48:10 - Sampler - INFO - 抽样 4000 行，随机种子：1275285399
+2025-06-06 21:48:10 - Sampler - INFO - 抽样结果已保存至: rule_mining/data/sample_data/sample_data.csv
+2025-06-06 21:48:14 - rule_mining.Incorporate_into - INFO - 列 1 的值被合并替换，替换对：{(441, 776), (748, 802), (717, 796), (350, 365), (694, 812), (687, 800), (753, 754), (588, 696), (752, 786), (564, 586), (790, 812), (284, 806), (568, 574), (692, 780), (190, 533), (92, 721), (138, 617), (645, 704), (683, 807), (781, 812), (627, 763), (349, 800), (344, 694), (687, 786), (19, 754), (42, 765), (679, 791), (456, 535), (46, 637), (554, 796), (532, 619), (287, 452), (140, 253), (669, 764), (87, 772), (518, 739), (620, 759), (445, 736), (92, 716), (588, 812), (109, 140), (698, 791), (349, 786), (747, 814), (449, 742), (540, 762), (676, 781), (676, 790), (637, 780), (619, 655), (637, 798), (305, 608), (736, 776), (237, 702), (91, 657), (517, 765), (360, 772), (187, 472), (800, 806), (305, 702), (288, 640), (19, 753), (554, 759), (305, 729), (589, 726), (552, 560), (284, 773), (253, 529), (284, 800), (28, 38), (600, 776), (173, 532), (694, 792), (243, 456), (445, 600), (80, 578), (743, 779), (759, 796), (295, 521), (620, 717), (284, 786), (263, 574), (348, 770), (717, 771), (522, 672), (781, 792), (608, 702), (340, 631), (441, 445), (92, 813), (608, 729), (323, 489), (91, 368), (721, 782), (534, 785), (555, 588), (526, 552), (109, 529), (554, 632), (555, 615), (173, 760), (97, 136), (430, 700), (163, 585), (316, 589), (687, 752), (173, 778), (780, 809), (640, 667), (48, 136), (279, 643), (544, 550), (407, 572), (773, 806), (344, 781), (284, 349), (344, 790), (634, 718), (607, 773), (746, 779), (546, 763), (754, 801), (187, 434), (349, 752), (397, 500), (419, 429), (370, 802), (743, 746), (558, 709), (740, 749), (33, 735), (209, 314), (46, 692), (594, 640), (366, 544), (263, 568), (620, 796), (594, 667), (325, 619), (325, 655), (501, 728), (708, 801), (359, 504), (225, 671), (544, 787), (131, 627), (97, 741), (615, 676), (692, 798), (187, 653), (615, 694), (613, 761), (624, 672), (77, 283), (99, 131), (514, 648), (588, 615), (48, 741), (555, 676), (716, 782), (546, 627), (486, 814), (19, 534), (555, 694), (540, 794), (480, 789), (173, 619), (516, 702), (316, 686), (753, 785), (548, 654), (746, 747), (231, 727), (532, 655), (187, 639), (786, 800), (228, 411), (676, 696), (366, 372), (461, 631), (372, 550), (696, 781), (760, 784), (696, 790), (93, 213), (366, 646), (206, 764), (780, 798), (615, 792), (470, 483), (638, 714), (237, 608), (19, 785), (671, 720), (47, 636), (53, 289), (349, 687), (555, 792), (350, 521), (522, 624), (686, 726), (237, 729), (46, 780), (445, 776), (240, 645), (46, 798), (42, 517), (631, 652), (288, 667), (138, 243), (676, 812), (26, 657), (274, 777), (253, 565), (607, 806), (99, 763), (632, 759), (544, 646), (372, 787), (620, 632), (708, 754), (421, 432), (595, 697), (257, 738), (588, 676), (532, 784), (790, 792), (588, 694), (293, 758), (340, 461), (121, 432), (606, 608), (221, 519), (93, 333), (620, 771), (630, 803), (291, 681), (606, 702), (619, 784), (372, 544), (714, 811), (760, 778), (606, 729), (173, 325), (672, 674), (284, 687), (110, 116), (627, 788), (763, 788), (752, 806), (70, 699), (47, 50), (638, 811), (588, 792), (716, 721), (109, 565), (243, 617), (706, 793), (237, 305), (344, 696), (26, 368), (99, 627), (615, 781), (615, 790), (554, 771), (687, 806), (160, 713), (237, 606), (743, 814), (771, 796), (632, 717), (555, 781), (50, 636), (721, 813), (305, 606), (607, 800), (140, 529), (666, 706), (515, 802), (665, 768), (550, 787), (349, 806), (532, 760), (460, 512), (157, 703), (676, 792), (534, 708), (372, 646), (557, 682), (330, 411), (441, 736), (637, 809), (244, 707), (456, 617), (344, 812), (607, 786), (526, 560), (619, 760), (87, 360), (457, 698), (486, 743), (619, 778), (694, 781), (694, 790), (501, 661), (486, 779), (115, 543), (138, 456), (340, 652), (752, 773), (74, 291), (434, 472), (213, 333), (746, 814), (747, 779), (486, 747), (516, 608), (781, 790), (498, 730), (759, 771), (778, 784), (131, 546), (529, 565), (368, 657), (349, 607), (687, 773), (149, 689), (762, 794), (284, 752), (773, 800), (109, 253), (516, 729), (173, 655), (344, 555), (785, 801), (423, 528), (535, 617), (225, 720), (534, 801), (457, 679), (536, 734), (588, 781), (168, 585), (658, 678), (588, 790), (758, 774), (441, 600), (522, 674), (632, 796), (349, 773), (500, 506), (344, 676), (457, 791), (716, 813), (74, 681), (131, 788), (115, 304), (240, 704), (773, 786), (228, 330), (227, 612), (533, 795), (136, 741), (673, 689), (550, 646), (325, 784), (559, 722), (316, 726), (295, 365), (725, 745), (717, 759), (41, 634), (546, 788), (486, 746), (696, 812), (589, 686), (792, 812), (325, 532), (661, 728), (138, 535), (344, 792), (754, 785), (554, 620), (261, 605), (206, 669), (284, 607), (600, 736), (353, 715), (779, 814), (26, 91), (19, 708), (48, 97), (173, 784), (392, 810), (655, 784), (666, 793), (607, 752), (461, 652), (397, 506), (516, 606), (92, 782), (163, 168), (708, 785), (41, 718), (702, 729), (659, 767), (534, 754), (325, 760), (753, 801), (295, 350), (325, 778), (366, 550), (798, 809), (492, 635), (676, 694), (692, 809), (615, 696), (624, 674), (708, 753), (288, 594), (472, 653), (646, 787), (179, 507), (743, 747), (555, 696), (149, 673), (434, 653), (19, 801), (690, 740), (583, 614), (690, 749), (304, 543), (555, 790), (344, 588), (405, 464), (370, 515), (344, 615), (190, 795), (99, 546), (632, 771), (30, 675), (472, 639), (140, 565), (237, 516), (696, 792), (655, 760), (554, 717), (131, 763), (626, 733), (433, 656), (532, 778), (655, 778), (365, 521), (305, 516), (434, 639), (615, 812), (463, 684), (694, 696), (534, 753), (786, 806), (555, 812), (366, 787), (370, 748), (639, 653), (515, 748), (679, 698), (195, 487), (637, 692), (99, 788), (46, 809), (607, 687), (567, 660), (121, 421), (752, 800), (293, 774), (782, 813), (243, 535)}，新 PLI 簇数：584
+2025-06-06 21:48:14 - rule_mining.Incorporate_into - INFO - 所有列的 PLI 更新完成。
+2025-06-06 21:48:14 - rule_mining.cords - INFO - RHS 列 0 唯一值数=3821，已使用哈希分桶为 50 类。
+2025-06-06 21:48:14 - rule_mining.cords - INFO - RHS 列 0 唯一值数=189，已使用哈希分桶为 50 类。
+2025-06-06 21:48:14 - rule_mining.cords - INFO - RHS 列 0 唯一值数=3455，已使用哈希分桶为 50 类。
+2025-06-06 21:48:14 - rule_mining.cords - INFO - RHS 列 0 唯一值数=177，已使用哈希分桶为 50 类。
+2025-06-06 21:48:14 - rule_mining.cords - INFO - RHS 列 0 唯一值数=2619，已使用哈希分桶为 50 类。
+2025-06-06 21:48:14 - rule_mining.cords - INFO - RHS 列 0 唯一值数=1270，已使用哈希分桶为 50 类。
+2025-06-06 21:48:14 - rule_mining.cords - INFO - RHS 列 0 唯一值数=2766，已使用哈希分桶为 50 类。
+2025-06-06 21:48:14 - rule_mining.cords - INFO - RHS 列 0 唯一值数=1242，已使用哈希分桶为 50 类。
+2025-06-06 21:48:14 - rule_mining.cords - INFO - RHS 列 0 唯一值数=1563，已使用哈希分桶为 50 类。
+2025-06-06 21:48:14 - rule_mining.cords - INFO - RHS 列 0 唯一值数=2486，已使用哈希分桶为 50 类。
+2025-06-06 21:48:14 - rule_mining.cords - INFO - RHS 列 0 唯一值数=1346，已使用哈希分桶为 50 类。
+2025-06-06 21:48:14 - rule_mining.cords - INFO - RHS 列 0 唯一值数=2336，已使用哈希分桶为 50 类。
+2025-06-06 21:48:14 - rule_mining.cords - INFO - RHS 列 1 唯一值数=799，已使用哈希分桶为 50 类。
+2025-06-06 21:48:14 - rule_mining.cords - INFO - RHS 列 1 唯一值数=81，已使用哈希分桶为 50 类。
+2025-06-06 21:48:14 - rule_mining.cords - INFO - RHS 列 1 唯一值数=785，已使用哈希分桶为 50 类。
+2025-06-06 21:48:14 - rule_mining.cords - INFO - RHS 列 1 唯一值数=84，已使用哈希分桶为 50 类。
+2025-06-06 21:48:14 - rule_mining.cords - INFO - RHS 列 1 唯一值数=784，已使用哈希分桶为 50 类。
+2025-06-06 21:48:14 - rule_mining.cords - INFO - RHS 列 1 唯一值数=105，已使用哈希分桶为 50 类。
+2025-06-06 21:48:14 - rule_mining.cords - INFO - RHS 列 1 唯一值数=769，已使用哈希分桶为 50 类。
+2025-06-06 21:48:14 - rule_mining.cords - INFO - RHS 列 1 唯一值数=88，已使用哈希分桶为 50 类。
+2025-06-06 21:48:14 - rule_mining.cords - INFO - RHS 列 1 唯一值数=802，已使用哈希分桶为 50 类。
+2025-06-06 21:48:14 - rule_mining.cords - INFO - RHS 列 1 唯一值数=85，已使用哈希分桶为 50 类。
+2025-06-06 21:48:14 - rule_mining.cords - INFO - RHS 列 1 唯一值数=786，已使用哈希分桶为 50 类。
+2025-06-06 21:48:14 - rule_mining.cords - INFO - RHS 列 2 唯一值数=1348，已使用哈希分桶为 50 类。
+2025-06-06 21:48:14 - rule_mining.cords - INFO - LHS 列 4 聚簇数=155，已哈希归并为 50 个聚簇。
+2025-06-06 21:48:14 - rule_mining.cords - INFO - RHS 列 2 唯一值数=66，已使用哈希分桶为 50 类。
+2025-06-06 21:48:14 - rule_mining.cords - INFO - RHS 列 2 唯一值数=1350，已使用哈希分桶为 50 类。
+2025-06-06 21:48:14 - rule_mining.cords - INFO - RHS 列 2 唯一值数=88，已使用哈希分桶为 50 类。
+2025-06-06 21:48:14 - rule_mining.cords - INFO - RHS 列 2 唯一值数=1330，已使用哈希分桶为 50 类。
+2025-06-06 21:48:14 - rule_mining.cords - INFO - RHS 列 2 唯一值数=82，已使用哈希分桶为 50 类。
+2025-06-06 21:48:14 - rule_mining.cords - INFO - RHS 列 2 唯一值数=1356，已使用哈希分桶为 50 类。
+2025-06-06 21:48:14 - rule_mining.cords - INFO - RHS 列 2 唯一值数=72，已使用哈希分桶为 50 类。
+2025-06-06 21:48:14 - rule_mining.cords - INFO - RHS 列 2 唯一值数=1318，已使用哈希分桶为 50 类。
+2025-06-06 21:48:14 - rule_mining.cords - INFO - RHS 列 3 唯一值数=155，已使用哈希分桶为 50 类。
+2025-06-06 21:48:14 - rule_mining.cords - INFO - RHS 列 3 唯一值数=96，已使用哈希分桶为 50 类。
+2025-06-06 21:48:14 - rule_mining.cords - INFO - RHS 列 3 唯一值数=175，已使用哈希分桶为 50 类。
+2025-06-06 21:48:14 - rule_mining.cords - INFO - RHS 列 3 唯一值数=98，已使用哈希分桶为 50 类。
+2025-06-06 21:48:14 - rule_mining.cords - INFO - RHS 列 3 唯一值数=175，已使用哈希分桶为 50 类。
+2025-06-06 21:48:14 - rule_mining.cords - INFO - RHS 列 3 唯一值数=71，已使用哈希分桶为 50 类。
+2025-06-06 21:48:14 - rule_mining.cords - INFO - RHS 列 3 唯一值数=202，已使用哈希分桶为 50 类。
+2025-06-06 21:48:14 - rule_mining.cords - INFO - RHS 列 3 唯一值数=69，已使用哈希分桶为 50 类。
+2025-06-06 21:48:14 - rule_mining.cords - INFO - RHS 列 3 唯一值数=203，已使用哈希分桶为 50 类。
+2025-06-06 21:48:14 - rule_mining.cords - INFO - RHS 列 4 唯一值数=196，已使用哈希分桶为 50 类。
+2025-06-06 21:48:14 - rule_mining.cords - INFO - RHS 列 4 唯一值数=74，已使用哈希分桶为 50 类。
+2025-06-06 21:48:14 - rule_mining.cords - INFO - RHS 列 4 唯一值数=199，已使用哈希分桶为 50 类。
+2025-06-06 21:48:14 - rule_mining.cords - INFO - RHS 列 4 唯一值数=74，已使用哈希分桶为 50 类。
+2025-06-06 21:48:14 - rule_mining.cords - INFO - RHS 列 4 唯一值数=166，已使用哈希分桶为 50 类。
+2025-06-06 21:48:14 - rule_mining.cords - INFO - RHS 列 4 唯一值数=106，已使用哈希分桶为 50 类。
+2025-06-06 21:48:14 - rule_mining.cords - INFO - RHS 列 4 唯一值数=161，已使用哈希分桶为 50 类。
+2025-06-06 21:48:14 - rule_mining.cords - INFO - RHS 列 4 唯一值数=111，已使用哈希分桶为 50 类。
+2025-06-06 21:48:14 - rule_mining.cords - INFO - RHS 列 5 唯一值数=77，已使用哈希分桶为 50 类。
+2025-06-06 21:48:14 - rule_mining.cords - INFO - LHS 列 9 聚簇数=319，已哈希归并为 50 个聚簇。
+2025-06-06 21:48:14 - rule_mining.cords - INFO - LHS 列 11 聚簇数=178，已哈希归并为 50 个聚簇。
+2025-06-06 21:48:14 - rule_mining.cords - INFO - RHS 列 8 唯一值数=82，已使用哈希分桶为 50 类。
+2025-06-06 21:48:14 - rule_mining.cords - INFO - RHS 列 8 唯一值数=89，已使用哈希分桶为 50 类。
+2025-06-06 21:48:14 - rule_mining.cords - INFO - RHS 列 8 唯一值数=86，已使用哈希分桶为 50 类。
+2025-06-06 21:48:14 - rule_mining.cords - INFO - RHS 列 8 唯一值数=90，已使用哈希分桶为 50 类。
+2025-06-06 21:48:14 - rule_mining.cords - INFO - RHS 列 9 唯一值数=1871，已使用哈希分桶为 50 类。
+2025-06-06 21:48:14 - rule_mining.cords - INFO - RHS 列 11 唯一值数=1129，已使用哈希分桶为 50 类。
+2025-06-06 21:48:14 - Cafd - INFO - Processing search space: <SearchSpace_bit.SearchSpace object at 0x0000029999A1C370>
+2025-06-06 21:48:14 - rule_mining.Correlation_utils - INFO - 计算列 ['DateReceived'] 和列 ClaimNumber 之间的φ²: 0.9999999999999903
+2025-06-06 21:48:14 - rule_mining.Correlation_utils - INFO - 计算列 ['IncidentDate'] 和列 ClaimNumber 之间的φ²: 0.999999999999995
+2025-06-06 21:48:14 - rule_mining.Correlation_utils - INFO - 计算列 ['AirportCode'] 和列 ClaimNumber 之间的φ²: 1.0000000000000067
+2025-06-06 21:48:14 - rule_mining.Correlation_utils - INFO - 计算列 ['AirportName'] 和列 ClaimNumber 之间的φ²: 1.0000000000000067
+2025-06-06 21:48:14 - rule_mining.Correlation_utils - INFO - 计算列 ['AirlineName'] 和列 ClaimNumber 之间的φ²: 1.0000000000000038
+2025-06-06 21:48:14 - rule_mining.Correlation_utils - INFO - 计算列 ['ClaimType'] 和列 ClaimNumber 之间的φ²: 0.9999999999999868
+2025-06-06 21:48:14 - rule_mining.Correlation_utils - INFO - 计算列 ['ClaimSite'] 和列 ClaimNumber 之间的φ²: 1.0000000000001072
+2025-06-06 21:48:14 - rule_mining.Correlation_utils - INFO - 计算列 ['Item'] 和列 ClaimNumber 之间的φ²: 1.000000000000002
+2025-06-06 21:48:14 - rule_mining.Correlation_utils - INFO - 计算列 ['ClaimAmount'] 和列 ClaimNumber 之间的φ²: 1.0000000000000013
+2025-06-06 21:48:14 - rule_mining.Correlation_utils - INFO - 计算列 ['Status'] 和列 ClaimNumber 之间的φ²: 0.9999999999999983
+2025-06-06 21:48:14 - rule_mining.Correlation_utils - INFO - 计算列 ['CloseAmount'] 和列 ClaimNumber 之间的φ²: 0.9999999999999999
+2025-06-06 21:48:14 - rule_mining.Correlation_utils - INFO - 计算列 ['Disposition'] 和列 ClaimNumber 之间的φ²: 0.9999999999999695
+2025-06-06 21:48:14 - Cafd - INFO - Processing search space: <SearchSpace_bit.SearchSpace object at 0x0000029999A1C340>
+2025-06-06 21:48:14 - rule_mining.Correlation_utils - WARNING - 列联表为空，返回 invalid
+2025-06-06 21:48:14 - rule_mining.Correlation_utils - INFO - 计算列 ['IncidentDate'] 和列 DateReceived 之间的φ²: 0.32107467206072376
+2025-06-06 21:48:14 - rule_mining.Correlation_utils - INFO - 计算列 ['AirportCode'] 和列 DateReceived 之间的φ²: 0.22894872651331827
+2025-06-06 21:48:14 - rule_mining.Correlation_utils - INFO - 计算列 ['AirportName'] 和列 DateReceived 之间的φ²: 0.22894872651331827
+2025-06-06 21:48:14 - rule_mining.Correlation_utils - INFO - 计算列 ['AirlineName'] 和列 DateReceived 之间的φ²: 0.2775571791886623
+2025-06-06 21:48:14 - rule_mining.Correlation_utils - INFO - 计算列 ['ClaimType'] 和列 DateReceived 之间的φ²: 0.25186712966472197
+2025-06-06 21:48:14 - rule_mining.Correlation_utils - INFO - 计算列 ['ClaimSite'] 和列 DateReceived 之间的φ²: 0.30201123856100215
+2025-06-06 21:48:14 - rule_mining.Correlation_utils - INFO - 计算列 ['Item'] 和列 DateReceived 之间的φ²: 0.304628912684384
+2025-06-06 21:48:14 - rule_mining.Correlation_utils - INFO - 计算列 ['ClaimAmount'] 和列 DateReceived 之间的φ²: 0.30423790269368056
+2025-06-06 21:48:14 - rule_mining.Correlation_utils - INFO - 计算列 ['Status'] 和列 DateReceived 之间的φ²: 0.21963307596146522
+2025-06-06 21:48:14 - rule_mining.Correlation_utils - INFO - 计算列 ['CloseAmount'] 和列 DateReceived 之间的φ²: 0.26450582287875385
+2025-06-06 21:48:14 - rule_mining.Correlation_utils - INFO - 计算列 ['Disposition'] 和列 DateReceived 之间的φ²: 0.24332473231952
+2025-06-06 21:48:14 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:14 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:14 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:14 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:14 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:14 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:14 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:14 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:14 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:14 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:14 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:14 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:14 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:14 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:14 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:14 - Cafd - INFO - Processing search space: <SearchSpace_bit.SearchSpace object at 0x0000029999A1CFD0>
+2025-06-06 21:48:14 - rule_mining.Correlation_utils - WARNING - 列联表为空，返回 invalid
+2025-06-06 21:48:14 - rule_mining.Correlation_utils - INFO - 计算列 ['DateReceived'] 和列 IncidentDate 之间的φ²: 0.4065449585171543
+2025-06-06 21:48:14 - rule_mining.Correlation_utils - INFO - 计算列 ['AirportCode'] 和列 IncidentDate 之间的φ²: 0.39647916933266697
+2025-06-06 21:48:14 - rule_mining.Correlation_utils - INFO - 计算列 ['AirportName'] 和列 IncidentDate 之间的φ²: 0.39647916933266697
+2025-06-06 21:48:14 - rule_mining.Correlation_utils - INFO - 计算列 ['AirlineName'] 和列 IncidentDate 之间的φ²: 0.4366829049897208
+2025-06-06 21:48:14 - rule_mining.Correlation_utils - INFO - 计算列 ['ClaimType'] 和列 IncidentDate 之间的φ²: 0.3895297427017598
+2025-06-06 21:48:14 - rule_mining.Correlation_utils - INFO - 计算列 ['ClaimSite'] 和列 IncidentDate 之间的φ²: 0.3752433956088285
+2025-06-06 21:48:14 - rule_mining.Correlation_utils - INFO - 计算列 ['Item'] 和列 IncidentDate 之间的φ²: 0.453138896257459
+2025-06-06 21:48:14 - rule_mining.Correlation_utils - INFO - 计算列 ['ClaimAmount'] 和列 IncidentDate 之间的φ²: 0.5105963843530424
+2025-06-06 21:48:14 - rule_mining.Correlation_utils - INFO - 计算列 ['Status'] 和列 IncidentDate 之间的φ²: 0.41772981428474176
+2025-06-06 21:48:14 - rule_mining.Correlation_utils - INFO - 计算列 ['CloseAmount'] 和列 IncidentDate 之间的φ²: 0.46186626120834257
+2025-06-06 21:48:14 - rule_mining.Correlation_utils - INFO - 计算列 ['Disposition'] 和列 IncidentDate 之间的φ²: 0.40680340893614886
+2025-06-06 21:48:14 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:14 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:14 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:14 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:14 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:14 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:15 - Cafd - INFO - Processing search space: <SearchSpace_bit.SearchSpace object at 0x0000029999A1CF10>
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - WARNING - 列联表为空，返回 invalid
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - INFO - 计算列 ['DateReceived'] 和列 AirportCode 之间的φ²: 0.18951520535309782
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - INFO - 计算列 ['IncidentDate'] 和列 AirportCode 之间的φ²: 0.31650604808373733
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - INFO - 计算列 ['AirportName'] 和列 AirportCode 之间的φ²: 1.0
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - INFO - 行方向得分: 1.0000, 列方向得分: 1.0000
+2025-06-06 21:48:15 - SearchSpace_bit - INFO - 发现函数依赖: ['AirportName'] -> AirportCode
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - INFO - 计算列 ['AirlineName'] 和列 AirportCode 之间的φ²: 0.1541046225120847
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - INFO - 计算列 ['ClaimType'] 和列 AirportCode 之间的φ²: 0.1842380069983121
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - INFO - 计算列 ['ClaimSite'] 和列 AirportCode 之间的φ²: 0.28574036155911386
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - INFO - 计算列 ['Item'] 和列 AirportCode 之间的φ²: 0.07427691820857364
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - INFO - 计算列 ['ClaimAmount'] 和列 AirportCode 之间的φ²: 0.15570375640064696
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - INFO - 计算列 ['Status'] 和列 AirportCode 之间的φ²: 0.17598569615395887
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - INFO - 计算列 ['CloseAmount'] 和列 AirportCode 之间的φ²: 0.07846314454269968
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - INFO - 计算列 ['Disposition'] 和列 AirportCode 之间的φ²: 0.07832212400875262
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:15 - Cafd - INFO - Processing search space: <SearchSpace_bit.SearchSpace object at 0x0000029999A1CCD0>
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - WARNING - 列联表为空，返回 invalid
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - INFO - 计算列 ['DateReceived'] 和列 AirportName 之间的φ²: 0.18951520535309782
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - INFO - 计算列 ['IncidentDate'] 和列 AirportName 之间的φ²: 0.31650604808373733
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - INFO - 计算列 ['AirportCode'] 和列 AirportName 之间的φ²: 1.0
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - INFO - 行方向得分: 1.0000, 列方向得分: 1.0000
+2025-06-06 21:48:15 - SearchSpace_bit - INFO - 发现函数依赖: ['AirportCode'] -> AirportName
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - INFO - 计算列 ['AirlineName'] 和列 AirportName 之间的φ²: 0.1541046225120847
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - INFO - 计算列 ['ClaimType'] 和列 AirportName 之间的φ²: 0.1842380069983121
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - INFO - 计算列 ['ClaimSite'] 和列 AirportName 之间的φ²: 0.28574036155911386
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - INFO - 计算列 ['Item'] 和列 AirportName 之间的φ²: 0.07427691820857364
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - INFO - 计算列 ['ClaimAmount'] 和列 AirportName 之间的φ²: 0.15570375640064696
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - INFO - 计算列 ['Status'] 和列 AirportName 之间的φ²: 0.17598569615395887
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - INFO - 计算列 ['CloseAmount'] 和列 AirportName 之间的φ²: 0.07846314454269968
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - INFO - 计算列 ['Disposition'] 和列 AirportName 之间的φ²: 0.07832212400875262
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:15 - Cafd - INFO - Processing search space: <SearchSpace_bit.SearchSpace object at 0x0000029999A1CE50>
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - WARNING - 列联表为空，返回 invalid
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - INFO - 计算列 ['DateReceived'] 和列 AirlineName 之间的φ²: 0.2516637799116038
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - INFO - 计算列 ['IncidentDate'] 和列 AirlineName 之间的φ²: 0.39850856918359934
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - INFO - 计算列 ['AirportCode'] 和列 AirlineName 之间的φ²: 0.09835296087677826
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - INFO - 计算列 ['AirportName'] 和列 AirlineName 之间的φ²: 0.09835296087677826
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - INFO - 计算列 ['ClaimType'] 和列 AirlineName 之间的φ²: 0.022693741339512602
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - INFO - 计算列 ['ClaimSite'] 和列 AirlineName 之间的φ²: 0.024924313874676276
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - INFO - 计算列 ['Item'] 和列 AirlineName 之间的φ²: 0.03260969080852674
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - INFO - 计算列 ['ClaimAmount'] 和列 AirlineName 之间的φ²: 0.1869047223375227
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - INFO - 计算列 ['Status'] 和列 AirlineName 之间的φ²: 0.029870435306491323
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - INFO - 计算列 ['CloseAmount'] 和列 AirlineName 之间的φ²: 0.06747023188992822
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - INFO - 计算列 ['Disposition'] 和列 AirlineName 之间的φ²: 0.02961126863583485
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:15 - Cafd - INFO - Processing search space: <SearchSpace_bit.SearchSpace object at 0x0000029999A1C5E0>
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - WARNING - 列联表为空，返回 invalid
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - INFO - 计算列 ['DateReceived'] 和列 ClaimType 之间的φ²: 0.2371114219811745
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - INFO - 计算列 ['IncidentDate'] 和列 ClaimType 之间的φ²: 0.32935504426367984
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - INFO - 计算列 ['AirportCode'] 和列 ClaimType 之间的φ²: 0.15411200193661032
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - INFO - 计算列 ['AirportName'] 和列 ClaimType 之间的φ²: 0.15411200193661032
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - INFO - 计算列 ['AirlineName'] 和列 ClaimType 之间的φ²: 0.0195525193667578
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - INFO - 计算列 ['ClaimSite'] 和列 ClaimType 之间的φ²: 0.25150369219144053
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - INFO - 计算列 ['Item'] 和列 ClaimType 之间的φ²: 0.06759987484087694
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - INFO - 计算列 ['ClaimAmount'] 和列 ClaimType 之间的φ²: 0.18471140079782228
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - INFO - 计算列 ['Status'] 和列 ClaimType 之间的φ²: 0.006823298740922156
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - INFO - 计算列 ['CloseAmount'] 和列 ClaimType 之间的φ²: 0.06231807203763283
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - INFO - 计算列 ['Disposition'] 和列 ClaimType 之间的φ²: 0.003745547839195216
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:15 - Cafd - INFO - Processing search space: <SearchSpace_bit.SearchSpace object at 0x0000029999BDB0A0>
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - WARNING - 列联表为空，返回 invalid
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - INFO - 计算列 ['DateReceived'] 和列 ClaimSite 之间的φ²: 0.2677656261789972
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - INFO - 计算列 ['IncidentDate'] 和列 ClaimSite 之间的φ²: 0.31719806412303375
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - INFO - 计算列 ['AirportCode'] 和列 ClaimSite 之间的φ²: 0.2594452839787256
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - INFO - 计算列 ['AirportName'] 和列 ClaimSite 之间的φ²: 0.2594452839787256
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - INFO - 计算列 ['AirlineName'] 和列 ClaimSite 之间的φ²: 0.02214436640463254
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - INFO - 计算列 ['ClaimType'] 和列 ClaimSite 之间的φ²: 0.2515036921914405
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - INFO - 计算列 ['Item'] 和列 ClaimSite 之间的φ²: 0.029482612621660274
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - INFO - 计算列 ['ClaimAmount'] 和列 ClaimSite 之间的φ²: 0.19232845992484518
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - INFO - 计算列 ['Status'] 和列 ClaimSite 之间的φ²: 0.021111441801400507
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - INFO - 计算列 ['CloseAmount'] 和列 ClaimSite 之间的φ²: 0.04795857936145714
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - INFO - 计算列 ['Disposition'] 和列 ClaimSite 之间的φ²: 0.004705436422780352
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:15 - Cafd - INFO - Processing search space: <SearchSpace_bit.SearchSpace object at 0x0000029999BDB640>
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - WARNING - 列联表为空，返回 invalid
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - INFO - 计算列 ['DateReceived'] 和列 Item 之间的φ²: 0.2530024062468713
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - INFO - 计算列 ['IncidentDate'] 和列 Item 之间的φ²: 0.34632110020580836
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - INFO - 计算列 ['AirportCode'] 和列 Item 之间的φ²: 0.039736343856506116
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - INFO - 计算列 ['AirportName'] 和列 Item 之间的φ²: 0.039736343856506116
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - INFO - 计算列 ['AirlineName'] 和列 Item 之间的φ²: 0.04438881279702282
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - INFO - 计算列 ['ClaimType'] 和列 Item 之间的φ²: 0.07073181828826296
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - INFO - 计算列 ['ClaimSite'] 和列 Item 之间的φ²: 0.0373360323552005
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - INFO - 计算列 ['ClaimAmount'] 和列 Item 之间的φ²: 0.1538654185060977
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - INFO - 计算列 ['Status'] 和列 Item 之间的φ²: 0.033557504741075495
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - INFO - 计算列 ['CloseAmount'] 和列 Item 之间的φ²: 0.042151235008364145
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - INFO - 计算列 ['Disposition'] 和列 Item 之间的φ²: 0.07719997594201772
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:15 - Cafd - INFO - Processing search space: <SearchSpace_bit.SearchSpace object at 0x0000029999BDB6D0>
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - WARNING - 列联表为空，返回 invalid
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - INFO - 计算列 ['DateReceived'] 和列 ClaimAmount 之间的φ²: 0.48465732762350716
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - INFO - 计算列 ['IncidentDate'] 和列 ClaimAmount 之间的φ²: 0.49690193642773356
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - INFO - 计算列 ['AirportCode'] 和列 ClaimAmount 之间的φ²: 0.5025211977615689
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - INFO - 计算列 ['AirportName'] 和列 ClaimAmount 之间的φ²: 0.5025211977615689
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - INFO - 计算列 ['AirlineName'] 和列 ClaimAmount 之间的φ²: 0.5712443230420223
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - INFO - 计算列 ['ClaimType'] 和列 ClaimAmount 之间的φ²: 0.6248503092998986
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - INFO - 计算列 ['ClaimSite'] 和列 ClaimAmount 之间的φ²: 0.5528936324315781
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - INFO - 计算列 ['Item'] 和列 ClaimAmount 之间的φ²: 0.5495009561513482
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - INFO - 计算列 ['Status'] 和列 ClaimAmount 之间的φ²: 0.528375838349551
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - INFO - 计算列 ['CloseAmount'] 和列 ClaimAmount 之间的φ²: 0.6106455053661086
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - INFO - 计算列 ['Disposition'] 和列 ClaimAmount 之间的φ²: 0.5557945729957404
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:15 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:16 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:16 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:16 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:16 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:16 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:16 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:16 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:16 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:16 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:16 - Cafd - INFO - Processing search space: <SearchSpace_bit.SearchSpace object at 0x0000029999BDB760>
+2025-06-06 21:48:16 - rule_mining.Correlation_utils - WARNING - 列联表为空，返回 invalid
+2025-06-06 21:48:16 - rule_mining.Correlation_utils - INFO - 计算列 ['DateReceived'] 和列 Status 之间的φ²: 0.19581042321148526
+2025-06-06 21:48:16 - rule_mining.Correlation_utils - INFO - 计算列 ['IncidentDate'] 和列 Status 之间的φ²: 0.3231419984471474
+2025-06-06 21:48:16 - rule_mining.Correlation_utils - INFO - 计算列 ['AirportCode'] 和列 Status 之间的φ²: 0.16736731617700193
+2025-06-06 21:48:16 - rule_mining.Correlation_utils - INFO - 计算列 ['AirportName'] 和列 Status 之间的φ²: 0.16736731617700193
+2025-06-06 21:48:16 - rule_mining.Correlation_utils - INFO - 计算列 ['AirlineName'] 和列 Status 之间的φ²: 0.01797824987512691
+2025-06-06 21:48:16 - rule_mining.Correlation_utils - INFO - 计算列 ['ClaimType'] 和列 Status 之间的φ²: 0.006823298740922132
+2025-06-06 21:48:16 - rule_mining.Correlation_utils - INFO - 计算列 ['ClaimSite'] 和列 Status 之间的φ²: 0.021111441801400507
+2025-06-06 21:48:16 - rule_mining.Correlation_utils - INFO - 计算列 ['Item'] 和列 Status 之间的φ²: 0.022812563120670228
+2025-06-06 21:48:16 - rule_mining.Correlation_utils - INFO - 计算列 ['ClaimAmount'] 和列 Status 之间的φ²: 0.16668530569547135
+2025-06-06 21:48:16 - rule_mining.Correlation_utils - INFO - 计算列 ['CloseAmount'] 和列 Status 之间的φ²: 0.31742677391580143
+2025-06-06 21:48:16 - rule_mining.Correlation_utils - INFO - 计算列 ['Disposition'] 和列 Status 之间的φ²: 1.0
+2025-06-06 21:48:16 - rule_mining.Correlation_utils - INFO - 行方向得分: 0.9989, 列方向得分: 1.0000
+2025-06-06 21:48:16 - SearchSpace_bit - INFO - 发现函数依赖: ['Disposition'] -> Status
+2025-06-06 21:48:16 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:16 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:16 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:16 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:16 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:16 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:16 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:16 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:16 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:16 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:16 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:16 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:16 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:16 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:16 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:16 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:16 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:16 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:16 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:16 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:16 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:16 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:16 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:16 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:16 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:16 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:16 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:16 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:16 - Cafd - INFO - Processing search space: <SearchSpace_bit.SearchSpace object at 0x0000029999BDB7F0>
+2025-06-06 21:48:16 - rule_mining.Correlation_utils - WARNING - 列联表为空，返回 invalid
+2025-06-06 21:48:16 - rule_mining.Correlation_utils - INFO - 计算列 ['DateReceived'] 和列 CloseAmount 之间的φ²: 0.30420876055826257
+2025-06-06 21:48:16 - rule_mining.Correlation_utils - INFO - 计算列 ['IncidentDate'] 和列 CloseAmount 之间的φ²: 0.3117619492748082
+2025-06-06 21:48:16 - rule_mining.Correlation_utils - INFO - 计算列 ['AirportCode'] 和列 CloseAmount 之间的φ²: 0.32116009651399613
+2025-06-06 21:48:16 - rule_mining.Correlation_utils - INFO - 计算列 ['AirportName'] 和列 CloseAmount 之间的φ²: 0.32116009651399613
+2025-06-06 21:48:16 - rule_mining.Correlation_utils - INFO - 计算列 ['AirlineName'] 和列 CloseAmount 之间的φ²: 0.37142922287693075
+2025-06-06 21:48:16 - rule_mining.Correlation_utils - INFO - 计算列 ['ClaimType'] 和列 CloseAmount 之间的φ²: 0.4681496731811012
+2025-06-06 21:48:16 - rule_mining.Correlation_utils - INFO - 计算列 ['ClaimSite'] 和列 CloseAmount 之间的φ²: 0.4321385854010759
+2025-06-06 21:48:16 - rule_mining.Correlation_utils - INFO - 计算列 ['Item'] 和列 CloseAmount 之间的φ²: 0.28892595444427555
+2025-06-06 21:48:16 - rule_mining.Correlation_utils - INFO - 计算列 ['ClaimAmount'] 和列 CloseAmount 之间的φ²: 0.46271468924397874
+2025-06-06 21:48:16 - rule_mining.Correlation_utils - INFO - 计算列 ['Status'] 和列 CloseAmount 之间的φ²: 0.39951705285207034
+2025-06-06 21:48:16 - rule_mining.Correlation_utils - INFO - 计算列 ['Disposition'] 和列 CloseAmount 之间的φ²: 0.7969470308850275
+2025-06-06 21:48:16 - rule_mining.Correlation_utils - INFO - 行方向得分: 0.4473, 列方向得分: 0.9057
+2025-06-06 21:48:16 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:16 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:16 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:16 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:16 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:16 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:16 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:16 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:16 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:16 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:16 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:16 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:16 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:16 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:16 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:16 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:16 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:16 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:16 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:16 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:16 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:16 - Cafd - INFO - Processing search space: <SearchSpace_bit.SearchSpace object at 0x0000029999BDB880>
+2025-06-06 21:48:16 - rule_mining.Correlation_utils - WARNING - 列联表为空，返回 invalid
+2025-06-06 21:48:16 - rule_mining.Correlation_utils - INFO - 计算列 ['DateReceived'] 和列 Disposition 之间的φ²: 0.2111428400492089
+2025-06-06 21:48:16 - rule_mining.Correlation_utils - INFO - 计算列 ['IncidentDate'] 和列 Disposition 之间的φ²: 0.3510971919123622
+2025-06-06 21:48:16 - rule_mining.Correlation_utils - INFO - 计算列 ['AirportCode'] 和列 Disposition 之间的φ²: 0.05888224749607014
+2025-06-06 21:48:16 - rule_mining.Correlation_utils - INFO - 计算列 ['AirportName'] 和列 Disposition 之间的φ²: 0.05888224749607014
+2025-06-06 21:48:16 - rule_mining.Correlation_utils - INFO - 计算列 ['AirlineName'] 和列 Disposition 之间的φ²: 0.019395661694035782
+2025-06-06 21:48:16 - rule_mining.Correlation_utils - INFO - 计算列 ['ClaimType'] 和列 Disposition 之间的φ²: 0.0037455478391951475
+2025-06-06 21:48:16 - rule_mining.Correlation_utils - INFO - 计算列 ['ClaimSite'] 和列 Disposition 之间的φ²: 0.004705436422780415
+2025-06-06 21:48:16 - rule_mining.Correlation_utils - INFO - 计算列 ['Item'] 和列 Disposition 之间的φ²: 0.05777793594201183
+2025-06-06 21:48:16 - rule_mining.Correlation_utils - INFO - 计算列 ['ClaimAmount'] 和列 Disposition 之间的φ²: 0.25690957878399423
+2025-06-06 21:48:16 - rule_mining.Correlation_utils - INFO - 计算列 ['Status'] 和列 Disposition 之间的φ²: 1.0
+2025-06-06 21:48:16 - rule_mining.Correlation_utils - INFO - 行方向得分: 1.0000, 列方向得分: 0.9989
+2025-06-06 21:48:16 - SearchSpace_bit - INFO - 发现函数依赖: ['Status'] -> Disposition
+2025-06-06 21:48:16 - rule_mining.Correlation_utils - INFO - 计算列 ['CloseAmount'] 和列 Disposition 之间的φ²: 0.6342955117231805
+2025-06-06 21:48:16 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:16 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:16 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:16 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:16 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:16 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:16 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:16 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:16 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:16 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:16 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:16 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:16 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:16 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:16 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:16 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:16 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:16 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:16 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:16 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:16 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:16 - Cafd - INFO - Processing search space: <SearchSpace_bit.SearchSpace object at 0x0000029999BDB910>
+2025-06-06 21:48:16 - rule_mining.Correlation_utils - INFO - 计算列 ['DateReceived'] 和列 ClaimNumber 之间的φ²: 0.9999999999999931
+2025-06-06 21:48:16 - rule_mining.Correlation_utils - INFO - 计算列 ['IncidentDate'] 和列 ClaimNumber 之间的φ²: 0.999999999999995
+2025-06-06 21:48:16 - rule_mining.Correlation_utils - INFO - 计算列 ['AirportCode'] 和列 ClaimNumber 之间的φ²: 1.0000000000000067
+2025-06-06 21:48:16 - rule_mining.Correlation_utils - INFO - 计算列 ['AirportName'] 和列 ClaimNumber 之间的φ²: 1.0000000000000067
+2025-06-06 21:48:16 - rule_mining.Correlation_utils - INFO - 计算列 ['AirlineName'] 和列 ClaimNumber 之间的φ²: 1.0000000000000038
+2025-06-06 21:48:16 - rule_mining.Correlation_utils - INFO - 计算列 ['ClaimType'] 和列 ClaimNumber 之间的φ²: 0.9999999999999868
+2025-06-06 21:48:16 - rule_mining.Correlation_utils - INFO - 计算列 ['ClaimSite'] 和列 ClaimNumber 之间的φ²: 1.0000000000001072
+2025-06-06 21:48:16 - rule_mining.Correlation_utils - INFO - 计算列 ['Item'] 和列 ClaimNumber 之间的φ²: 1.000000000000002
+2025-06-06 21:48:16 - rule_mining.Correlation_utils - INFO - 计算列 ['ClaimAmount'] 和列 ClaimNumber 之间的φ²: 1.0000000000000013
+2025-06-06 21:48:16 - rule_mining.Correlation_utils - INFO - 计算列 ['Status'] 和列 ClaimNumber 之间的φ²: 0.9999999999999983
+2025-06-06 21:48:16 - rule_mining.Correlation_utils - INFO - 计算列 ['CloseAmount'] 和列 ClaimNumber 之间的φ²: 0.9999999999999999
+2025-06-06 21:48:16 - rule_mining.Correlation_utils - INFO - 计算列 ['Disposition'] 和列 ClaimNumber 之间的φ²: 0.9999999999999695
+2025-06-06 21:48:16 - Cafd - INFO - Processing search space: <SearchSpace_bit.SearchSpace object at 0x0000029999BDB9A0>
+2025-06-06 21:48:16 - rule_mining.Correlation_utils - WARNING - 列联表为空，返回 invalid
+2025-06-06 21:48:16 - rule_mining.Correlation_utils - INFO - 计算列 ['IncidentDate'] 和列 DateReceived 之间的φ²: 0.3205385147763886
+2025-06-06 21:48:16 - rule_mining.Correlation_utils - INFO - 计算列 ['AirportCode'] 和列 DateReceived 之间的φ²: 0.20358553840533739
+2025-06-06 21:48:16 - rule_mining.Correlation_utils - INFO - 计算列 ['AirportName'] 和列 DateReceived 之间的φ²: 0.20358553840533739
+2025-06-06 21:48:16 - rule_mining.Correlation_utils - INFO - 计算列 ['AirlineName'] 和列 DateReceived 之间的φ²: 0.21418947543702116
+2025-06-06 21:48:16 - rule_mining.Correlation_utils - INFO - 计算列 ['ClaimType'] 和列 DateReceived 之间的φ²: 0.2088427597296748
+2025-06-06 21:48:16 - rule_mining.Correlation_utils - INFO - 计算列 ['ClaimSite'] 和列 DateReceived 之间的φ²: 0.24578651800671245
+2025-06-06 21:48:16 - rule_mining.Correlation_utils - INFO - 计算列 ['Item'] 和列 DateReceived 之间的φ²: 0.22086989986672395
+2025-06-06 21:48:16 - rule_mining.Correlation_utils - INFO - 计算列 ['ClaimAmount'] 和列 DateReceived 之间的φ²: 0.2467681021031364
+2025-06-06 21:48:16 - rule_mining.Correlation_utils - INFO - 计算列 ['Status'] 和列 DateReceived 之间的φ²: 0.17966166230752856
+2025-06-06 21:48:16 - rule_mining.Correlation_utils - INFO - 计算列 ['CloseAmount'] 和列 DateReceived 之间的φ²: 0.21095558777431422
+2025-06-06 21:48:16 - rule_mining.Correlation_utils - INFO - 计算列 ['Disposition'] 和列 DateReceived 之间的φ²: 0.1840316031885977
+2025-06-06 21:48:16 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:16 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:16 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:16 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:16 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:16 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:16 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:16 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:16 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:16 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:16 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:16 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:16 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:16 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:16 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:16 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:16 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:16 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:16 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:16 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:16 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:16 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:16 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:16 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:17 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:17 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:17 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:17 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:17 - Cafd - INFO - Processing search space: <SearchSpace_bit.SearchSpace object at 0x0000029999BDBA30>
+2025-06-06 21:48:17 - rule_mining.Correlation_utils - WARNING - 列联表为空，返回 invalid
+2025-06-06 21:48:17 - rule_mining.Correlation_utils - INFO - 计算列 ['DateReceived'] 和列 IncidentDate 之间的φ²: 0.39340642196084874
+2025-06-06 21:48:17 - rule_mining.Correlation_utils - INFO - 计算列 ['AirportCode'] 和列 IncidentDate 之间的φ²: 0.39647916933266697
+2025-06-06 21:48:17 - rule_mining.Correlation_utils - INFO - 计算列 ['AirportName'] 和列 IncidentDate 之间的φ²: 0.39647916933266697
+2025-06-06 21:48:17 - rule_mining.Correlation_utils - INFO - 计算列 ['AirlineName'] 和列 IncidentDate 之间的φ²: 0.4366829049897208
+2025-06-06 21:48:17 - rule_mining.Correlation_utils - INFO - 计算列 ['ClaimType'] 和列 IncidentDate 之间的φ²: 0.3895297427017598
+2025-06-06 21:48:17 - rule_mining.Correlation_utils - INFO - 计算列 ['ClaimSite'] 和列 IncidentDate 之间的φ²: 0.3752433956088285
+2025-06-06 21:48:17 - rule_mining.Correlation_utils - INFO - 计算列 ['Item'] 和列 IncidentDate 之间的φ²: 0.453138896257459
+2025-06-06 21:48:17 - rule_mining.Correlation_utils - INFO - 计算列 ['ClaimAmount'] 和列 IncidentDate 之间的φ²: 0.5105963843530424
+2025-06-06 21:48:17 - rule_mining.Correlation_utils - INFO - 计算列 ['Status'] 和列 IncidentDate 之间的φ²: 0.41772981428474176
+2025-06-06 21:48:17 - rule_mining.Correlation_utils - INFO - 计算列 ['CloseAmount'] 和列 IncidentDate 之间的φ²: 0.46186626120834257
+2025-06-06 21:48:17 - rule_mining.Correlation_utils - INFO - 计算列 ['Disposition'] 和列 IncidentDate 之间的φ²: 0.40680340893614886
+2025-06-06 21:48:17 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:17 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:17 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:17 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:17 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:17 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:17 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:17 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:17 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:17 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:17 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:17 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:17 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:17 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:17 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:17 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:17 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:17 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:17 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:17 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:17 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:17 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:17 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:17 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:17 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:17 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:17 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:17 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:17 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:17 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:17 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:17 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:17 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:17 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:17 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:17 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:17 - Cafd - INFO - Processing search space: <SearchSpace_bit.SearchSpace object at 0x0000029999BDBAC0>
+2025-06-06 21:48:17 - rule_mining.Correlation_utils - WARNING - 列联表为空，返回 invalid
+2025-06-06 21:48:17 - rule_mining.Correlation_utils - INFO - 计算列 ['DateReceived'] 和列 AirportCode 之间的φ²: 0.17160996318440516
+2025-06-06 21:48:17 - rule_mining.Correlation_utils - INFO - 计算列 ['IncidentDate'] 和列 AirportCode 之间的φ²: 0.31650604808373733
+2025-06-06 21:48:17 - rule_mining.Correlation_utils - INFO - 计算列 ['AirportName'] 和列 AirportCode 之间的φ²: 1.0
+2025-06-06 21:48:17 - rule_mining.Correlation_utils - INFO - 行方向得分: 1.0000, 列方向得分: 1.0000
+2025-06-06 21:48:17 - SearchSpace_bit - INFO - 发现函数依赖: ['AirportName'] -> AirportCode
+2025-06-06 21:48:17 - rule_mining.Correlation_utils - INFO - 计算列 ['AirlineName'] 和列 AirportCode 之间的φ²: 0.1541046225120847
+2025-06-06 21:48:17 - rule_mining.Correlation_utils - INFO - 计算列 ['ClaimType'] 和列 AirportCode 之间的φ²: 0.1842380069983121
+2025-06-06 21:48:17 - rule_mining.Correlation_utils - INFO - 计算列 ['ClaimSite'] 和列 AirportCode 之间的φ²: 0.28574036155911386
+2025-06-06 21:48:17 - rule_mining.Correlation_utils - INFO - 计算列 ['Item'] 和列 AirportCode 之间的φ²: 0.07427691820857364
+2025-06-06 21:48:17 - rule_mining.Correlation_utils - INFO - 计算列 ['ClaimAmount'] 和列 AirportCode 之间的φ²: 0.15570375640064696
+2025-06-06 21:48:17 - rule_mining.Correlation_utils - INFO - 计算列 ['Status'] 和列 AirportCode 之间的φ²: 0.17598569615395887
+2025-06-06 21:48:17 - rule_mining.Correlation_utils - INFO - 计算列 ['CloseAmount'] 和列 AirportCode 之间的φ²: 0.07846314454269968
+2025-06-06 21:48:17 - rule_mining.Correlation_utils - INFO - 计算列 ['Disposition'] 和列 AirportCode 之间的φ²: 0.07832212400875262
+2025-06-06 21:48:17 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:17 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:17 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:17 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:17 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:17 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:17 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:17 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:17 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:17 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:17 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:17 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:17 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:17 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:17 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:17 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:17 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:17 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:17 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:17 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:17 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:17 - Cafd - INFO - Processing search space: <SearchSpace_bit.SearchSpace object at 0x0000029999BDBB50>
+2025-06-06 21:48:17 - rule_mining.Correlation_utils - WARNING - 列联表为空，返回 invalid
+2025-06-06 21:48:17 - rule_mining.Correlation_utils - INFO - 计算列 ['DateReceived'] 和列 AirportName 之间的φ²: 0.17160996318440516
+2025-06-06 21:48:17 - rule_mining.Correlation_utils - INFO - 计算列 ['IncidentDate'] 和列 AirportName 之间的φ²: 0.31650604808373733
+2025-06-06 21:48:17 - rule_mining.Correlation_utils - INFO - 计算列 ['AirportCode'] 和列 AirportName 之间的φ²: 1.0
+2025-06-06 21:48:17 - rule_mining.Correlation_utils - INFO - 行方向得分: 1.0000, 列方向得分: 1.0000
+2025-06-06 21:48:17 - SearchSpace_bit - INFO - 发现函数依赖: ['AirportCode'] -> AirportName
+2025-06-06 21:48:17 - rule_mining.Correlation_utils - INFO - 计算列 ['AirlineName'] 和列 AirportName 之间的φ²: 0.1541046225120847
+2025-06-06 21:48:17 - rule_mining.Correlation_utils - INFO - 计算列 ['ClaimType'] 和列 AirportName 之间的φ²: 0.1842380069983121
+2025-06-06 21:48:17 - rule_mining.Correlation_utils - INFO - 计算列 ['ClaimSite'] 和列 AirportName 之间的φ²: 0.28574036155911386
+2025-06-06 21:48:17 - rule_mining.Correlation_utils - INFO - 计算列 ['Item'] 和列 AirportName 之间的φ²: 0.07427691820857364
+2025-06-06 21:48:17 - rule_mining.Correlation_utils - INFO - 计算列 ['ClaimAmount'] 和列 AirportName 之间的φ²: 0.15570375640064696
+2025-06-06 21:48:17 - rule_mining.Correlation_utils - INFO - 计算列 ['Status'] 和列 AirportName 之间的φ²: 0.17598569615395887
+2025-06-06 21:48:17 - rule_mining.Correlation_utils - INFO - 计算列 ['CloseAmount'] 和列 AirportName 之间的φ²: 0.07846314454269968
+2025-06-06 21:48:17 - rule_mining.Correlation_utils - INFO - 计算列 ['Disposition'] 和列 AirportName 之间的φ²: 0.07832212400875262
+2025-06-06 21:48:17 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:17 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:17 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:17 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:17 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:17 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:17 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:17 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:17 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:17 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:17 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:17 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:17 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:17 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:17 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:17 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:17 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:17 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:17 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:17 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:17 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:17 - Cafd - INFO - Processing search space: <SearchSpace_bit.SearchSpace object at 0x0000029999BDBBE0>
+2025-06-06 21:48:17 - rule_mining.Correlation_utils - WARNING - 列联表为空，返回 invalid
+2025-06-06 21:48:17 - rule_mining.Correlation_utils - INFO - 计算列 ['DateReceived'] 和列 AirlineName 之间的φ²: 0.22747327866628775
+2025-06-06 21:48:17 - rule_mining.Correlation_utils - INFO - 计算列 ['IncidentDate'] 和列 AirlineName 之间的φ²: 0.39850856918359934
+2025-06-06 21:48:17 - rule_mining.Correlation_utils - INFO - 计算列 ['AirportCode'] 和列 AirlineName 之间的φ²: 0.09835296087677826
+2025-06-06 21:48:17 - rule_mining.Correlation_utils - INFO - 计算列 ['AirportName'] 和列 AirlineName 之间的φ²: 0.09835296087677826
+2025-06-06 21:48:17 - rule_mining.Correlation_utils - INFO - 计算列 ['ClaimType'] 和列 AirlineName 之间的φ²: 0.022693741339512602
+2025-06-06 21:48:17 - rule_mining.Correlation_utils - INFO - 计算列 ['ClaimSite'] 和列 AirlineName 之间的φ²: 0.024924313874676276
+2025-06-06 21:48:17 - rule_mining.Correlation_utils - INFO - 计算列 ['Item'] 和列 AirlineName 之间的φ²: 0.03260969080852674
+2025-06-06 21:48:17 - rule_mining.Correlation_utils - INFO - 计算列 ['ClaimAmount'] 和列 AirlineName 之间的φ²: 0.1869047223375227
+2025-06-06 21:48:17 - rule_mining.Correlation_utils - INFO - 计算列 ['Status'] 和列 AirlineName 之间的φ²: 0.029870435306491323
+2025-06-06 21:48:17 - rule_mining.Correlation_utils - INFO - 计算列 ['CloseAmount'] 和列 AirlineName 之间的φ²: 0.06747023188992822
+2025-06-06 21:48:17 - rule_mining.Correlation_utils - INFO - 计算列 ['Disposition'] 和列 AirlineName 之间的φ²: 0.02961126863583485
+2025-06-06 21:48:17 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:17 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:17 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:17 - Cafd - INFO - Processing search space: <SearchSpace_bit.SearchSpace object at 0x0000029999BDBC70>
+2025-06-06 21:48:17 - rule_mining.Correlation_utils - WARNING - 列联表为空，返回 invalid
+2025-06-06 21:48:17 - rule_mining.Correlation_utils - INFO - 计算列 ['DateReceived'] 和列 ClaimType 之间的φ²: 0.20742381070419638
+2025-06-06 21:48:17 - rule_mining.Correlation_utils - INFO - 计算列 ['IncidentDate'] 和列 ClaimType 之间的φ²: 0.32935504426367984
+2025-06-06 21:48:17 - rule_mining.Correlation_utils - INFO - 计算列 ['AirportCode'] 和列 ClaimType 之间的φ²: 0.15411200193661032
+2025-06-06 21:48:17 - rule_mining.Correlation_utils - INFO - 计算列 ['AirportName'] 和列 ClaimType 之间的φ²: 0.15411200193661032
+2025-06-06 21:48:17 - rule_mining.Correlation_utils - INFO - 计算列 ['AirlineName'] 和列 ClaimType 之间的φ²: 0.0195525193667578
+2025-06-06 21:48:17 - rule_mining.Correlation_utils - INFO - 计算列 ['ClaimSite'] 和列 ClaimType 之间的φ²: 0.25150369219144053
+2025-06-06 21:48:17 - rule_mining.Correlation_utils - INFO - 计算列 ['Item'] 和列 ClaimType 之间的φ²: 0.06759987484087694
+2025-06-06 21:48:17 - rule_mining.Correlation_utils - INFO - 计算列 ['ClaimAmount'] 和列 ClaimType 之间的φ²: 0.18471140079782228
+2025-06-06 21:48:17 - rule_mining.Correlation_utils - INFO - 计算列 ['Status'] 和列 ClaimType 之间的φ²: 0.006823298740922156
+2025-06-06 21:48:17 - rule_mining.Correlation_utils - INFO - 计算列 ['CloseAmount'] 和列 ClaimType 之间的φ²: 0.06231807203763283
+2025-06-06 21:48:17 - rule_mining.Correlation_utils - INFO - 计算列 ['Disposition'] 和列 ClaimType 之间的φ²: 0.003745547839195216
+2025-06-06 21:48:17 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:17 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:17 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:17 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:17 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:17 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:17 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:17 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:17 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:17 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:17 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:17 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:17 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:18 - Cafd - INFO - Processing search space: <SearchSpace_bit.SearchSpace object at 0x0000029999BDBD00>
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - WARNING - 列联表为空，返回 invalid
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - INFO - 计算列 ['DateReceived'] 和列 ClaimSite 之间的φ²: 0.22505874821256677
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - INFO - 计算列 ['IncidentDate'] 和列 ClaimSite 之间的φ²: 0.31719806412303375
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - INFO - 计算列 ['AirportCode'] 和列 ClaimSite 之间的φ²: 0.2594452839787256
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - INFO - 计算列 ['AirportName'] 和列 ClaimSite 之间的φ²: 0.2594452839787256
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - INFO - 计算列 ['AirlineName'] 和列 ClaimSite 之间的φ²: 0.02214436640463254
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - INFO - 计算列 ['ClaimType'] 和列 ClaimSite 之间的φ²: 0.2515036921914405
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - INFO - 计算列 ['Item'] 和列 ClaimSite 之间的φ²: 0.029482612621660274
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - INFO - 计算列 ['ClaimAmount'] 和列 ClaimSite 之间的φ²: 0.19232845992484518
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - INFO - 计算列 ['Status'] 和列 ClaimSite 之间的φ²: 0.021111441801400507
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - INFO - 计算列 ['CloseAmount'] 和列 ClaimSite 之间的φ²: 0.04795857936145714
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - INFO - 计算列 ['Disposition'] 和列 ClaimSite 之间的φ²: 0.004705436422780352
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:18 - Cafd - INFO - Processing search space: <SearchSpace_bit.SearchSpace object at 0x0000029999BDBD90>
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - WARNING - 列联表为空，返回 invalid
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - INFO - 计算列 ['DateReceived'] 和列 Item 之间的φ²: 0.21133220347415488
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - INFO - 计算列 ['IncidentDate'] 和列 Item 之间的φ²: 0.34632110020580836
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - INFO - 计算列 ['AirportCode'] 和列 Item 之间的φ²: 0.039736343856506116
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - INFO - 计算列 ['AirportName'] 和列 Item 之间的φ²: 0.039736343856506116
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - INFO - 计算列 ['AirlineName'] 和列 Item 之间的φ²: 0.04438881279702282
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - INFO - 计算列 ['ClaimType'] 和列 Item 之间的φ²: 0.07073181828826296
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - INFO - 计算列 ['ClaimSite'] 和列 Item 之间的φ²: 0.0373360323552005
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - INFO - 计算列 ['ClaimAmount'] 和列 Item 之间的φ²: 0.1538654185060977
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - INFO - 计算列 ['Status'] 和列 Item 之间的φ²: 0.033557504741075495
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - INFO - 计算列 ['CloseAmount'] 和列 Item 之间的φ²: 0.042151235008364145
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - INFO - 计算列 ['Disposition'] 和列 Item 之间的φ²: 0.07719997594201772
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:18 - Cafd - INFO - Processing search space: <SearchSpace_bit.SearchSpace object at 0x0000029999BDBE20>
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - WARNING - 列联表为空，返回 invalid
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - INFO - 计算列 ['DateReceived'] 和列 ClaimAmount 之间的φ²: 0.48628359549102856
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - INFO - 计算列 ['IncidentDate'] 和列 ClaimAmount 之间的φ²: 0.49690193642773356
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - INFO - 计算列 ['AirportCode'] 和列 ClaimAmount 之间的φ²: 0.5025211977615689
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - INFO - 计算列 ['AirportName'] 和列 ClaimAmount 之间的φ²: 0.5025211977615689
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - INFO - 计算列 ['AirlineName'] 和列 ClaimAmount 之间的φ²: 0.5712443230420223
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - INFO - 计算列 ['ClaimType'] 和列 ClaimAmount 之间的φ²: 0.6248503092998986
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - INFO - 计算列 ['ClaimSite'] 和列 ClaimAmount 之间的φ²: 0.5528936324315781
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - INFO - 计算列 ['Item'] 和列 ClaimAmount 之间的φ²: 0.5495009561513482
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - INFO - 计算列 ['Status'] 和列 ClaimAmount 之间的φ²: 0.528375838349551
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - INFO - 计算列 ['CloseAmount'] 和列 ClaimAmount 之间的φ²: 0.6106455053661086
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - INFO - 计算列 ['Disposition'] 和列 ClaimAmount 之间的φ²: 0.5557945729957404
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:18 - Cafd - INFO - Processing search space: <SearchSpace_bit.SearchSpace object at 0x0000029999BDBEB0>
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - WARNING - 列联表为空，返回 invalid
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - INFO - 计算列 ['DateReceived'] 和列 Status 之间的φ²: 0.16830796256216835
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - INFO - 计算列 ['IncidentDate'] 和列 Status 之间的φ²: 0.3231419984471474
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - INFO - 计算列 ['AirportCode'] 和列 Status 之间的φ²: 0.16736731617700193
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - INFO - 计算列 ['AirportName'] 和列 Status 之间的φ²: 0.16736731617700193
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - INFO - 计算列 ['AirlineName'] 和列 Status 之间的φ²: 0.01797824987512691
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - INFO - 计算列 ['ClaimType'] 和列 Status 之间的φ²: 0.006823298740922132
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - INFO - 计算列 ['ClaimSite'] 和列 Status 之间的φ²: 0.021111441801400507
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - INFO - 计算列 ['Item'] 和列 Status 之间的φ²: 0.022812563120670228
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - INFO - 计算列 ['ClaimAmount'] 和列 Status 之间的φ²: 0.16668530569547135
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - INFO - 计算列 ['CloseAmount'] 和列 Status 之间的φ²: 0.31742677391580143
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - INFO - 计算列 ['Disposition'] 和列 Status 之间的φ²: 1.0
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - INFO - 行方向得分: 0.9989, 列方向得分: 1.0000
+2025-06-06 21:48:18 - SearchSpace_bit - INFO - 发现函数依赖: ['Disposition'] -> Status
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:18 - Cafd - INFO - Processing search space: <SearchSpace_bit.SearchSpace object at 0x0000029999BDBF40>
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - WARNING - 列联表为空，返回 invalid
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - INFO - 计算列 ['DateReceived'] 和列 CloseAmount 之间的φ²: 0.3044726372849497
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - INFO - 计算列 ['IncidentDate'] 和列 CloseAmount 之间的φ²: 0.3117619492748082
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - INFO - 计算列 ['AirportCode'] 和列 CloseAmount 之间的φ²: 0.32116009651399613
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - INFO - 计算列 ['AirportName'] 和列 CloseAmount 之间的φ²: 0.32116009651399613
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - INFO - 计算列 ['AirlineName'] 和列 CloseAmount 之间的φ²: 0.37142922287693075
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - INFO - 计算列 ['ClaimType'] 和列 CloseAmount 之间的φ²: 0.4681496731811012
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - INFO - 计算列 ['ClaimSite'] 和列 CloseAmount 之间的φ²: 0.4321385854010759
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - INFO - 计算列 ['Item'] 和列 CloseAmount 之间的φ²: 0.28892595444427555
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - INFO - 计算列 ['ClaimAmount'] 和列 CloseAmount 之间的φ²: 0.46271468924397874
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - INFO - 计算列 ['Status'] 和列 CloseAmount 之间的φ²: 0.39951705285207034
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - INFO - 计算列 ['Disposition'] 和列 CloseAmount 之间的φ²: 0.7969470308850275
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - INFO - 行方向得分: 0.4473, 列方向得分: 0.9057
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:18 - Cafd - INFO - Processing search space: <SearchSpace_bit.SearchSpace object at 0x0000029999BDBFD0>
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - WARNING - 列联表为空，返回 invalid
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - INFO - 计算列 ['DateReceived'] 和列 Disposition 之间的φ²: 0.17819528729692732
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - INFO - 计算列 ['IncidentDate'] 和列 Disposition 之间的φ²: 0.3510971919123622
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - INFO - 计算列 ['AirportCode'] 和列 Disposition 之间的φ²: 0.05888224749607014
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - INFO - 计算列 ['AirportName'] 和列 Disposition 之间的φ²: 0.05888224749607014
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - INFO - 计算列 ['AirlineName'] 和列 Disposition 之间的φ²: 0.019395661694035782
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - INFO - 计算列 ['ClaimType'] 和列 Disposition 之间的φ²: 0.0037455478391951475
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - INFO - 计算列 ['ClaimSite'] 和列 Disposition 之间的φ²: 0.004705436422780415
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - INFO - 计算列 ['Item'] 和列 Disposition 之间的φ²: 0.05777793594201183
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - INFO - 计算列 ['ClaimAmount'] 和列 Disposition 之间的φ²: 0.25690957878399423
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - INFO - 计算列 ['Status'] 和列 Disposition 之间的φ²: 1.0
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - INFO - 行方向得分: 1.0000, 列方向得分: 0.9989
+2025-06-06 21:48:18 - SearchSpace_bit - INFO - 发现函数依赖: ['Status'] -> Disposition
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - INFO - 计算列 ['CloseAmount'] 和列 Disposition 之间的φ²: 0.6342955117231805
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:18 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:19 - Cafd - INFO - Processing search space: <SearchSpace_bit.SearchSpace object at 0x0000029999BF50A0>
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - INFO - 计算列 ['DateReceived'] 和列 ClaimNumber 之间的φ²: 0.4759701837096087
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - INFO - 计算列 ['IncidentDate'] 和列 ClaimNumber 之间的φ²: 0.4859104455119393
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - INFO - 计算列 ['AirportCode'] 和列 ClaimNumber 之间的φ²: 0.40991016044294976
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - INFO - 计算列 ['AirportName'] 和列 ClaimNumber 之间的φ²: 0.4205215900166299
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - INFO - 计算列 ['AirlineName'] 和列 ClaimNumber 之间的φ²: 0.42308254398936745
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - INFO - 计算列 ['ClaimType'] 和列 ClaimNumber 之间的φ²: 0.34102735206430923
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - INFO - 计算列 ['ClaimSite'] 和列 ClaimNumber 之间的φ²: 0.3315014010811027
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - INFO - 计算列 ['Item'] 和列 ClaimNumber 之间的φ²: 0.3457750350304902
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - INFO - 计算列 ['ClaimAmount'] 和列 ClaimNumber 之间的φ²: 0.37107802723015004
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - INFO - 计算列 ['Status'] 和列 ClaimNumber 之间的φ²: 0.668937519833915
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - INFO - 计算列 ['CloseAmount'] 和列 ClaimNumber 之间的φ²: 0.29310532273158324
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - INFO - 计算列 ['Disposition'] 和列 ClaimNumber 之间的φ²: 0.3512599974483027
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:19 - Cafd - INFO - Processing search space: <SearchSpace_bit.SearchSpace object at 0x0000029999BF5130>
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - INFO - 计算列 ['ClaimNumber'] 和列 DateReceived 之间的φ²: 0.027429103920735408
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - INFO - 计算列 ['IncidentDate'] 和列 DateReceived 之间的φ²: 0.029869546462405222
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - INFO - 计算列 ['AirportCode'] 和列 DateReceived 之间的φ²: 0.023118254557272528
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - INFO - 计算列 ['AirportName'] 和列 DateReceived 之间的φ²: 0.039740442913435155
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - INFO - 计算列 ['AirlineName'] 和列 DateReceived 之间的φ²: 0.03979621890100837
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - INFO - 计算列 ['ClaimType'] 和列 DateReceived 之间的φ²: 0.0367248468520968
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - INFO - 计算列 ['ClaimSite'] 和列 DateReceived 之间的φ²: 0.06074993769885389
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - INFO - 计算列 ['Item'] 和列 DateReceived 之间的φ²: 0.022220236010332753
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - INFO - 计算列 ['ClaimAmount'] 和列 DateReceived 之间的φ²: 0.023934995507986105
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - INFO - 计算列 ['Status'] 和列 DateReceived 之间的φ²: 0.038228305423259445
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - INFO - 计算列 ['CloseAmount'] 和列 DateReceived 之间的φ²: 0.022618248201629637
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - INFO - 计算列 ['Disposition'] 和列 DateReceived 之间的φ²: 0.026816335061344457
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:19 - Cafd - INFO - Processing search space: <SearchSpace_bit.SearchSpace object at 0x0000029999BF51C0>
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - INFO - 计算列 ['ClaimNumber'] 和列 IncidentDate 之间的φ²: 0.02345224270128275
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - INFO - 计算列 ['DateReceived'] 和列 IncidentDate 之间的φ²: 0.07750410883121728
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - INFO - 计算列 ['AirportCode'] 和列 IncidentDate 之间的φ²: 0.024392008388335214
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - INFO - 计算列 ['AirportName'] 和列 IncidentDate 之间的φ²: 0.042800808002687284
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - INFO - 计算列 ['AirlineName'] 和列 IncidentDate 之间的φ²: 0.026063936642334494
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - INFO - 计算列 ['ClaimType'] 和列 IncidentDate 之间的φ²: 0.05747275306726374
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - INFO - 计算列 ['ClaimSite'] 和列 IncidentDate 之间的φ²: 0.05992198339996842
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - INFO - 计算列 ['Item'] 和列 IncidentDate 之间的φ²: 0.04598540016290731
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - INFO - 计算列 ['ClaimAmount'] 和列 IncidentDate 之间的φ²: 0.028130419471722252
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - INFO - 计算列 ['Status'] 和列 IncidentDate 之间的φ²: 0.14035786317560997
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - INFO - 计算列 ['CloseAmount'] 和列 IncidentDate 之间的φ²: 0.019105747588763204
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - INFO - 计算列 ['Disposition'] 和列 IncidentDate 之间的φ²: 0.019850092637862558
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:19 - Cafd - INFO - Processing search space: <SearchSpace_bit.SearchSpace object at 0x0000029999BF5250>
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - INFO - 计算列 ['ClaimNumber'] 和列 AirportCode 之间的φ²: 0.022968439160091118
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - INFO - 计算列 ['DateReceived'] 和列 AirportCode 之间的φ²: 0.024793867157624563
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - INFO - 计算列 ['IncidentDate'] 和列 AirportCode 之间的φ²: 0.026390580435874188
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - INFO - 计算列 ['AirportName'] 和列 AirportCode 之间的φ²: 1.0000000000000002
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - INFO - 行方向得分: 1.0000, 列方向得分: 0.7873
+2025-06-06 21:48:19 - SearchSpace_bit - INFO - 发现函数依赖: ['AirportName'] -> AirportCode
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - INFO - 计算列 ['AirlineName'] 和列 AirportCode 之间的φ²: 0.05967232183739702
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - INFO - 计算列 ['ClaimType'] 和列 AirportCode 之间的φ²: 0.02108566712690141
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - INFO - 计算列 ['ClaimSite'] 和列 AirportCode 之间的φ²: 0.03468400722109905
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - INFO - 计算列 ['Item'] 和列 AirportCode 之间的φ²: 0.02940500809600179
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - INFO - 计算列 ['ClaimAmount'] 和列 AirportCode 之间的φ²: 0.018610349812680553
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - INFO - 计算列 ['Status'] 和列 AirportCode 之间的φ²: 0.08454151471394289
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - INFO - 计算列 ['CloseAmount'] 和列 AirportCode 之间的φ²: 0.021069516198582036
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - INFO - 计算列 ['Disposition'] 和列 AirportCode 之间的φ²: 0.026915492429355776
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:19 - Cafd - INFO - Processing search space: <SearchSpace_bit.SearchSpace object at 0x0000029999BF52E0>
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - INFO - 计算列 ['ClaimNumber'] 和列 AirportName 之间的φ²: 0.06246999379756677
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - INFO - 计算列 ['DateReceived'] 和列 AirportName 之间的φ²: 0.048366898728660526
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - INFO - 计算列 ['IncidentDate'] 和列 AirportName 之间的φ²: 0.053460797480659634
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - INFO - 计算列 ['AirportCode'] 和列 AirportName 之间的φ²: 0.9999999999999999
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - INFO - 行方向得分: 0.7873, 列方向得分: 1.0000
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - INFO - 计算列 ['AirlineName'] 和列 AirportName 之间的φ²: 0.12462605049541134
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - INFO - 计算列 ['ClaimType'] 和列 AirportName 之间的φ²: 0.07979886578713151
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - INFO - 计算列 ['ClaimSite'] 和列 AirportName 之间的φ²: 0.10281813801279481
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - INFO - 计算列 ['Item'] 和列 AirportName 之间的φ²: 0.051846210304648976
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - INFO - 计算列 ['ClaimAmount'] 和列 AirportName 之间的φ²: 0.044072893027845575
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - INFO - 计算列 ['Status'] 和列 AirportName 之间的φ²: 0.14335625490101964
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - INFO - 计算列 ['CloseAmount'] 和列 AirportName 之间的φ²: 0.046663805410086204
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - INFO - 计算列 ['Disposition'] 和列 AirportName 之间的φ²: 0.057108285233098854
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:19 - Cafd - INFO - Processing search space: <SearchSpace_bit.SearchSpace object at 0x0000029999BF5370>
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - INFO - 计算列 ['ClaimNumber'] 和列 AirlineName 之间的φ²: 0.0374013478815552
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - INFO - 计算列 ['DateReceived'] 和列 AirlineName 之间的φ²: 0.023683219337835678
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - INFO - 计算列 ['IncidentDate'] 和列 AirlineName 之间的φ²: 0.019989662212422616
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - INFO - 计算列 ['AirportCode'] 和列 AirlineName 之间的φ²: 0.04580055489902941
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - INFO - 计算列 ['AirportName'] 和列 AirlineName 之间的φ²: 0.10469233630584454
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - INFO - 计算列 ['ClaimType'] 和列 AirlineName 之间的φ²: 0.011468805385300316
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - INFO - 计算列 ['ClaimSite'] 和列 AirlineName 之间的φ²: 0.015473692689914605
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - INFO - 计算列 ['Item'] 和列 AirlineName 之间的φ²: 0.02644386068010598
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - INFO - 计算列 ['ClaimAmount'] 和列 AirlineName 之间的φ²: 0.018261911469540044
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - INFO - 计算列 ['Status'] 和列 AirlineName 之间的φ²: 0.01987984064299281
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - INFO - 计算列 ['CloseAmount'] 和列 AirlineName 之间的φ²: 0.017382556137626303
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - INFO - 计算列 ['Disposition'] 和列 AirlineName 之间的φ²: 0.021055899712696113
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:19 - Cafd - INFO - Processing search space: <SearchSpace_bit.SearchSpace object at 0x0000029999BF54C0>
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - INFO - 计算列 ['ClaimNumber'] 和列 ClaimType 之间的φ²: 0.020767264232374308
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - INFO - 计算列 ['DateReceived'] 和列 ClaimType 之间的φ²: 0.02601893955891656
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - INFO - 计算列 ['IncidentDate'] 和列 ClaimType 之间的φ²: 0.014829101129579393
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - INFO - 计算列 ['AirportCode'] 和列 ClaimType 之间的φ²: 0.019818235934941173
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - INFO - 计算列 ['AirportName'] 和列 ClaimType 之间的φ²: 0.07857100598121323
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - INFO - 计算列 ['AirlineName'] 和列 ClaimType 之间的φ²: 0.01065906307768646
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - INFO - 计算列 ['ClaimSite'] 和列 ClaimType 之间的φ²: 0.25150369219144053
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - INFO - 计算列 ['Item'] 和列 ClaimType 之间的φ²: 0.06534145503974302
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - INFO - 计算列 ['ClaimAmount'] 和列 ClaimType 之间的φ²: 0.016443544721206012
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - INFO - 计算列 ['Status'] 和列 ClaimType 之间的φ²: 0.006823298740922156
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - INFO - 计算列 ['CloseAmount'] 和列 ClaimType 之间的φ²: 0.024263664725547245
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - INFO - 计算列 ['Disposition'] 和列 ClaimType 之间的φ²: 0.003745547839195216
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:19 - Cafd - INFO - Processing search space: <SearchSpace_bit.SearchSpace object at 0x0000029999BF5550>
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - INFO - 计算列 ['ClaimNumber'] 和列 ClaimSite 之间的φ²: 0.01857935693577105
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - INFO - 计算列 ['DateReceived'] 和列 ClaimSite 之间的φ²: 0.03536737310547161
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - INFO - 计算列 ['IncidentDate'] 和列 ClaimSite 之间的φ²: 0.028350346941624215
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - INFO - 计算列 ['AirportCode'] 和列 ClaimSite 之间的φ²: 0.026747001194591096
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - INFO - 计算列 ['AirportName'] 和列 ClaimSite 之间的φ²: 0.09510998969315815
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - INFO - 计算列 ['AirlineName'] 和列 ClaimSite 之间的φ²: 0.014601210382296807
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - INFO - 计算列 ['ClaimType'] 和列 ClaimSite 之间的φ²: 0.2515036921914405
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - INFO - 计算列 ['Item'] 和列 ClaimSite 之间的φ²: 0.031708497600397435
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - INFO - 计算列 ['ClaimAmount'] 和列 ClaimSite 之间的φ²: 0.017010758314940165
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - INFO - 计算列 ['Status'] 和列 ClaimSite 之间的φ²: 0.021111441801400507
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - INFO - 计算列 ['CloseAmount'] 和列 ClaimSite 之间的φ²: 0.016296096727727753
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - INFO - 计算列 ['Disposition'] 和列 ClaimSite 之间的φ²: 0.004705436422780352
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:19 - Cafd - INFO - Processing search space: <SearchSpace_bit.SearchSpace object at 0x0000029999BF55E0>
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - INFO - 计算列 ['ClaimNumber'] 和列 Item 之间的φ²: 0.02366053032064402
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - INFO - 计算列 ['DateReceived'] 和列 Item 之间的φ²: 0.03877646471657721
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - INFO - 计算列 ['IncidentDate'] 和列 Item 之间的φ²: 0.02902319167167786
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - INFO - 计算列 ['AirportCode'] 和列 Item 之间的φ²: 0.025640778041484458
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - INFO - 计算列 ['AirportName'] 和列 Item 之间的φ²: 0.03778556041818563
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - INFO - 计算列 ['AirlineName'] 和列 Item 之间的φ²: 0.059055176335279534
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - INFO - 计算列 ['ClaimType'] 和列 Item 之间的φ²: 0.06665464455341762
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - INFO - 计算列 ['ClaimSite'] 和列 Item 之间的φ²: 0.033467987440639294
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - INFO - 计算列 ['ClaimAmount'] 和列 Item 之间的φ²: 0.025340162164537435
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - INFO - 计算列 ['Status'] 和列 Item 之间的φ²: 0.029429485775501977
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - INFO - 计算列 ['CloseAmount'] 和列 Item 之间的φ²: 0.01962647934779811
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - INFO - 计算列 ['Disposition'] 和列 Item 之间的φ²: 0.06724158585702049
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:19 - Cafd - INFO - Processing search space: <SearchSpace_bit.SearchSpace object at 0x0000029999BF5670>
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - INFO - 计算列 ['ClaimNumber'] 和列 ClaimAmount 之间的φ²: 0.021440545811226397
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - INFO - 计算列 ['DateReceived'] 和列 ClaimAmount 之间的φ²: 0.01755484368807764
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - INFO - 计算列 ['IncidentDate'] 和列 ClaimAmount 之间的φ²: 0.015660282585082074
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - INFO - 计算列 ['AirportCode'] 和列 ClaimAmount 之间的φ²: 0.013795701538598364
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - INFO - 计算列 ['AirportName'] 和列 ClaimAmount 之间的φ²: 0.03939439167137842
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - INFO - 计算列 ['AirlineName'] 和列 ClaimAmount 之间的φ²: 0.018107814560035636
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - INFO - 计算列 ['ClaimType'] 和列 ClaimAmount 之间的φ²: 0.016443544721206012
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - INFO - 计算列 ['ClaimSite'] 和列 ClaimAmount 之间的φ²: 0.01701075831494036
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - INFO - 计算列 ['Item'] 和列 ClaimAmount 之间的φ²: 0.0174959006907396
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - INFO - 计算列 ['Status'] 和列 ClaimAmount 之间的φ²: 0.016430663991464717
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - INFO - 计算列 ['CloseAmount'] 和列 ClaimAmount 之间的φ²: 0.03922104339734077
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - INFO - 计算列 ['Disposition'] 和列 ClaimAmount 之间的φ²: 0.02720661748612933
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:19 - Cafd - INFO - Processing search space: <SearchSpace_bit.SearchSpace object at 0x0000029999BF5700>
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - INFO - 计算列 ['ClaimNumber'] 和列 Status 之间的φ²: 0.02123008450380673
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - INFO - 计算列 ['DateReceived'] 和列 Status 之间的φ²: 0.02133736727559431
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - INFO - 计算列 ['IncidentDate'] 和列 Status 之间的φ²: 0.03438988011615281
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - INFO - 计算列 ['AirportCode'] 和列 Status 之间的φ²: 0.08077273863376364
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - INFO - 计算列 ['AirportName'] 和列 Status 之间的φ²: 0.139689336934615
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - INFO - 计算列 ['AirlineName'] 和列 Status 之间的φ²: 0.018723343463700637
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - INFO - 计算列 ['ClaimType'] 和列 Status 之间的φ²: 0.006823298740922132
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - INFO - 计算列 ['ClaimSite'] 和列 Status 之间的φ²: 0.021111441801400507
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - INFO - 计算列 ['Item'] 和列 Status 之间的φ²: 0.023980719789591043
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - INFO - 计算列 ['ClaimAmount'] 和列 Status 之间的φ²: 0.016430663991464717
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - INFO - 计算列 ['CloseAmount'] 和列 Status 之间的φ²: 0.2411854653899495
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - INFO - 计算列 ['Disposition'] 和列 Status 之间的φ²: 1.0
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - INFO - 行方向得分: 0.9989, 列方向得分: 1.0000
+2025-06-06 21:48:19 - SearchSpace_bit - INFO - 发现函数依赖: ['Disposition'] -> Status
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:19 - Cafd - INFO - Processing search space: <SearchSpace_bit.SearchSpace object at 0x0000029999BF5790>
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - INFO - 计算列 ['ClaimNumber'] 和列 CloseAmount 之间的φ²: 0.021427173101939805
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - INFO - 计算列 ['DateReceived'] 和列 CloseAmount 之间的φ²: 0.018895147336560315
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - INFO - 计算列 ['IncidentDate'] 和列 CloseAmount 之间的φ²: 0.016075831365154093
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - INFO - 计算列 ['AirportCode'] 和列 CloseAmount 之间的φ²: 0.015080120574548191
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - INFO - 计算列 ['AirportName'] 和列 CloseAmount 之间的φ²: 0.04083374841699646
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - INFO - 计算列 ['AirlineName'] 和列 CloseAmount 之间的φ²: 0.017377126643498157
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - INFO - 计算列 ['ClaimType'] 和列 CloseAmount 之间的φ²: 0.024263664725547245
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - INFO - 计算列 ['ClaimSite'] 和列 CloseAmount 之间的φ²: 0.016296096727727794
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - INFO - 计算列 ['Item'] 和列 CloseAmount 之间的φ²: 0.015096195504325281
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - INFO - 计算列 ['ClaimAmount'] 和列 CloseAmount 之间的φ²: 0.03922104339734074
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - INFO - 计算列 ['Status'] 和列 CloseAmount 之间的φ²: 0.24118546538994937
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - INFO - 计算列 ['Disposition'] 和列 CloseAmount 之间的φ²: 0.4818346859239194
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:19 - Cafd - INFO - Processing search space: <SearchSpace_bit.SearchSpace object at 0x0000029999BF5820>
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - INFO - 计算列 ['ClaimNumber'] 和列 Disposition 之间的φ²: 0.021305781569142077
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - INFO - 计算列 ['DateReceived'] 和列 Disposition 之间的φ²: 0.021903527347782413
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - INFO - 计算列 ['IncidentDate'] 和列 Disposition 之间的φ²: 0.015949966739881367
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - INFO - 计算列 ['AirportCode'] 和列 Disposition 之间的φ²: 0.021726666431610045
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - INFO - 计算列 ['AirportName'] 和列 Disposition 之间的φ²: 0.05208209104094207
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - INFO - 计算列 ['AirlineName'] 和列 Disposition 之间的φ²: 0.017705408855687985
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - INFO - 计算列 ['ClaimType'] 和列 Disposition 之间的φ²: 0.0037455478391951475
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - INFO - 计算列 ['ClaimSite'] 和列 Disposition 之间的φ²: 0.004705436422780415
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - INFO - 计算列 ['Item'] 和列 Disposition 之间的φ²: 0.05981726335807648
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - INFO - 计算列 ['ClaimAmount'] 和列 Disposition 之间的φ²: 0.027206617486129202
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - INFO - 计算列 ['Status'] 和列 Disposition 之间的φ²: 1.0
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - INFO - 行方向得分: 1.0000, 列方向得分: 0.9989
+2025-06-06 21:48:19 - SearchSpace_bit - INFO - 发现函数依赖: ['Status'] -> Disposition
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - INFO - 计算列 ['CloseAmount'] 和列 Disposition 之间的φ²: 0.48183468592391965
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:19 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-06 21:48:19 - Cafd - INFO - Total dependencies found: 11
+2025-06-06 21:48:19 - root - INFO - 发现的函数依赖如下：
+2025-06-06 21:48:19 - root - INFO - ['AirportName'] -> AirportCode
+2025-06-06 21:48:19 - root - INFO - ['AirportCode'] -> AirportName
+2025-06-06 21:48:19 - root - INFO - ['Disposition'] -> Status
+2025-06-06 21:48:19 - root - INFO - ['Status'] -> Disposition
+2025-06-06 21:48:19 - root - INFO - ['AirportName'] -> AirportCode
+2025-06-06 21:48:19 - root - INFO - ['AirportCode'] -> AirportName
+2025-06-06 21:48:19 - root - INFO - ['Disposition'] -> Status
+2025-06-06 21:48:19 - root - INFO - ['Status'] -> Disposition
+2025-06-06 21:48:19 - root - INFO - ['AirportName'] -> AirportCode
+2025-06-06 21:48:19 - root - INFO - ['Disposition'] -> Status
+2025-06-06 21:48:19 - root - INFO - ['Status'] -> Disposition
+2025-06-06 21:48:19 - Evaluate_fd - INFO - 评估结果: TP=4, FP=0, FN=0
+2025-06-06 21:48:19 - root - INFO - Precision: 1.00, Recall: 1.00, F1: 1.00
+2025-06-06 21:48:19 - root - INFO - 总运行时长: 9558 ms
+2025-06-06 21:48:19 - root - INFO - 结果已保存至: rule_mining\discovered_fd\claims_discovered.txt

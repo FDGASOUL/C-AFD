@@ -1,86 +1,9 @@
+education-num->education
 education->education-num
 fnlwgt,relationship->marital-status
-age,hours-per-week,occupation,relationship->marital-status
-age,hours-per-week,relationship,sex->marital-status
-age,fnlwgt,hours-per-week,occupation,relationship,sex->marital-status
-age,capital-gain,hours-per-week,occupation,relationship,sex->marital-status
-age,hours-per-week,occupation,outcome,relationship,sex->marital-status
-age,capital-gain,hours-per-week,occupation,outcome,relationship->marital-status
-age,capital-gain,fnlwgt,hours-per-week,occupation,outcome,relationship,sex->marital-status
-fnlwgt,marital-status->relationship
-age,education,hours-per-week,marital-status,occupation,sex->relationship
-age,education-num,hours-per-week,marital-status,occupation,sex->relationship
-age,education,education-num,fnlwgt,hours-per-week,marital-status,occupation,sex->relationship
-age,capital-gain,education,fnlwgt,hours-per-week,marital-status,occupation,sex->relationship
-age,capital-gain,education,education-num,hours-per-week,marital-status,occupation,sex->relationship
 fnlwgt->race
 fnlwgt->sex
-age,marital-status,occupation,relationship->sex
-age,occupation,race,relationship->sex
-age,hours-per-week,occupation,relationship->sex
-education,marital-status,occupation,relationship,workclass->sex
-education,marital-status,occupation,race,relationship->sex
-education-num,marital-status,occupation,race,relationship->sex
-education,hours-per-week,marital-status,occupation,relationship->sex
-education-num,hours-per-week,marital-status,occupation,relationship->sex
-education,hours-per-week,occupation,race,relationship->sex
-education-num,hours-per-week,occupation,race,relationship->sex
-hours-per-week,marital-status,occupation,race,relationship->sex
-age,marital-status,occupation,race,relationship,workclass->sex
-age,capital-gain,marital-status,occupation,race,relationship->sex
-age,hours-per-week,marital-status,occupation,relationship,workclass->sex
-age,hours-per-week,occupation,race,relationship,workclass->sex
-age,capital-gain,hours-per-week,marital-status,occupation,relationship->sex
-age,capital-gain,hours-per-week,occupation,race,relationship->sex
-age,marital-status,occupation,outcome,race,relationship->sex
-age,hours-per-week,marital-status,occupation,outcome,relationship->sex
-age,hours-per-week,occupation,outcome,race,relationship->sex
-education,education-num,marital-status,occupation,race,relationship,workclass->sex
-capital-gain,education,marital-status,occupation,race,relationship,workclass->sex
-capital-gain,education-num,marital-status,occupation,race,relationship,workclass->sex
-capital-gain,education,education-num,marital-status,occupation,race,relationship->sex
-age,education,education-num,hours-per-week,marital-status,occupation,relationship->sex
-education,education-num,hours-per-week,marital-status,occupation,relationship,workclass->sex
-education,education-num,hours-per-week,occupation,race,relationship,workclass->sex
-age,education,hours-per-week,marital-status,occupation,race,relationship->sex
-education,hours-per-week,marital-status,occupation,race,relationship,workclass->sex
-age,education-num,hours-per-week,marital-status,occupation,race,relationship->sex
-education-num,hours-per-week,marital-status,occupation,race,relationship,workclass->sex
-education,education-num,hours-per-week,marital-status,occupation,race,relationship->sex
-capital-gain,education,hours-per-week,marital-status,occupation,relationship,workclass->sex
-capital-gain,education-num,hours-per-week,marital-status,occupation,relationship,workclass->sex
-capital-gain,education,education-num,hours-per-week,marital-status,occupation,relationship->sex
-capital-gain,education,hours-per-week,occupation,race,relationship,workclass->sex
-capital-gain,education-num,hours-per-week,occupation,race,relationship,workclass->sex
-capital-gain,education,education-num,hours-per-week,occupation,race,relationship->sex
-capital-gain,hours-per-week,marital-status,occupation,race,relationship,workclass->sex
-capital-gain,education,hours-per-week,marital-status,occupation,race,relationship->sex
-capital-gain,education-num,hours-per-week,marital-status,occupation,race,relationship->sex
-education,marital-status,occupation,outcome,race,relationship,workclass->sex
-education-num,marital-status,occupation,outcome,race,relationship,workclass->sex
-education,education-num,marital-status,occupation,outcome,race,relationship->sex
-capital-gain,education,marital-status,occupation,outcome,race,relationship->sex
-education,hours-per-week,marital-status,occupation,outcome,relationship,workclass->sex
-education-num,hours-per-week,marital-status,occupation,outcome,relationship,workclass->sex
-education,education-num,hours-per-week,marital-status,occupation,outcome,relationship->sex
-education,hours-per-week,occupation,outcome,race,relationship,workclass->sex
-education-num,hours-per-week,occupation,outcome,race,relationship,workclass->sex
-education,education-num,hours-per-week,occupation,outcome,race,relationship->sex
-hours-per-week,marital-status,occupation,outcome,race,relationship,workclass->sex
-education,hours-per-week,marital-status,occupation,outcome,race,relationship->sex
-education-num,hours-per-week,marital-status,occupation,outcome,race,relationship->sex
-capital-gain,education,hours-per-week,marital-status,occupation,outcome,relationship->sex
-capital-gain,education-num,hours-per-week,marital-status,occupation,outcome,relationship->sex
-capital-gain,hours-per-week,marital-status,occupation,outcome,race,relationship->sex
-capital-gain,education,education-num,hours-per-week,marital-status,occupation,race,relationship,workclass->sex
-education,education-num,hours-per-week,marital-status,occupation,outcome,race,relationship,workclass->sex
-capital-gain,education,education-num,hours-per-week,marital-status,occupation,outcome,relationship,workclass->sex
-capital-gain,education,hours-per-week,marital-status,occupation,outcome,race,relationship,workclass->sex
-capital-gain,education-num,hours-per-week,marital-status,occupation,outcome,race,relationship,workclass->sex
-capital-gain,education,education-num,hours-per-week,marital-status,occupation,outcome,race,relationship->sex
-age,capital-gain,capital-loss,education,hours-per-week,marital-status,occupation,workclass->outcome
-age,capital-gain,capital-loss,education-num,hours-per-week,marital-status,occupation,workclass->outcome
-Precision: 0.0122
-Recall: 0.5000
-F1: 0.0238
-Runtime: 102380 ms
+Precision: 0.4000
+Recall: 1.0000
+F1: 0.5714
+Runtime: 111423 ms

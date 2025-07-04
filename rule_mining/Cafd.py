@@ -8,6 +8,8 @@ from Sampler import Sampler
 from ColumnLayoutRelationData import ColumnLayoutRelationData
 from SearchSpace_bit import SearchSpace
 from rule_mining.Incorporate_into import FDAnalyzer
+from rule_mining.Buckets_merging import HashCompressPhi2Analyzer
+from test3 import Phi2Merger
 
 # 获取日志实例
 logger = logging.getLogger(__name__)
@@ -88,6 +90,13 @@ class CAFD:
 
         analyzer = FDAnalyzer(layout_data)
         analyzer.refine_column_plis()
+
+        # merger = Phi2Merger(layout_data, target_index=1)  # 设定目标列为第6列
+        # num = merger.analyze_and_merge()
+        #
+        # analyzer = HashCompressPhi2Analyzer(layout_data, target_index=1, target_num_clusters=num)
+        # analyzer.analyze_compression_effect()
+
 
         # 初始化并设置上下文
         spaces: List[SearchSpace] = []

@@ -1,0 +1,33 @@
+2025-06-07 18:06:04 - root - INFO - 日志配置完成。
+2025-06-07 18:06:04 - root - INFO - Config: dataset=t_biocase_identification_highertaxon_r562959_c3.csv, sample_size=4000, null_equal_null=True
+2025-06-07 18:06:04 - root - INFO - 开始执行 CAFD...
+2025-06-07 18:06:04 - Cafd - INFO - Executing CAFD on: E:\资料\C-AFD\rule_mining\data\real_world_data\t_biocase_identification_highertaxon_r562959_c3.csv
+2025-06-07 18:06:04 - Cafd - INFO - Using ground truth: E:\资料\C-AFD\rule_mining\groundtruth\real_world_data\t_biocase_identification_highertaxon_r562959_c3.txt
+2025-06-07 18:06:04 - Sampler - INFO - Reading dataset from: E:\资料\C-AFD\rule_mining\data\real_world_data\t_biocase_identification_highertaxon_r562959_c3.csv
+2025-06-07 18:06:04 - Sampler - INFO - 移除全空列：0 / 3
+2025-06-07 18:06:04 - Sampler - INFO - 移除单一值列：0 个
+2025-06-07 18:06:04 - Sampler - INFO - 最终采样方式 'mode_bin_2000'，样本量: 20000
+2025-06-07 18:06:04 - Sampler - INFO - 抽样 20000 行，随机种子：2388535752
+2025-06-07 18:06:04 - Sampler - INFO - 抽样结果已保存至: rule_mining/data/sample_data/sample_data.csv
+2025-06-07 18:06:05 - rule_mining.Incorporate_into - INFO - 所有列的 PLI 更新完成。
+2025-06-07 18:06:05 - Cafd - INFO - Processing search space: <SearchSpace_bit.SearchSpace object at 0x0000014A8F7F4B80>
+2025-06-07 18:06:05 - rule_mining.Correlation_utils - INFO - 计算列 ['HigherTaxonName'] 和列 _identificationguid 之间的φ²: 0.9049647967733186
+2025-06-07 18:06:05 - rule_mining.Correlation_utils - INFO - 计算列 ['HigherTaxonName'] 和列 _identificationguid 之间的相关性 (φ²): 0.0
+2025-06-07 18:06:05 - rule_mining.Correlation_utils - INFO - 计算列 ['HigherTaxonRank'] 和列 _identificationguid 之间的φ²: 0.8831263333416504
+2025-06-07 18:06:05 - rule_mining.Correlation_utils - INFO - 计算列 ['HigherTaxonRank'] 和列 _identificationguid 之间的相关性 (φ²): 0.0
+2025-06-07 18:06:05 - Cafd - INFO - Processing search space: <SearchSpace_bit.SearchSpace object at 0x0000014A8F7F49A0>
+2025-06-07 18:06:05 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: _identificationguid->HigherTaxonName
+2025-06-07 18:06:05 - rule_mining.Correlation_utils - INFO - 计算列 ['HigherTaxonRank'] 和列 HigherTaxonName 之间的φ²: 0.9999071807410117
+2025-06-07 18:06:05 - rule_mining.Correlation_utils - INFO - 计算列 ['HigherTaxonRank'] 和列 HigherTaxonName 之间的相关性 (φ²): 0.9999007754778433
+2025-06-07 18:06:05 - rule_mining.Correlation_utils - INFO - 行方向得分: 0.5779, 列方向得分: 0.9999
+2025-06-07 18:06:05 - Cafd - INFO - Processing search space: <SearchSpace_bit.SearchSpace object at 0x0000014A8F7F4AC0>
+2025-06-07 18:06:05 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: _identificationguid->HigherTaxonRank
+2025-06-07 18:06:05 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: HigherTaxonName->HigherTaxonRank
+2025-06-07 18:06:05 - SearchSpace_bit - INFO - 发现函数依赖: ['HigherTaxonName'] -> HigherTaxonRank
+2025-06-07 18:06:05 - Cafd - INFO - Total dependencies found: 1
+2025-06-07 18:06:05 - root - INFO - 发现的函数依赖如下：
+2025-06-07 18:06:05 - root - INFO - ['HigherTaxonName'] -> HigherTaxonRank
+2025-06-07 18:06:05 - Evaluate_fd - INFO - 评估结果: TP=1, FP=0, FN=0
+2025-06-07 18:06:05 - root - INFO - Precision: 1.00, Recall: 1.00, F1: 1.00
+2025-06-07 18:06:05 - root - INFO - 总运行时长: 1152 ms
+2025-06-07 18:06:05 - root - INFO - 结果已保存至: rule_mining\discovered_fd\t_biocase_identification_highertaxon_r562959_c3_discovered.txt

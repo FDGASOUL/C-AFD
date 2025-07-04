@@ -74,19 +74,19 @@ class FDDataGeneratorConfig:
         """根据FD生成BIF文件"""
         bif_file_path = self.output_path_csv.replace('.csv', '.bif')  # 假设bif文件路径
         bif_generator = BIFGenerator(self.num_attributes, self.fd_rules, bif_file_path, self.error_rate, domain_sizes={
-                'column1': 216,
-                'column2': 5,
-                'column3': 216,
-                'column4': 5,
-                'column5': 4,
-                'column6': 4,
-                'column7': 4,
-                'column8': 10,
+                'column1': 800,
+                'column2': 7,
+                'column3': 600,
+                'column4': 600,
+                'column5': 30,
+                'column6': 20,
+                'column7': 7,
+                'column8': 11,
                 'column9': 10,
-                'column10': 10,
-                'column11': 6,
-                'column12': 6,
-                'column13': 6,
+                'column10': 6,
+                'column11': 7,
+                'column12': 5,
+                'column13': 5,
                 'column14': 5,
                 'column15': 5,
                 'column16': 5,
@@ -94,16 +94,6 @@ class FDDataGeneratorConfig:
                 'column18': 5,
                 'column19': 5,
                 'column20': 5,
-                'column21': 5,
-                'column22': 5,
-                'column23': 5,
-                'column24': 5,
-                'column25': 5,
-                'column26': 5,
-                'column27': 5,
-                'column28': 5,
-                'column29': 5,
-                'column30': 5,
             })
         bif_generator.generate_bif()
 
@@ -126,11 +116,11 @@ class FDDataGeneratorConfig:
 if __name__ == "__main__":
     config = FDDataGeneratorConfig(
         num_tuples=5000,
-        num_attributes=30,
-        error_rate=0.06,
-        domain_size=216,
+        num_attributes=20,
+        error_rate=0.1,
+        domain_size=100,
         input_path_fd='data_generator/data/input_fd.txt',
-        output_path_csv='data_generator/data/data_e6.csv',
+        output_path_csv='data_generator/data/data_d800.csv',
     )
 
     config.run()

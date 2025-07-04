@@ -1,0 +1,490 @@
+2025-06-07 18:43:48 - root - INFO - 日志配置完成。
+2025-06-07 18:43:48 - root - INFO - Config: dataset=t_biocase_identification_r91800_c38.csv, sample_size=4000, null_equal_null=True
+2025-06-07 18:43:48 - root - INFO - 开始执行 CAFD...
+2025-06-07 18:43:48 - Cafd - INFO - Executing CAFD on: E:\资料\C-AFD\rule_mining\data\real_world_data\t_biocase_identification_r91800_c38.csv
+2025-06-07 18:43:48 - Cafd - INFO - Using ground truth: E:\资料\C-AFD\rule_mining\groundtruth\real_world_data\t_biocase_identification_r91800_c38.txt
+2025-06-07 18:43:48 - Sampler - INFO - Reading dataset from: E:\资料\C-AFD\rule_mining\data\real_world_data\t_biocase_identification_r91800_c38.csv
+2025-06-07 18:43:49 - Sampler - INFO - 移除全空列：25 / 38
+2025-06-07 18:43:49 - Sampler - INFO - 移除单一值列：0 个
+2025-06-07 18:43:49 - Sampler - INFO - 移除大于数据集行数 (91799) 的不现实样本量：10 个
+2025-06-07 18:43:49 - Sampler - INFO - 最终采样方式 'mode_bin_2000'，样本量: 6000
+2025-06-07 18:43:49 - Sampler - INFO - 抽样 6000 行，随机种子：2335465559
+2025-06-07 18:43:49 - Sampler - INFO - 抽样结果已保存至: rule_mining/data/sample_data/sample_data.csv
+2025-06-07 18:43:50 - rule_mining.Incorporate_into - INFO - 所有列的 PLI 更新完成。
+2025-06-07 18:43:50 - Cafd - INFO - Processing search space: <SearchSpace_bit.SearchSpace object at 0x0000022816FF3A90>
+2025-06-07 18:43:50 - rule_mining.Correlation_utils - WARNING - 列联表为空，返回 invalid
+2025-06-07 18:43:50 - rule_mining.Correlation_utils - INFO - 计算列 ['_timestamp'] 和列 _unitguid 之间的φ²: 0.9999999999999998
+2025-06-07 18:43:50 - rule_mining.Correlation_utils - INFO - 计算列 ['_timestamp'] 和列 _unitguid 之间的相关性 (φ²): 0.9999999999999927
+2025-06-07 18:43:50 - rule_mining.Correlation_utils - INFO - 行方向得分: 0.1066, 列方向得分: 1.0000
+2025-06-07 18:43:50 - rule_mining.Correlation_utils - INFO - 计算列 ['ScientificName'] 和列 _unitguid 之间的φ²: 0.9993686184151038
+2025-06-07 18:43:50 - rule_mining.Correlation_utils - INFO - 计算列 ['ScientificName'] 和列 _unitguid 之间的相关性 (φ²): 0.3311564410666363
+2025-06-07 18:43:50 - rule_mining.Correlation_utils - INFO - 计算列 ['FullScientificNameString'] 和列 _unitguid 之间的φ²: 0.9993686184151038
+2025-06-07 18:43:50 - rule_mining.Correlation_utils - INFO - 计算列 ['FullScientificNameString'] 和列 _unitguid 之间的相关性 (φ²): 0.3311564410666363
+2025-06-07 18:43:50 - rule_mining.Correlation_utils - INFO - 计算列 ['GenusOrMonomial'] 和列 _unitguid 之间的φ²: 0.9978386433725346
+2025-06-07 18:43:50 - rule_mining.Correlation_utils - INFO - 计算列 ['GenusOrMonomial'] 和列 _unitguid 之间的相关性 (φ²): 0.10320325780396994
+2025-06-07 18:43:50 - rule_mining.Correlation_utils - INFO - 计算列 ['Subgenus'] 和列 _unitguid 之间的φ²: 0.9999999999999999
+2025-06-07 18:43:50 - rule_mining.Correlation_utils - INFO - 计算列 ['Subgenus'] 和列 _unitguid 之间的相关性 (φ²): 0.0
+2025-06-07 18:43:50 - rule_mining.Correlation_utils - INFO - 计算列 ['SpeciesEpithet'] 和列 _unitguid 之间的φ²: 0.9988146590227335
+2025-06-07 18:43:50 - rule_mining.Correlation_utils - INFO - 计算列 ['SpeciesEpithet'] 和列 _unitguid 之间的相关性 (φ²): 0.2871655697963264
+2025-06-07 18:43:50 - rule_mining.Correlation_utils - INFO - 计算列 ['SubspeciesEpithet'] 和列 _unitguid 之间的φ²: 0.999645390070918
+2025-06-07 18:43:50 - rule_mining.Correlation_utils - INFO - 计算列 ['SubspeciesEpithet'] 和列 _unitguid 之间的相关性 (φ²): 0.5283687943209929
+2025-06-07 18:43:50 - rule_mining.Correlation_utils - INFO - 计算列 ['AuthorTeamOriginalAndYear'] 和列 _unitguid 之间的φ²: 0.9999999999999996
+2025-06-07 18:43:50 - rule_mining.Correlation_utils - INFO - 计算列 ['AuthorTeamOriginalAndYear'] 和列 _unitguid 之间的相关性 (φ²): 0.0
+2025-06-07 18:43:50 - rule_mining.Correlation_utils - INFO - 计算列 ['AuthorTeamParenthesisAndYear'] 和列 _unitguid 之间的φ²: 1.0000000000000004
+2025-06-07 18:43:50 - rule_mining.Correlation_utils - INFO - 计算列 ['AuthorTeamParenthesisAndYear'] 和列 _unitguid 之间的相关性 (φ²): 0.0
+2025-06-07 18:43:50 - rule_mining.Correlation_utils - INFO - 计算列 ['PreferredFlag'] 和列 _unitguid 之间的φ²: 0.9678330406139476
+2025-06-07 18:43:50 - rule_mining.Correlation_utils - INFO - 计算列 ['PreferredFlag'] 和列 _unitguid 之间的相关性 (φ²): 0.0
+2025-06-07 18:43:50 - rule_mining.Correlation_utils - WARNING - 列联表为空，返回 invalid
+2025-06-07 18:43:50 - rule_mining.Correlation_utils - INFO - 计算列 ['ScientificName', 'FullScientificNameString'] 和列 _unitguid 之间的φ²: 0.9993686184151038
+2025-06-07 18:43:50 - rule_mining.Correlation_utils - INFO - 计算列 ['ScientificName', 'FullScientificNameString'] 和列 _unitguid 之间的相关性 (φ²): 0.3311564410666363
+2025-06-07 18:43:50 - rule_mining.Correlation_utils - INFO - 计算列 ['ScientificName', 'GenusOrMonomial'] 和列 _unitguid 之间的φ²: 0.9993686184151038
+2025-06-07 18:43:51 - rule_mining.Correlation_utils - INFO - 计算列 ['ScientificName', 'GenusOrMonomial'] 和列 _unitguid 之间的相关性 (φ²): 0.3311564410666363
+2025-06-07 18:43:51 - rule_mining.Correlation_utils - INFO - 计算列 ['FullScientificNameString', 'GenusOrMonomial'] 和列 _unitguid 之间的φ²: 0.9993686184151038
+2025-06-07 18:43:51 - rule_mining.Correlation_utils - INFO - 计算列 ['FullScientificNameString', 'GenusOrMonomial'] 和列 _unitguid 之间的相关性 (φ²): 0.3311564410666363
+2025-06-07 18:43:51 - rule_mining.Correlation_utils - INFO - 计算列 ['ScientificName', 'SpeciesEpithet'] 和列 _unitguid 之间的φ²: 0.9993686184151038
+2025-06-07 18:43:51 - rule_mining.Correlation_utils - INFO - 计算列 ['ScientificName', 'SpeciesEpithet'] 和列 _unitguid 之间的相关性 (φ²): 0.3311564410666363
+2025-06-07 18:43:51 - rule_mining.Correlation_utils - INFO - 计算列 ['FullScientificNameString', 'SpeciesEpithet'] 和列 _unitguid 之间的φ²: 0.9993686184151038
+2025-06-07 18:43:51 - rule_mining.Correlation_utils - INFO - 计算列 ['FullScientificNameString', 'SpeciesEpithet'] 和列 _unitguid 之间的相关性 (φ²): 0.3311564410666363
+2025-06-07 18:43:51 - rule_mining.Correlation_utils - INFO - 计算列 ['GenusOrMonomial', 'SpeciesEpithet'] 和列 _unitguid 之间的φ²: 0.9972910830999071
+2025-06-07 18:43:51 - rule_mining.Correlation_utils - INFO - 计算列 ['GenusOrMonomial', 'SpeciesEpithet'] 和列 _unitguid 之间的相关性 (φ²): 0.0
+2025-06-07 18:43:51 - rule_mining.Correlation_utils - INFO - 计算列 ['ScientificName', 'SubspeciesEpithet'] 和列 _unitguid 之间的φ²: 0.9993686184151038
+2025-06-07 18:43:51 - rule_mining.Correlation_utils - INFO - 计算列 ['ScientificName', 'SubspeciesEpithet'] 和列 _unitguid 之间的相关性 (φ²): 0.3311564410666363
+2025-06-07 18:43:51 - rule_mining.Correlation_utils - INFO - 计算列 ['FullScientificNameString', 'SubspeciesEpithet'] 和列 _unitguid 之间的φ²: 0.9993686184151038
+2025-06-07 18:43:51 - rule_mining.Correlation_utils - INFO - 计算列 ['FullScientificNameString', 'SubspeciesEpithet'] 和列 _unitguid 之间的相关性 (φ²): 0.3311564410666363
+2025-06-07 18:43:51 - rule_mining.Correlation_utils - INFO - 计算列 ['GenusOrMonomial', 'SubspeciesEpithet'] 和列 _unitguid 之间的φ²: 0.9973253929671053
+2025-06-07 18:43:51 - rule_mining.Correlation_utils - INFO - 计算列 ['GenusOrMonomial', 'SubspeciesEpithet'] 和列 _unitguid 之间的相关性 (φ²): 0.0
+2025-06-07 18:43:52 - rule_mining.Correlation_utils - INFO - 计算列 ['SpeciesEpithet', 'SubspeciesEpithet'] 和列 _unitguid 之间的φ²: 0.9987833750805497
+2025-06-07 18:43:52 - rule_mining.Correlation_utils - INFO - 计算列 ['SpeciesEpithet', 'SubspeciesEpithet'] 和列 _unitguid 之间的相关性 (φ²): 0.2683521890655622
+2025-06-07 18:43:52 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-07 18:43:52 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-07 18:43:52 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-07 18:43:52 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-07 18:43:52 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-07 18:43:52 - Cafd - INFO - Processing search space: <SearchSpace_bit.SearchSpace object at 0x0000022816FF39D0>
+2025-06-07 18:43:52 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: _unitguid->_identificationguid
+2025-06-07 18:43:52 - rule_mining.Correlation_utils - INFO - 计算列 ['_timestamp'] 和列 _identificationguid 之间的φ²: 0.9999999999999998
+2025-06-07 18:43:52 - rule_mining.Correlation_utils - INFO - 计算列 ['_timestamp'] 和列 _identificationguid 之间的相关性 (φ²): 0.0
+2025-06-07 18:43:52 - rule_mining.Correlation_utils - INFO - 计算列 ['ScientificName'] 和列 _identificationguid 之间的φ²: 0.9999999999999958
+2025-06-07 18:43:52 - rule_mining.Correlation_utils - INFO - 计算列 ['ScientificName'] 和列 _identificationguid 之间的相关性 (φ²): 0.0
+2025-06-07 18:43:52 - rule_mining.Correlation_utils - INFO - 计算列 ['FullScientificNameString'] 和列 _identificationguid 之间的φ²: 0.9999999999999958
+2025-06-07 18:43:52 - rule_mining.Correlation_utils - INFO - 计算列 ['FullScientificNameString'] 和列 _identificationguid 之间的相关性 (φ²): 0.0
+2025-06-07 18:43:52 - rule_mining.Correlation_utils - INFO - 计算列 ['GenusOrMonomial'] 和列 _identificationguid 之间的φ²: 1.0000000000000124
+2025-06-07 18:43:52 - rule_mining.Correlation_utils - INFO - 计算列 ['GenusOrMonomial'] 和列 _identificationguid 之间的相关性 (φ²): 0.0
+2025-06-07 18:43:52 - rule_mining.Correlation_utils - INFO - 计算列 ['Subgenus'] 和列 _identificationguid 之间的φ²: 0.9999999999999999
+2025-06-07 18:43:52 - rule_mining.Correlation_utils - INFO - 计算列 ['Subgenus'] 和列 _identificationguid 之间的相关性 (φ²): 0.0
+2025-06-07 18:43:52 - rule_mining.Correlation_utils - INFO - 计算列 ['SpeciesEpithet'] 和列 _identificationguid 之间的φ²: 0.999999999999998
+2025-06-07 18:43:52 - rule_mining.Correlation_utils - INFO - 计算列 ['SpeciesEpithet'] 和列 _identificationguid 之间的相关性 (φ²): 0.0
+2025-06-07 18:43:52 - rule_mining.Correlation_utils - INFO - 计算列 ['SubspeciesEpithet'] 和列 _identificationguid 之间的φ²: 0.9999999999999959
+2025-06-07 18:43:52 - rule_mining.Correlation_utils - INFO - 计算列 ['SubspeciesEpithet'] 和列 _identificationguid 之间的相关性 (φ²): 0.0
+2025-06-07 18:43:52 - rule_mining.Correlation_utils - INFO - 计算列 ['AuthorTeamOriginalAndYear'] 和列 _identificationguid 之间的φ²: 0.9999999999999996
+2025-06-07 18:43:52 - rule_mining.Correlation_utils - INFO - 计算列 ['AuthorTeamOriginalAndYear'] 和列 _identificationguid 之间的相关性 (φ²): 0.0
+2025-06-07 18:43:52 - rule_mining.Correlation_utils - INFO - 计算列 ['AuthorTeamParenthesisAndYear'] 和列 _identificationguid 之间的φ²: 1.0000000000000004
+2025-06-07 18:43:52 - rule_mining.Correlation_utils - INFO - 计算列 ['AuthorTeamParenthesisAndYear'] 和列 _identificationguid 之间的相关性 (φ²): 0.0
+2025-06-07 18:43:52 - rule_mining.Correlation_utils - INFO - 计算列 ['PreferredFlag'] 和列 _identificationguid 之间的φ²: 0.9999999999999439
+2025-06-07 18:43:52 - rule_mining.Correlation_utils - INFO - 计算列 ['PreferredFlag'] 和列 _identificationguid 之间的相关性 (φ²): 0.0
+2025-06-07 18:43:52 - rule_mining.Correlation_utils - WARNING - 列联表为空，返回 invalid
+2025-06-07 18:43:52 - Cafd - INFO - Processing search space: <SearchSpace_bit.SearchSpace object at 0x0000022816FF39A0>
+2025-06-07 18:43:52 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: _unitguid->_timestamp
+2025-06-07 18:43:52 - SearchSpace_bit - INFO - 发现函数依赖: ['_unitguid'] -> _timestamp
+2025-06-07 18:43:52 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: _identificationguid->_timestamp
+2025-06-07 18:43:52 - rule_mining.Correlation_utils - INFO - 计算列 ['ScientificName'] 和列 _timestamp 之间的φ²: 0.9635971055088672
+2025-06-07 18:43:52 - rule_mining.Correlation_utils - INFO - 计算列 ['ScientificName'] 和列 _timestamp 之间的相关性 (φ²): 0.03593001089316789
+2025-06-07 18:43:52 - rule_mining.Correlation_utils - INFO - 计算列 ['FullScientificNameString'] 和列 _timestamp 之间的φ²: 0.9635971055088672
+2025-06-07 18:43:52 - rule_mining.Correlation_utils - INFO - 计算列 ['FullScientificNameString'] 和列 _timestamp 之间的相关性 (φ²): 0.03593001089316789
+2025-06-07 18:43:52 - rule_mining.Correlation_utils - INFO - 计算列 ['GenusOrMonomial'] 和列 _timestamp 之间的φ²: 0.9021749525101919
+2025-06-07 18:43:52 - rule_mining.Correlation_utils - INFO - 计算列 ['GenusOrMonomial'] 和列 _timestamp 之间的相关性 (φ²): 0.0
+2025-06-07 18:43:52 - rule_mining.Correlation_utils - INFO - 计算列 ['Subgenus'] 和列 _timestamp 之间的φ²: 0.0
+2025-06-07 18:43:52 - rule_mining.Correlation_utils - INFO - 计算列 ['Subgenus'] 和列 _timestamp 之间的相关性 (φ²): 0.0
+2025-06-07 18:43:52 - rule_mining.Correlation_utils - INFO - 计算列 ['SpeciesEpithet'] 和列 _timestamp 之间的φ²: 0.9450605028322377
+2025-06-07 18:43:52 - rule_mining.Correlation_utils - INFO - 计算列 ['SpeciesEpithet'] 和列 _timestamp 之间的相关性 (φ²): 0.0
+2025-06-07 18:43:52 - rule_mining.Correlation_utils - INFO - 计算列 ['SubspeciesEpithet'] 和列 _timestamp 之间的φ²: 0.98271627356616
+2025-06-07 18:43:52 - rule_mining.Correlation_utils - INFO - 计算列 ['SubspeciesEpithet'] 和列 _timestamp 之间的相关性 (φ²): 0.0
+2025-06-07 18:43:52 - rule_mining.Correlation_utils - INFO - 计算列 ['AuthorTeamOriginalAndYear'] 和列 _timestamp 之间的φ²: 0.5909090909090902
+2025-06-07 18:43:52 - rule_mining.Correlation_utils - INFO - 计算列 ['AuthorTeamOriginalAndYear'] 和列 _timestamp 之间的相关性 (φ²): 0.0
+2025-06-07 18:43:52 - rule_mining.Correlation_utils - INFO - 计算列 ['AuthorTeamParenthesisAndYear'] 和列 _timestamp 之间的φ²: 0.8375000000000005
+2025-06-07 18:43:52 - rule_mining.Correlation_utils - INFO - 计算列 ['AuthorTeamParenthesisAndYear'] 和列 _timestamp 之间的相关性 (φ²): 0.0
+2025-06-07 18:43:52 - rule_mining.Correlation_utils - INFO - 计算列 ['PreferredFlag'] 和列 _timestamp 之间的φ²: 0.9585403634579925
+2025-06-07 18:43:52 - rule_mining.Correlation_utils - INFO - 计算列 ['PreferredFlag'] 和列 _timestamp 之间的相关性 (φ²): 0.45813429277668255
+2025-06-07 18:43:52 - rule_mining.Correlation_utils - WARNING - 列联表为空，返回 invalid
+2025-06-07 18:43:52 - rule_mining.Correlation_utils - INFO - 计算列 ['ScientificName', 'FullScientificNameString'] 和列 _timestamp 之间的φ²: 0.9635971055088672
+2025-06-07 18:43:52 - rule_mining.Correlation_utils - INFO - 计算列 ['ScientificName', 'FullScientificNameString'] 和列 _timestamp 之间的相关性 (φ²): 0.03593001089316789
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - INFO - 计算列 ['ScientificName', 'PreferredFlag'] 和列 _timestamp 之间的φ²: 0.9636418007515426
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - INFO - 计算列 ['ScientificName', 'PreferredFlag'] 和列 _timestamp 之间的相关性 (φ²): 0.037113689903353765
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - INFO - 计算列 ['FullScientificNameString', 'PreferredFlag'] 和列 _timestamp 之间的φ²: 0.9636418007515426
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - INFO - 计算列 ['FullScientificNameString', 'PreferredFlag'] 和列 _timestamp 之间的相关性 (φ²): 0.037113689903353765
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-07 18:43:53 - Cafd - INFO - Processing search space: <SearchSpace_bit.SearchSpace object at 0x0000022816FF3880>
+2025-06-07 18:43:53 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: _unitguid->ScientificName
+2025-06-07 18:43:53 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: _identificationguid->ScientificName
+2025-06-07 18:43:53 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: _timestamp->ScientificName
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - INFO - 计算列 ['FullScientificNameString'] 和列 ScientificName 之间的φ²: 1.0
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - INFO - 计算列 ['FullScientificNameString'] 和列 ScientificName 之间的相关性 (φ²): 1.0
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - INFO - 行方向得分: 1.0000, 列方向得分: 1.0000
+2025-06-07 18:43:53 - SearchSpace_bit - INFO - 发现函数依赖: ['FullScientificNameString'] -> ScientificName
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - INFO - 计算列 ['GenusOrMonomial'] 和列 ScientificName 之间的φ²: 1.0000000000000069
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - INFO - 计算列 ['GenusOrMonomial'] 和列 ScientificName 之间的相关性 (φ²): 1.0000000000000175
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - INFO - 行方向得分: 0.3705, 列方向得分: 1.0000
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - INFO - 计算列 ['Subgenus'] 和列 ScientificName 之间的φ²: 1.0
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - INFO - 计算列 ['Subgenus'] 和列 ScientificName 之间的相关性 (φ²): 1.0
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - INFO - 行方向得分: 0.5000, 列方向得分: 1.0000
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - INFO - 计算列 ['SpeciesEpithet'] 和列 ScientificName 之间的φ²: 0.9999999999999989
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - INFO - 计算列 ['SpeciesEpithet'] 和列 ScientificName 之间的相关性 (φ²): 0.9999999999999974
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - INFO - 行方向得分: 0.5790, 列方向得分: 1.0000
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - INFO - 计算列 ['SubspeciesEpithet'] 和列 ScientificName 之间的φ²: 0.9999999999999992
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - INFO - 计算列 ['SubspeciesEpithet'] 和列 ScientificName 之间的相关性 (φ²): 0.9999999999999986
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - INFO - 行方向得分: 0.7802, 列方向得分: 1.0000
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - INFO - 计算列 ['AuthorTeamOriginalAndYear'] 和列 ScientificName 之间的φ²: 0.9999999999999996
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - INFO - 计算列 ['AuthorTeamOriginalAndYear'] 和列 ScientificName 之间的相关性 (φ²): 0.999999999999999
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - INFO - 行方向得分: 0.3102, 列方向得分: 1.0000
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - INFO - 计算列 ['AuthorTeamParenthesisAndYear'] 和列 ScientificName 之间的φ²: 0.9999999999999999
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - INFO - 计算列 ['AuthorTeamParenthesisAndYear'] 和列 ScientificName 之间的相关性 (φ²): 0.9999999999999997
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - INFO - 行方向得分: 0.2488, 列方向得分: 1.0000
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - INFO - 计算列 ['PreferredFlag'] 和列 ScientificName 之间的φ²: 0.9529239102318701
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - INFO - 计算列 ['PreferredFlag'] 和列 ScientificName 之间的相关性 (φ²): 0.867038859454326
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - INFO - 行方向得分: 0.0070, 列方向得分: 0.9973
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - WARNING - 列联表为空，返回 invalid
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - INFO - 计算列 ['_unitguid', '_timestamp'] 和列 ScientificName 之间的φ²: 0.9642857142857143
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - INFO - 计算列 ['_unitguid', '_timestamp'] 和列 ScientificName 之间的相关性 (φ²): 0.0
+2025-06-07 18:43:53 - Cafd - INFO - Processing search space: <SearchSpace_bit.SearchSpace object at 0x0000022816FF37F0>
+2025-06-07 18:43:53 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: _unitguid->FullScientificNameString
+2025-06-07 18:43:53 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: _identificationguid->FullScientificNameString
+2025-06-07 18:43:53 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: _timestamp->FullScientificNameString
+2025-06-07 18:43:53 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: ScientificName->FullScientificNameString
+2025-06-07 18:43:53 - SearchSpace_bit - INFO - 发现函数依赖: ['ScientificName'] -> FullScientificNameString
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - INFO - 计算列 ['GenusOrMonomial'] 和列 FullScientificNameString 之间的φ²: 1.0000000000000069
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - INFO - 计算列 ['GenusOrMonomial'] 和列 FullScientificNameString 之间的相关性 (φ²): 1.0000000000000175
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - INFO - 行方向得分: 0.3705, 列方向得分: 1.0000
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - INFO - 计算列 ['Subgenus'] 和列 FullScientificNameString 之间的φ²: 1.0
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - INFO - 计算列 ['Subgenus'] 和列 FullScientificNameString 之间的相关性 (φ²): 1.0
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - INFO - 行方向得分: 0.5000, 列方向得分: 1.0000
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - INFO - 计算列 ['SpeciesEpithet'] 和列 FullScientificNameString 之间的φ²: 0.9999999999999989
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - INFO - 计算列 ['SpeciesEpithet'] 和列 FullScientificNameString 之间的相关性 (φ²): 0.9999999999999974
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - INFO - 行方向得分: 0.5790, 列方向得分: 1.0000
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - INFO - 计算列 ['SubspeciesEpithet'] 和列 FullScientificNameString 之间的φ²: 0.9999999999999992
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - INFO - 计算列 ['SubspeciesEpithet'] 和列 FullScientificNameString 之间的相关性 (φ²): 0.9999999999999986
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - INFO - 行方向得分: 0.7802, 列方向得分: 1.0000
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - INFO - 计算列 ['AuthorTeamOriginalAndYear'] 和列 FullScientificNameString 之间的φ²: 0.9999999999999996
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - INFO - 计算列 ['AuthorTeamOriginalAndYear'] 和列 FullScientificNameString 之间的相关性 (φ²): 0.999999999999999
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - INFO - 行方向得分: 0.3102, 列方向得分: 1.0000
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - INFO - 计算列 ['AuthorTeamParenthesisAndYear'] 和列 FullScientificNameString 之间的φ²: 0.9999999999999999
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - INFO - 计算列 ['AuthorTeamParenthesisAndYear'] 和列 FullScientificNameString 之间的相关性 (φ²): 0.9999999999999997
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - INFO - 行方向得分: 0.2488, 列方向得分: 1.0000
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - INFO - 计算列 ['PreferredFlag'] 和列 FullScientificNameString 之间的φ²: 0.9529239102318701
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - INFO - 计算列 ['PreferredFlag'] 和列 FullScientificNameString 之间的相关性 (φ²): 0.867038859454326
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - INFO - 行方向得分: 0.0070, 列方向得分: 0.9973
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - WARNING - 列联表为空，返回 invalid
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - INFO - 计算列 ['_unitguid', '_timestamp'] 和列 FullScientificNameString 之间的φ²: 0.9642857142857143
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - INFO - 计算列 ['_unitguid', '_timestamp'] 和列 FullScientificNameString 之间的相关性 (φ²): 0.0
+2025-06-07 18:43:53 - Cafd - INFO - Processing search space: <SearchSpace_bit.SearchSpace object at 0x0000022816FF3760>
+2025-06-07 18:43:53 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: _unitguid->GenusOrMonomial
+2025-06-07 18:43:53 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: _identificationguid->GenusOrMonomial
+2025-06-07 18:43:53 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: _timestamp->GenusOrMonomial
+2025-06-07 18:43:53 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: ScientificName->GenusOrMonomial
+2025-06-07 18:43:53 - SearchSpace_bit - INFO - 发现函数依赖: ['ScientificName'] -> GenusOrMonomial
+2025-06-07 18:43:53 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: FullScientificNameString->GenusOrMonomial
+2025-06-07 18:43:53 - SearchSpace_bit - INFO - 发现函数依赖: ['FullScientificNameString'] -> GenusOrMonomial
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - INFO - 计算列 ['Subgenus'] 和列 GenusOrMonomial 之间的φ²: 1.0
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - INFO - 计算列 ['Subgenus'] 和列 GenusOrMonomial 之间的相关性 (φ²): 1.0
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - INFO - 行方向得分: 1.0000, 列方向得分: 0.8750
+2025-06-07 18:43:53 - SearchSpace_bit - INFO - 发现函数依赖: ['Subgenus'] -> GenusOrMonomial
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - INFO - 计算列 ['SpeciesEpithet'] 和列 GenusOrMonomial 之间的φ²: 0.5881216189023114
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - INFO - 计算列 ['SpeciesEpithet'] 和列 GenusOrMonomial 之间的相关性 (φ²): 0.4697492931600268
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - INFO - 计算列 ['SubspeciesEpithet'] 和列 GenusOrMonomial 之间的φ²: 0.6092030306471737
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - INFO - 计算列 ['SubspeciesEpithet'] 和列 GenusOrMonomial 之间的相关性 (φ²): 0.4551782293089529
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - INFO - 计算列 ['AuthorTeamOriginalAndYear'] 和列 GenusOrMonomial 之间的φ²: 0.7528004173586518
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - INFO - 计算列 ['AuthorTeamOriginalAndYear'] 和列 GenusOrMonomial 之间的相关性 (φ²): 0.6630326857060455
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - INFO - 行方向得分: 0.4171, 列方向得分: 0.8503
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - INFO - 计算列 ['AuthorTeamParenthesisAndYear'] 和列 GenusOrMonomial 之间的φ²: 0.6620359660737241
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - INFO - 计算列 ['AuthorTeamParenthesisAndYear'] 和列 GenusOrMonomial 之间的相关性 (φ²): 0.5145743610161906
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - INFO - 计算列 ['PreferredFlag'] 和列 GenusOrMonomial 之间的φ²: 0.4700760159302342
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - INFO - 计算列 ['PreferredFlag'] 和列 GenusOrMonomial 之间的相关性 (φ²): 0.3163410794764462
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - WARNING - 列联表为空，返回 invalid
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - INFO - 计算列 ['_unitguid', 'SpeciesEpithet'] 和列 GenusOrMonomial 之间的φ²: 0.8854166666666666
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - INFO - 计算列 ['_unitguid', 'SpeciesEpithet'] 和列 GenusOrMonomial 之间的相关性 (φ²): 0.1692708333333334
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - INFO - 计算列 ['_unitguid', 'SubspeciesEpithet'] 和列 GenusOrMonomial 之间的φ²: 0.8214285714285714
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - INFO - 计算列 ['_unitguid', 'SubspeciesEpithet'] 和列 GenusOrMonomial 之间的相关性 (φ²): 0.0
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - INFO - 计算列 ['SpeciesEpithet', 'SubspeciesEpithet'] 和列 GenusOrMonomial 之间的φ²: 0.7233128862792173
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - INFO - 计算列 ['SpeciesEpithet', 'SubspeciesEpithet'] 和列 GenusOrMonomial 之间的相关性 (φ²): 0.5507452905465118
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - INFO - 计算列 ['_unitguid', 'AuthorTeamParenthesisAndYear'] 和列 GenusOrMonomial 之间的φ²: 0.9125
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - INFO - 计算列 ['_unitguid', 'AuthorTeamParenthesisAndYear'] 和列 GenusOrMonomial 之间的相关性 (φ²): 0.4924999999999999
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - INFO - 计算列 ['SpeciesEpithet', 'AuthorTeamParenthesisAndYear'] 和列 GenusOrMonomial 之间的φ²: 0.7144295791011052
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - INFO - 计算列 ['SpeciesEpithet', 'AuthorTeamParenthesisAndYear'] 和列 GenusOrMonomial 之间的相关性 (φ²): 0.6118985042529427
+2025-06-07 18:43:53 - SearchSpace_bit - INFO - 发现函数依赖: ['SpeciesEpithet', 'AuthorTeamParenthesisAndYear'] -> GenusOrMonomial
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - INFO - 计算列 ['SubspeciesEpithet', 'AuthorTeamParenthesisAndYear'] 和列 GenusOrMonomial 之间的φ²: 0.7730963380582185
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - INFO - 计算列 ['SubspeciesEpithet', 'AuthorTeamParenthesisAndYear'] 和列 GenusOrMonomial 之间的相关性 (φ²): 0.6460036711054905
+2025-06-07 18:43:53 - SearchSpace_bit - INFO - 发现函数依赖: ['SubspeciesEpithet', 'AuthorTeamParenthesisAndYear'] -> GenusOrMonomial
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - INFO - 计算列 ['_unitguid', 'PreferredFlag'] 和列 GenusOrMonomial 之间的φ²: 1.0
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - INFO - 计算列 ['_unitguid', 'PreferredFlag'] 和列 GenusOrMonomial 之间的相关性 (φ²): 0.0
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - INFO - 计算列 ['SpeciesEpithet', 'PreferredFlag'] 和列 GenusOrMonomial 之间的φ²: 0.6204905789439144
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - INFO - 计算列 ['SpeciesEpithet', 'PreferredFlag'] 和列 GenusOrMonomial 之间的相关性 (φ²): 0.49950114454472916
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - INFO - 计算列 ['SubspeciesEpithet', 'PreferredFlag'] 和列 GenusOrMonomial 之间的φ²: 0.6371119295810728
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - INFO - 计算列 ['SubspeciesEpithet', 'PreferredFlag'] 和列 GenusOrMonomial 之间的相关性 (φ²): 0.48573134399874984
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - INFO - 计算列 ['AuthorTeamParenthesisAndYear', 'PreferredFlag'] 和列 GenusOrMonomial 之间的φ²: 0.6381979417598838
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - INFO - 计算列 ['AuthorTeamParenthesisAndYear', 'PreferredFlag'] 和列 GenusOrMonomial 之间的相关性 (φ²): 0.4803352496816935
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-07 18:43:53 - Cafd - INFO - Processing search space: <SearchSpace_bit.SearchSpace object at 0x0000022816FF36A0>
+2025-06-07 18:43:53 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: _unitguid->Subgenus
+2025-06-07 18:43:53 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: _identificationguid->Subgenus
+2025-06-07 18:43:53 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: _timestamp->Subgenus
+2025-06-07 18:43:53 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: ScientificName->Subgenus
+2025-06-07 18:43:53 - SearchSpace_bit - INFO - 发现函数依赖: ['ScientificName'] -> Subgenus
+2025-06-07 18:43:53 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: FullScientificNameString->Subgenus
+2025-06-07 18:43:53 - SearchSpace_bit - INFO - 发现函数依赖: ['FullScientificNameString'] -> Subgenus
+2025-06-07 18:43:53 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: GenusOrMonomial->Subgenus
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - INFO - 计算列 ['SpeciesEpithet'] 和列 Subgenus 之间的φ²: 1.0
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - INFO - 计算列 ['SpeciesEpithet'] 和列 Subgenus 之间的相关性 (φ²): 1.0
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - INFO - 行方向得分: 1.0000, 列方向得分: 0.6923
+2025-06-07 18:43:53 - SearchSpace_bit - INFO - 发现函数依赖: ['SpeciesEpithet'] -> Subgenus
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - INFO - 计算列 ['SubspeciesEpithet'] 和列 Subgenus 之间的φ²: 0.0
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - INFO - 计算列 ['SubspeciesEpithet'] 和列 Subgenus 之间的相关性 (φ²): 0.0
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - INFO - 计算列 ['AuthorTeamOriginalAndYear'] 和列 Subgenus 之间的φ²: 0.7999999999999999
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - INFO - 计算列 ['AuthorTeamOriginalAndYear'] 和列 Subgenus 之间的相关性 (φ²): 0.5333333333333332
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - INFO - 计算列 ['AuthorTeamParenthesisAndYear'] 和列 Subgenus 之间的φ²: 1.0
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - INFO - 计算列 ['AuthorTeamParenthesisAndYear'] 和列 Subgenus 之间的相关性 (φ²): 0.0
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - INFO - 计算列 ['PreferredFlag'] 和列 Subgenus 之间的φ²: 0.0
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - INFO - 计算列 ['PreferredFlag'] 和列 Subgenus 之间的相关性 (φ²): 0.0
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - WARNING - 列联表为空，返回 invalid
+2025-06-07 18:43:53 - Cafd - INFO - Processing search space: <SearchSpace_bit.SearchSpace object at 0x0000022816FF35E0>
+2025-06-07 18:43:53 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: _unitguid->SpeciesEpithet
+2025-06-07 18:43:53 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: _identificationguid->SpeciesEpithet
+2025-06-07 18:43:53 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: _timestamp->SpeciesEpithet
+2025-06-07 18:43:53 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: ScientificName->SpeciesEpithet
+2025-06-07 18:43:53 - SearchSpace_bit - INFO - 发现函数依赖: ['ScientificName'] -> SpeciesEpithet
+2025-06-07 18:43:53 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: FullScientificNameString->SpeciesEpithet
+2025-06-07 18:43:53 - SearchSpace_bit - INFO - 发现函数依赖: ['FullScientificNameString'] -> SpeciesEpithet
+2025-06-07 18:43:53 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: GenusOrMonomial->SpeciesEpithet
+2025-06-07 18:43:53 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: Subgenus->SpeciesEpithet
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - INFO - 计算列 ['SubspeciesEpithet'] 和列 SpeciesEpithet 之间的φ²: 0.6974075526953772
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - INFO - 计算列 ['SubspeciesEpithet'] 和列 SpeciesEpithet 之间的相关性 (φ²): 0.5777041396483229
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - INFO - 计算列 ['AuthorTeamOriginalAndYear'] 和列 SpeciesEpithet 之间的φ²: 0.9632468313929883
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - INFO - 计算列 ['AuthorTeamOriginalAndYear'] 和列 SpeciesEpithet 之间的相关性 (φ²): 0.9409578130119618
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - INFO - 行方向得分: 0.3837, 列方向得分: 0.9799
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - INFO - 计算列 ['AuthorTeamParenthesisAndYear'] 和列 SpeciesEpithet 之间的φ²: 0.9333515933491029
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - INFO - 计算列 ['AuthorTeamParenthesisAndYear'] 和列 SpeciesEpithet 之间的相关性 (φ²): 0.8886044028012711
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - INFO - 行方向得分: 0.3359, 列方向得分: 0.9599
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - INFO - 计算列 ['PreferredFlag'] 和列 SpeciesEpithet 之间的φ²: 0.6432174495200482
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - INFO - 计算列 ['PreferredFlag'] 和列 SpeciesEpithet 之间的相关性 (φ²): 0.4272575540997509
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - WARNING - 列联表为空，返回 invalid
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - INFO - 计算列 ['_unitguid', 'GenusOrMonomial'] 和列 SpeciesEpithet 之间的φ²: 0.88
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - INFO - 计算列 ['_unitguid', 'GenusOrMonomial'] 和列 SpeciesEpithet 之间的相关性 (φ²): 0.13000000000000037
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - INFO - 计算列 ['_unitguid', 'SubspeciesEpithet'] 和列 SpeciesEpithet 之间的φ²: 0.9226190476190477
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - INFO - 计算列 ['_unitguid', 'SubspeciesEpithet'] 和列 SpeciesEpithet 之间的相关性 (φ²): 0.43898809523809584
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - INFO - 计算列 ['GenusOrMonomial', 'SubspeciesEpithet'] 和列 SpeciesEpithet 之间的φ²: 0.5642863287157203
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - INFO - 计算列 ['GenusOrMonomial', 'SubspeciesEpithet'] 和列 SpeciesEpithet 之间的相关性 (φ²): 0.33702692724755856
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - INFO - 计算列 ['_unitguid', 'PreferredFlag'] 和列 SpeciesEpithet 之间的φ²: 1.0
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - INFO - 计算列 ['_unitguid', 'PreferredFlag'] 和列 SpeciesEpithet 之间的相关性 (φ²): 0.0
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - INFO - 计算列 ['GenusOrMonomial', 'PreferredFlag'] 和列 SpeciesEpithet 之间的φ²: 0.7655468037527119
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - INFO - 计算列 ['GenusOrMonomial', 'PreferredFlag'] 和列 SpeciesEpithet 之间的相关性 (φ²): 0.6432607784039853
+2025-06-07 18:43:53 - SearchSpace_bit - INFO - 发现函数依赖: ['GenusOrMonomial', 'PreferredFlag'] -> SpeciesEpithet
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - INFO - 计算列 ['SubspeciesEpithet', 'PreferredFlag'] 和列 SpeciesEpithet 之间的φ²: 0.7235620656778483
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - INFO - 计算列 ['SubspeciesEpithet', 'PreferredFlag'] 和列 SpeciesEpithet 之间的相关性 (φ²): 0.6082445896127205
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-07 18:43:53 - Cafd - INFO - Processing search space: <SearchSpace_bit.SearchSpace object at 0x0000022816FF3550>
+2025-06-07 18:43:53 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: _unitguid->SubspeciesEpithet
+2025-06-07 18:43:53 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: _identificationguid->SubspeciesEpithet
+2025-06-07 18:43:53 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: _timestamp->SubspeciesEpithet
+2025-06-07 18:43:53 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: ScientificName->SubspeciesEpithet
+2025-06-07 18:43:53 - SearchSpace_bit - INFO - 发现函数依赖: ['ScientificName'] -> SubspeciesEpithet
+2025-06-07 18:43:53 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: FullScientificNameString->SubspeciesEpithet
+2025-06-07 18:43:53 - SearchSpace_bit - INFO - 发现函数依赖: ['FullScientificNameString'] -> SubspeciesEpithet
+2025-06-07 18:43:53 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: GenusOrMonomial->SubspeciesEpithet
+2025-06-07 18:43:53 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: Subgenus->SubspeciesEpithet
+2025-06-07 18:43:53 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: SpeciesEpithet->SubspeciesEpithet
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - INFO - 计算列 ['AuthorTeamOriginalAndYear'] 和列 SubspeciesEpithet 之间的φ²: 0.9677231258203154
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - INFO - 计算列 ['AuthorTeamOriginalAndYear'] 和列 SubspeciesEpithet 之间的相关性 (φ²): 0.9402692328398939
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - INFO - 行方向得分: 0.3326, 列方向得分: 0.9814
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - INFO - 计算列 ['AuthorTeamParenthesisAndYear'] 和列 SubspeciesEpithet 之间的φ²: 0.9187960825143944
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - INFO - 计算列 ['AuthorTeamParenthesisAndYear'] 和列 SubspeciesEpithet 之间的相关性 (φ²): 0.8077046120653366
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - INFO - 行方向得分: 0.2656, 列方向得分: 0.9502
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - INFO - 计算列 ['PreferredFlag'] 和列 SubspeciesEpithet 之间的φ²: 0.6958939017358114
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - INFO - 计算列 ['PreferredFlag'] 和列 SubspeciesEpithet 之间的相关性 (φ²): 0.4053355070106459
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - WARNING - 列联表为空，返回 invalid
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - INFO - 计算列 ['_unitguid', 'GenusOrMonomial'] 和列 SubspeciesEpithet 之间的φ²: 0.9375
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - INFO - 计算列 ['_unitguid', 'GenusOrMonomial'] 和列 SubspeciesEpithet 之间的相关性 (φ²): 0.0
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - INFO - 计算列 ['_unitguid', 'SpeciesEpithet'] 和列 SubspeciesEpithet 之间的φ²: 1.0
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - INFO - 计算列 ['_unitguid', 'SpeciesEpithet'] 和列 SubspeciesEpithet 之间的相关性 (φ²): 1.0
+2025-06-07 18:43:53 - SearchSpace_bit - INFO - 发现函数依赖: ['_unitguid', 'SpeciesEpithet'] -> SubspeciesEpithet
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - INFO - 计算列 ['GenusOrMonomial', 'SpeciesEpithet'] 和列 SubspeciesEpithet 之间的φ²: 0.8072305168250179
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - INFO - 计算列 ['GenusOrMonomial', 'SpeciesEpithet'] 和列 SubspeciesEpithet 之间的相关性 (φ²): 0.6280184478513532
+2025-06-07 18:43:53 - SearchSpace_bit - INFO - 发现函数依赖: ['GenusOrMonomial', 'SpeciesEpithet'] -> SubspeciesEpithet
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - INFO - 计算列 ['_unitguid', 'PreferredFlag'] 和列 SubspeciesEpithet 之间的φ²: 1.0
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - INFO - 计算列 ['_unitguid', 'PreferredFlag'] 和列 SubspeciesEpithet 之间的相关性 (φ²): 0.0
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - INFO - 计算列 ['GenusOrMonomial', 'PreferredFlag'] 和列 SubspeciesEpithet 之间的φ²: 0.8153145359676012
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - INFO - 计算列 ['GenusOrMonomial', 'PreferredFlag'] 和列 SubspeciesEpithet 之间的相关性 (φ²): 0.6436179397352831
+2025-06-07 18:43:53 - SearchSpace_bit - INFO - 发现函数依赖: ['GenusOrMonomial', 'PreferredFlag'] -> SubspeciesEpithet
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - INFO - 计算列 ['SpeciesEpithet', 'PreferredFlag'] 和列 SubspeciesEpithet 之间的φ²: 0.8619606267302287
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - INFO - 计算列 ['SpeciesEpithet', 'PreferredFlag'] 和列 SubspeciesEpithet 之间的相关性 (φ²): 0.7515138413621114
+2025-06-07 18:43:53 - SearchSpace_bit - INFO - 发现函数依赖: ['SpeciesEpithet', 'PreferredFlag'] -> SubspeciesEpithet
+2025-06-07 18:43:53 - Cafd - INFO - Processing search space: <SearchSpace_bit.SearchSpace object at 0x0000022816FF3430>
+2025-06-07 18:43:53 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: _unitguid->AuthorTeamOriginalAndYear
+2025-06-07 18:43:53 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: _identificationguid->AuthorTeamOriginalAndYear
+2025-06-07 18:43:53 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: _timestamp->AuthorTeamOriginalAndYear
+2025-06-07 18:43:53 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: ScientificName->AuthorTeamOriginalAndYear
+2025-06-07 18:43:53 - SearchSpace_bit - INFO - 发现函数依赖: ['ScientificName'] -> AuthorTeamOriginalAndYear
+2025-06-07 18:43:53 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: FullScientificNameString->AuthorTeamOriginalAndYear
+2025-06-07 18:43:53 - SearchSpace_bit - INFO - 发现函数依赖: ['FullScientificNameString'] -> AuthorTeamOriginalAndYear
+2025-06-07 18:43:53 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: GenusOrMonomial->AuthorTeamOriginalAndYear
+2025-06-07 18:43:53 - SearchSpace_bit - INFO - 发现函数依赖: ['GenusOrMonomial'] -> AuthorTeamOriginalAndYear
+2025-06-07 18:43:53 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: Subgenus->AuthorTeamOriginalAndYear
+2025-06-07 18:43:53 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: SpeciesEpithet->AuthorTeamOriginalAndYear
+2025-06-07 18:43:53 - SearchSpace_bit - INFO - 发现函数依赖: ['SpeciesEpithet'] -> AuthorTeamOriginalAndYear
+2025-06-07 18:43:53 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: SubspeciesEpithet->AuthorTeamOriginalAndYear
+2025-06-07 18:43:53 - SearchSpace_bit - INFO - 发现函数依赖: ['SubspeciesEpithet'] -> AuthorTeamOriginalAndYear
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - WARNING - 列联表为空，返回 invalid
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - INFO - 计算列 ['PreferredFlag'] 和列 AuthorTeamOriginalAndYear 之间的φ²: 0.45045998534560205
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - INFO - 计算列 ['PreferredFlag'] 和列 AuthorTeamOriginalAndYear 之间的相关性 (φ²): 0.2711715131897666
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - WARNING - 列联表为空，返回 invalid
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - INFO - 计算列 ['Subgenus', 'PreferredFlag'] 和列 AuthorTeamOriginalAndYear 之间的φ²: 0.7333333333333332
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - INFO - 计算列 ['Subgenus', 'PreferredFlag'] 和列 AuthorTeamOriginalAndYear 之间的相关性 (φ²): 0.5999999999999998
+2025-06-07 18:43:53 - Cafd - INFO - Processing search space: <SearchSpace_bit.SearchSpace object at 0x0000022816FF33A0>
+2025-06-07 18:43:53 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: _unitguid->AuthorTeamParenthesisAndYear
+2025-06-07 18:43:53 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: _identificationguid->AuthorTeamParenthesisAndYear
+2025-06-07 18:43:53 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: _timestamp->AuthorTeamParenthesisAndYear
+2025-06-07 18:43:53 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: ScientificName->AuthorTeamParenthesisAndYear
+2025-06-07 18:43:53 - SearchSpace_bit - INFO - 发现函数依赖: ['ScientificName'] -> AuthorTeamParenthesisAndYear
+2025-06-07 18:43:53 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: FullScientificNameString->AuthorTeamParenthesisAndYear
+2025-06-07 18:43:53 - SearchSpace_bit - INFO - 发现函数依赖: ['FullScientificNameString'] -> AuthorTeamParenthesisAndYear
+2025-06-07 18:43:53 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: GenusOrMonomial->AuthorTeamParenthesisAndYear
+2025-06-07 18:43:53 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: Subgenus->AuthorTeamParenthesisAndYear
+2025-06-07 18:43:53 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: SpeciesEpithet->AuthorTeamParenthesisAndYear
+2025-06-07 18:43:53 - SearchSpace_bit - INFO - 发现函数依赖: ['SpeciesEpithet'] -> AuthorTeamParenthesisAndYear
+2025-06-07 18:43:53 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: SubspeciesEpithet->AuthorTeamParenthesisAndYear
+2025-06-07 18:43:53 - SearchSpace_bit - INFO - 发现函数依赖: ['SubspeciesEpithet'] -> AuthorTeamParenthesisAndYear
+2025-06-07 18:43:53 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: AuthorTeamOriginalAndYear->AuthorTeamParenthesisAndYear
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - INFO - 计算列 ['PreferredFlag'] 和列 AuthorTeamParenthesisAndYear 之间的φ²: 0.28681061210105535
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - INFO - 计算列 ['PreferredFlag'] 和列 AuthorTeamParenthesisAndYear 之间的相关性 (φ²): 0.09424320481435702
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - WARNING - 列联表为空，返回 invalid
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - INFO - 计算列 ['GenusOrMonomial', 'PreferredFlag'] 和列 AuthorTeamParenthesisAndYear 之间的φ²: 0.5453557193050742
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - INFO - 计算列 ['GenusOrMonomial', 'PreferredFlag'] 和列 AuthorTeamParenthesisAndYear 之间的相关性 (φ²): 0.3936465756938025
+2025-06-07 18:43:53 - Cafd - INFO - Processing search space: <SearchSpace_bit.SearchSpace object at 0x0000022816FF3310>
+2025-06-07 18:43:53 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: _unitguid->PreferredFlag
+2025-06-07 18:43:53 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: _identificationguid->PreferredFlag
+2025-06-07 18:43:53 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: _timestamp->PreferredFlag
+2025-06-07 18:43:53 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: ScientificName->PreferredFlag
+2025-06-07 18:43:53 - SearchSpace_bit - INFO - 发现函数依赖: ['ScientificName'] -> PreferredFlag
+2025-06-07 18:43:53 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: FullScientificNameString->PreferredFlag
+2025-06-07 18:43:53 - SearchSpace_bit - INFO - 发现函数依赖: ['FullScientificNameString'] -> PreferredFlag
+2025-06-07 18:43:53 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: GenusOrMonomial->PreferredFlag
+2025-06-07 18:43:53 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: Subgenus->PreferredFlag
+2025-06-07 18:43:53 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: SpeciesEpithet->PreferredFlag
+2025-06-07 18:43:53 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: SubspeciesEpithet->PreferredFlag
+2025-06-07 18:43:53 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: AuthorTeamOriginalAndYear->PreferredFlag
+2025-06-07 18:43:53 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: AuthorTeamParenthesisAndYear->PreferredFlag
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - WARNING - 列联表为空，返回 invalid
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - INFO - 计算列 ['_timestamp', 'GenusOrMonomial'] 和列 PreferredFlag 之间的φ²: 0.863190927108568
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - INFO - 计算列 ['_timestamp', 'GenusOrMonomial'] 和列 PreferredFlag 之间的相关性 (φ²): 0.8140895886187665
+2025-06-07 18:43:53 - SearchSpace_bit - INFO - 发现函数依赖: ['_timestamp', 'GenusOrMonomial'] -> PreferredFlag
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - INFO - 计算列 ['_timestamp', 'SpeciesEpithet'] 和列 PreferredFlag 之间的φ²: 0.8905527416868542
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - INFO - 计算列 ['_timestamp', 'SpeciesEpithet'] 和列 PreferredFlag 之间的相关性 (φ²): 0.8435566567051287
+2025-06-07 18:43:53 - SearchSpace_bit - INFO - 发现函数依赖: ['_timestamp', 'SpeciesEpithet'] -> PreferredFlag
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - INFO - 计算列 ['GenusOrMonomial', 'SpeciesEpithet'] 和列 PreferredFlag 之间的φ²: 0.7067360733679959
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - INFO - 计算列 ['GenusOrMonomial', 'SpeciesEpithet'] 和列 PreferredFlag 之间的相关性 (φ²): 0.5283644543073852
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - INFO - 计算列 ['_timestamp', 'SubspeciesEpithet'] 和列 PreferredFlag 之间的φ²: 0.7263818542171324
+2025-06-07 18:43:53 - rule_mining.Correlation_utils - INFO - 计算列 ['_timestamp', 'SubspeciesEpithet'] 和列 PreferredFlag 之间的相关性 (φ²): 0.6806715286863475
+2025-06-07 18:43:53 - SearchSpace_bit - INFO - 发现函数依赖: ['_timestamp', 'SubspeciesEpithet'] -> PreferredFlag
+2025-06-07 18:43:54 - rule_mining.Correlation_utils - INFO - 计算列 ['GenusOrMonomial', 'SubspeciesEpithet'] 和列 PreferredFlag 之间的φ²: 0.5257322675891125
+2025-06-07 18:43:54 - rule_mining.Correlation_utils - INFO - 计算列 ['GenusOrMonomial', 'SubspeciesEpithet'] 和列 PreferredFlag 之间的相关性 (φ²): 0.28521929348300445
+2025-06-07 18:43:54 - rule_mining.Correlation_utils - INFO - 计算列 ['SpeciesEpithet', 'SubspeciesEpithet'] 和列 PreferredFlag 之间的φ²: 0.6093128531867782
+2025-06-07 18:43:54 - rule_mining.Correlation_utils - INFO - 计算列 ['SpeciesEpithet', 'SubspeciesEpithet'] 和列 PreferredFlag 之间的相关性 (φ²): 0.3656443255759669
+2025-06-07 18:43:54 - rule_mining.Correlation_utils - INFO - 计算列 ['_timestamp', 'AuthorTeamOriginalAndYear'] 和列 PreferredFlag 之间的φ²: 0.5257285473096959
+2025-06-07 18:43:54 - rule_mining.Correlation_utils - INFO - 计算列 ['_timestamp', 'AuthorTeamOriginalAndYear'] 和列 PreferredFlag 之间的相关性 (φ²): 0.4372281326928449
+2025-06-07 18:43:54 - rule_mining.Correlation_utils - INFO - 计算列 ['GenusOrMonomial', 'AuthorTeamOriginalAndYear'] 和列 PreferredFlag 之间的φ²: 0.3592011977303798
+2025-06-07 18:43:54 - rule_mining.Correlation_utils - INFO - 计算列 ['GenusOrMonomial', 'AuthorTeamOriginalAndYear'] 和列 PreferredFlag 之间的相关性 (φ²): 0.2317251079256876
+2025-06-07 18:43:54 - rule_mining.Correlation_utils - INFO - 计算列 ['SpeciesEpithet', 'AuthorTeamOriginalAndYear'] 和列 PreferredFlag 之间的φ²: 0.4219199580593994
+2025-06-07 18:43:54 - rule_mining.Correlation_utils - INFO - 计算列 ['SpeciesEpithet', 'AuthorTeamOriginalAndYear'] 和列 PreferredFlag 之间的相关性 (φ²): 0.2395014816034374
+2025-06-07 18:43:54 - rule_mining.Correlation_utils - INFO - 计算列 ['SubspeciesEpithet', 'AuthorTeamOriginalAndYear'] 和列 PreferredFlag 之间的φ²: 0.5018619859834507
+2025-06-07 18:43:54 - rule_mining.Correlation_utils - INFO - 计算列 ['SubspeciesEpithet', 'AuthorTeamOriginalAndYear'] 和列 PreferredFlag 之间的相关性 (φ²): 0.2790820907051027
+2025-06-07 18:43:54 - rule_mining.Correlation_utils - INFO - 计算列 ['_timestamp', 'AuthorTeamParenthesisAndYear'] 和列 PreferredFlag 之间的φ²: 0.6716582250605589
+2025-06-07 18:43:54 - rule_mining.Correlation_utils - INFO - 计算列 ['_timestamp', 'AuthorTeamParenthesisAndYear'] 和列 PreferredFlag 之间的相关性 (φ²): 0.6131650347506823
+2025-06-07 18:43:54 - SearchSpace_bit - INFO - 发现函数依赖: ['_timestamp', 'AuthorTeamParenthesisAndYear'] -> PreferredFlag
+2025-06-07 18:43:54 - rule_mining.Correlation_utils - INFO - 计算列 ['GenusOrMonomial', 'AuthorTeamParenthesisAndYear'] 和列 PreferredFlag 之间的φ²: 0.4147746970713125
+2025-06-07 18:43:54 - rule_mining.Correlation_utils - INFO - 计算列 ['GenusOrMonomial', 'AuthorTeamParenthesisAndYear'] 和列 PreferredFlag 之间的相关性 (φ²): 0.2658824920936418
+2025-06-07 18:43:54 - rule_mining.Correlation_utils - INFO - 计算列 ['SpeciesEpithet', 'AuthorTeamParenthesisAndYear'] 和列 PreferredFlag 之间的φ²: 0.4614827232197541
+2025-06-07 18:43:54 - rule_mining.Correlation_utils - INFO - 计算列 ['SpeciesEpithet', 'AuthorTeamParenthesisAndYear'] 和列 PreferredFlag 之间的相关性 (φ²): 0.2681337235622138
+2025-06-07 18:43:54 - rule_mining.Correlation_utils - INFO - 计算列 ['SubspeciesEpithet', 'AuthorTeamParenthesisAndYear'] 和列 PreferredFlag 之间的φ²: 0.645497640372371
+2025-06-07 18:43:54 - rule_mining.Correlation_utils - INFO - 计算列 ['SubspeciesEpithet', 'AuthorTeamParenthesisAndYear'] 和列 PreferredFlag 之间的相关性 (φ²): 0.446934735126397
+2025-06-07 18:43:54 - rule_mining.Correlation_utils - INFO - 计算列 ['AuthorTeamOriginalAndYear', 'AuthorTeamParenthesisAndYear'] 和列 PreferredFlag 之间的φ²: 0.0872458470499571
+2025-06-07 18:43:54 - rule_mining.Correlation_utils - INFO - 计算列 ['AuthorTeamOriginalAndYear', 'AuthorTeamParenthesisAndYear'] 和列 PreferredFlag 之间的相关性 (φ²): 0.0
+2025-06-07 18:43:54 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-07 18:43:54 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-07 18:43:54 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-07 18:43:54 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-07 18:43:54 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-07 18:43:54 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-07 18:43:54 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-07 18:43:54 - Cafd - INFO - Processing search space: <SearchSpace_bit.SearchSpace object at 0x0000022816FF3280>
+2025-06-07 18:43:54 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: _unitguid->Notes
+2025-06-07 18:43:54 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: _identificationguid->Notes
+2025-06-07 18:43:54 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: _timestamp->Notes
+2025-06-07 18:43:54 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: ScientificName->Notes
+2025-06-07 18:43:54 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: FullScientificNameString->Notes
+2025-06-07 18:43:54 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: GenusOrMonomial->Notes
+2025-06-07 18:43:54 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: Subgenus->Notes
+2025-06-07 18:43:54 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: SpeciesEpithet->Notes
+2025-06-07 18:43:54 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: SubspeciesEpithet->Notes
+2025-06-07 18:43:54 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: AuthorTeamOriginalAndYear->Notes
+2025-06-07 18:43:54 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: AuthorTeamParenthesisAndYear->Notes
+2025-06-07 18:43:54 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: PreferredFlag->Notes
+2025-06-07 18:43:54 - Cafd - INFO - Total dependencies found: 35
+2025-06-07 18:43:54 - root - INFO - 发现的函数依赖如下：
+2025-06-07 18:43:54 - root - INFO - ['_unitguid'] -> _timestamp
+2025-06-07 18:43:54 - root - INFO - ['FullScientificNameString'] -> ScientificName
+2025-06-07 18:43:54 - root - INFO - ['ScientificName'] -> FullScientificNameString
+2025-06-07 18:43:54 - root - INFO - ['ScientificName'] -> GenusOrMonomial
+2025-06-07 18:43:54 - root - INFO - ['FullScientificNameString'] -> GenusOrMonomial
+2025-06-07 18:43:54 - root - INFO - ['Subgenus'] -> GenusOrMonomial
+2025-06-07 18:43:54 - root - INFO - ['AuthorTeamParenthesisAndYear', 'SpeciesEpithet'] -> GenusOrMonomial
+2025-06-07 18:43:54 - root - INFO - ['AuthorTeamParenthesisAndYear', 'SubspeciesEpithet'] -> GenusOrMonomial
+2025-06-07 18:43:54 - root - INFO - ['ScientificName'] -> Subgenus
+2025-06-07 18:43:54 - root - INFO - ['FullScientificNameString'] -> Subgenus
+2025-06-07 18:43:54 - root - INFO - ['SpeciesEpithet'] -> Subgenus
+2025-06-07 18:43:54 - root - INFO - ['ScientificName'] -> SpeciesEpithet
+2025-06-07 18:43:54 - root - INFO - ['FullScientificNameString'] -> SpeciesEpithet
+2025-06-07 18:43:54 - root - INFO - ['GenusOrMonomial', 'PreferredFlag'] -> SpeciesEpithet
+2025-06-07 18:43:54 - root - INFO - ['ScientificName'] -> SubspeciesEpithet
+2025-06-07 18:43:54 - root - INFO - ['FullScientificNameString'] -> SubspeciesEpithet
+2025-06-07 18:43:54 - root - INFO - ['SpeciesEpithet', '_unitguid'] -> SubspeciesEpithet
+2025-06-07 18:43:54 - root - INFO - ['GenusOrMonomial', 'SpeciesEpithet'] -> SubspeciesEpithet
+2025-06-07 18:43:54 - root - INFO - ['GenusOrMonomial', 'PreferredFlag'] -> SubspeciesEpithet
+2025-06-07 18:43:54 - root - INFO - ['PreferredFlag', 'SpeciesEpithet'] -> SubspeciesEpithet
+2025-06-07 18:43:54 - root - INFO - ['ScientificName'] -> AuthorTeamOriginalAndYear
+2025-06-07 18:43:54 - root - INFO - ['FullScientificNameString'] -> AuthorTeamOriginalAndYear
+2025-06-07 18:43:54 - root - INFO - ['GenusOrMonomial'] -> AuthorTeamOriginalAndYear
+2025-06-07 18:43:54 - root - INFO - ['SpeciesEpithet'] -> AuthorTeamOriginalAndYear
+2025-06-07 18:43:54 - root - INFO - ['SubspeciesEpithet'] -> AuthorTeamOriginalAndYear
+2025-06-07 18:43:54 - root - INFO - ['ScientificName'] -> AuthorTeamParenthesisAndYear
+2025-06-07 18:43:54 - root - INFO - ['FullScientificNameString'] -> AuthorTeamParenthesisAndYear
+2025-06-07 18:43:54 - root - INFO - ['SpeciesEpithet'] -> AuthorTeamParenthesisAndYear
+2025-06-07 18:43:54 - root - INFO - ['SubspeciesEpithet'] -> AuthorTeamParenthesisAndYear
+2025-06-07 18:43:54 - root - INFO - ['ScientificName'] -> PreferredFlag
+2025-06-07 18:43:54 - root - INFO - ['FullScientificNameString'] -> PreferredFlag
+2025-06-07 18:43:54 - root - INFO - ['GenusOrMonomial', '_timestamp'] -> PreferredFlag
+2025-06-07 18:43:54 - root - INFO - ['SpeciesEpithet', '_timestamp'] -> PreferredFlag
+2025-06-07 18:43:54 - root - INFO - ['SubspeciesEpithet', '_timestamp'] -> PreferredFlag
+2025-06-07 18:43:54 - root - INFO - ['AuthorTeamParenthesisAndYear', '_timestamp'] -> PreferredFlag
+2025-06-07 18:43:54 - Evaluate_fd - INFO - 评估结果: TP=14, FP=21, FN=0
+2025-06-07 18:43:54 - Evaluate_fd - WARNING - 误报 FD (21 个):
+Subgenus->GenusOrMonomial
+SubspeciesEpithet,_timestamp->PreferredFlag
+SpeciesEpithet,_unitguid->SubspeciesEpithet
+PreferredFlag,SpeciesEpithet->SubspeciesEpithet
+GenusOrMonomial,PreferredFlag->SubspeciesEpithet
+ScientificName->PreferredFlag
+GenusOrMonomial->AuthorTeamOriginalAndYear
+_unitguid->_timestamp
+SubspeciesEpithet->AuthorTeamParenthesisAndYear
+AuthorTeamParenthesisAndYear,SubspeciesEpithet->GenusOrMonomial
+SpeciesEpithet->AuthorTeamParenthesisAndYear
+FullScientificNameString->PreferredFlag
+AuthorTeamParenthesisAndYear,_timestamp->PreferredFlag
+GenusOrMonomial,_timestamp->PreferredFlag
+SpeciesEpithet,_timestamp->PreferredFlag
+GenusOrMonomial,PreferredFlag->SpeciesEpithet
+SubspeciesEpithet->AuthorTeamOriginalAndYear
+AuthorTeamParenthesisAndYear,SpeciesEpithet->GenusOrMonomial
+GenusOrMonomial,SpeciesEpithet->SubspeciesEpithet
+SpeciesEpithet->Subgenus
+SpeciesEpithet->AuthorTeamOriginalAndYear
+2025-06-07 18:43:54 - root - INFO - Precision: 0.40, Recall: 1.00, F1: 0.57
+2025-06-07 18:43:54 - root - INFO - 总运行时长: 3923 ms
+2025-06-07 18:43:54 - root - INFO - 结果已保存至: rule_mining\discovered_fd\t_biocase_identification_r91800_c38_discovered.txt

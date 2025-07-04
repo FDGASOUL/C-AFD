@@ -4,9 +4,8 @@ Gath_DateTime_End->_datasetguid
 Gath_AreaDetail->Gath_Country_Name
 Gath_DateTime_Text->Gath_Country_Name
 Gath_AreaDetail->Gath_DateTime_Text
-Gath_AreaDetail,Gath_Country_Name->Gath_DateTime_Begin
 Gath_DateTime_Begin->Gath_DateTime_End
-Precision: 0.1250
+Precision: 0.1429
 Recall: 1.0000
-F1: 0.2222
-Runtime: 1178 ms
+F1: 0.2500
+Runtime: 1240 ms

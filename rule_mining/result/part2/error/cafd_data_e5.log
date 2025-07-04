@@ -1,0 +1,734 @@
+2025-06-09 11:21:36 - root - INFO - 日志配置完成。
+2025-06-09 11:21:36 - root - INFO - Config: dataset=data_e5.csv, sample_size=4000, null_equal_null=True
+2025-06-09 11:21:36 - root - INFO - 开始执行 CAFD...
+2025-06-09 11:21:36 - Cafd - INFO - Executing CAFD on: E:\资料\C-AFD\rule_mining\data\synthetic_data\error\data_e5.csv
+2025-06-09 11:21:36 - Cafd - INFO - Using ground truth: E:\资料\C-AFD\rule_mining\groundtruth\synthetic_data\error\data_e5.txt
+2025-06-09 11:21:36 - Sampler - INFO - Reading dataset from: E:\资料\C-AFD\rule_mining\data\synthetic_data\error\data_e5.csv
+2025-06-09 11:21:36 - Sampler - INFO - 移除全空列：0 / 20
+2025-06-09 11:21:36 - Sampler - INFO - 移除单一值列：0 个
+2025-06-09 11:21:36 - Sampler - INFO - 移除大于数据集行数 (5000) 的不现实样本量：48 个
+2025-06-09 11:21:36 - Sampler - INFO - 最终采样方式 'mode_bin_2000'，样本量: 4000
+2025-06-09 11:21:36 - Sampler - INFO - 抽样 4000 行，随机种子：1699129599
+2025-06-09 11:21:36 - Sampler - INFO - 抽样结果已保存至: rule_mining/data/sample_data/sample_data.csv
+2025-06-09 11:21:37 - rule_mining.Incorporate_into - INFO - 所有列的 PLI 更新完成。
+2025-06-09 11:21:37 - Cafd - INFO - Processing search space: <SearchSpace_bit.SearchSpace object at 0x00000124DADA3D60>
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column2'] 和列 column1 之间的φ²: 0.873677593438638
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column2'] 和列 column1 之间的相关性 (φ²): 0.8704709477336189
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 行方向得分: 0.1032, 列方向得分: 0.9455
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column3'] 和列 column1 之间的φ²: 0.02434202413424104
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column3'] 和列 column1 之间的相关性 (φ²): 0.0
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column4'] 和列 column1 之间的φ²: 0.02449769086013297
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column4'] 和列 column1 之间的相关性 (φ²): 0.0
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column5'] 和列 column1 之间的φ²: 0.02455166113298657
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column5'] 和列 column1 之间的相关性 (φ²): 0.0
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column6'] 和列 column1 之间的φ²: 0.02404760132101569
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column6'] 和列 column1 之间的相关性 (φ²): 0.0
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column7'] 和列 column1 之间的φ²: 0.022478494473770903
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column7'] 和列 column1 之间的相关性 (φ²): 0.0
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column8'] 和列 column1 之间的φ²: 0.02584610850967863
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column8'] 和列 column1 之间的相关性 (φ²): 0.0011175866487704725
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column9'] 和列 column1 之间的φ²: 0.029911137664993398
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column9'] 和列 column1 之间的相关性 (φ²): 0.0052858050057201554
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column10'] 和列 column1 之间的φ²: 0.02595266142691429
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column10'] 和列 column1 之间的相关性 (φ²): 0.0012268443708282704
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column11'] 和列 column1 之间的φ²: 0.025629221864748752
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column11'] 和列 column1 之间的相关性 (φ²): 0.0008951944197769916
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column12'] 和列 column1 之间的φ²: 0.20203853868271585
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column12'] 和列 column1 之间的相关性 (φ²): 0.18178259389543094
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column13'] 和列 column1 之间的φ²: 0.2099840706369269
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column13'] 和列 column1 之间的相关性 (φ²): 0.18992982012232582
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column14'] 和列 column1 之间的φ²: 0.027237917346524965
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column14'] 和列 column1 之间的相关性 (φ²): 0.0025447260176290625
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column15'] 和列 column1 之间的φ²: 0.023678711104054742
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column15'] 和列 column1 之间的相关性 (φ²): 0.0
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column16'] 和列 column1 之间的φ²: 0.021197578577583955
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column16'] 和列 column1 之间的相关性 (φ²): 0.0
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column17'] 和列 column1 之间的φ²: 0.023086384074430328
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column17'] 和列 column1 之间的相关性 (φ²): 0.0
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column18'] 和列 column1 之间的φ²: 0.021633868612769617
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column18'] 和列 column1 之间的相关性 (φ²): 0.0
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column19'] 和列 column1 之间的φ²: 0.0262963243650633
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column19'] 和列 column1 之间的相关性 (φ²): 0.0015792310604841376
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column20'] 和列 column1 之间的φ²: 0.026639379139116612
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column20'] 和列 column1 之间的相关性 (φ²): 0.0019309941480326505
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column12', 'column13'] 和列 column1 之间的φ²: 0.07889606315464465
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column12', 'column13'] 和列 column1 之间的相关性 (φ²): 0.05551419398857024
+2025-06-09 11:21:37 - Cafd - INFO - Processing search space: <SearchSpace_bit.SearchSpace object at 0x00000124DADA3FD0>
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column1->column2
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 发现函数依赖: ['column1'] -> column2
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column3'] 和列 column2 之间的φ²: 0.02708001626315712
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column3'] 和列 column2 之间的相关性 (φ²): 0.0023828166759911097
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column4'] 和列 column2 之间的φ²: 0.026513067157441127
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column4'] 和列 column2 之间的相关性 (φ²): 0.0018014757852838654
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column5'] 和列 column2 之间的φ²: 0.00489356906277763
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column5'] 和列 column2 之间的相关性 (φ²): 0.00014306097538888005
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column6'] 和列 column2 之间的φ²: 0.0008441280883845081
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column6'] 和列 column2 之间的相关性 (φ²): 0.0
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column7'] 和列 column2 之间的φ²: 0.0007341391611719245
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column7'] 和列 column2 之间的相关性 (φ²): 0.0
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column8'] 和列 column2 之间的φ²: 0.0008605072095113542
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column8'] 和列 column2 之间的相关性 (φ²): 0.0
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column9'] 和列 column2 之间的φ²: 0.0003395994857115738
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column9'] 和列 column2 之间的相关性 (φ²): 0.0
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column10'] 和列 column2 之间的φ²: 0.0012252140096135236
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column10'] 和列 column2 之间的相关性 (φ²): 0.00022518919260187245
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column11'] 和列 column2 之间的φ²: 0.0017841482069327413
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column11'] 和列 column2 之间的相关性 (φ²): 0.0005345039257696626
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column12'] 和列 column2 之间的φ²: 0.20951422796759936
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column12'] 和列 column2 之间的相关性 (φ²): 0.20872275285167202
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column13'] 和列 column2 之间的φ²: 0.2230819117993123
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column13'] 和列 column2 之间的相关性 (φ²): 0.22230402134804753
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column14'] 和列 column2 之间的φ²: 0.0008982685323469184
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column14'] 和列 column2 之间的相关性 (φ²): 0.0
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column15'] 和列 column2 之间的φ²: 0.0009720844068352505
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column15'] 和列 column2 之间的相关性 (φ²): 0.0
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column16'] 和列 column2 之间的φ²: 0.0005971375558281977
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column16'] 和列 column2 之间的相关性 (φ²): 0.0
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column17'] 和列 column2 之间的φ²: 0.001228395151564456
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column17'] 和列 column2 之间的相关性 (φ²): 0.00022837351967616002
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column18'] 和列 column2 之间的φ²: 0.0006225385551034605
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column18'] 和列 column2 之间的相关性 (φ²): 0.0
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column19'] 和列 column2 之间的φ²: 0.0015072020812149844
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column19'] 和列 column2 之间的相关性 (φ²): 0.0005074596052011821
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column20'] 和列 column2 之间的φ²: 0.0013176399819304833
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column20'] 和列 column2 之间的相关性 (φ²): 0.00031770770656821087
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column12', 'column13'] 和列 column2 之间的φ²: 0.38908160042117096
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column12', 'column13'] 和列 column2 之间的相关性 (φ²): 0.38539303649918555
+2025-06-09 11:21:37 - Cafd - INFO - Processing search space: <SearchSpace_bit.SearchSpace object at 0x00000124DADA3F40>
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column1->column3
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column2->column3
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column4'] 和列 column3 之间的φ²: 0.9300610535765914
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column4'] 和列 column3 之间的相关性 (φ²): 0.9282856803212279
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 行方向得分: 0.9505, 列方向得分: 0.9505
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 发现函数依赖: ['column4'] -> column3
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column5'] 和列 column3 之间的φ²: 0.025245615015893726
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column5'] 和列 column3 之间的相关性 (φ²): 0.0005018498586048764
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column6'] 和列 column3 之间的φ²: 0.028962636570052155
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column6'] 和列 column3 之间的相关性 (φ²): 0.0043132265752919416
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column7'] 和列 column3 之间的φ²: 0.026696658031232726
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column7'] 和列 column3 之间的相关性 (φ²): 0.0019897270427947896
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column8'] 和列 column3 之间的φ²: 0.025287845099306424
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column8'] 和列 column3 之间的相关性 (φ²): 0.0005451519364426656
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column9'] 和列 column3 之间的φ²: 0.022817223162313365
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column9'] 和列 column3 之间的相关性 (φ²): 0.0
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column10'] 和列 column3 之间的φ²: 0.02274527930496572
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column10'] 和列 column3 之间的相关性 (φ²): 0.0
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column11'] 和列 column3 之间的φ²: 0.0281054858689934
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column11'] 和列 column3 之间的相关性 (φ²): 0.003434317433360158
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column12'] 和列 column3 之间的φ²: 0.024997391104957672
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column12'] 和列 column3 之间的相关性 (φ²): 0.00024732487916044507
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column13'] 和列 column3 之间的φ²: 0.027367216222041406
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column13'] 和列 column3 之间的相关性 (φ²): 0.002677307095370151
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column14'] 和列 column3 之间的φ²: 0.23591407821761173
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column14'] 和列 column3 之间的相关性 (φ²): 0.2165180509723665
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column15'] 和列 column3 之间的φ²: 0.22289321455088862
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column15'] 和列 column3 之间的相关性 (φ²): 0.2031666576894881
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column16'] 和列 column3 之间的φ²: 0.02681992575863933
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column16'] 和列 column3 之间的相关性 (φ²): 0.0021161238740509455
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column17'] 和列 column3 之间的φ²: 0.021403161572614637
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column17'] 和列 column3 之间的相关性 (φ²): 0.0
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column18'] 和列 column3 之间的φ²: 0.02220388055469067
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column18'] 和列 column3 之间的相关性 (φ²): 0.0
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column19'] 和列 column3 之间的φ²: 0.025035740591496106
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column19'] 和列 column3 之间的相关性 (φ²): 0.0002866478526648553
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column20'] 和列 column3 之间的φ²: 0.022357545308592817
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column20'] 和列 column3 之间的相关性 (φ²): 0.0
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column14', 'column15'] 和列 column3 之间的φ²: 0.12246027919564396
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column14', 'column15'] 和列 column3 之间的相关性 (φ²): 0.10018427089830262
+2025-06-09 11:21:37 - Cafd - INFO - Processing search space: <SearchSpace_bit.SearchSpace object at 0x00000124DADA3EB0>
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column1->column4
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column2->column4
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column3->column4
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 发现函数依赖: ['column3'] -> column4
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column5'] 和列 column4 之间的φ²: 0.025386208070736865
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column5'] 和列 column4 之间的相关性 (φ²): 0.000646011814070956
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column6'] 和列 column4 之间的φ²: 0.029159079927972186
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column6'] 和列 column4 之间的相关性 (φ²): 0.004514656572297636
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column7'] 和列 column4 之间的φ²: 0.026029776303586306
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column7'] 和列 column4 之间的相关性 (φ²): 0.0013059167789850373
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column8'] 和列 column4 之间的φ²: 0.02591879241594336
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column8'] 和列 column4 之间的相关性 (φ²): 0.0011921156080403844
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column9'] 和列 column4 之间的φ²: 0.02297241138192271
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column9'] 和列 column4 之间的相关性 (φ²): 0.0
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column10'] 和列 column4 之间的φ²: 0.021815115805108122
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column10'] 和列 column4 之间的相关性 (φ²): 0.0
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column11'] 和列 column4 之间的φ²: 0.027883265328660308
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column11'] 和列 column4 之间的相关性 (φ²): 0.0032064559100801484
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column12'] 和列 column4 之间的φ²: 0.02573354558481441
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column12'] 和列 column4 之间的相关性 (φ²): 0.001002166357352007
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column13'] 和列 column4 之间的φ²: 0.026620843247488493
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column13'] 和列 column4 之间的相关性 (φ²): 0.0019119877299247413
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column14'] 和列 column4 之间的φ²: 0.2573559744820178
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column14'] 和列 column4 之间的相关性 (φ²): 0.23850424152656133
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column15'] 和列 column4 之间的φ²: 0.2501143075603023
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column15'] 和列 column4 之间的相关性 (φ²): 0.23107874767529457
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column16'] 和列 column4 之间的φ²: 0.029663484408992986
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column16'] 和列 column4 之间的相关性 (φ²): 0.005031865167067425
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column17'] 和列 column4 之间的φ²: 0.021192495288224734
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column17'] 和列 column4 之间的相关性 (φ²): 0.0
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column18'] 和列 column4 之间的φ²: 0.0216097262866723
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column18'] 和列 column4 之间的相关性 (φ²): 0.0
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column19'] 和列 column4 之间的φ²: 0.02489904538594959
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column19'] 和列 column4 之间的相关性 (φ²): 0.00014648269190061953
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column20'] 和列 column4 之间的φ²: 0.02192914987580889
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column20'] 和列 column4 之间的相关性 (φ²): 0.0
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column14', 'column15'] 和列 column4 之间的φ²: 0.1343899072195819
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column14', 'column15'] 和列 column4 之间的相关性 (φ²): 0.11241672794130976
+2025-06-09 11:21:37 - Cafd - INFO - Processing search space: <SearchSpace_bit.SearchSpace object at 0x00000124DADB69D0>
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column1->column5
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column2->column5
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column3->column5
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column4->column5
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column6'] 和列 column5 之间的φ²: 0.007514397726354162
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column6'] 和列 column5 之间的相关性 (φ²): 0.0027764011325855007
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column7'] 和列 column5 之间的φ²: 0.07080604969749947
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column7'] 和列 column5 之间的相关性 (φ²): 0.06637019918098
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column8'] 和列 column5 之间的φ²: 0.005560570356992088
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column8'] 和列 column5 之间的相关性 (φ²): 0.00081324644663602
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column9'] 和列 column5 之间的φ²: 0.004201851577139791
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column9'] 和列 column5 之间的相关性 (φ²): 0.0
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column10'] 和列 column5 之间的φ²: 0.004931107294251575
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column10'] 和列 column5 之间的相关性 (φ²): 0.00018077840947538932
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column11'] 和列 column5 之间的φ²: 0.00535122787198311
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column11'] 和列 column5 之间的相关性 (φ²): 0.0006029045879548888
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column12'] 和列 column5 之间的φ²: 0.0057719785576857705
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column12'] 和列 column5 之间的相关性 (φ²): 0.0010256638824586424
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column13'] 和列 column5 之间的φ²: 0.004864916534015095
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column13'] 和列 column5 之间的相关性 (φ²): 0.00011427166319757901
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column14'] 和列 column5 之间的φ²: 0.00396871269077144
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column14'] 和列 column5 之间的相关性 (φ²): 0.0
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column15'] 和列 column5 之间的φ²: 0.005588396713442165
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column15'] 和列 column5 之间的相关性 (φ²): 0.000841205642476186
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column16'] 和列 column5 之间的φ²: 0.004929957876681982
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column16'] 和列 column5 之间的相关性 (φ²): 0.00017962350473649399
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column17'] 和列 column5 之间的φ²: 0.005902719690243486
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column17'] 和列 column5 之间的相关性 (φ²): 0.001157029156101433
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column18'] 和列 column5 之间的φ²: 0.028311576128692877
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column18'] 和列 column5 之间的相关性 (φ²): 0.023672862547397696
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column19'] 和列 column5 之间的φ²: 0.013035030300484323
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column19'] 和列 column5 之间的相关性 (φ²): 0.00832338848533588
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column20'] 和列 column5 之间的φ²: 0.004631320592165622
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column20'] 和列 column5 之间的相关性 (φ²): 0.0
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column7', 'column18'] 和列 column5 之间的φ²: 0.01472803317855346
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column7', 'column18'] 和列 column5 之间的相关性 (φ²): 0.010024473537948565
+2025-06-09 11:21:37 - Cafd - INFO - Processing search space: <SearchSpace_bit.SearchSpace object at 0x00000124DADB6160>
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column1->column6
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column2->column6
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column3->column6
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column4->column6
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column5->column6
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column7'] 和列 column6 之间的φ²: 0.04116646443391869
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column7'] 和列 column6 之间的相关性 (φ²): 0.04020643085638069
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column8'] 和列 column6 之间的φ²: 0.001710830498235282
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column8'] 和列 column6 之间的相关性 (φ²): 0.0007112919054925888
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column9'] 和列 column6 之间的φ²: 0.0007343390695462328
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column9'] 和列 column6 之间的相关性 (φ²): 0.0
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column10'] 和列 column6 之间的φ²: 0.0008568519830923833
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column10'] 和列 column6 之间的相关性 (φ²): 0.0
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column11'] 和列 column6 之间的φ²: 0.0014852831058701384
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column11'] 和列 column6 之间的相关性 (φ²): 0.00023526468211684616
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column12'] 和列 column6 之间的φ²: 0.0009849186623064837
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column12'] 和列 column6 之间的相关性 (φ²): 0.0
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column13'] 和列 column6 之间的φ²: 0.0009312222733331055
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column13'] 和列 column6 之间的相关性 (φ²): 0.0
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column14'] 和列 column6 之间的φ²: 0.0013199909722962388
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column14'] 和列 column6 之间的相关性 (φ²): 0.00032006105086674805
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column15'] 和列 column6 之间的φ²: 0.001010868109164619
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column15'] 和列 column6 之间的相关性 (φ²): 1.0628677984808771e-05
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column16'] 和列 column6 之间的φ²: 0.0013078024996138423
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column16'] 和列 column6 之间的相关性 (φ²): 0.00030786037445701
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column17'] 和列 column6 之间的φ²: 0.0009086681037629489
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column17'] 和列 column6 之间的相关性 (φ²): 0.0
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column18'] 和列 column6 之间的φ²: 0.012959904811573266
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column18'] 和列 column6 之间的相关性 (φ²): 0.01197162937208548
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column19'] 和列 column6 之间的φ²: 0.010467089519393255
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column19'] 和列 column6 之间的相关性 (φ²): 0.009476318144694273
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column20'] 和列 column6 之间的φ²: 0.0010157210226651614
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column20'] 和列 column6 之间的相关性 (φ²): 1.5486450472585778e-05
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column7', 'column18'] 和列 column6 之间的φ²: 0.03483899256025239
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column7', 'column18'] 和列 column6 之间的相关性 (φ²): 0.030231440012173198
+2025-06-09 11:21:37 - Cafd - INFO - Processing search space: <SearchSpace_bit.SearchSpace object at 0x00000124DADB69A0>
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column1->column7
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column2->column7
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column3->column7
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column4->column7
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column5->column7
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column6->column7
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column8'] 和列 column7 之间的φ²: 0.0009581663368045762
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column8'] 和列 column7 之间的相关性 (φ²): 0.0
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column9'] 和列 column7 之间的φ²: 0.0004583963947103863
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column9'] 和列 column7 之间的相关性 (φ²): 0.0
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column10'] 和列 column7 之间的φ²: 0.0010009060988645615
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column10'] 和列 column7 之间的相关性 (φ²): 6.566932063531733e-07
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column11'] 和列 column7 之间的φ²: 0.0006587232113361475
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column11'] 和列 column7 之间的相关性 (φ²): 0.0
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column12'] 和列 column7 之间的φ²: 0.0007986549018805439
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column12'] 和列 column7 之间的相关性 (φ²): 0.0
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column13'] 和列 column7 之间的φ²: 0.0006302808784092425
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column13'] 和列 column7 之间的相关性 (φ²): 0.0
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column14'] 和列 column7 之间的φ²: 0.001042427554914525
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column14'] 和列 column7 之间的相关性 (φ²): 4.221972267914518e-05
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column15'] 和列 column7 之间的φ²: 0.0015550319825623547
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column15'] 和列 column7 之间的相关性 (φ²): 0.0005553373963121042
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column16'] 和列 column7 之间的φ²: 0.00044688772057304506
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column16'] 和列 column7 之间的相关性 (φ²): 0.0
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column17'] 和列 column7 之间的φ²: 0.0013050335735588685
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column17'] 和列 column7 之间的相关性 (φ²): 0.0003050886760104918
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column18'] 和列 column7 之间的φ²: 0.32168320216843477
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column18'] 和列 column7 之间的相关性 (φ²): 0.3210040364134094
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column19'] 和列 column7 之间的φ²: 0.26260410237077575
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column19'] 和列 column7 之间的相关性 (φ²): 0.26186578357465135
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column20'] 和列 column7 之间的φ²: 0.001451050835471733
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column20'] 和列 column7 之间的相关性 (φ²): 0.00045125213793528404
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column5', 'column6'] 和列 column7 之间的φ²: 0.8781963991107461
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column5', 'column6'] 和列 column7 之间的相关性 (φ²): 0.8751044615497112
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 发现函数依赖: ['column5', 'column6'] -> column7
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column5', 'column18'] 和列 column7 之间的φ²: 0.3732947668423094
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column5', 'column18'] 和列 column7 之间的相关性 (φ²): 0.35738609553907574
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column6', 'column18'] 和列 column7 之间的φ²: 0.35719159072024026
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column6', 'column18'] 和列 column7 之间的相关性 (φ²): 0.35331048334345677
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column5', 'column19'] 和列 column7 之间的φ²: 0.3389332219139532
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column5', 'column19'] 和列 column7 之间的相关性 (φ²): 0.32215229600869205
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column6', 'column19'] 和列 column7 之间的φ²: 0.294549481660995
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column6', 'column19'] 和列 column7 之间的相关性 (φ²): 0.290290157776684
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column18', 'column19'] 和列 column7 之间的φ²: 0.5299987321403274
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column18', 'column19'] 和列 column7 之间的相关性 (φ²): 0.527160988636269
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-09 11:21:37 - Cafd - INFO - Processing search space: <SearchSpace_bit.SearchSpace object at 0x00000124DADB6A30>
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column1->column8
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column2->column8
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column3->column8
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column4->column8
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column5->column8
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column6->column8
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column7->column8
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column9'] 和列 column8 之间的φ²: 0.00027120483718006956
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column9'] 和列 column8 之间的相关性 (φ²): 0.0
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column10'] 和列 column8 之间的φ²: 0.0006891014628718893
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column10'] 和列 column8 之间的相关性 (φ²): 0.0
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column11'] 和列 column8 之间的φ²: 0.029991949610680364
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column11'] 和列 column8 之间的相关性 (φ²): 0.028777618050353226
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column12'] 和列 column8 之间的φ²: 0.0007479053464802234
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column12'] 和列 column8 之间的相关性 (φ²): 0.0
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column13'] 和列 column8 之间的φ²: 0.0011664040791929437
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column13'] 和列 column8 之间的相关性 (φ²): 0.00016632037864645338
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column14'] 和列 column8 之间的φ²: 0.001628282613669569
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column14'] 和列 column8 之间的相关性 (φ²): 0.0006286613697283117
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column15'] 和列 column8 之间的φ²: 0.000768694712152012
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column15'] 和列 column8 之间的相关性 (φ²): 0.0
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column16'] 和列 column8 之间的φ²: 0.00497476089531284
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column16'] 和列 column8 之间的相关性 (φ²): 0.003978490317986495
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column17'] 和列 column8 之间的φ²: 0.006071689872857746
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column17'] 和列 column8 之间的相关性 (φ²): 0.005076517597386264
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column18'] 和列 column8 之间的φ²: 0.000959845283810239
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column18'] 和列 column8 之间的相关性 (φ²): 0.0
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column19'] 和列 column8 之间的φ²: 0.0012509047116820683
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column19'] 和列 column8 之间的相关性 (φ²): 0.0002509056175260552
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column20'] 和列 column8 之间的φ²: 0.0007524131021571634
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column20'] 和列 column8 之间的相关性 (φ²): 0.0
+2025-06-09 11:21:37 - Cafd - INFO - Processing search space: <SearchSpace_bit.SearchSpace object at 0x00000124DADB6B20>
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column1->column9
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column2->column9
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column3->column9
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column4->column9
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column5->column9
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column6->column9
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column7->column9
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column8->column9
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column10'] 和列 column9 之间的φ²: 0.0007680779901465182
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column10'] 和列 column9 之间的相关性 (φ²): 0.0
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column11'] 和列 column9 之间的φ²: 0.024380927149639093
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column11'] 和列 column9 之间的相关性 (φ²): 0.02315957127476383
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column12'] 和列 column9 之间的φ²: 0.0007415040845324559
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column12'] 和列 column9 之间的相关性 (φ²): 0.0
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column13'] 和列 column9 之间的φ²: 0.0007306390999541464
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column13'] 和列 column9 之间的相关性 (φ²): 0.0
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column14'] 和列 column9 之间的φ²: 0.0010354329874171526
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column14'] 和列 column9 之间的相关性 (φ²): 3.5218151860123334e-05
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column15'] 和列 column9 之间的φ²: 0.0010476237886281297
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column15'] 和列 column9 之间的相关性 (φ²): 4.742115912988494e-05
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column16'] 和列 column9 之间的φ²: 0.002375176279760391
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column16'] 和列 column9 之间的相关性 (φ²): 0.0013763028642707893
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column17'] 和列 column9 之间的φ²: 0.005776659638867197
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column17'] 和列 column9 之间的相关性 (φ²): 0.00478119196391237
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column18'] 和列 column9 之间的φ²: 0.0004959606745338381
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column18'] 和列 column9 之间的相关性 (φ²): 0.0
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column19'] 和列 column9 之间的φ²: 0.0008785450730348051
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column19'] 和列 column9 之间的相关性 (φ²): 0.0
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column20'] 和列 column9 之间的φ²: 0.0004691081202646501
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column20'] 和列 column9 之间的相关性 (φ²): 0.0
+2025-06-09 11:21:37 - Cafd - INFO - Processing search space: <SearchSpace_bit.SearchSpace object at 0x00000124DADB6AF0>
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column1->column10
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column2->column10
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column3->column10
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column4->column10
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column5->column10
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column6->column10
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column7->column10
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column8->column10
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column9->column10
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column11'] 和列 column10 之间的φ²: 0.10951392383790824
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column11'] 和列 column10 之间的相关性 (φ²): 0.10839914407305835
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column12'] 和列 column10 之间的φ²: 0.0009898756787076763
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column12'] 和列 column10 之间的相关性 (φ²): 0.0
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column13'] 和列 column10 之间的φ²: 0.0011050900007955136
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column13'] 和列 column10 之间的相关性 (φ²): 0.00010494490943210473
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column14'] 和列 column10 之间的φ²: 0.0008835718118507714
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column14'] 和列 column10 之间的相关性 (φ²): 0.0
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column15'] 和列 column10 之间的φ²: 0.0005751766344782538
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column15'] 和列 column10 之间的相关性 (φ²): 0.0
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column16'] 和列 column10 之间的φ²: 0.025274753815367545
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column16'] 和列 column10 之间的相关性 (φ²): 0.02429880863771084
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column17'] 和列 column10 之间的φ²: 0.026655546241439707
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column17'] 和列 column10 之间的相关性 (φ²): 0.025680983584359794
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column18'] 和列 column10 之间的φ²: 0.0013800618222900595
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column18'] 和列 column10 之间的相关性 (φ²): 0.0003801920468931033
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column19'] 和列 column10 之间的φ²: 0.0009167008077820356
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column19'] 和列 column10 之间的相关性 (φ²): 0.0
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column20'] 和列 column10 之间的φ²: 0.001194816872827772
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column20'] 和列 column10 之间的相关性 (φ²): 0.00019476162063535924
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column11', 'column16'] 和列 column10 之间的φ²: 0.11601151630555478
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column11', 'column16'] 和列 column10 之间的相关性 (φ²): 0.10955416969922258
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column11', 'column17'] 和列 column10 之间的φ²: 0.11487966795231551
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column11', 'column17'] 和列 column10 之间的相关性 (φ²): 0.10841405343609817
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column16', 'column17'] 和列 column10 之间的φ²: 0.049394767993366145
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column16', 'column17'] 和列 column10 之间的相关性 (φ²): 0.04365526470577892
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-09 11:21:37 - Cafd - INFO - Processing search space: <SearchSpace_bit.SearchSpace object at 0x00000124DADB6A90>
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column1->column11
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column2->column11
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column3->column11
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column4->column11
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column5->column11
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column6->column11
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column7->column11
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column8->column11
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column9->column11
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column10->column11
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column12'] 和列 column11 之间的φ²: 0.001756693880455657
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column12'] 和列 column11 之间的相关性 (φ²): 0.0005070152298302887
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column13'] 和列 column11 之间的φ²: 0.001927774146437372
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column13'] 和列 column11 之间的相关性 (φ²): 0.0006783096674018654
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column14'] 和列 column11 之间的φ²: 0.0016782582572688796
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column14'] 和列 column11 之间的相关性 (φ²): 0.0004284814148268026
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column15'] 和列 column11 之间的φ²: 0.0014351333926921938
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column15'] 和列 column11 之间的相关性 (φ²): 0.00018505218762545893
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column16'] 和列 column11 之间的φ²: 0.22212418589302882
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column16'] 和列 column11 之间的相关性 (φ²): 0.22115038041718135
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column17'] 和列 column11 之间的φ²: 0.23853882824754424
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column17'] 和列 column11 之间的相关性 (φ²): 0.23758557189832985
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column18'] 和列 column11 之间的φ²: 0.00046622429360473915
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column18'] 和列 column11 之间的相关性 (φ²): 0.0
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column19'] 和列 column11 之间的φ²: 0.0007975826282121261
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column19'] 和列 column11 之间的相关性 (φ²): 0.0
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column20'] 和列 column11 之间的φ²: 0.0015173438430482805
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column20'] 和列 column11 之间的相关性 (φ²): 0.0002673655554206494
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column8', 'column9'] 和列 column11 之间的φ²: 0.12764076724325665
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column8', 'column9'] 和列 column11 之间的相关性 (φ²): 0.12347623824265914
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column8', 'column10'] 和列 column11 之间的φ²: 0.2834153182653411
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column8', 'column10'] 和列 column11 之间的相关性 (φ²): 0.2790887692435469
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column9', 'column10'] 和列 column11 之间的φ²: 0.2013665628339706
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column9', 'column10'] 和列 column11 之间的相关性 (φ²): 0.19755399114900715
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column8', 'column16'] 和列 column11 之间的φ²: 0.20940878044095226
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column8', 'column16'] 和列 column11 之间的相关性 (φ²): 0.2046353994926712
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column9', 'column16'] 和列 column11 之间的φ²: 0.20062892621226575
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column9', 'column16'] 和列 column11 之间的相关性 (φ²): 0.1968128331464449
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column10', 'column16'] 和列 column11 之间的φ²: 0.266900007531412
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column10', 'column16'] 和列 column11 之间的相关性 (φ²): 0.26247374342594126
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column8', 'column17'] 和列 column11 之间的φ²: 0.22326356173584255
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column8', 'column17'] 和列 column11 之间的相关性 (φ²): 0.21857383229726648
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column9', 'column17'] 和列 column11 之间的φ²: 0.20953563444903403
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column9', 'column17'] 和列 column11 之间的相关性 (φ²): 0.205762060844645
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column10', 'column17'] 和列 column11 之间的φ²: 0.2887833682221327
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column10', 'column17'] 和列 column11 之间的相关性 (φ²): 0.28448923006800214
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column16', 'column17'] 和列 column11 之间的φ²: 0.369377498429799
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column16', 'column17'] 和列 column11 之间的相关性 (φ²): 0.36556996634484684
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-09 11:21:37 - Cafd - INFO - Processing search space: <SearchSpace_bit.SearchSpace object at 0x00000124DADB6C10>
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column1->column12
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column2->column12
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column3->column12
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column4->column12
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column5->column12
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column6->column12
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column7->column12
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column8->column12
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column9->column12
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column10->column12
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column11->column12
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column13'] 和列 column12 之间的φ²: 0.0519963588646271
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column13'] 和列 column12 之间的相关性 (φ²): 0.051047168735830734
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column14'] 和列 column12 之间的φ²: 0.0006539158857613926
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column14'] 和列 column12 之间的相关性 (φ²): 0.0
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column15'] 和列 column12 之间的φ²: 0.0009344503315222994
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column15'] 和列 column12 之间的相关性 (φ²): 0.0
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column16'] 和列 column12 之间的φ²: 0.00047472209474807415
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column16'] 和列 column12 之间的相关性 (φ²): 0.0
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column17'] 和列 column12 之间的φ²: 0.0012440099229397675
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column17'] 和列 column12 之间的相关性 (φ²): 0.00024400392536573962
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column18'] 和列 column12 之间的φ²: 0.0013620521488916495
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column18'] 和列 column12 之间的相关性 (φ²): 0.0003621643412810278
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column19'] 和列 column12 之间的φ²: 0.0015473766332865751
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column19'] 和列 column12 之间的相关性 (φ²): 0.0005476743821058857
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column20'] 和列 column12 之间的φ²: 0.0008947729630040158
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column20'] 和列 column12 之间的相关性 (φ²): 0.0
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column1', 'column2'] 和列 column12 之间的φ²: 0.2558836348650225
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column1', 'column2'] 和列 column12 之间的相关性 (φ²): 0.20774192114622606
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column1', 'column13'] 和列 column12 之间的φ²: 0.2734226235758708
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column1', 'column13'] 和列 column12 之间的相关性 (φ²): 0.18565500887889783
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column2', 'column13'] 和列 column12 之间的φ²: 0.2145996490699888
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column2', 'column13'] 和列 column12 之间的相关性 (φ²): 0.20985760921531701
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-09 11:21:37 - Cafd - INFO - Processing search space: <SearchSpace_bit.SearchSpace object at 0x00000124DADB6CD0>
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column1->column13
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column2->column13
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column3->column13
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column4->column13
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column5->column13
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column6->column13
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column7->column13
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column8->column13
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column9->column13
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column10->column13
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column11->column13
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column12->column13
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column14'] 和列 column13 之间的φ²: 0.00035820385745114435
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column14'] 和列 column13 之间的相关性 (φ²): 0.0
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column15'] 和列 column13 之间的φ²: 0.0013487080452160001
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column15'] 和列 column13 之间的相关性 (φ²): 0.00034880687680069683
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column16'] 和列 column13 之间的φ²: 0.0005125723374961239
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column16'] 和列 column13 之间的相关性 (φ²): 0.0
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column17'] 和列 column13 之间的φ²: 0.0014573042931021688
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column17'] 和列 column13 之间的相关性 (φ²): 0.0004575118568499556
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column18'] 和列 column13 之间的φ²: 0.0009314133457747573
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column18'] 和列 column13 之间的相关性 (φ²): 0.0
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column19'] 和列 column13 之间的φ²: 0.0007993244679962004
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column19'] 和列 column13 之间的相关性 (φ²): 0.0
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column20'] 和列 column13 之间的φ²: 0.0015307241706263425
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column20'] 和列 column13 之间的相关性 (φ²): 0.0005310052461413625
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column1', 'column2'] 和列 column13 之间的φ²: 0.26808859667109164
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column1', 'column2'] 和列 column13 之间的相关性 (φ²): 0.22073650108831083
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column1', 'column12'] 和列 column13 之间的φ²: 0.28138270502776525
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column1', 'column12'] 和列 column13 之间的相关性 (φ²): 0.19637847802182135
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column2', 'column12'] 和列 column13 之间的φ²: 0.2262068985231083
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column2', 'column12'] 和列 column13 之间的相关性 (φ²): 0.22153494017456854
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-09 11:21:37 - Cafd - INFO - Processing search space: <SearchSpace_bit.SearchSpace object at 0x00000124DADB6D60>
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column1->column14
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column2->column14
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column3->column14
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column4->column14
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column5->column14
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column6->column14
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column7->column14
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column8->column14
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column9->column14
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column10->column14
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column11->column14
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column12->column14
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column13->column14
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column15'] 和列 column14 之间的φ²: 0.00445399651542428
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column15'] 和列 column14 之间的相关性 (φ²): 0.003457204521947858
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column16'] 和列 column14 之间的φ²: 0.000759786260598787
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column16'] 和列 column14 之间的相关性 (φ²): 0.0
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column17'] 和列 column14 之间的φ²: 0.0011005148972463132
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column17'] 和列 column14 之间的相关性 (φ²): 0.00010036522505331815
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column18'] 和列 column14 之间的φ²: 0.0008653635136179787
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column18'] 和列 column14 之间的相关性 (φ²): 0.0
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column19'] 和列 column14 之间的φ²: 0.0010590218537426211
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column19'] 和列 column14 之间的相关性 (φ²): 5.8830636574904006e-05
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column20'] 和列 column14 之间的φ²: 0.0008022416472358885
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column20'] 和列 column14 之间的相关性 (φ²): 0.0
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column3', 'column4'] 和列 column14 之间的φ²: 0.2776470542779422
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column3', 'column4'] 和列 column14 之间的相关性 (φ²): 0.23437862975284673
+2025-06-09 11:21:37 - Cafd - INFO - Processing search space: <SearchSpace_bit.SearchSpace object at 0x00000124DADB6DF0>
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column1->column15
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column2->column15
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column3->column15
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column4->column15
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column5->column15
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column6->column15
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column7->column15
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column8->column15
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column9->column15
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column10->column15
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column11->column15
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column12->column15
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column13->column15
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column14->column15
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column16'] 和列 column15 之间的φ²: 0.0009450465718829548
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column16'] 和列 column15 之间的相关性 (φ²): 0.0
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column17'] 和列 column15 之间的φ²: 0.0010576728255380203
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column17'] 和列 column15 之间的相关性 (φ²): 5.748025765370279e-05
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column18'] 和列 column15 之间的φ²: 0.0008557047098871635
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column18'] 和列 column15 之间的相关性 (φ²): 0.0
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column19'] 和列 column15 之间的φ²: 0.0006896949011923254
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column19'] 和列 column15 之间的相关性 (φ²): 0.0
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column20'] 和列 column15 之间的φ²: 0.000598703548177582
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column20'] 和列 column15 之间的相关性 (φ²): 0.0
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column3', 'column4'] 和列 column15 之间的φ²: 0.2729892085839069
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column3', 'column4'] 和列 column15 之间的相关性 (φ²): 0.229441782434944
+2025-06-09 11:21:37 - Cafd - INFO - Processing search space: <SearchSpace_bit.SearchSpace object at 0x00000124DADB6E80>
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column1->column16
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column2->column16
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column3->column16
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column4->column16
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column5->column16
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column6->column16
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column7->column16
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column8->column16
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column9->column16
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column10->column16
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column11->column16
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column12->column16
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column13->column16
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column14->column16
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column15->column16
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column17'] 和列 column16 之间的φ²: 0.04514548224348948
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column17'] 和列 column16 之间的相关性 (φ²): 0.044189432663758306
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column18'] 和列 column16 之间的φ²: 0.0007410205703305053
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column18'] 和列 column16 之间的相关性 (φ²): 0.0
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column19'] 和列 column16 之间的φ²: 0.0005425388213964481
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column19'] 和列 column16 之间的相关性 (φ²): 0.0
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column20'] 和列 column16 之间的φ²: 0.0010231959184424965
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column20'] 和列 column16 之间的相关性 (φ²): 2.2968830501012034e-05
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column10', 'column11'] 和列 column16 之间的φ²: 0.227552130039026
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column10', 'column11'] 和列 column16 之间的相关性 (φ²): 0.22210550693177158
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column10', 'column17'] 和列 column16 之间的φ²: 0.07235856516591997
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column10', 'column17'] 和列 column16 之间的相关性 (φ²): 0.06675771121975195
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column11', 'column17'] 和列 column16 之间的φ²: 0.2267040137335943
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column11', 'column17'] 和列 column16 之间的相关性 (φ²): 0.2210552521210689
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-09 11:21:37 - Cafd - INFO - Processing search space: <SearchSpace_bit.SearchSpace object at 0x00000124DADB6F10>
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column1->column17
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column2->column17
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column3->column17
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column4->column17
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column5->column17
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column6->column17
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column7->column17
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column8->column17
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column9->column17
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column10->column17
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column11->column17
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column12->column17
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column13->column17
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column14->column17
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column15->column17
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column16->column17
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column18'] 和列 column17 之间的φ²: 0.0012302559243326527
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column18'] 和列 column17 之间的相关性 (φ²): 0.00023023615554600195
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column19'] 和列 column17 之间的φ²: 0.000728397155114834
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column19'] 和列 column17 之间的相关性 (φ²): 0.0
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column20'] 和列 column17 之间的φ²: 0.0009083253743723674
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column20'] 和列 column17 之间的相关性 (φ²): 0.0
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column10', 'column11'] 和列 column17 之间的φ²: 0.24260623996110955
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column10', 'column11'] 和列 column17 之间的相关性 (φ²): 0.23726576519881068
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column10', 'column16'] 和列 column17 之间的φ²: 0.07091971096691418
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column10', 'column16'] 和列 column17 之间的相关性 (φ²): 0.06531016959916726
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column11', 'column16'] 和列 column17 之间的φ²: 0.24302106177739932
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column11', 'column16'] 和列 column17 之间的相关性 (φ²): 0.23749149270725942
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-09 11:21:37 - Cafd - INFO - Processing search space: <SearchSpace_bit.SearchSpace object at 0x00000124DADB6FA0>
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column1->column18
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column2->column18
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column3->column18
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column4->column18
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column5->column18
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column6->column18
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column7->column18
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column8->column18
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column9->column18
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column10->column18
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column11->column18
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column12->column18
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column13->column18
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column14->column18
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column15->column18
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column16->column18
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column17->column18
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column19'] 和列 column18 之间的φ²: 0.053783655500168094
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column19'] 和列 column18 之间的相关性 (φ²): 0.05283625490492421
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column20'] 和列 column18 之间的φ²: 0.0015101315574725903
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column20'] 和列 column18 之间的相关性 (φ²): 0.0005103920146014738
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column5', 'column6'] 和列 column18 之间的φ²: 0.23075043295596373
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column5', 'column6'] 和列 column18 之间的相关性 (φ²): 0.21122332856176898
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column5', 'column7'] 和列 column18 之间的φ²: 0.2574362745276189
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column5', 'column7'] 和列 column18 之间的相关性 (φ²): 0.2424713423050888
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column6', 'column7'] 和列 column18 之间的φ²: 0.2455537161831386
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column6', 'column7'] 和列 column18 之间的相关性 (φ²): 0.24195208819506814
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column5', 'column19'] 和列 column18 之间的φ²: 0.0942952515021509
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column5', 'column19'] 和列 column18 之间的相关性 (φ²): 0.07130428480951319
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column6', 'column19'] 和列 column18 之间的φ²: 0.06910916453292805
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column6', 'column19'] 和列 column18 之间的相关性 (φ²): 0.06348869156407026
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column7', 'column19'] 和列 column18 之间的φ²: 0.24438721107217037
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column7', 'column19'] 和列 column18 之间的相关性 (φ²): 0.24078001434110788
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-09 11:21:37 - Cafd - INFO - Processing search space: <SearchSpace_bit.SearchSpace object at 0x00000124DB049070>
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column1->column19
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column2->column19
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column3->column19
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column4->column19
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column5->column19
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column6->column19
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column7->column19
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column8->column19
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column9->column19
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column10->column19
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column11->column19
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column12->column19
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column13->column19
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column14->column19
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column15->column19
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column16->column19
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column17->column19
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column18->column19
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column20'] 和列 column19 之间的φ²: 0.0014336405860846356
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column20'] 和列 column19 之间的相关性 (φ²): 0.00043382445650875026
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column7', 'column18'] 和列 column19 之间的φ²: 0.20111666412291163
+2025-06-09 11:21:37 - rule_mining.Correlation_utils - INFO - 计算列 ['column7', 'column18'] 和列 column19 之间的相关性 (φ²): 0.19730289945415166
+2025-06-09 11:21:37 - Cafd - INFO - Processing search space: <SearchSpace_bit.SearchSpace object at 0x00000124DB049100>
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column1->column20
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column2->column20
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column3->column20
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column4->column20
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column5->column20
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column6->column20
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column7->column20
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column8->column20
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column9->column20
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column10->column20
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column11->column20
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column12->column20
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column13->column20
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column14->column20
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column15->column20
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column16->column20
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column17->column20
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column18->column20
+2025-06-09 11:21:37 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: column19->column20
+2025-06-09 11:21:37 - Cafd - INFO - Total dependencies found: 4
+2025-06-09 11:21:37 - root - INFO - 发现的函数依赖如下：
+2025-06-09 11:21:37 - root - INFO - ['column1'] -> column2
+2025-06-09 11:21:37 - root - INFO - ['column4'] -> column3
+2025-06-09 11:21:37 - root - INFO - ['column3'] -> column4
+2025-06-09 11:21:37 - root - INFO - ['column5', 'column6'] -> column7
+2025-06-09 11:21:37 - Evaluate_fd - INFO - 评估结果: TP=4, FP=0, FN=1
+2025-06-09 11:21:37 - Evaluate_fd - WARNING - 漏报 FD (1 个):
+column10,column8,column9->column11
+2025-06-09 11:21:37 - root - INFO - Precision: 1.00, Recall: 0.80, F1: 0.89
+2025-06-09 11:21:37 - root - INFO - 总运行时长: 1180 ms
+2025-06-09 11:21:37 - root - INFO - 结果已保存至: rule_mining\discovered_fd\data_e5_discovered.txt

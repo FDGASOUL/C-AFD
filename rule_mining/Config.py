@@ -59,7 +59,7 @@ class Config:
 
     # 支持的数据集及对应相对路径
     DATASET_MAP = {
-        "DATA": "synthetic_data/error/data_e6",
+        "DATA": "synthetic_data/tuples/data_t100k",
         "RWD-ADULT": "real_world_data/adult",
         "RWD-TAX": "real_world_data/tax",
         "RWD-HOSPITAL": "real_world_data/hospital.txt",
@@ -116,7 +116,7 @@ def main() -> None:
     setup_logging()
     logging.info("日志配置完成。")
 
-    config = Config("RWD-DBLP")
+    config = Config("RWD-TAX")
     logging.info(config)
 
     logging.info("开始执行 CAFD...")

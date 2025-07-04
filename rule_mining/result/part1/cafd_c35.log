@@ -1,0 +1,148 @@
+2025-06-07 18:38:23 - root - INFO - 日志配置完成。
+2025-06-07 18:38:23 - root - INFO - Config: dataset=t_biocase_gathering_r90992_c35.csv, sample_size=4000, null_equal_null=True
+2025-06-07 18:38:23 - root - INFO - 开始执行 CAFD...
+2025-06-07 18:38:23 - Cafd - INFO - Executing CAFD on: E:\资料\C-AFD\rule_mining\data\real_world_data\t_biocase_gathering_r90992_c35.csv
+2025-06-07 18:38:23 - Cafd - INFO - Using ground truth: E:\资料\C-AFD\rule_mining\groundtruth\real_world_data\t_biocase_gathering_r90992_c35.txt
+2025-06-07 18:38:23 - Sampler - INFO - Reading dataset from: E:\资料\C-AFD\rule_mining\data\real_world_data\t_biocase_gathering_r90992_c35.csv
+2025-06-07 18:38:23 - Sampler - INFO - 移除全空列：24 / 35
+2025-06-07 18:38:23 - Sampler - INFO - 移除单一值列：3 个
+2025-06-07 18:38:23 - Sampler - INFO - 移除大于数据集行数 (90991) 的不现实样本量：5 个
+2025-06-07 18:38:23 - Sampler - INFO - 最终采样方式 'mode_bin_2000'，样本量: 8000
+2025-06-07 18:38:23 - Sampler - INFO - 抽样 8000 行，随机种子：894212875
+2025-06-07 18:38:23 - Sampler - INFO - 抽样结果已保存至: rule_mining/data/sample_data/sample_data.csv
+2025-06-07 18:38:23 - rule_mining.Incorporate_into - INFO - 所有列的 PLI 更新完成。
+2025-06-07 18:38:23 - Cafd - INFO - Processing search space: <SearchSpace_bit.SearchSpace object at 0x000002B89A605F70>
+2025-06-07 18:38:23 - rule_mining.Correlation_utils - WARNING - 列联表为空，返回 invalid
+2025-06-07 18:38:23 - rule_mining.Correlation_utils - INFO - 计算列 ['Gath_AreaDetail'] 和列 _datasetguid 之间的φ²: 0.8925383958818665
+2025-06-07 18:38:23 - rule_mining.Correlation_utils - INFO - 计算列 ['Gath_AreaDetail'] 和列 _datasetguid 之间的相关性 (φ²): 0.8704778129212436
+2025-06-07 18:38:23 - rule_mining.Correlation_utils - INFO - 行方向得分: 0.9927, 列方向得分: 0.0291
+2025-06-07 18:38:23 - SearchSpace_bit - INFO - 发现函数依赖: ['Gath_AreaDetail'] -> _datasetguid
+2025-06-07 18:38:23 - rule_mining.Correlation_utils - INFO - 计算列 ['Gath_Country_Name'] 和列 _datasetguid 之间的φ²: 0.2874236635747887
+2025-06-07 18:38:23 - rule_mining.Correlation_utils - INFO - 计算列 ['Gath_Country_Name'] 和列 _datasetguid 之间的相关性 (φ²): 0.2687698327783172
+2025-06-07 18:38:23 - rule_mining.Correlation_utils - INFO - 计算列 ['Gath_DateTime_Text'] 和列 _datasetguid 之间的φ²: 0.0
+2025-06-07 18:38:23 - rule_mining.Correlation_utils - INFO - 计算列 ['Gath_DateTime_Text'] 和列 _datasetguid 之间的相关性 (φ²): 0.0
+2025-06-07 18:38:23 - rule_mining.Correlation_utils - INFO - 计算列 ['Gath_DateTime_Begin'] 和列 _datasetguid 之间的φ²: 0.8464270828389916
+2025-06-07 18:38:23 - rule_mining.Correlation_utils - INFO - 计算列 ['Gath_DateTime_Begin'] 和列 _datasetguid 之间的相关性 (φ²): 0.7468356234018715
+2025-06-07 18:38:23 - rule_mining.Correlation_utils - INFO - 行方向得分: 0.9732, 列方向得分: 0.0165
+2025-06-07 18:38:23 - SearchSpace_bit - INFO - 发现函数依赖: ['Gath_DateTime_Begin'] -> _datasetguid
+2025-06-07 18:38:23 - rule_mining.Correlation_utils - INFO - 计算列 ['Gath_DateTime_End'] 和列 _datasetguid 之间的φ²: 0.883953959574244
+2025-06-07 18:38:23 - rule_mining.Correlation_utils - INFO - 计算列 ['Gath_DateTime_End'] 和列 _datasetguid 之间的相关性 (φ²): 0.8071282509027198
+2025-06-07 18:38:23 - rule_mining.Correlation_utils - INFO - 行方向得分: 0.9863, 列方向得分: 0.0155
+2025-06-07 18:38:23 - SearchSpace_bit - INFO - 发现函数依赖: ['Gath_DateTime_End'] -> _datasetguid
+2025-06-07 18:38:23 - rule_mining.Correlation_utils - INFO - 计算列 ['Gath_Notes'] 和列 _datasetguid 之间的φ²: 0.0
+2025-06-07 18:38:23 - rule_mining.Correlation_utils - INFO - 计算列 ['Gath_Notes'] 和列 _datasetguid 之间的相关性 (φ²): 0.0
+2025-06-07 18:38:23 - Cafd - INFO - Processing search space: <SearchSpace_bit.SearchSpace object at 0x000002B89A605490>
+2025-06-07 18:38:23 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: _datasetguid->_unitguid
+2025-06-07 18:38:23 - rule_mining.Correlation_utils - INFO - 计算列 ['Gath_AreaDetail'] 和列 _unitguid 之间的φ²: 0.9999999999999908
+2025-06-07 18:38:23 - rule_mining.Correlation_utils - INFO - 计算列 ['Gath_AreaDetail'] 和列 _unitguid 之间的相关性 (φ²): 0.0
+2025-06-07 18:38:23 - rule_mining.Correlation_utils - INFO - 计算列 ['Gath_Country_Name'] 和列 _unitguid 之间的φ²: 0.999999999999991
+2025-06-07 18:38:23 - rule_mining.Correlation_utils - INFO - 计算列 ['Gath_Country_Name'] 和列 _unitguid 之间的相关性 (φ²): 0.0
+2025-06-07 18:38:23 - rule_mining.Correlation_utils - INFO - 计算列 ['Gath_DateTime_Text'] 和列 _unitguid 之间的φ²: 1.0000000000000024
+2025-06-07 18:38:23 - rule_mining.Correlation_utils - INFO - 计算列 ['Gath_DateTime_Text'] 和列 _unitguid 之间的相关性 (φ²): 0.0
+2025-06-07 18:38:24 - rule_mining.Correlation_utils - INFO - 计算列 ['Gath_DateTime_Begin'] 和列 _unitguid 之间的φ²: 1.0
+2025-06-07 18:38:24 - rule_mining.Correlation_utils - INFO - 计算列 ['Gath_DateTime_Begin'] 和列 _unitguid 之间的相关性 (φ²): 0.0
+2025-06-07 18:38:24 - rule_mining.Correlation_utils - INFO - 计算列 ['Gath_DateTime_End'] 和列 _unitguid 之间的φ²: 0.9999999999999956
+2025-06-07 18:38:24 - rule_mining.Correlation_utils - INFO - 计算列 ['Gath_DateTime_End'] 和列 _unitguid 之间的相关性 (φ²): 0.0
+2025-06-07 18:38:24 - rule_mining.Correlation_utils - INFO - 计算列 ['Gath_Notes'] 和列 _unitguid 之间的φ²: 1.0
+2025-06-07 18:38:24 - rule_mining.Correlation_utils - INFO - 计算列 ['Gath_Notes'] 和列 _unitguid 之间的相关性 (φ²): 0.0
+2025-06-07 18:38:24 - Cafd - INFO - Processing search space: <SearchSpace_bit.SearchSpace object at 0x000002B89A605FA0>
+2025-06-07 18:38:24 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: _datasetguid->Gath_AreaDetail
+2025-06-07 18:38:24 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: _unitguid->Gath_AreaDetail
+2025-06-07 18:38:24 - rule_mining.Correlation_utils - INFO - 计算列 ['Gath_Country_Name'] 和列 Gath_AreaDetail 之间的φ²: 0.987425543842073
+2025-06-07 18:38:24 - rule_mining.Correlation_utils - INFO - 计算列 ['Gath_Country_Name'] 和列 Gath_AreaDetail 之间的相关性 (φ²): 0.9802739699066797
+2025-06-07 18:38:24 - rule_mining.Correlation_utils - INFO - 行方向得分: 0.2315, 列方向得分: 0.9976
+2025-06-07 18:38:24 - rule_mining.Correlation_utils - INFO - 计算列 ['Gath_DateTime_Text'] 和列 Gath_AreaDetail 之间的φ²: 0.794175138631078
+2025-06-07 18:38:24 - rule_mining.Correlation_utils - INFO - 计算列 ['Gath_DateTime_Text'] 和列 Gath_AreaDetail 之间的相关性 (φ²): 0.6737117507756237
+2025-06-07 18:38:24 - rule_mining.Correlation_utils - INFO - 行方向得分: 0.7399, 列方向得分: 0.8254
+2025-06-07 18:38:24 - rule_mining.Correlation_utils - INFO - 计算列 ['Gath_DateTime_Begin'] 和列 Gath_AreaDetail 之间的φ²: 0.5966811162515478
+2025-06-07 18:38:24 - rule_mining.Correlation_utils - INFO - 计算列 ['Gath_DateTime_Begin'] 和列 Gath_AreaDetail 之间的相关性 (φ²): 0.3331488910750024
+2025-06-07 18:38:24 - rule_mining.Correlation_utils - INFO - 计算列 ['Gath_DateTime_End'] 和列 Gath_AreaDetail 之间的φ²: 0.6064929982755333
+2025-06-07 18:38:24 - rule_mining.Correlation_utils - INFO - 计算列 ['Gath_DateTime_End'] 和列 Gath_AreaDetail 之间的相关性 (φ²): 0.34389213339728186
+2025-06-07 18:38:24 - rule_mining.Correlation_utils - INFO - 计算列 ['Gath_Notes'] 和列 Gath_AreaDetail 之间的φ²: 0.0
+2025-06-07 18:38:24 - rule_mining.Correlation_utils - INFO - 计算列 ['Gath_Notes'] 和列 Gath_AreaDetail 之间的相关性 (φ²): 0.0
+2025-06-07 18:38:24 - rule_mining.Correlation_utils - INFO - 计算列 ['Gath_DateTime_Begin', 'Gath_DateTime_End'] 和列 Gath_AreaDetail 之间的φ²: 0.6304233643817201
+2025-06-07 18:38:24 - rule_mining.Correlation_utils - INFO - 计算列 ['Gath_DateTime_Begin', 'Gath_DateTime_End'] 和列 Gath_AreaDetail 之间的相关性 (φ²): 0.37107133938643594
+2025-06-07 18:38:24 - Cafd - INFO - Processing search space: <SearchSpace_bit.SearchSpace object at 0x000002B89B096BE0>
+2025-06-07 18:38:24 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: _datasetguid->Gath_Country_Name
+2025-06-07 18:38:24 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: _unitguid->Gath_Country_Name
+2025-06-07 18:38:24 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: Gath_AreaDetail->Gath_Country_Name
+2025-06-07 18:38:24 - SearchSpace_bit - INFO - 发现函数依赖: ['Gath_AreaDetail'] -> Gath_Country_Name
+2025-06-07 18:38:24 - rule_mining.Correlation_utils - INFO - 计算列 ['Gath_DateTime_Text'] 和列 Gath_Country_Name 之间的φ²: 0.7338437342069097
+2025-06-07 18:38:24 - rule_mining.Correlation_utils - INFO - 计算列 ['Gath_DateTime_Text'] 和列 Gath_Country_Name 之间的相关性 (φ²): 0.6433326808563975
+2025-06-07 18:38:24 - rule_mining.Correlation_utils - INFO - 行方向得分: 0.8695, 列方向得分: 0.4693
+2025-06-07 18:38:24 - SearchSpace_bit - INFO - 发现函数依赖: ['Gath_DateTime_Text'] -> Gath_Country_Name
+2025-06-07 18:38:24 - rule_mining.Correlation_utils - INFO - 计算列 ['Gath_DateTime_Begin'] 和列 Gath_Country_Name 之间的φ²: 0.6556943327901615
+2025-06-07 18:38:24 - rule_mining.Correlation_utils - INFO - 计算列 ['Gath_DateTime_Begin'] 和列 Gath_Country_Name 之间的相关性 (φ²): 0.4192015512722927
+2025-06-07 18:38:24 - rule_mining.Correlation_utils - INFO - 计算列 ['Gath_DateTime_End'] 和列 Gath_Country_Name 之间的φ²: 0.6727129146209189
+2025-06-07 18:38:24 - rule_mining.Correlation_utils - INFO - 计算列 ['Gath_DateTime_End'] 和列 Gath_Country_Name 之间的相关性 (φ²): 0.44298255661444846
+2025-06-07 18:38:24 - rule_mining.Correlation_utils - INFO - 计算列 ['Gath_Notes'] 和列 Gath_Country_Name 之间的φ²: 0.0
+2025-06-07 18:38:24 - rule_mining.Correlation_utils - INFO - 计算列 ['Gath_Notes'] 和列 Gath_Country_Name 之间的相关性 (φ²): 0.0
+2025-06-07 18:38:24 - rule_mining.Correlation_utils - INFO - 计算列 ['_datasetguid', 'Gath_DateTime_Begin'] 和列 Gath_Country_Name 之间的φ²: 0.14296079202204645
+2025-06-07 18:38:24 - rule_mining.Correlation_utils - INFO - 计算列 ['_datasetguid', 'Gath_DateTime_Begin'] 和列 Gath_Country_Name 之间的相关性 (φ²): 0.03984646964317285
+2025-06-07 18:38:24 - rule_mining.Correlation_utils - INFO - 计算列 ['_datasetguid', 'Gath_DateTime_End'] 和列 Gath_Country_Name 之间的φ²: 0.11076528484949431
+2025-06-07 18:38:24 - rule_mining.Correlation_utils - INFO - 计算列 ['_datasetguid', 'Gath_DateTime_End'] 和列 Gath_Country_Name 之间的相关性 (φ²): 0.010236671997899321
+2025-06-07 18:38:24 - rule_mining.Correlation_utils - INFO - 计算列 ['Gath_DateTime_Begin', 'Gath_DateTime_End'] 和列 Gath_Country_Name 之间的φ²: 0.6932086743003233
+2025-06-07 18:38:24 - rule_mining.Correlation_utils - INFO - 计算列 ['Gath_DateTime_Begin', 'Gath_DateTime_End'] 和列 Gath_Country_Name 之间的相关性 (φ²): 0.4668662706363578
+2025-06-07 18:38:24 - rule_mining.Correlation_utils - WARNING - 期望分布频数表不符合要求，无法计算相关性。
+2025-06-07 18:38:24 - Cafd - INFO - Processing search space: <SearchSpace_bit.SearchSpace object at 0x000002B89B096340>
+2025-06-07 18:38:24 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: _datasetguid->Gath_DateTime_Text
+2025-06-07 18:38:24 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: _unitguid->Gath_DateTime_Text
+2025-06-07 18:38:24 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: Gath_AreaDetail->Gath_DateTime_Text
+2025-06-07 18:38:24 - SearchSpace_bit - INFO - 发现函数依赖: ['Gath_AreaDetail'] -> Gath_DateTime_Text
+2025-06-07 18:38:24 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: Gath_Country_Name->Gath_DateTime_Text
+2025-06-07 18:38:24 - rule_mining.Correlation_utils - WARNING - 列联表为空，返回 invalid
+2025-06-07 18:38:24 - rule_mining.Correlation_utils - WARNING - 列联表为空，返回 invalid
+2025-06-07 18:38:24 - rule_mining.Correlation_utils - WARNING - 列联表为空，返回 invalid
+2025-06-07 18:38:24 - Cafd - INFO - Processing search space: <SearchSpace_bit.SearchSpace object at 0x000002B89B096220>
+2025-06-07 18:38:24 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: _datasetguid->Gath_DateTime_Begin
+2025-06-07 18:38:24 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: _unitguid->Gath_DateTime_Begin
+2025-06-07 18:38:24 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: Gath_AreaDetail->Gath_DateTime_Begin
+2025-06-07 18:38:24 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: Gath_Country_Name->Gath_DateTime_Begin
+2025-06-07 18:38:24 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: Gath_DateTime_Text->Gath_DateTime_Begin
+2025-06-07 18:38:24 - rule_mining.Correlation_utils - INFO - 计算列 ['Gath_DateTime_End'] 和列 Gath_DateTime_Begin 之间的φ²: 0.9894653156557919
+2025-06-07 18:38:24 - rule_mining.Correlation_utils - INFO - 计算列 ['Gath_DateTime_End'] 和列 Gath_DateTime_Begin 之间的相关性 (φ²): 0.9821720726482633
+2025-06-07 18:38:24 - rule_mining.Correlation_utils - INFO - 行方向得分: 0.9839, 列方向得分: 0.9904
+2025-06-07 18:38:24 - rule_mining.Correlation_utils - INFO - 计算列 ['Gath_Notes'] 和列 Gath_DateTime_Begin 之间的φ²: 0.0
+2025-06-07 18:38:24 - rule_mining.Correlation_utils - INFO - 计算列 ['Gath_Notes'] 和列 Gath_DateTime_Begin 之间的相关性 (φ²): 0.0
+2025-06-07 18:38:24 - rule_mining.Correlation_utils - INFO - 计算列 ['Gath_AreaDetail', 'Gath_Country_Name'] 和列 Gath_DateTime_Begin 之间的φ²: 0.9025502919192278
+2025-06-07 18:38:24 - rule_mining.Correlation_utils - INFO - 计算列 ['Gath_AreaDetail', 'Gath_Country_Name'] 和列 Gath_DateTime_Begin 之间的相关性 (φ²): 0.608759931948754
+2025-06-07 18:38:24 - Cafd - INFO - Processing search space: <SearchSpace_bit.SearchSpace object at 0x000002B89B096250>
+2025-06-07 18:38:24 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: _datasetguid->Gath_DateTime_End
+2025-06-07 18:38:24 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: _unitguid->Gath_DateTime_End
+2025-06-07 18:38:24 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: Gath_AreaDetail->Gath_DateTime_End
+2025-06-07 18:38:24 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: Gath_Country_Name->Gath_DateTime_End
+2025-06-07 18:38:24 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: Gath_DateTime_Text->Gath_DateTime_End
+2025-06-07 18:38:24 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: Gath_DateTime_Begin->Gath_DateTime_End
+2025-06-07 18:38:24 - SearchSpace_bit - INFO - 发现函数依赖: ['Gath_DateTime_Begin'] -> Gath_DateTime_End
+2025-06-07 18:38:24 - rule_mining.Correlation_utils - INFO - 计算列 ['Gath_Notes'] 和列 Gath_DateTime_End 之间的φ²: 0.0
+2025-06-07 18:38:24 - rule_mining.Correlation_utils - INFO - 计算列 ['Gath_Notes'] 和列 Gath_DateTime_End 之间的相关性 (φ²): 0.0
+2025-06-07 18:38:24 - rule_mining.Correlation_utils - INFO - 计算列 ['Gath_AreaDetail', 'Gath_Country_Name'] 和列 Gath_DateTime_End 之间的φ²: 0.9048351279529341
+2025-06-07 18:38:24 - rule_mining.Correlation_utils - INFO - 计算列 ['Gath_AreaDetail', 'Gath_Country_Name'] 和列 Gath_DateTime_End 之间的相关性 (φ²): 0.6094181080911891
+2025-06-07 18:38:24 - Cafd - INFO - Processing search space: <SearchSpace_bit.SearchSpace object at 0x000002B89B0961F0>
+2025-06-07 18:38:24 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: _datasetguid->Gath_Notes
+2025-06-07 18:38:24 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: _unitguid->Gath_Notes
+2025-06-07 18:38:24 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: Gath_AreaDetail->Gath_Notes
+2025-06-07 18:38:24 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: Gath_Country_Name->Gath_Notes
+2025-06-07 18:38:24 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: Gath_DateTime_Text->Gath_Notes
+2025-06-07 18:38:24 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: Gath_DateTime_Begin->Gath_Notes
+2025-06-07 18:38:24 - SearchSpace_bit - INFO - 从全局结论表中命中缓存: Gath_DateTime_End->Gath_Notes
+2025-06-07 18:38:24 - Cafd - INFO - Total dependencies found: 7
+2025-06-07 18:38:24 - root - INFO - 发现的函数依赖如下：
+2025-06-07 18:38:24 - root - INFO - ['Gath_AreaDetail'] -> _datasetguid
+2025-06-07 18:38:24 - root - INFO - ['Gath_DateTime_Begin'] -> _datasetguid
+2025-06-07 18:38:24 - root - INFO - ['Gath_DateTime_End'] -> _datasetguid
+2025-06-07 18:38:24 - root - INFO - ['Gath_AreaDetail'] -> Gath_Country_Name
+2025-06-07 18:38:24 - root - INFO - ['Gath_DateTime_Text'] -> Gath_Country_Name
+2025-06-07 18:38:24 - root - INFO - ['Gath_AreaDetail'] -> Gath_DateTime_Text
+2025-06-07 18:38:24 - root - INFO - ['Gath_DateTime_Begin'] -> Gath_DateTime_End
+2025-06-07 18:38:24 - Evaluate_fd - INFO - 评估结果: TP=1, FP=6, FN=0
+2025-06-07 18:38:24 - Evaluate_fd - WARNING - 误报 FD (6 个):
+Gath_DateTime_End->_datasetguid
+Gath_DateTime_Text->Gath_Country_Name
+Gath_AreaDetail->Gath_DateTime_Text
+Gath_DateTime_Begin->Gath_DateTime_End
+Gath_AreaDetail->_datasetguid
+Gath_DateTime_Begin->_datasetguid
+2025-06-07 18:38:24 - root - INFO - Precision: 0.14, Recall: 1.00, F1: 0.25
+2025-06-07 18:38:24 - root - INFO - 总运行时长: 1202 ms
+2025-06-07 18:38:24 - root - INFO - 结果已保存至: rule_mining\discovered_fd\t_biocase_gathering_r90992_c35_discovered.txt

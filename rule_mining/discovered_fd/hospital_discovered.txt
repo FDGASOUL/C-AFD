@@ -1,3 +1,4 @@
+PhoneNumber->ProviderNumber
 ProviderNumber->HospitalName
 PhoneNumber->HospitalName
 ProviderNumber->City
@@ -24,6 +25,11 @@ ProviderNumber->HospitalType
 HospitalName->HospitalType
 ZIPCode->HospitalType
 PhoneNumber->HospitalType
+City,HospitalOwner->HospitalType
+HospitalOwner,State->HospitalType
+CountyName,HospitalOwner->HospitalType
+City,EmergencyService->HospitalType
+HospitalOwner,StateAvg->HospitalType
 ProviderNumber->HospitalOwner
 HospitalName->HospitalOwner
 ZIPCode->HospitalOwner
@@ -36,10 +42,11 @@ City,HospitalOwner->EmergencyService
 MeasureCode->Condition
 MeasureName->Condition
 StateAvg->Condition
+MeasureName->MeasureCode
 StateAvg->MeasureCode
 MeasureCode->MeasureName
 StateAvg->MeasureName
-Precision: 0.6341
-Recall: 0.9286
-F1: 0.7536
-Runtime: 5095 ms
+Precision: 0.5833
+Recall: 1.0000
+F1: 0.7368
+Runtime: 4206 ms

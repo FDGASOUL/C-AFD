@@ -3,7 +3,7 @@ import random
 import math
 from pathlib import Path
 from itertools import combinations
-from typing import List
+from typing import List, Optional
 
 import numpy as np
 import pandas as pd
@@ -60,7 +60,14 @@ class Sampler:
         self.delta: float = config.delta
         self.method: str = 'mode_bin_2000'  # 表示使用 2000 为步长的众数分段法
 
-    def random_sample(self) -> pd.DataFrame:
+    def random_sample(self, forced_size: Optional[int] = None) -> pd.DataFrame:
+        """
+        随机抽样：如果传入 forced_size，则使用该值；
+        否则按原有逻辑计算样本量。
+
+        :param forced_size: 用户指定的抽样数（可选）
+        :return: 抽样后的 DataFrame
+        """
         logger.info(f"Reading dataset from: {self.input_path}")
         try:
             df = pd.read_csv(
@@ -75,71 +82,51 @@ class Sampler:
             raise ValueError(f"输入数据集读取失败: {exc}") from exc
 
         clean_df = self._clean_data(df)
-        sizes = self._calculate_all_sizes(clean_df)
 
-        if not sizes:
-            logger.warning("无法计算任何列对的样本量，返回完整数据集")
-            return clean_df
+        if forced_size is not None:
+            sample_size = forced_size
+            logger.info(f"使用用户指定的抽样数: {sample_size}")
+        else:
+            sizes = self._calculate_all_sizes(clean_df)
+            if not sizes:
+                logger.warning("无法计算任何列对的样本量，返回完整数据集")
+                return clean_df
 
-        max_rows = len(clean_df)
-        # 丢弃大于 max_rows 的不现实值
-        realistic_sizes = [s for s in sizes if s <= max_rows]
-        removed_count = len(sizes) - len(realistic_sizes)
-        if removed_count > 0:
-            logger.info(f"移除大于数据集行数 ({max_rows}) 的不现实样本量：{removed_count} 个")
+            max_rows = len(clean_df)
+            realistic_sizes = [s for s in sizes if s <= max_rows]
+            if not realistic_sizes:
+                realistic_sizes = sizes.copy()
 
-        if not realistic_sizes:
-            # 如果全部值都被移除则退回到原始 sizes 列表
-            logger.warning(
-                f"所有样本量均大于数据集行数 ({max_rows})，退回到原始 sizes 列表"
+            bin_width = 2000
+            bins = list(range(0, max_rows + bin_width, bin_width))
+            if bins[-1] < max_rows:
+                bins.append(max_rows)
+
+            arr = np.array(realistic_sizes)
+            arr[arr > max_rows] = max_rows
+            bin_indices = np.digitize(arr, bins)
+
+            bin_counts = {}
+            for idx in bin_indices:
+                bin_counts[idx] = bin_counts.get(idx, 0) + 1
+
+            mode_bin_idx = min(
+                [idx for idx, cnt in bin_counts.items() if cnt == max(bin_counts.values())]
             )
-            realistic_sizes = sizes.copy()
+            left_edge = bins[mode_bin_idx - 1] if mode_bin_idx - 1 < len(bins) else bins[-2]
+            right_edge = bins[mode_bin_idx] if mode_bin_idx < len(bins) else bins[-1]
+            rep_value = right_edge
+            print(
+                f"样本量分段情况 -> bin 范围 [{left_edge}, {right_edge}] "
+                f"包含 {bin_counts[mode_bin_idx]} 个样本量，"
+                f"选用中点 {rep_value:.2f} 作为抽样数"
+            )
 
-        # 将 realistic_sizes 按 [0, max_rows] 区间以 2000 为步长分 bin
-        bin_width = 2000
-        # 生成 bin 边界：0,2000,4000,..., 含最后一个 >= max_rows
-        bins = list(range(0, max_rows + bin_width, bin_width))
-        if bins[-1] < max_rows:
-            bins.append(max_rows)
+            sample_size = math.ceil(rep_value)
+            if sample_size < 1:
+                sample_size = 1
+            logger.info(f"最终采样方式 '{self.method}'，样本量: {sample_size}")
 
-        # 使用 numpy 的 digitize 将每个 size 分到对应的 bin 索引(从1开始)
-        arr = np.array(realistic_sizes)
-        # 对于恰好为 max_rows 的值，让它归入最后一个 bin
-        arr[arr > max_rows] = max_rows
-        bin_indices = np.digitize(arr, bins)  # bin_indices 范围在 1..len(bins)
-
-        # 统计每个 bin 中元素的数量
-        bin_counts = {}
-        for idx in bin_indices:
-            # digitize 返回的 idx 可能是 len(bins)（当 value == bins[-1]），
-            # 最终 bin 计数也包含在字典中
-            bin_counts[idx] = bin_counts.get(idx, 0) + 1
-
-        # 找到出现次数最多的 bin idx（多数情况下只需一个，若并列则取最小 idx）
-        mode_bin_idx = min(
-            [idx for idx, cnt in bin_counts.items() if cnt == max(bin_counts.values())]
-        )
-        # 计算该 bin 的左右边界
-        # digitize 规则：如果 v 落在 (bins[i-1], bins[i]]，则 digitize 返回 i
-        # 因此 bin i 的左边界是 bins[i-1]，右边界是 bins[i]
-        left_edge = bins[mode_bin_idx - 1] if mode_bin_idx - 1 < len(bins) else bins[-2]
-        right_edge = bins[mode_bin_idx] if mode_bin_idx < len(bins) else bins[-1]
-        # 以中点为代表：也可以改为 left_edge 或 right_edge
-        # rep_value = (left_edge + right_edge) / 2
-        rep_value = right_edge
-
-        print(
-            f"样本量分段情况 -> bin 范围 [{left_edge}, {right_edge}] "
-            f"包含 {bin_counts[mode_bin_idx]} 个样本量，"
-            f"选用中点 {rep_value:.2f} 作为抽样数"
-        )
-
-        sample_size = math.ceil(rep_value)
-        # 若计算后 sample_size 为 0，则至少取 1
-        if sample_size < 1:
-            sample_size = 1
-
-        logger.info(f"最终采样方式 '{self.method}'，样本量: {sample_size}")
         return self._perform_sampling(clean_df, sample_size)
 
     def _clean_data(self, data: pd.DataFrame) -> pd.DataFrame:
@@ -171,6 +158,7 @@ class Sampler:
             try:
                 size = calculate_full_formula(v, self.p, self.delta, d)
                 sizes.append(size)
+                logger.info(f"计算 {c1} 和 {c2} 的样本量: {size:.2f}")
             except Exception as exc:
                 logger.warning(f"计算样本量时出错: {exc}")
         return sizes
